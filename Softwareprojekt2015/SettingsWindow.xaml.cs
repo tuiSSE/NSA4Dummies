@@ -54,6 +54,7 @@ namespace Softwareprojekt2015
 			parent.UpdateTranslations();
 
 			Softwareprojekt2015.Properties.Settings.Default.lan = lan;
+			Softwareprojekt2015.Properties.Settings.Default.Save();
 
 			this.Close();
 
