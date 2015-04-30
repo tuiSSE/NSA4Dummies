@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root lan="Deutsch">
+  <string id="ok">OK</string>
+  <string id="cancel">Abbruch</string>
+  <string id="settings">Einstellungen</string>
+  <string id="language">Sprache wählen</string>
+  <string id="advanced">Erweiterte Einstellungen</string>
+  <string id="save">Speichern</string>
+</root>
