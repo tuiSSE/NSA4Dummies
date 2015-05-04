@@ -64,11 +64,15 @@ namespace Softwareprojekt2015
 
 			try
 			{
-				foreach (XmlNode str in doc.DocumentElement.ChildNodes)
+				foreach (XmlNode category in doc.DocumentElement.ChildNodes)
 				{
-					string key = str.Attributes["id"].Value;
-					string value = str.InnerText;
-					translation.Add(key, value);
+                    foreach (XmlNode str in category.ChildNodes)
+                    {
+                        string key = category.Attributes["name"].Value + "." + str.Attributes["id"].Value;
+                        string value = str.InnerText;
+                        translation.Add(key, value);
+                    }
+					
 				}
 			}
 			catch (Exception e)

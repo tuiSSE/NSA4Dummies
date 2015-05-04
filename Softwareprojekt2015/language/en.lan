@@ -1,9 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <root lan="English">
-  <string id="ok">OK</string>
-  <string id="cancel">Cancel</string>
-  <string id="settings">Settings</string>
-  <string id="language">Choose Language</string>
-  <string id="advanced">Advanced Settings</string>
-  <string id="save">Save</string>
+  <category name="general">
+    <string id="ok">OK</string>
+    <string id="cancel">Cancel</string>
+    <string id="save">Save</string>
+  </category>
+  <category name="settings">
+    <string id="title">Settings</string>
+    <string id="language">Choose Language</string>
+    <string id="advanced">Advanced Settings</string>
+  </category>
+  <category name="mainWindow">
+    <string id="title">NSA 4 Dummies</string>
+  </category>
 </root> 
