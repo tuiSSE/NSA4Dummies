@@ -1,0 +1,248 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:chart="clr-namespace:De.TorstenMandelkow.MetroChart;assembly=De.TorstenMandelkow.MetroChart"
+                    xmlns:local="clr-namespace:Softwareprojekt2015">
+
+    <local:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+    <local:StringToBrushConverter x:Key="StringToBrushConverter" />
+
+    <Style x:Key="BaseChartStyle" TargetType="chart:ChartBase">
+        <Setter Property="Margin" Value="0 0 10 10"/>
+        <Setter Property="FontSize" Value="{Binding Path=SelectedFontSize}" />
+    </Style>
+
+    <Style x:Key="ChartStyleVariableSize" TargetType="chart:ChartBase" BasedOn="{StaticResource BaseChartStyle}">
+        <Setter Property="MinWidth" Value="450"/>
+        <Setter Property="MinHeight" Value="400"/>
+    </Style>
+    <Style x:Key="ChartStyleFixedSize" TargetType="chart:ChartBase" BasedOn="{StaticResource BaseChartStyle}">
+        <Setter Property="Width" Value="500"/>
+        <Setter Property="Height" Value="500"/>
+        <Setter Property="VerticalAlignment" Value="Top"/>
+    </Style>
+    <Style x:Key="ChartStyleMinimalSize" TargetType="chart:ChartBase" BasedOn="{StaticResource BaseChartStyle}">
+        <Setter Property="Width" Value="425"/>
+        <Setter Property="Height" Value="400"/>
+    </Style>
+
+    <DataTemplate x:Key="Statistics">
+        <Viewbox>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto" />
+                    <ColumnDefinition Width="auto" />
+                    <ColumnDefinition Width="auto" />
+                    <ColumnDefinition Width="auto" />
+                </Grid.ColumnDefinitions>
+            
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                </Grid.RowDefinitions>
+
+                <chart:PieChart  
+                    Grid.Column="0"
+                    Grid.Row="0"                
+                    Style="{StaticResource ChartStyleMinimalSize}"
+                    ChartTitle="Pie Chart"
+                    ChartSubTitle="Chart with fixed width and height"
+                    Palette="{Binding Path=SelectedPalette.Value}"
+                    FontSize="{Binding Path=SelectedFontSize}"
+                    IsRowColumnSwitched="{Binding Path=IsRowColumnSwitched}"
+                    ChartTitleVisibility="{Binding Path=IsTitleVisible, Converter={StaticResource BooleanToVisibilityConverter}}"
+                    ChartLegendVisibility="{Binding Path=IsLegendVisible, Converter={StaticResource BooleanToVisibilityConverter}}"
+                    ToolTipFormat="{Binding Path=ToolTipFormat}"
+                    PieMinimalSize="400.0"
+                    Foreground="{Binding Path=Foreground}" 
+                    Background="{Binding Path=Background}"                 
+                    SelectedItem="{Binding Path=SelectedItem, Mode=TwoWay}"
+                    SelectedBrush="{Binding Path=SelectedBrush, Converter={StaticResource StringToBrushConverter}}"  >
+                    <chart:PieChart.Series>
+                        <chart:ChartSeries
+                            SeriesTitle="Errors"
+                            DisplayMember="Category"
+                            ValueMember="Number"
+                            ItemsSource="{Binding Path=Errors}" />
+                    </chart:PieChart.Series>
+                </chart:PieChart>
+
+                <chart:DoughnutChart  
+                    Grid.Column="0"
+                    Grid.Row="1"  
+                    Style="{StaticResource ChartStyleMinimalSize}"
+                    ChartTitle="Doughnut Chart"                                
+                    ChartSubTitle="Chart with fixed width and height"
+                    Palette="{Binding Path=SelectedPalette.Value}"
+                    FontSize="{Binding Path=SelectedFontSize}"
+                    IsRowColumnSwitched="{Binding Path=IsRowColumnSwitched}"
+                    ChartTitleVisibility="{Binding Path=IsTitleVisible, Converter={StaticResource BooleanToVisibilityConverter}}"
+                    ChartLegendVisibility="{Binding Path=IsLegendVisible, Converter={StaticResource BooleanToVisibilityConverter}}"
+                    ToolTipFormat="{Binding Path=ToolTipFormat}"
+                    PieMinimalSize="500.0"
+                    Foreground="{Binding Path=Foreground}" 
+                    Background="{Binding Path=Background}" 
+                    InnerRadiusRatio="{Binding Path=SelectedDoughnutInnerRadiusRatio}"
+                    SelectedItem="{Binding Path=SelectedItem, Mode=TwoWay}"
+                    SelectedBrush="{Binding Path=SelectedBrush, Converter={StaticResource StringToBrushConverter}}"  >
+                    <chart:PieChart.Series>
+                        <chart:ChartSeries
+                                SeriesTitle="Warnings"
+                                DisplayMember="Category"
+                                ValueMember="Number"
+                                ItemsSource="{Binding Path=Warnings}">
+                        </chart:ChartSeries>
+                    </chart:PieChart.Series>
+                </chart:DoughnutChart>
+
+                <chart:ClusteredColumnChart  
+                    Grid.Column="1"
+                    Grid.Row="0" 
+                    Style="{StaticResource ChartStyleMinimalSize}"
+                    ChartTitle="Column Chart"
+                    ChartSubTitle="Chart with fixed width and height" 
+                    Palette="{Binding Path=SelectedPalette.Value}"
+                    FontSize="{Binding Path=SelectedFontSize}"
+                    IsRowColumnSwitched="{Binding Path=IsRowColumnSwitched}"
+                    ChartTitleVisibility="{Binding Path=IsTitleVisible, Converter={StaticResource BooleanToVisibilityConverter}}"
+                    ChartLegendVisibility="{Binding Path=IsLegendVisible, Converter={StaticResource BooleanToVisibilityConverter}}"
+                    ToolTipFormat="{Binding Path=ToolTipFormat}"
+                    Foreground="{Binding Path=Foreground}" 
+                    Background="{Binding Path=Background}"                 
+                    SelectedItem="{Binding Path=SelectedItem, Mode=TwoWay}"
+                    SelectedBrush="{Binding Path=SelectedBrush, Converter={StaticResource StringToBrushConverter}}" >
+                    <chart:ClusteredColumnChart.Series>
+                        <chart:ChartSeries
+                            SeriesTitle="Errors"
+                            DisplayMember="Category"
+                            ValueMember="Number"
+                            ItemsSource="{Binding Path=Errors}" />
+                        <chart:ChartSeries
+                            SeriesTitle="Warnings"
+                            DisplayMember="Category"
+                            ValueMember="Number"
+                            ItemsSource="{Binding Path=Warnings}" />
+                    </chart:ClusteredColumnChart.Series>
+                </chart:ClusteredColumnChart>
+
+                <chart:StackedColumnChart  
+                    Grid.Column="1"
+                    Grid.Row="1" 
+                    Style="{StaticResource ChartStyleMinimalSize}"
+                    ChartTitle="StackedColumn Chart"
+                    ChartSubTitle="Chart with fixed width and height" 
+                    Palette="{Binding Path=SelectedPalette.Value}"
+                    FontSize="{Binding Path=SelectedFontSize}"
+                    IsRowColumnSwitched="{Binding Path=IsRowColumnSwitched}"
+                    ChartTitleVisibility="{Binding Path=IsTitleVisible, Converter={StaticResource BooleanToVisibilityConverter}}"
+                    ChartLegendVisibility="{Binding Path=IsLegendVisible, Converter={StaticResource BooleanToVisibilityConverter}}"
+                    ToolTipFormat="{Binding Path=ToolTipFormat}"
+                    Foreground="{Binding Path=Foreground}" 
+                    Background="{Binding Path=Background}"                 
+                    SelectedItem="{Binding Path=SelectedItem, Mode=TwoWay}"
+                    SelectedBrush="{Binding Path=SelectedBrush, Converter={StaticResource StringToBrushConverter}}" >
+                    <chart:StackedColumnChart.Series>
+                        <chart:ChartSeries
+                            SeriesTitle="Errors"
+                            DisplayMember="Category"
+                            ValueMember="Number"
+                            ItemsSource="{Binding Path=Errors}" />
+                        <chart:ChartSeries
+                            SeriesTitle="Warnings"
+                            DisplayMember="Category"
+                            ValueMember="Number"
+                            ItemsSource="{Binding Path=Warnings}" />
+                    </chart:StackedColumnChart.Series>
+                </chart:StackedColumnChart>
+
+                <chart:ClusteredBarChart  
+                    Grid.Column="2"
+                    Grid.Row="0" 
+                    Style="{StaticResource ChartStyleMinimalSize}"
+                    ChartTitle="Bar Chart"
+                    ChartSubTitle="Chart with fixed width and height"     
+                    Palette="{Binding Path=SelectedPalette.Value}"
+                    FontSize="{Binding Path=SelectedFontSize}"
+                    IsRowColumnSwitched="{Binding Path=IsRowColumnSwitched}"
+                    ChartTitleVisibility="{Binding Path=IsTitleVisible, Converter={StaticResource BooleanToVisibilityConverter}}"
+                    ChartLegendVisibility="{Binding Path=IsLegendVisible, Converter={StaticResource BooleanToVisibilityConverter}}"
+                    ToolTipFormat="{Binding Path=ToolTipFormat}"
+                    Foreground="{Binding Path=Foreground}" 
+                    Background="{Binding Path=Background}"                 
+                    SelectedItem="{Binding Path=SelectedItem, Mode=TwoWay}"
+                    SelectedBrush="{Binding Path=SelectedBrush, Converter={StaticResource StringToBrushConverter}}" >
+                    <chart:ClusteredBarChart.Series>
+                        <chart:ChartSeries
+                            SeriesTitle="Errors"
+                            DisplayMember="Category"
+                            ValueMember="Number"
+                            ItemsSource="{Binding Path=Errors}" />
+                        <chart:ChartSeries
+                            SeriesTitle="Warnings"
+                            DisplayMember="Category"
+                            ValueMember="Number"
+                            ItemsSource="{Binding Path=Warnings}" />
+                    </chart:ClusteredBarChart.Series>
+                </chart:ClusteredBarChart>
+
+                <chart:StackedBarChart  
+                    Grid.Column="2"
+                    Grid.Row="1" 
+                    Style="{StaticResource ChartStyleMinimalSize}"
+                    ChartTitle="Stacked Bar Chart"
+                    ChartSubTitle="Chart with fixed width and height"     
+                    Palette="{Binding Path=SelectedPalette.Value}"
+                    FontSize="{Binding Path=SelectedFontSize}"
+                    IsRowColumnSwitched="{Binding Path=IsRowColumnSwitched}"
+                    ChartTitleVisibility="{Binding Path=IsTitleVisible, Converter={StaticResource BooleanToVisibilityConverter}}"
+                    ChartLegendVisibility="{Binding Path=IsLegendVisible, Converter={StaticResource BooleanToVisibilityConverter}}"
+                    ToolTipFormat="{Binding Path=ToolTipFormat}"
+                    Foreground="{Binding Path=Foreground}" 
+                    Background="{Binding Path=Background}"                 
+                    SelectedItem="{Binding Path=SelectedItem, Mode=TwoWay}"
+                    SelectedBrush="{Binding Path=SelectedBrush, Converter={StaticResource StringToBrushConverter}}" >
+                    <chart:StackedBarChart.Series>
+                        <chart:ChartSeries
+                            SeriesTitle="Errors"
+                            DisplayMember="Category"
+                            ValueMember="Number"
+                            ItemsSource="{Binding Path=Errors}" />
+                        <chart:ChartSeries
+                            SeriesTitle="Warnings"
+                            DisplayMember="Category"
+                            ValueMember="Number"
+                            ItemsSource="{Binding Path=Warnings}" />
+                    </chart:StackedBarChart.Series>
+                </chart:StackedBarChart>
+
+                <chart:RadialGaugeChart  
+                Grid.Column="3"
+                Grid.Row="0" 
+                Grid.RowSpan="2"
+                Style="{StaticResource ChartStyleVariableSize}"
+                ChartTitle="Gauge Chart"
+                ChartSubTitle="Chart with dynamic width and height"
+                Palette="{Binding Path=SelectedPalette.Value}"
+                FontSize="{Binding Path=SelectedFontSize}"
+                IsRowColumnSwitched="{Binding Path=IsRowColumnSwitched}"
+                ChartTitleVisibility="{Binding Path=IsTitleVisible, Converter={StaticResource BooleanToVisibilityConverter}}"
+                ChartLegendVisibility="{Binding Path=IsLegendVisible, Converter={StaticResource BooleanToVisibilityConverter}}"
+                ToolTipFormat="{Binding Path=ToolTipFormat}"
+                Foreground="{Binding Path=Foreground}" 
+                Background="{Binding Path=Background}"                 
+                SelectedItem="{Binding Path=SelectedItem, Mode=TwoWay}"
+                SelectedBrush="{Binding Path=SelectedBrush, Converter={StaticResource StringToBrushConverter}}" >
+                <chart:RadialGaugeChart.Series>
+                    <chart:ChartSeries
+                        SeriesTitle="Errors"
+                        DisplayMember="Category"
+                        ValueMember="Number"
+                        ItemsSource="{Binding Path=Errors}">
+                    </chart:ChartSeries>
+                </chart:RadialGaugeChart.Series>
+            </chart:RadialGaugeChart>
+            
+            </Grid>
+        </Viewbox>
+    </DataTemplate>
+
+</ResourceDictionary>

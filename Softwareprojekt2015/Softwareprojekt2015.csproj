@@ -52,6 +52,9 @@
     <StartupObject>Softwareprojekt2015.App</StartupObject>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="De.TorstenMandelkow.MetroChart">
+      <HintPath>.\De.TorstenMandelkow.MetroChart.dll</HintPath>
+    </Reference>
     <Reference Include="PacketDotNet">
       <HintPath>..\SharpPcap-4.2.0.bin\SharpPcap-4.2.0\Debug\PacketDotNet.dll</HintPath>
     </Reference>
@@ -77,10 +80,39 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Controls\BooleanToVisibilityConverter.cs" />
+    <Compile Include="Controls\PortableHyperLinkButton.cs" />
+    <Compile Include="Controls\PortablePopup.cs" />
+    <Compile Include="Controls\StringToBrushConverter.cs" />
+    <Compile Include="Controls\StringToDataTemplateConverter.cs" />
+    <Compile Include="GUI\WorldMap.xaml.cs">
+      <DependentUpon>WorldMap.xaml</DependentUpon>
+    </Compile>
     <Compile Include="LanguageFile.cs" />
     <Compile Include="SettingsWindow.xaml.cs">
       <DependentUpon>SettingsWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ViewModel\GUIViewModel.cs" />
+    <Page Include="GUI\Buttons.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="GUI\Charts.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="GUI\PageContent.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="GUI\TextStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="GUI\WorldMap.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -148,7 +180,9 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Core\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
