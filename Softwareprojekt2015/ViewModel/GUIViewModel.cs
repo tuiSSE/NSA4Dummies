@@ -23,6 +23,17 @@ namespace Softwareprojekt2015
         public Dictionary<string, De.TorstenMandelkow.MetroChart.ResourceDictionaryCollection> Palettes { get; set; }
 
         /*
+         *  Language
+         * */
+        public static Dictionary<string, string> T
+        {
+            get
+            {
+                return App.translation;
+            }
+        }
+        
+        /*
          *  selected layout elements
          * */
         private string selectedChartType = null;
@@ -79,6 +90,28 @@ namespace Softwareprojekt2015
                 selectedDoughnutInnerRadiusRatio = value;
                 NotifyPropertyChanged("SelectedDoughnutInnerRadiusRatio");
                 NotifyPropertyChanged("SelectedDoughnutInnerRadiusRatioString");
+            }
+        }
+
+        public string SelectedFontSizeString
+        {
+            get
+            {
+                return SelectedFontSize.ToString() + "px";
+            }
+        }
+
+        private object selectedItem = null;
+        public object SelectedItem
+        {
+            get
+            {
+                return selectedItem;
+            }
+            set
+            {
+                selectedItem = value;
+                NotifyPropertyChanged("SelectedItem");
             }
         }
 
@@ -154,99 +187,77 @@ namespace Softwareprojekt2015
         {
             get
             {
-                if (darkLayout)
+                if (hackerLayout)
                 {
-                    return "#FFEEEEEE";
+                    return "#FF00ff24";
                 }
-                if (tuIlemauLayout)
-                {
-                    return "#FFEEEEEE";
-                }
-                return "#FF666666";
+                return "#FF006666";
             }
         }
         public string MainForeground
         {
             get
             {
-                if (darkLayout)
+                if (hackerLayout)
                 {
-                    return "#FFFFFFFF";
+                    return "#FF00ff24";
                 }
-                if (tuIlemauLayout)
-                {
-                    return "#FFFFFFFF";
-                }
-                return "#FF666666";
+                return "#FF006666";
             }
         }
         public string Background
         {
             get
             {
-                if (darkLayout)
+                if (hackerLayout)
                 {
                     return "#FF333333";
                 }
-                if (tuIlemauLayout)
-                {
-                    return "#FF333333";
-                }
-                return "#FFF9F9F9";
+                return "#FF6699CC";
             }
         }
         public string MainBackground
         {
             get
             {
-                if (darkLayout)
+                if (hackerLayout)
                 {
                     return "#FF000000";
                 }
-                if (tuIlemauLayout)
+                return "#FF003359";
+            }
+        }
+        public string MapDefaultColor
+        {
+            get
+            {
+                if (hackerLayout)
                 {
-                    return "#FF000000";
+                    return "#FF38FF62";
                 }
-                return "#FFEFEFEF";
+                return "#FFFFAF66";
             }
         }
 
         /*
          *  Layouts
          * */
-        private bool darkLayout = false;
-        public bool DarkLayout
+        private bool hackerLayout = false;
+        public bool HackerLayout
         {
             get
             {
-                return darkLayout;
+                return hackerLayout;
             }
             set
             {
-                darkLayout = value;
+                hackerLayout = value;
                 NotifyPropertyChanged("DarkLayout");
                 NotifyPropertyChanged("Foreground");
                 NotifyPropertyChanged("Background");
                 NotifyPropertyChanged("MainBackground");
                 NotifyPropertyChanged("MainForeground");
-            }
-        }
-
-        private bool tuIlemauLayout = false;
-        public bool TUIlmenauLayout
-        {
-            get
-            {
-                return tuIlemauLayout;
-            }
-            set
-            {
-                tuIlemauLayout = value;
-                NotifyPropertyChanged("DarkLayout");
-                NotifyPropertyChanged("Foreground");
-                NotifyPropertyChanged("Background");
-                NotifyPropertyChanged("MainBackground");
-                NotifyPropertyChanged("MainForeground");
+                NotifyPropertyChanged("MapDefaultColor");
             }
         }
 
@@ -254,6 +265,14 @@ namespace Softwareprojekt2015
          *  Events
          * */
         public event PropertyChangedEventHandler PropertyChanged;
+
+        public string ToolTipFormat
+        {
+            get
+            {
+                return "{0} in series '{2}' has value '{1}' ({3:P2})";
+            }
+        }
 
         /*
          *  Private methods

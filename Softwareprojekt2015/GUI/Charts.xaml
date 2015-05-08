@@ -6,6 +6,28 @@
     <local:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
     <local:StringToBrushConverter x:Key="StringToBrushConverter" />
 
+    <!--
+    <Style TargetType="local:ChartLegendItem">
+        <Setter Property="HorizontalContentAlignment" Value="Left" />
+        <Setter Property="VerticalContentAlignment" Value="Top" />
+        <Setter Property="IsTabStop" Value="False" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="local:ChartLegendItem">
+                    <StackPanel Orientation="Horizontal" Margin="0 0 10 5">
+                        <Border Width="10" Height="20" Background="{TemplateBinding ItemBrush}" Margin="0 0 5 0" />
+                        <TextBlock FontSize="{TemplateBinding FontSize}" VerticalAlignment="Center" Text="{TemplateBinding Caption}"></TextBlock>
+                    </StackPanel>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="ChartLegendItemStyle" TargetType="local:ChartLegendItem">
+        <Setter Property="FontSize" Value="9" />
+    </Style>
+    -->
+
     <Style x:Key="BaseChartStyle" TargetType="chart:ChartBase">
         <Setter Property="Margin" Value="0 0 10 10"/>
         <Setter Property="FontSize" Value="{Binding Path=SelectedFontSize}" />

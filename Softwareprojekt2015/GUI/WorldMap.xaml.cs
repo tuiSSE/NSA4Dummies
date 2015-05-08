@@ -16,8 +16,8 @@ namespace Softwareprojekt2015
         private static IDictionary<string, int> _mapDictionary = new Dictionary<string, int>();
         private static IDictionary<string, double> _shadingDictionary = new Dictionary<string, double>();
         private static IDictionary<string, Path> _pathDictionary = new Dictionary<string, Path>();
-        static SolidColorBrush defaultShading = new SolidColorBrush(Color.FromArgb(255, 204, 204, 204));
-        static SolidColorBrush mouseOverShading = new SolidColorBrush(Colors.Red);
+        static SolidColorBrush defaultShading = new SolidColorBrush(Color.FromArgb(255, 255, 175, 102));
+        static SolidColorBrush mouseOverShading = new SolidColorBrush(Color.FromArgb(255, 255, 121, 0));
 
 
         /*

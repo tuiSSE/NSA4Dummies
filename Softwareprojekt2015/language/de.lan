@@ -11,6 +11,8 @@
     <string id="advanced">Erweiterte Einstellungen</string>
   </category>
   <category name="mainWindow">
-    <string id="title">NSA 4 Dummies</string>
+    <string id="windowTitle">No Such Application</string>
+    <string id="programName">NSA For Dummies</string>
+    <string id="programVersion">v0.0.0.1</string>
   </category>
 </root>

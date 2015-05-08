@@ -25,7 +25,7 @@ namespace Softwareprojekt2015
             InitializeComponent();
 
 			//binding the Apps dictonary as datacontext
-			//this.DataContext = App.translation;
+            // this.DataContext = App.translation;
             this.DataContext = new GUIViewModel();
         }
 

@@ -6,7 +6,6 @@
         \brief  This ResourceDictionary contains the main layout of the program window
     -->
 
-
     <local:StringToDataTemplateConverter x:Key="StringToDataTemplateConverter" />
 
     <!-- -->
@@ -89,7 +88,7 @@
                         Row 2:
             -->
             <Grid.RowDefinitions>
-                <RowDefinition Height="65"/>
+                <RowDefinition Height="55"/>
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
@@ -112,8 +111,8 @@
                         Padding = "20 0 0 0"
                         HorizontalAlignment="Left">
                     <StackPanel Orientation="Horizontal">
-                        <TextBlock Foreground="{Binding Path=MainForeground}" VerticalAlignment="Bottom" x:Name="pageTitle" Text="NSA For Dummies" Style="{StaticResource PageHeaderTextStyle}" />
-                        <TextBlock Foreground="{Binding Path=MainForeground}" VerticalAlignment="Bottom" Margin="0 0 0 3" Opacity="0.75" Text="v0.0.0.1" Style="{StaticResource SectionHeaderSmallTextStyle}" />
+                        <TextBlock Foreground="{Binding Path=MainForeground}" VerticalAlignment="Bottom" x:Name="pageTitle" Text="{Binding T[mainWindow.programName]}" Style="{StaticResource PageHeaderTextStyle}" />
+                        <TextBlock Foreground="{Binding Path=MainForeground}" VerticalAlignment="Bottom" Margin="0 0 0 3" Opacity="0.75" Text="{Binding T[mainWindow.programVersion]}" Style="{StaticResource SectionHeaderSmallTextStyle}" />
                     </StackPanel>
                 </Border>
 
@@ -207,8 +206,8 @@
                                             <CheckBox IsChecked="{Binding Path=IsLegendVisible, Mode=TwoWay}">
                                                 <TextBlock Text="Legend Visible" Style="{StaticResource ContentTextStyle}" />
                                             </CheckBox>
-                                            <CheckBox IsChecked="{Binding Path=DarkLayout, Mode=TwoWay}">
-                                                <TextBlock Text="Dark Layout" Style="{StaticResource ContentTextStyle}" />
+                                            <CheckBox IsChecked="{Binding Path=HackerLayout, Mode=TwoWay}">
+                                                <TextBlock Text="Hacker Layout" Style="{StaticResource ContentTextStyle}" />
                                             </CheckBox>
                                             <TextBlock Text="Font Size" Style="{StaticResource SectionHeaderSmallTextStyle}" />
                                             <TextBlock Style="{StaticResource ContentTextStyle}" Text="Font size is used globally for legend items, series title and displayed numbers." />
@@ -302,7 +301,7 @@
             <Border Grid.Row="1">
                 <ListBox
                     Foreground="{Binding Path=MainForeground}"
-                    Margin="40 10 20 10" 
+                    Margin="40 0 20 0" 
                     ItemsSource="{Binding Path=ViewTypes}" 
                     ItemContainerStyle="{StaticResource SelectableListBoxItem}"                     
                     Background="Transparent" 
@@ -332,7 +331,7 @@
             </Border>
 
             <ScrollViewer Grid.Row="2" VerticalScrollBarVisibility="Disabled" HorizontalScrollBarVisibility="Auto" BorderThickness="0" >
-                <ContentControl Content="{Binding}" Margin="50 15 25 0" ContentTemplate="{Binding Path=SelectedChartType, Converter={StaticResource StringToDataTemplateConverter}}" HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch" VerticalAlignment="Stretch" VerticalContentAlignment="Stretch" />
+                <ContentControl Content="{Binding}" Margin="0 0 0 10" ContentTemplate="{Binding Path=SelectedChartType, Converter={StaticResource StringToDataTemplateConverter}}" HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch" VerticalAlignment="Stretch" VerticalContentAlignment="Stretch" />
             </ScrollViewer>
         </Grid>
     </DataTemplate>
