@@ -27,6 +27,7 @@ namespace Softwareprojekt2015
 
         private void btnCaptureFile_Click(object sender, RoutedEventArgs e)
         {
+            CreatingCaptureFile.MainClass.Main1(null);
             // Code zum Aufrufen der Methode bitte hier einfügen.
             // Möglicherweise muss ich den Code von CreatingCaptureFile.cs in MainWindow.xaml.cs einbinden.
             // CreatingCaptureFile.MainClass.Main1();
