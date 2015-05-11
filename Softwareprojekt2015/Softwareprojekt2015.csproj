@@ -85,13 +85,13 @@
     <Compile Include="Controls\PortablePopup.cs" />
     <Compile Include="Controls\StringToBrushConverter.cs" />
     <Compile Include="Controls\StringToDataTemplateConverter.cs" />
+    <Compile Include="GUI\PageContent.xaml.cs">
+      <DependentUpon>PageContent.xaml</DependentUpon>
+    </Compile>
     <Compile Include="GUI\WorldMap.xaml.cs">
       <DependentUpon>WorldMap.xaml</DependentUpon>
     </Compile>
     <Compile Include="LanguageFile.cs" />
-    <Compile Include="SettingsWindow.xaml.cs">
-      <DependentUpon>SettingsWindow.xaml</DependentUpon>
-    </Compile>
     <Compile Include="ViewModel\GUIViewModel.cs" />
     <Page Include="GUI\Buttons.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -125,10 +125,6 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="SettingsWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">

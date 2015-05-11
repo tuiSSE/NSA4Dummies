@@ -3,7 +3,7 @@
   <Profiles />
   <Settings>
     <Setting Name="lan" Type="System.String" Scope="User">
-      <Value Profile="(Default)">en</Value>
+      <Value Profile="(Default)">de</Value>
     </Setting>
     <Setting Name="advancedUserMode" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>

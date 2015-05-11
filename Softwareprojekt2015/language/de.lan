@@ -9,10 +9,36 @@
     <string id="title">Einstellungen</string>
     <string id="language">Sprache wählen</string>
     <string id="advanced">Erweiterte Einstellungen</string>
+    <string id="buttonClose">Schließen</string>
+    
+    <string id="headerAbout">Über</string>
+    <string id="aboutHeadline1">Überschrift 1</string>
+    <string id="aboutParagraph1">Abschnitt 1</string>
+    <string id="aboutHeadline2">Überschrift 2</string>
+    <string id="aboutParagraph2">Abschnitt 2</string>
+    <string id="aboutHeadline3">Überschrift 3</string>
+    <string id="aboutParagraph3">Abschnitt 3</string>
+    <string id="aboutHyperlinkText1">Google</string>
+    <string id="aboutHyperlinkURL1">http://google.de</string>
+    <string id="aboutHyperlinkText2">TU Ilmenau</string>
+    <string id="aboutHyperlinkURL2">http://tu-ilmenau.de</string>
+    <string id="aboutHyperlinkText3">Youtube</string>
+    <string id="aboutHyperlinkURL3">http://youtube.com</string>
+
+    <string id="headerOptions">Optionen und Einstellungen</string>
+    <string id="optionsHeadline1">Anzeigeoptionen</string>
+    <string id="optionsTitleVisible">Überschrift anzeigen</string>
+    <string id="optionsLegendVisible">Legende Anzeigen</string>
+    <string id="optionsHackerMode">Hacker Modus</string>
+    <string id="optionsExpertMode">Experten Modus</string>
+    <string id="optionsLanguage">Sprache</string>
+    <string id="optionsFontSize">Schriftgröße</string>
   </category>
   <category name="mainWindow">
     <string id="windowTitle">No Such Application</string>
     <string id="programName">NSA For Dummies</string>
     <string id="programVersion">v0.0.0.1</string>
+    <string id="buttonAbout">Über</string>
+    <string id="buttonOptions">Optionen</string>
   </category>
 </root>

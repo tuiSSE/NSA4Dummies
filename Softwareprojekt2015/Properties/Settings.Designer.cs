@@ -25,7 +25,7 @@ namespace Softwareprojekt2015.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("en")]
+        [global::System.Configuration.DefaultSettingValueAttribute("de")]
         public string lan {
             get {
                 return ((string)(this["lan"]));

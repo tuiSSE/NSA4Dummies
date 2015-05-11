@@ -27,25 +27,14 @@ namespace Softwareprojekt2015
 		public App()
 		{
 
-
 			// Lade Settings...
 
 			string lan = Softwareprojekt2015.Properties.Settings.Default.lan;
 
 			// Lade Sprachdatei...
 
-			translation = LanguageFile.GetTranslation(lan);
+            translation = LanguageFile.GetTranslation(lan);
 
-			UpdateTranslations();
-
-		}
-
-		public void UpdateTranslations(){
-
-			foreach (Window w in Windows)
-			{
-				w.DataContext = App.translation;
-			}
 		}
 
 	}

@@ -97,6 +97,7 @@ namespace Softwareprojekt2015
         {
             get
             {
+                Console.WriteLine(SelectedFontSize.ToString() + "px");
                 return SelectedFontSize.ToString() + "px";
             }
         }
