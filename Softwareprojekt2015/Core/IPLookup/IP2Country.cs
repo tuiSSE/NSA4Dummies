@@ -11,10 +11,10 @@ namespace Softwareprojekt2015{
         static IPLookupLINQDataContext db = new IPLookupLINQDataContext();
         static IDictionary<uint, string> cacheDict = new Dictionary<uint, string>();
 
-        public static uint adress2Numer(string adress)
+        public static uint address2Number(string address)
         {
             char[] splitchar = { '.' };
-            string[] subnets = adress.Split(splitchar);
+            string[] subnets = address.Split(splitchar);
             uint s1, s2, s3, s4;
             uint number = 0;
 

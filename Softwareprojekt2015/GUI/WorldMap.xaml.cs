@@ -13,7 +13,7 @@ namespace Softwareprojekt2015
     public partial class WorldMap : INotifyPropertyChanged
     {
 
-        private static IDictionary<string, int> _mapDictionary = new Dictionary<string, int>();
+        private static IDictionary<string, UInt64> _mapDictionary = new Dictionary<string, UInt64>();
         private static IDictionary<string, double> _shadingDictionary = new Dictionary<string, double>();
         private static IDictionary<string, Path> _pathDictionary = new Dictionary<string, Path>();
         static SolidColorBrush defaultShading = new SolidColorBrush(Color.FromArgb(255, 255, 175, 102));
@@ -104,14 +104,42 @@ namespace Softwareprojekt2015
             }
         }
 
+        /*
+         * 
+         * */
+        public void addPackageToCountry(string IPAddress)
+        {
+            uint number = IP2Country.address2Number(IPAddress);
+            string country = IP2Country.number2Country(number);
+            if (_mapDictionary.ContainsKey(country))
+            {
+                _mapDictionary[country] = _mapDictionary[country] + 1;
+            }
+        }
+
 
         /*
          * 
          * */
-        public void setData(string countryCode, int value)
+        public void setData(string countryCode, UInt64 value)
         {
             countryCode = cleanCountryCode(countryCode).ToUpper();
             _mapDictionary[countryCode] = value;
+        }
+
+
+        /*
+         * 
+         * */
+        public UInt64 getData(string countryCode)
+        {
+            countryCode = cleanCountryCode(countryCode).ToUpper();
+            if (_mapDictionary.ContainsKey(countryCode))
+            {
+                return _mapDictionary[countryCode];
+            }else{
+                return 0;
+            }
         }
 
 
