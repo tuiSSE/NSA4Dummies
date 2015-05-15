@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm11="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner" xmlns:dm12="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ComponentDesigner" dslVersion="1.0.0.0" Id="54cd051f-2c52-4c23-8429-8e66b3e4423f" name="MultilanguageSupport" linkedPackageId="f30e5982-5cb7-40cb-b8ba-6dbe1d6d2c85" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <profileInstances>
+    <packageHasProfileInstances Id="b1bc96a6-cabc-4c42-920a-6cb05a34097b">
+      <profileInstance Id="1952b282-e9a2-456e-92bd-3701be81d1e2" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="a4f4a9c2-245c-42fe-9883-35711d897a17">
+      <profileInstance Id="56193d02-5518-4f97-937a-6e362766c416" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="56b9890a-1138-4b29-9991-8fd394dd8c04" name="LanguageFile" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="3048861c-6671-4951-97e7-4ea3dc83bb34" />
+        <ownedOperationsInternal>
+          <operation Id="08351ddd-7265-46b9-95a7-cf8b9172fdae" name="GetTranslation" isLeaf="false" isStatic="true" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="853eab9c-31ab-4522-a205-b96ea3443066" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="dcda6c45-24af-4932-bfad-22f5cc987049" direction="Return">
+                  <elementDefinition Id="9dc4bc4d-5522-404a-a975-8d67639116bd" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="8cf6d61b-90f4-4a64-a209-96610c0c31ba" LastKnownName="Dictionary&lt;string,string&gt;" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="aef0974c-9b9e-4b5c-bfb8-2e2f90b400bb" name="language" direction="In">
+                  <elementDefinition Id="06f2c37a-659e-4ec9-bd96-434c1bec0e0f" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="e235cec5-1dda-462c-8532-7f0c820fd168" LastKnownName="String" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="d942e390-db03-4f0c-a191-3b3f53c23b84" name="GetLanguages" isLeaf="false" isStatic="true" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="ad3ec32d-3956-4510-95fd-ef0b4d592ace" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="5f765b66-c244-461b-a870-5188e7174183" direction="Return">
+                  <elementDefinition Id="5477172a-60f9-42e3-8d08-1534e8ec84e1" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="cb2ff25c-6faa-4760-83a1-2fc21fbf58ff" LastKnownName="LanguageFile.Language[]" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="8cf6d61b-90f4-4a64-a209-96610c0c31ba" name="Dictionary&lt;string,string&gt;" isAbstract="false" isLeaf="false" cachedFullName="Dictionary&lt;string,string&gt;">
+        <elementDefinition Id="336c2386-611b-453a-a062-bdb9734831d1" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="e235cec5-1dda-462c-8532-7f0c820fd168" name="String" isAbstract="false" isLeaf="false" cachedFullName="String">
+        <elementDefinition Id="59259974-6d55-42c6-b7bd-763d77ac8ef9" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="cb2ff25c-6faa-4760-83a1-2fc21fbf58ff" name="LanguageFile.Language[]" isAbstract="false" isLeaf="false" cachedFullName="LanguageFile.Language[]">
+        <elementDefinition Id="9cdc7f55-1ac6-43c4-bd46-48208653dd1d" />
+      </referencedType>
+    </packageHasNamedElement>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="ecd039a9-47dc-4296-bd87-0317e4eb58c1" name="LanguageFile.Language" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="1f302755-188a-4b03-9268-9835cd7adcf3" />
+        <ownedAttributesInternal>
+          <property Id="5b9de761-2bf1-449d-9482-810e1adcc564" name="name" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="ff0494d4-acc5-48e9-b082-63c51057f33c" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="2b9e9e1e-998d-4fbd-9fa6-364faa55aeaa" LastKnownName="String" />
+            </type_NamedElement>
+          </property>
+          <property Id="2166781c-3c22-470b-bc41-3922626bdd8c" name="sName" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="5f0232a3-cabe-471d-931a-05523c82d8bc" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="8bd8703a-dadf-4bab-b8d4-0962b6a8cc61" LastKnownName="String" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="e7a9b91a-779b-45d5-b8e2-94e429b62c3d" name="ToString" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="3ef4dcea-029a-48a2-835b-5f6faee896e4" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="2b945ceb-9307-40bc-8926-df2c8b7b0c1d" direction="Return">
+                  <elementDefinition Id="e42922dd-4e3f-4921-a20b-0408a90ffca3" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="b7b31a69-4841-4d50-a63a-d35d53c4fd54" LastKnownName="String" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="2b9e9e1e-998d-4fbd-9fa6-364faa55aeaa" name="String" isAbstract="false" isLeaf="false" cachedFullName="String">
+        <elementDefinition Id="59259974-6d55-42c6-b7bd-763d77ac8ef9" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="8bd8703a-dadf-4bab-b8d4-0962b6a8cc61" name="String" isAbstract="false" isLeaf="false" cachedFullName="String">
+        <elementDefinition Id="59259974-6d55-42c6-b7bd-763d77ac8ef9" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="b7b31a69-4841-4d50-a63a-d35d53c4fd54" name="String" isAbstract="false" isLeaf="false" cachedFullName="String">
+        <elementDefinition Id="59259974-6d55-42c6-b7bd-763d77ac8ef9" />
+      </referencedType>
+    </packageHasNamedElement>
+  </packagedElements>
+  <package Id="f30e5982-5cb7-40cb-b8ba-6dbe1d6d2c85" name="Softwareprojekt2015_UML">
+    <elementDefinition Id="e5d99e23-c72c-4d5b-bc18-d8605d02b538" />
+  </package>
+</logicalClassDesignerModel>
