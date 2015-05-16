@@ -25,13 +25,16 @@ namespace Softwareprojekt2015
             InitializeComponent();
 
 			//binding the Apps dictonary as datacontext
-			this.DataContext = App.translation;
+            // this.DataContext = App.translation;
+            this.DataContext = new GUIViewModel();
         }
 
+        /*
         private void btn_settings_Click(object sender, RoutedEventArgs e)
         {
             SettingsWindow s = new SettingsWindow();
             s.ShowDialog();
         }
+         * */
     }
 }

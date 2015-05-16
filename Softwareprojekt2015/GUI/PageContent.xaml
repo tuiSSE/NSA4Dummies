@@ -1,0 +1,445 @@
+﻿<ResourceDictionary x:Class="Softwareprojekt2015.PageContent"
+                    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:Softwareprojekt2015">
+    
+    <!--
+        \brief  This ResourceDictionary contains the main layout of the program window
+    -->
+
+    <local:StringToDataTemplateConverter x:Key="StringToDataTemplateConverter" />
+
+    <!-- -->
+    <Style x:Key="SelectableListBoxItem" TargetType="ListBoxItem">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Margin" Value="0"/>
+        <Setter Property="Padding" Value="0"/>
+        <Setter Property="HorizontalAlignment" Value="Stretch"/>
+        <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ListBoxItem">
+                    <Border x:Name="LayoutRoot" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}">
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal"/>
+                                <VisualState x:Name="MouseOver">
+                                    <Storyboard>
+                                        <DoubleAnimation To="1" Duration="0" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="ContentPresenter" />
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="PointerOver">
+                                    <Storyboard>
+                                        <DoubleAnimation To="1" Duration="0" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="ContentPresenter" />
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Disabled">
+                                </VisualState>
+                                <VisualState x:Name="Pressed">
+                                    <Storyboard>
+                                        <DoubleAnimation To="1" Duration="0" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="ContentPresenter" />
+                                        <DoubleAnimation 
+                                            Storyboard.TargetName="InnerGrid" Storyboard.TargetProperty="(FrameworkElement.RenderTransform).(ScaleTransform.ScaleX)" 
+                                            Duration="0:0:0.1"
+                                            From="1" To="0.975"/>
+                                        <DoubleAnimation 
+                                            Storyboard.TargetName="InnerGrid" Storyboard.TargetProperty="(FrameworkElement.RenderTransform).(ScaleTransform.ScaleY)" 
+                                            Duration="0:0:0.1"
+                                            From="1" To="0.975" />
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                            <VisualStateGroup x:Name="SelectionStates">
+                                <VisualState x:Name="Unselected" />
+                                <VisualState x:Name="Selected">
+                                    <Storyboard>
+                                        <DoubleAnimation To="1" Duration="0" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="ContentPresenter" />
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="SelectedUnfocused" />
+                                <VisualState x:Name="SelectedDisabled" />
+                                <VisualState x:Name="SelectedPointerOver" />
+                                <VisualState x:Name="SelectedPressed" />
+                            </VisualStateGroup>
+                            <VisualStateGroup x:Name="FocusStates">
+                                <VisualState x:Name="Focused" />
+                                <VisualState x:Name="Unfocused"/>
+                                <VisualState x:Name="PointerFocused"/>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <Grid x:Name="InnerGrid" RenderTransformOrigin="0.5, 0.5">
+                            <ContentControl Opacity="0.5" x:Name="ContentPresenter" Foreground="{TemplateBinding Foreground}" ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding Content}" HorizontalAlignment="{TemplateBinding HorizontalAlignment}" HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" VerticalAlignment="{TemplateBinding VerticalAlignment}" VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                            <Grid.RenderTransform>
+                                <ScaleTransform ScaleX="1.0" ScaleY="1.0"/>
+                            </Grid.RenderTransform>
+                        </Grid>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+    <!-- -->
+    <DataTemplate x:Key="PageContent">
+        <Grid x:Name="maingrid" Background="{Binding Path=MainBackground}">
+            <!-- 
+                \brief  There are two rows in the main window
+                        Row 0: 
+                        Row 1:
+                        Row 2:
+            -->
+            <Grid.RowDefinitions>
+                <RowDefinition Height="55"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0">
+                <!-- 
+                    \brief  There are two columns in the first row.
+                            Column 0: Program title and version
+                            Column 1: 'About' and 'Config' button
+                -->
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <!-- 
+                    \brief  Column 0: Program title and version
+                -->
+                <Border Grid.Column="0"
+                        Padding = "20 0 0 0"
+                        HorizontalAlignment="Left">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Foreground="{Binding Path=MainForeground}" VerticalAlignment="Bottom" x:Name="pageTitle" Text="{Binding T[mainWindow.programName]}" Style="{StaticResource PageHeaderTextStyle}" />
+                        <TextBlock Foreground="{Binding Path=MainForeground}" VerticalAlignment="Bottom" Margin="0 0 0 3" Opacity="0.75" Text="{Binding T[mainWindow.programVersion]}" Style="{StaticResource SectionHeaderSmallTextStyle}" />
+                    </StackPanel>
+                </Border>
+
+                <!-- 
+                    \brief  Column 1: 'About' and 'Config' button
+                -->
+                <Border Grid.Column="1">
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Right">
+                        <StackPanel>
+                            <!-- -->
+                            <ToggleButton x:Name="aboutButton" Style="{StaticResource ToggleButtonWithText}">
+                                <TextBlock Text="{Binding T[mainWindow.buttonAbout]}" Foreground="{Binding Path=MainForeground}" />
+                            </ToggleButton>
+
+                            <local:PortablePopup Foreground="Black" IsOpen="{Binding Path=IsChecked, ElementName=aboutButton, Mode=TwoWay}">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="auto" />
+                                        <RowDefinition Height="*" />
+                                    </Grid.RowDefinitions>
+                                    <Border Grid.Row="0" Background="#FFEFEFEF">
+                                        <TextBlock Margin="15" Text="{Binding T[settings.headerAbout]}" Style="{StaticResource SectionHeaderSmallTextStyle}" />
+                                    </Border>
+                                    <ScrollViewer Grid.Row="1" BorderThickness="0">
+                                        <StackPanel Margin="15">
+                                            <TextBlock Text="{Binding T[settings.aboutHeadline1]}" Style="{StaticResource SectionHeaderSmallTextStyle}" />
+                                            <TextBlock Style="{StaticResource ContentTextStyle}" Text="{Binding T[settings.aboutParagraph1]}" />
+
+                                            <TextBlock Text="{Binding T[settings.aboutHeadline2]}" Style="{StaticResource SectionHeaderSmallTextStyle}" />
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="*" />
+                                                    <ColumnDefinition Width="auto" />
+                                                </Grid.ColumnDefinitions>
+                                                <Image Margin="10 0 0 10" VerticalAlignment="Top" Grid.Column="1" Width="75" Height="75" Source="/Shared/Images/torsten.png" />
+                                                <TextBlock Grid.Column="0" Style="{StaticResource ContentTextStyle}" Text="{Binding T[settings.aboutParagraph2]}" />
+                                            </Grid>
+                                            <local:PortableHyperLinkButton Url="{Binding T[settings.aboutHyperlinkURL1]}">
+                                                <TextBlock Margin="0 0 0 3" Style="{StaticResource ContentTextStyle}">
+                                                    <Underline>
+                                                        <Run Text="{Binding T[settings.aboutHyperlinkText1]}"/>
+                                                    </Underline>
+                                                </TextBlock>
+                                            </local:PortableHyperLinkButton>
+                                            <local:PortableHyperLinkButton Url="{Binding T[settings.aboutHyperlinkURL2]}">
+                                                <TextBlock Margin="0 0 0 3" Style="{StaticResource ContentTextStyle}">
+                                                    <Underline>
+                                                        <Run Text="{Binding T[settings.aboutHyperlinkText2]}"/>
+                                                    </Underline>
+                                                </TextBlock>
+                                            </local:PortableHyperLinkButton>
+
+                                            <TextBlock Text="{Binding T[settings.aboutHeadline3]}" Style="{StaticResource SectionHeaderSmallTextStyle}" />
+                                            <TextBlock Style="{StaticResource ContentTextStyle}" Text="{Binding T[settings.aboutParagraph3]}" />
+                                            <local:PortableHyperLinkButton Url="{Binding T[settings.aboutHyperlinkURL3]}">
+                                                <TextBlock Margin="0 0 0 3" Style="{StaticResource ContentTextStyle}">
+                                                    <Underline>
+                                                        <Run Text="{Binding T[settings.aboutHyperlinkText3]}"/>
+                                                    </Underline>
+                                                </TextBlock>
+                                            </local:PortableHyperLinkButton>
+                                        </StackPanel>
+                                    </ScrollViewer>
+                                </Grid>
+                            </local:PortablePopup>
+                        </StackPanel>
+
+                        <StackPanel>
+                            <ToggleButton x:Name="editDataButton" Style="{StaticResource ToggleButtonWithText}">
+                                <TextBlock Text="{Binding T[mainWindow.buttonOptions]}" Foreground="{Binding Path=MainForeground}" />
+                            </ToggleButton>
+
+                            <local:PortablePopup Foreground="Black" IsOpen="{Binding Path=IsChecked, ElementName=editDataButton, Mode=TwoWay}">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="auto" />
+                                        <RowDefinition Height="*" />
+                                    </Grid.RowDefinitions>
+                                    <Border Grid.Row="0" Background="#FFEFEFEF">
+                                        <TextBlock Margin="15" Text="{Binding T[settings.headerOptions]}" Style="{StaticResource SectionHeaderSmallTextStyle}" />
+                                    </Border>
+                                    <ScrollViewer Grid.Row="1" BorderThickness="0">
+                                        <StackPanel Margin="15">
+                                            <TextBlock Text="{Binding T[settings.optionsHeadline1]}" Style="{StaticResource SectionHeaderSmallTextStyle}" />
+                                            <!--
+                                            <CheckBox IsChecked="{Binding Path=IsRowColumnSwitched, Mode=TwoWay}">
+                                                <TextBlock Text="Switch Axes" Style="{StaticResource ContentTextStyle}" />
+                                            </CheckBox>
+                                            -->
+                                            <CheckBox IsChecked="{Binding Path=IsTitleVisible, Mode=TwoWay}">
+                                                <TextBlock Text="{Binding T[settings.optionsTitleVisible]}" Style="{StaticResource ContentTextStyle}"/>
+                                            </CheckBox>
+                                            
+                                            <CheckBox IsChecked="{Binding Path=IsLegendVisible, Mode=TwoWay}">
+                                                <TextBlock Text="{Binding T[settings.optionsLegendVisible]}" Style="{StaticResource ContentTextStyle}" />
+                                            </CheckBox>
+                                            
+                                            <CheckBox IsChecked="{Binding Path=HackerLayout, Mode=TwoWay}">
+                                                <TextBlock Text="{Binding T[settings.optionsHackerMode]}" Style="{StaticResource ContentTextStyle}" />
+                                            </CheckBox>
+
+                                            <!--
+                                            <CheckBox IsChecked="{Binding Path=ExpertMode, Mode=TwoWay}">
+                                                <TextBlock Text="{Binding T[settings.optionsExpertMode]}" Style="{StaticResource ContentTextStyle}" />
+                                            </CheckBox>
+                                            -->
+
+                                            <TextBlock Text="{Binding T[settings.optionsLanguage]}" Style="{StaticResource SectionHeaderSmallTextStyle}" />
+
+                                            <ComboBox
+                                                Loaded="LangComboBox_Loaded"
+                                                SelectionChanged="LangComboBox_SelectionChanged">
+                                                <ComboBox.ItemTemplate>
+                                                    <DataTemplate>
+                                                        <TextBlock Foreground="Black" Text="{Binding}" />
+                                                    </DataTemplate>
+                                                </ComboBox.ItemTemplate>
+                                            </ComboBox>
+
+                                            <TextBlock Text="{Binding T[settings.optionsFontSize]}" Style="{StaticResource SectionHeaderSmallTextStyle}" />
+
+                                            <ComboBox Tag="{Binding Path=SelectedFontSizeString}" ItemsSource="{Binding Path=FontSizes}" SelectedItem="{Binding Path=SelectedFontSize, Mode=TwoWay}" >
+                                                <ComboBox.ItemTemplate>
+                                                    <DataTemplate>
+                                                        <TextBlock Foreground="Black" Text="{Binding}" />
+                                                    </DataTemplate>
+                                                </ComboBox.ItemTemplate>
+                                            </ComboBox>
+
+                                            <!--
+                                            <TextBlock Text="Palette" Style="{StaticResource SectionHeaderSmallTextStyle}" />
+                                            <TextBlock Style="{StaticResource ContentTextStyle}" Text="The charts use a predefined default color palette or use a custom palette." />
+                                            <ComboBox Tag="{Binding Path=SelectedPalette.Key}" ItemsSource="{Binding Path=Palettes}" SelectedItem="{Binding Path=SelectedPalette, Mode=TwoWay}">
+                                                <ComboBox.ItemTemplate>
+                                                    <DataTemplate>
+                                                        <TextBlock Foreground="Black" Text="{Binding Path=Key}" />
+                                                    </DataTemplate>
+                                                </ComboBox.ItemTemplate>
+                                            </ComboBox>
+                                            -->
+
+                                            <TextBlock Text="Doughnut Inner Radius" Style="{StaticResource SectionHeaderSmallTextStyle}" />
+                                            <ComboBox Tag="{Binding Path=SelectedDoughnutInnerRadiusRatioString}" ItemsSource="{Binding Path=DoughnutInnerRadiusRatios}" SelectedItem="{Binding Path=SelectedDoughnutInnerRadiusRatio, Mode=TwoWay}" >
+                                                <ComboBox.ItemTemplate>
+                                                    <DataTemplate>
+                                                        <TextBlock Foreground="Black" Text="{Binding}" />
+                                                    </DataTemplate>
+                                                </ComboBox.ItemTemplate>
+                                            </ComboBox>
+
+                                            <TextBlock Text="Selection Support" Style="{StaticResource SectionHeaderSmallTextStyle}" />
+                                            <TextBlock Style="{StaticResource ContentTextStyle}" Text="Users can select the chart elements (like the bar or column). Change the color for the selected element. The selected object can be used to display additional data." />
+
+                                            <ComboBox Foreground="Black" Tag="{Binding Path=SelectedBrush}" ItemsSource="{Binding Path=SelectionBrushes}" SelectedItem="{Binding Path=SelectedBrush, Mode=TwoWay}" />
+
+                                            <TextBlock Text="Series Data" Style="{StaticResource SectionHeaderSmallTextStyle}" />
+                                            <TextBlock Style="{StaticResource ContentTextStyle}" Text="The chart can display a fixed number of series or a dynamic list of series. Change the values to see the changes within the charts or add new series." />
+                                            <Button Command="{Binding Path=AddSeriesCommand}" Style="{StaticResource BorderButton}" Content="Add Series" Margin="5 5 5 5" />
+                                            <Border BorderThickness="2" BorderBrush="Black" Background="#efefef">
+                                                <ItemsControl
+                                                    Margin="5"
+                                                    x:Name="parentList"
+                                                    VerticalAlignment="Stretch"
+                                                    HorizontalAlignment="Stretch"
+                                                    VerticalContentAlignment="Stretch"
+                                                    HorizontalContentAlignment="Stretch"
+                                                    ItemsSource="{Binding Path=Series}"
+                                                    Tag="{Binding Path=SelectedItem, Mode=TwoWay}" >
+                                                    <ItemsControl.ItemTemplate>
+                                                        <DataTemplate>
+                                                            <StackPanel>
+                                                                <StackPanel Orientation="Horizontal">
+                                                                    <TextBlock Text="Series" Style="{StaticResource SeriesHeader}"/>
+                                                                    <TextBlock Text="{Binding Path=SeriesDisplayName}" Style="{StaticResource SeriesHeader}" />
+                                                                </StackPanel>
+                                                                <ListBox 
+                                                                    BorderThickness="0"   
+                                                                    Background="Transparent"
+                                                                    ItemContainerStyle="{StaticResource ListBoxItemStyle}"
+                                                                    ItemsSource="{Binding Path=Items}" 
+                                                                    SelectedItem="{Binding Path=Tag, Mode=TwoWay, ElementName=parentList}">
+                                                                    <ListBox.ItemTemplate>
+                                                                        <DataTemplate>
+                                                                            <Grid>
+                                                                                <Grid.ColumnDefinitions>
+                                                                                    <ColumnDefinition Width="auto" />
+                                                                                    <ColumnDefinition Width="*" />
+                                                                                </Grid.ColumnDefinitions>
+                                                                                <TextBlock Grid.Column="0" Text="{Binding Path=Category}" />
+                                                                                <TextBox Width="50" Background="White" Margin="0 0 0 0" BorderBrush="DarkGray" Grid.Column="1" HorizontalAlignment="Right" Text="{Binding Path=Number, Mode=TwoWay}" />
+                                                                            </Grid>
+                                                                        </DataTemplate>
+                                                                    </ListBox.ItemTemplate>
+                                                                </ListBox>
+                                                            </StackPanel>
+                                                        </DataTemplate>
+                                                    </ItemsControl.ItemTemplate>
+                                                </ItemsControl>
+                                            </Border>
+
+                                        </StackPanel>
+                                    </ScrollViewer>
+                                </Grid>
+                            </local:PortablePopup>
+                        </StackPanel>
+
+                    </StackPanel>
+                </Border>
+            </Grid>
+
+            <Border Grid.Row="1">
+                <ListBox
+                    Foreground="{Binding Path=MainForeground}"
+                    Margin="40 0 20 0" 
+                    ItemsSource="{Binding Path=ViewTypes}" 
+                    ItemContainerStyle="{StaticResource SelectableListBoxItem}"                     
+                    Background="Transparent" 
+                    SelectedItem="{Binding Path=SelectedChartType, Mode=TwoWay}">
+                    <ListBox.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <StackPanel Orientation="Horizontal" />
+                        </ItemsPanelTemplate>
+                    </ListBox.ItemsPanel>
+                    
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding}" Style="{StaticResource SectionHeaderTextStyle}" />
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                    
+                    <ListBox.Template>
+                        <ControlTemplate>
+                            <Border x:Name="LayoutRoot" BorderBrush="Transparent" BorderThickness="0" Background="{TemplateBinding Background}">
+                                <ScrollViewer Foreground="{Binding Path=MainForeground}" x:Name="ScrollViewer" HorizontalScrollBarVisibility="{TemplateBinding ScrollViewer.HorizontalScrollBarVisibility}" Padding="{TemplateBinding Padding}" VerticalScrollBarVisibility="{TemplateBinding ScrollViewer.VerticalScrollBarVisibility}" BorderThickness="0" BorderBrush="Transparent">
+                                    <ItemsPresenter/>
+                                </ScrollViewer>
+                            </Border>
+                        </ControlTemplate>
+                    </ListBox.Template>
+                </ListBox>
+            </Border>
+
+            <ScrollViewer Grid.Row="2" VerticalScrollBarVisibility="Disabled" HorizontalScrollBarVisibility="Auto" BorderThickness="0" >
+                <ContentControl Content="{Binding}" Margin="0 0 0 10" ContentTemplate="{Binding Path=SelectedChartType, Converter={StaticResource StringToDataTemplateConverter}}" HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch" VerticalAlignment="Stretch" VerticalContentAlignment="Stretch" />
+            </ScrollViewer>
+        </Grid>
+    </DataTemplate>
+
+    <Style TargetType="local:PortablePopup">
+        <Setter Property="IsTabStop" Value="False" />
+        <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+        <Setter Property="VerticalContentAlignment" Value="Stretch" />
+        <Setter Property="Background" Value="#FFFFFFFF" />
+        <Setter Property="BorderBrush" Value="Black" />
+        <Setter Property="BorderThickness" Value="2" />
+        <Setter Property="FontSize" Value="16" />
+        <Setter Property="MinWidth" Value="150" />
+        <Setter Property="FontFamily" Value="Segoe UI" />
+        <Setter Property="Padding" Value="0" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="local:PortablePopup">
+                    <Popup IsOpen="{TemplateBinding IsOpen}" x:Name="PART_Popup">
+                        <Border HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                Padding="{TemplateBinding Padding}"
+                                BorderThickness="{TemplateBinding BorderThickness}">
+                            <Grid>
+                                <ContentControl x:Name="PART_Content" Content="{TemplateBinding Content}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch"/>
+                                <Button x:Name="PART_CloseButton" Style="{StaticResource BorderButton}" Content="{Binding T[settings.buttonClose]}" Margin="5 5 5 5" VerticalAlignment="Top" HorizontalAlignment="Right" />
+                            </Grid>
+                        </Border>
+                    </Popup>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="local:PortableHyperLinkButton">
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="BorderBrush" Value="Transparent" />
+        <Setter Property="HorizontalAlignment" Value="Left" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Grid>
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal"/>
+                                <VisualState x:Name="PointerOver">
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetName="ContentPresenter" Storyboard.TargetProperty="Opacity" Duration="0" To="1"/>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="MouseOver">
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetName="ContentPresenter" Storyboard.TargetProperty="Opacity" Duration="0" To="1"/>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Pressed">
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetName="ContentPresenter" Storyboard.TargetProperty="Opacity" Duration="0" To="1"/>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Disabled">
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetName="ContentPresenter" Storyboard.TargetProperty="Opacity" Duration="0" To="0.25"/>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                            <VisualStateGroup x:Name="FocusStates">
+                                <VisualState x:Name="Focused" />
+                                <VisualState x:Name="Unfocused"/>
+                                <VisualState x:Name="PointerFocused" />
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <Border x:Name="Border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="Transparent" Margin="0">
+                            <ContentControl Opacity="0.9" x:Name="ContentPresenter" Foreground="{TemplateBinding Foreground}" ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding Content}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+</ResourceDictionary>

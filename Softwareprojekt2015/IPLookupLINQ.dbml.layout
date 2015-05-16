@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="IPLookupLINQ">
+  <DataContextMoniker Name="/IPLookupLINQDataContext" />
+  <nestedChildShapes>
+    <classShape Id="038dd3b0-c0e5-4ad5-ad51-53a9a3ca20fe" absoluteBounds="4, 2, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/IPLookupLINQDataContext/IPLookupTable" />
+      <nestedChildShapes>
+        <elementListCompartment Id="19bb26d6-961f-4c4a-9b3f-7c61a9647670" absoluteBounds="4.015, 2.46, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
