@@ -46,5 +46,19 @@ namespace Softwareprojekt2015
 
             // comboBox.SelectedIndex = 0;
         }
+
+        private void btn_close_Click(object sender, RoutedEventArgs e)
+        {
+            App.Current.Shutdown();
+        }
+
+        private void btn_minimize_Click(object sender, RoutedEventArgs e)
+        {
+
+            foreach(Window window in App.Current.Windows) {
+                window.WindowState = WindowState.Minimized;
+            }
+
+        }
     }
 }

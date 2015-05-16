@@ -319,6 +319,12 @@
                                 </Grid>
                             </local:PortablePopup>
                         </StackPanel>
+                        <!-- Close and Minimize Button -->
+                        <StackPanel Orientation="Horizontal"
+                                    Margin="0,0,10,0">
+                            <Button Content="_" Style="{StaticResource WindowControllButton}" Name="btn_minimize" Click="btn_minimize_Click" />
+                            <Button Content="X" Style="{StaticResource WindowControllButton}" Name="btn_close" Click="btn_close_Click" />
+                        </StackPanel>
 
                     </StackPanel>
                 </Border>

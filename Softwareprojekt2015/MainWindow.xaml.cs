@@ -29,12 +29,5 @@ namespace Softwareprojekt2015
             this.DataContext = new GUIViewModel();
         }
 
-        /*
-        private void btn_settings_Click(object sender, RoutedEventArgs e)
-        {
-            SettingsWindow s = new SettingsWindow();
-            s.ShowDialog();
-        }
-         * */
     }
 }
