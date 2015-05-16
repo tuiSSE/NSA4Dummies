@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Configuration;
 using System.Data;
 using System.IO;
@@ -18,6 +19,8 @@ namespace Softwareprojekt2015
 
 		public static Dictionary<string,string> translation;
 
+        private BackgroundWorker snifferWorker;
+
 		public static LanguageFile.Language CurrentLanguage
 		{
 			get;
@@ -27,13 +30,21 @@ namespace Softwareprojekt2015
 		public App()
 		{
 
-			// Lade Settings...
+            snifferWorker = new BackgroundWorker();
+            snifferWorker.WorkerReportsProgress = true;
+            snifferWorker.DoWork += new DoWorkEventHandler();  // Add the sniffers run methode here !!! (endless loop reacting on incoming pakets)
+            snifferWorker.ProgressChanged += new ProgressChangedEventHandler(((MainWindow)this.MainWindow).Update);
+
+
+			// Load settings...
 
 			string lan = Softwareprojekt2015.Properties.Settings.Default.lan;
 
-			// Lade Sprachdatei...
+			// Load language file...
 
             translation = LanguageFile.GetTranslation(lan);
+
+
 
 		}
 

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -28,6 +29,16 @@ namespace Softwareprojekt2015
             // this.DataContext = App.translation;
             this.DataContext = new GUIViewModel();
         }
+
+
+
+        public void Update(object sender, ProgressChangedEventArgs e)
+        {
+            // Handle all Window Update, required when a new packet arives here. Packet content can be accesed in e.UserState.
+
+            
+        }
+
 
     }
 }

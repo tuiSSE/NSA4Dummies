@@ -87,7 +87,6 @@
     <Compile Include="Controls\StringToBrushConverter.cs" />
     <Compile Include="Controls\StringToDataTemplateConverter.cs" />
     <Compile Include="Core\IPLookup\IP2Country.cs" />
-    <Compile Include="DataExchangeHandler.cs" />
     <Compile Include="DataPacket.cs" />
     <Compile Include="GUI\PageContent.xaml.cs">
       <DependentUpon>PageContent.xaml</DependentUpon>

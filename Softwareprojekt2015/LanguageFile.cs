@@ -10,7 +10,7 @@ using System.Xml;
 
 namespace Softwareprojekt2015
 {
-	public class LanguageFile
+	public static class LanguageFile
 	{
 
 		public struct Language
