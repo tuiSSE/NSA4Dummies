@@ -3,7 +3,9 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="{Binding T[mainWindow.windowTitle]}"
         WindowStartupLocation="CenterScreen"
-        MinHeight="500" MinWidth="600">
+        MinHeight="500" MinWidth="600"
+        WindowStyle = "None"
+        WindowState = "Maximized">
     <Grid x:Name="mainGrid">
         <ContentControl Content="{Binding}" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" ContentTemplate="{StaticResource PageContent}" />
     </Grid>
