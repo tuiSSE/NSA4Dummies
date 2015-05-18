@@ -19,7 +19,7 @@ namespace Softwareprojekt2015
 
 		public static Dictionary<string,string> translation;
 
-        private BackgroundWorker snifferWorker;
+        public BackgroundWorker snifferWorker;
 
 		public static LanguageFile.Language CurrentLanguage
 		{
