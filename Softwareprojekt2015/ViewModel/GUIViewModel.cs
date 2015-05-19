@@ -373,6 +373,7 @@ namespace Softwareprojekt2015
 
             EncryptionStatus.Add(new TestClass() { Category = "Unencrypted", Number = 83 });
 
+
             Filetypes.Add(new TestClass() { Category = "JPEG", Number = 83 });
             Filetypes.Add(new TestClass() { Category = "Mp3", Number = 15 });
             Filetypes.Add(new TestClass() { Category = "Gif", Number = 60 });
