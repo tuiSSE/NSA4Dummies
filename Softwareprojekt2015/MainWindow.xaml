@@ -4,8 +4,7 @@
         Title="{Binding T[mainWindow.windowTitle]}"
         WindowStartupLocation="CenterScreen"
         MinHeight="500" MinWidth="600"
-        WindowStyle = "None"
-        WindowState = "Maximized">
+        WindowStyle = "None">
     <Grid x:Name="mainGrid">
         <ContentControl Content="{Binding}" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" ContentTemplate="{StaticResource PageContent}" />
     </Grid>
