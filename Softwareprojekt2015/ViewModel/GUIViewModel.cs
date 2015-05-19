@@ -15,7 +15,7 @@ namespace Softwareprojekt2015
         /*
          *  Public members
          * */
-        public DelegateCommand AddSeriesCommand { get; set; }
+        //public DelegateCommand AddSeriesCommand { get; set; }
         public List<double> FontSizes { get; set; }
         public List<double> DoughnutInnerRadiusRatios { get; set; }
         public List<string> SelectionBrushes { get; set; }
@@ -328,12 +328,12 @@ namespace Softwareprojekt2015
         {
             LoadPalettes();
 
-            AddSeriesCommand = new DelegateCommand(x => AddSeries());
+            //AddSeriesCommand = new DelegateCommand(x => AddSeries());
 
             ViewTypes = new ObservableCollection<string>();
             ViewTypes.Add("Map");
             ViewTypes.Add("Statistics");
-            ViewTypes.Add("Passwords");
+            // ViewTypes.Add("Passwords");
             SelectedChartType = ViewTypes.FirstOrDefault();
 
             FontSizes = new List<double>();
@@ -381,6 +381,9 @@ namespace Softwareprojekt2015
             Filetypes.Add(new TestClass() { Category = "HTML", Number = 120 });
             Filetypes.Add(new TestClass() { Category = "CSS", Number = 122 });
             Filetypes.Add(new TestClass() { Category = "JS", Number = 89 });
+            Filetypes.Add(new TestClass() { Category = "JS", Number = 90 });
+            Filetypes.Add(new TestClass() { Category = "JS", Number = 91 });
+            Filetypes.Add(new TestClass() { Category = "JS", Number = 20 });
 
         }
 
@@ -449,6 +452,7 @@ namespace Softwareprojekt2015
     }
 
 
+    /*
     public class SeriesData
     {
         public string SeriesDisplayName { get; set; }
@@ -457,6 +461,7 @@ namespace Softwareprojekt2015
 
         public ObservableCollection<TestClass> Items { get; set; }
     }
+     * */
 
 
     public class TestClass : INotifyPropertyChanged
