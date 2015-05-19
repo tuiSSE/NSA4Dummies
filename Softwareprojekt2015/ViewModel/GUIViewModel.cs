@@ -15,7 +15,7 @@ namespace Softwareprojekt2015
         /*
          *  Public members
          * */
-        public DelegateCommand AddSeriesCommand { get; set; }
+        //public DelegateCommand AddSeriesCommand { get; set; }
         public List<double> FontSizes { get; set; }
         public List<double> DoughnutInnerRadiusRatios { get; set; }
         public List<string> SelectionBrushes { get; set; }
@@ -318,8 +318,6 @@ namespace Softwareprojekt2015
             data.Add(new TestClass() { Category = "Naming", Number = 15 });
             data.Add(new TestClass() { Category = "Best Practices", Number = 10 });
 
-            Series.Add(new SeriesData() { SeriesDisplayName = "New Series " + newSeriesCounter.ToString(), Items = data });
-
             newSeriesCounter++;
         }
 
@@ -330,12 +328,12 @@ namespace Softwareprojekt2015
         {
             LoadPalettes();
 
-            AddSeriesCommand = new DelegateCommand(x => AddSeries());
+            //AddSeriesCommand = new DelegateCommand(x => AddSeries());
 
             ViewTypes = new ObservableCollection<string>();
             ViewTypes.Add("Map");
             ViewTypes.Add("Statistics");
-            ViewTypes.Add("Passwords");
+            // ViewTypes.Add("Passwords");
             SelectedChartType = ViewTypes.FirstOrDefault();
 
             FontSizes = new List<double>();
@@ -364,56 +362,49 @@ namespace Softwareprojekt2015
             SelectionBrushes.Add("[NoColor]");
             SelectedBrush = SelectionBrushes.FirstOrDefault();
 
-            Series = new ObservableCollection<SeriesData>();
+            TopWebsites = new ObservableCollection<TestClass>();
+            EncryptionStatus = new ObservableCollection<TestClass>();
+            Filetypes = new ObservableCollection<TestClass>();
 
-            Errors = new ObservableCollection<TestClass>();
-            Warnings = new ObservableCollection<TestClass>();
+            TopWebsites.Add(new TestClass() { Category = "facebook.com", Number = 75 });
+            TopWebsites.Add(new TestClass() { Category = "google.com", Number = 2 });
+            TopWebsites.Add(new TestClass() { Category = "youtube.com", Number = 12 });
+            TopWebsites.Add(new TestClass() { Category = "gmail.com", Number = 83 });
 
-            ObservableCollection<TestClass> Infos = new ObservableCollection<TestClass>();
+            EncryptionStatus.Add(new TestClass() { Category = "Unencrypted", Number = 83 });
 
-            Errors.Add(new TestClass() { Category = "Globalization", Number = 75 });
-            Errors.Add(new TestClass() { Category = "Features", Number = 2 });
-            Errors.Add(new TestClass() { Category = "ContentTypes", Number = 12 });
-            Errors.Add(new TestClass() { Category = "Correctness", Number = 83});
-            //Errors.Add(new TestClass() { Category = "Naming", Number = 80 });
-            Errors.Add(new TestClass() { Category = "Best Practices", Number = 29 });
 
-            Warnings.Add(new TestClass() { Category = "Globalization", Number = 34 });
-            Warnings.Add(new TestClass() { Category = "Features", Number = 23 });
-            Warnings.Add(new TestClass() { Category = "ContentTypes", Number = 15 });
-            Warnings.Add(new TestClass() { Category = "Correctness", Number = 66 });
-            Warnings.Add(new TestClass() { Category = "Naming", Number = 56 });
-            Warnings.Add(new TestClass() { Category = "Best Practices", Number = 34 });
+            Filetypes.Add(new TestClass() { Category = "JPEG", Number = 83 });
+            Filetypes.Add(new TestClass() { Category = "Mp3", Number = 15 });
+            Filetypes.Add(new TestClass() { Category = "Gif", Number = 60 });
+            Filetypes.Add(new TestClass() { Category = "PNG", Number = 47 });
+            Filetypes.Add(new TestClass() { Category = "HTML", Number = 120 });
+            Filetypes.Add(new TestClass() { Category = "CSS", Number = 122 });
+            Filetypes.Add(new TestClass() { Category = "JS", Number = 89 });
+            Filetypes.Add(new TestClass() { Category = "JS", Number = 90 });
+            Filetypes.Add(new TestClass() { Category = "JS", Number = 91 });
+            Filetypes.Add(new TestClass() { Category = "JS", Number = 20 });
 
-            Infos.Add(new TestClass() { Category = "Globalization", Number = 14 });
-            Infos.Add(new TestClass() { Category = "Features", Number = 3 });
-            Infos.Add(new TestClass() { Category = "ContentTypes", Number = 55 });
-            Infos.Add(new TestClass() { Category = "Correctness", Number = 26 });
-            Infos.Add(new TestClass() { Category = "Naming", Number = 3 });
-            Infos.Add(new TestClass() { Category = "Best Practices", Number = 8 });
-
-            Series.Add(new SeriesData() { SeriesDisplayName = "Errors", Items = Errors });
-            Series.Add(new SeriesData() { SeriesDisplayName = "Warnings", Items = Warnings });
-            Series.Add(new SeriesData() { SeriesDisplayName = "Info", Items = Infos });
         }
 
-        public ObservableCollection<SeriesData> Series
+        public ObservableCollection<TestClass> TopWebsites
         {
             get;
             set;
         }
 
-        public ObservableCollection<TestClass> Errors
+        public ObservableCollection<TestClass> EncryptionStatus
         {
             get;
             set;
         }
 
-        public ObservableCollection<TestClass> Warnings
+        public ObservableCollection<TestClass> Filetypes
         {
             get;
             set;
         }
+
     }
 
 
@@ -461,6 +452,7 @@ namespace Softwareprojekt2015
     }
 
 
+    /*
     public class SeriesData
     {
         public string SeriesDisplayName { get; set; }
@@ -469,6 +461,7 @@ namespace Softwareprojekt2015
 
         public ObservableCollection<TestClass> Items { get; set; }
     }
+     * */
 
 
     public class TestClass : INotifyPropertyChanged
