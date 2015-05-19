@@ -10,7 +10,8 @@ namespace Softwareprojekt2015
 {
     public partial class PageContent
     {
-        public PageContent(){
+        public PageContent()
+        {
             
         }
         
