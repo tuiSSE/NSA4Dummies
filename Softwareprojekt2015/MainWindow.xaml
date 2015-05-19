@@ -6,7 +6,7 @@
         MinHeight="500" MinWidth="600"
         WindowStyle = "None"
         WindowState = "Maximized"
-        Loaded="Window_Loaded">
+        >
     <Grid x:Name="mainGrid">
         <ContentControl Content="{Binding}" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" ContentTemplate="{StaticResource PageContent}" />
     </Grid>

@@ -45,21 +45,32 @@ namespace Softwareprojekt2015
         }
 
 
-        /*
-         * 
-         * */
+        ///
+        /// <summary>
+        /// This function collects references to all Paths which resemble a country on the worldmap (Name has prefix 'Map')
+        /// This function is called as soon as the map gets loaded.
+        /// This happens every time the map gets visual.
+        /// </summary>
+        /// <param name="sender">sender of the vent</param>
+        /// <param name="e">arguments for the event</param>
         private void Map_OnLoaded(object sender, EventArgs e)
-        {            
+        {
             foreach (var p in FindVisualChildren<Path>(((MainWindow)System.Windows.Application.Current.MainWindow).mainGrid))
             {
-                _pathDictionary[cleanCountryCode(p.Name).ToUpper()] = p;
+                if (p.Name.ToUpper().StartsWith("MAP"))
+                {
+                    _pathDictionary[cleanCountryCode(p.Name).ToUpper()] = p;
+                }
             }
         }
 
 
-        /*
-         * 
-         * */
+        ///
+        /// <summary>
+        /// This functions fills (shades) the country on which the mouse is over with the current 'mouseOverShading'
+        /// </summary>
+        /// <param name="sender">sender of the vent</param>
+        /// <param name="e">arguments for the event</param>
         private void Map_Country_MouseEnter(object sender, System.Windows.Input.MouseEventArgs e)
         {
             var country = sender as Path;
@@ -80,29 +91,6 @@ namespace Softwareprojekt2015
             CountryNameString = "";
         }
 
-
-        /*
-         * 
-         * */
-        public void updateCountry(string countryCode)
-        {
-            countryCode = cleanCountryCode(countryCode).ToUpper();
-
-            if (_shadingDictionary.ContainsKey(countryCode) && _pathDictionary.ContainsKey(countryCode))
-            {
-                SolidColorBrush packageShading = new SolidColorBrush(Colors.Blue);
-
-                packageShading.Opacity = _shadingDictionary[countryCode];
-                _pathDictionary[countryCode].Fill = packageShading;
-            }
-            else
-            {
-                if (_pathDictionary.ContainsKey(countryCode))
-                {
-                    _pathDictionary[countryCode].Fill = defaultShading;
-                }
-            }
-        }
 
         /*
          * 
@@ -139,6 +127,30 @@ namespace Softwareprojekt2015
                 return _mapDictionary[countryCode];
             }else{
                 return 0;
+            }
+        }
+
+
+        /*
+         * 
+         * */
+        public void updateCountry(string countryCode)
+        {
+            countryCode = cleanCountryCode(countryCode).ToUpper();
+
+            if (_shadingDictionary.ContainsKey(countryCode) && _pathDictionary.ContainsKey(countryCode))
+            {
+                SolidColorBrush packageShading = new SolidColorBrush(Colors.Blue);
+
+                packageShading.Opacity = _shadingDictionary[countryCode];
+                _pathDictionary[countryCode].Fill = packageShading;
+            }
+            else
+            {
+                if (_pathDictionary.ContainsKey(countryCode))
+                {
+                    _pathDictionary[countryCode].Fill = defaultShading;
+                }
             }
         }
 
