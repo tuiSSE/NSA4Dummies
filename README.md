@@ -9,10 +9,11 @@ This software is a sleek, intuitive application that shows unencrypted network t
 - [Quick start](#quick-start)
 - [General](#general) 
 - [Minimum requirements](#minimum-requirements) 
+- [Copyright](#copyright)
 
 ## Quick start:
 
-[Download the latest release](#https://github.com/Softwareprojekt2015/Softwareprojekt2015/releases)
+[Download the latest release](https://github.com/Softwareprojekt2015/Softwareprojekt2015/releases)
 
 Getting started:
 To run double click icon.
@@ -28,3 +29,7 @@ Using the software does not violate §202a, §202b, §202c StgB.
 ## Minimum requirements:
 
 Windows 7
+
+##Copyright
+
+[World map](http://creativecommons.org/licenses/by-nc/4.0) converted from SVG to XAML
