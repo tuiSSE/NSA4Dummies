@@ -80,7 +80,7 @@ namespace Softwareprojekt2015
 
         }
 
-        public ~PacketSniffer()
+        ~PacketSniffer()
         {
             foreach (var device in deviceList)
             {

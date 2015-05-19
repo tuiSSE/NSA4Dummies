@@ -10,7 +10,7 @@ namespace Softwareprojekt2015
     class DataPacket
     {
 
-        enum DataTransferProtocol
+        public enum DataTransferProtocol
         {
             DTP_TCP,
             DTP_UDP,
