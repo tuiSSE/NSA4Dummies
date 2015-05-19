@@ -35,7 +35,6 @@ namespace Softwareprojekt2015
         public void Update(object sender, ProgressChangedEventArgs e)
         {
             // Handle all Window Update, required when a new packet arives here. Packet content can be accessed in e.UserState.
-
             
         }
 

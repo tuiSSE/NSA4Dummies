@@ -125,8 +125,8 @@ namespace Softwareprojekt2015
                 IpPacket ipPacket = (IpPacket)tcpPacket.ParentPacket;
 
 
-                currentPacket.DestIP = ipPacket.DestinationAddress.ToString();
-                currentPacket.SourceIP = ipPacket.SourceAddress.ToString();
+                currentPacket.DestIP = ipPacket.DestinationAddress;
+                currentPacket.SourceIP = ipPacket.SourceAddress;
 
             }
 

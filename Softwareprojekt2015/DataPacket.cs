@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Net;
 
 namespace Softwareprojekt2015
 {
@@ -18,9 +19,9 @@ namespace Softwareprojekt2015
 
         public DataTransferProtocol Protocol { get; set; }
 
-        public string DestIP { get; set; }
+        public IPAddress DestIP { get; set; }
 
-        public string SourceIP { get; set; }
+        public IPAddress SourceIP { get; set; }
 
         public string DestMAC { get; set; }
 
