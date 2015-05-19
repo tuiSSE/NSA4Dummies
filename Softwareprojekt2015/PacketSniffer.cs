@@ -33,54 +33,56 @@ namespace Softwareprojekt2015
 
             deviceList = LibPcapLiveDeviceList.Instance;
 
-            // Assign a device with an index.
-            int i = 0;
-            var device = deviceList[i];
+            
 
-            // Register the handler function to the packet arrival event.
-            device.OnPacketArrival += new PacketArrivalEventHandler(device_OnPacketArrival);
-
-            captureFileWriter = new CaptureFileWriterDevice(device, DateTime.Now.ToString());
-
-            // Open the device for capturing
-            int readTimeoutMilliseconds = 1000;
-
-            string filter = "ip and tcp";
-            device.Filter = filter;
+            
 
             foreach (var adapter in deviceList)
             {
 
+                // Register the handler function to the packet arrival event.
+                adapter.OnPacketArrival += new PacketArrivalEventHandler(device_OnPacketArrival);
 
-                if (device is AirPcapDevice)
+                //captureFileWriter = new CaptureFileWriterDevice(device, "test.pcpap");
+
+                // Open the device for capturing
+                int readTimeoutMilliseconds = 1000;
+
+                
+
+
+                if (adapter is AirPcapDevice)
                 {
-                    var airPcap = device as AirPcapDevice;
+                    var airPcap = adapter as AirPcapDevice;
                     airPcap.Open(SharpPcap.WinPcap.OpenFlags.DataTransferUdp, readTimeoutMilliseconds);
                 }
-                else if (device is WinPcapDevice)
+                else if (adapter is WinPcapDevice)
                 {
-                    var winPcap = device as WinPcapDevice;
+                    var winPcap = adapter as WinPcapDevice;
                     winPcap.Open(SharpPcap.WinPcap.OpenFlags.DataTransferUdp | SharpPcap.WinPcap.OpenFlags.NoCaptureLocal, readTimeoutMilliseconds);
                 }
-                else if (device is LibPcapLiveDevice)
+                else if (adapter is LibPcapLiveDevice)
                 {
-                    var livePcapDevice = device as LibPcapLiveDevice;
+                    var livePcapDevice = adapter as LibPcapLiveDevice;
                     livePcapDevice.Open(DeviceMode.Promiscuous, readTimeoutMilliseconds);
                 }
                 else
                 {
-                    throw new System.InvalidOperationException("unknown device type of " + device.GetType().ToString());
+                    throw new System.InvalidOperationException("unknown device type of " + adapter.GetType().ToString());
                 }
 
+                string filter = "ip and tcp";
+                adapter.Filter = filter;
+
                 // Start the capturing process
-                device.StartCapture();
+                adapter.StartCapture();
             }
 
             ewh = new EventWaitHandle(false, EventResetMode.AutoReset);
 
         }
 
-        ~PacketSniffer()
+        public void KillSniffer()
         {
             foreach (var device in deviceList)
             {
@@ -98,6 +100,12 @@ namespace Softwareprojekt2015
 
                 ewh.WaitOne();
 
+                if (((App)App.Current).snifferWorker.CancellationPending)
+                {
+                    e.Cancel = true;
+                    return;
+                }
+
                 ((App)App.Current).snifferWorker.ReportProgress(0, currentPacket);
 
             }
@@ -109,7 +117,7 @@ namespace Softwareprojekt2015
 
         private void device_OnPacketArrival(object sender, CaptureEventArgs e)
         {
-            captureFileWriter.Write(e.Packet);
+            //captureFileWriter.Write(e.Packet);
             currentPacket = new DataPacket();
 
             currentPacket.Data = e.Packet.Data;
@@ -134,6 +142,16 @@ namespace Softwareprojekt2015
 
 
             ewh.Set();
+        }
+
+        public void Cancel()
+        {
+            
+            ((App)App.Current).snifferWorker.CancelAsync();
+            ewh.Set();
+
+            KillSniffer();
+            
         }
     }
 

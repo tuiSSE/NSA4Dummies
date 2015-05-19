@@ -38,6 +38,11 @@ namespace Softwareprojekt2015
             
         }
 
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            ((App)App.Current).snifferWorker.ProgressChanged += new ProgressChangedEventHandler(Update);
+        }
+
 
     }
 }

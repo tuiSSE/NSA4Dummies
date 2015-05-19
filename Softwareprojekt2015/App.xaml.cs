@@ -38,9 +38,6 @@ namespace Softwareprojekt2015
             snifferWorker.WorkerReportsProgress = true;
             snifferWorker.WorkerSupportsCancellation = true;
             snifferWorker.DoWork += new DoWorkEventHandler(sniffer.RunPacketSniffer);
-            snifferWorker.ProgressChanged += new ProgressChangedEventHandler(((MainWindow)this.MainWindow).Update);
-
-
 
 			// Load settings...
 
@@ -56,7 +53,7 @@ namespace Softwareprojekt2015
 
         private void Application_Exit(object sender, ExitEventArgs e)
         {
-            snifferWorker.CancelAsync();
+            sniffer.Cancel();
 
         }
 
