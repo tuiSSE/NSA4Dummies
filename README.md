@@ -10,12 +10,12 @@ This software is a sleek, intuitive application that shows unencrypted network t
 - [General](#general) 
 - [Minimum requirements](#minimum-requirements) 
 
-
 ## Quick start:
 
+[Download the latest release](#https://github.com/Softwareprojekt2015/Softwareprojekt2015/releases)
 
-Download the latest release
-
+Getting started:
+To run double click icon.
 
 ## General:
 
@@ -24,11 +24,6 @@ The application is exclusively to be used in your own home network. Please infor
 
 Encrypted data aren't supposed to be logged and intruding secured networks isn't able with this application.
 Using the software does not violate §202a, §202b, §202c StgB.
-
-
-
-
-
 
 ## Minimum requirements:
 
