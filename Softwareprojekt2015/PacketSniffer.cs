@@ -8,40 +8,49 @@ using SharpPcap.LibPcap;
 using SharpPcap.AirPcap;
 using SharpPcap.WinPcap;
 using PacketDotNet;
+using System.ComponentModel;
+using System.Threading;
 
 namespace Softwareprojekt2015
 {
     class PacketSniffer
     {
-        
-        public static void Main (string[] args)
-        {   
-            
-        }
+
+        // Retrieves the list of network devices.
+        private LibPcapLiveDeviceList deviceList;
+
+        // EventWaitHandle to let thread react on event
+        private EventWaitHandle ewh;
 
         // Create the FileWriterDevice to write to a pcap file.
-        private static CaptureFileWriterDevice captureFileWriter;
+        private CaptureFileWriterDevice captureFileWriter;
 
-        public void RunPacketSniffer(object sender, DoWorkEventArgs e)
+        DataPacket currentPacket;
+
+
+        public PacketSniffer()
         {
-            // Retrieves the list of network devices.
-            var devices = LibPcapLiveDeviceList.Instance;
-            
+
+            deviceList = LibPcapLiveDeviceList.Instance;
+
             // Assign a device with an index.
             int i = 0;
-            var device = devices[i];
+            var device = deviceList[i];
 
             // Register the handler function to the packet arrival event.
             device.OnPacketArrival += new PacketArrivalEventHandler(device_OnPacketArrival);
 
             captureFileWriter = new CaptureFileWriterDevice(device, DateTime.Now.ToString());
 
+            // Open the device for capturing
+            int readTimeoutMilliseconds = 1000;
 
-            foreach(var adapter in devices)
+            string filter = "ip and tcp";
+            device.Filter = filter;
+
+            foreach (var adapter in deviceList)
             {
-                
-                // Open the device for capturing
-                int readTimeoutMilliseconds = 1000;
+
 
                 if (device is AirPcapDevice)
                 {
@@ -65,22 +74,66 @@ namespace Softwareprojekt2015
 
                 // Start the capturing process
                 device.StartCapture();
-            }          
+            }
+
+            ewh = new EventWaitHandle(false, EventResetMode.AutoReset);
+
+        }
+
+        public ~PacketSniffer()
+        {
+            foreach (var device in deviceList)
+            {
+                device.StopCapture();
+                device.Close();
+            }
+        }
+
+
+        public void RunPacketSniffer(object sender, DoWorkEventArgs e)
+        {
+
+            while (!e.Cancel)
+            {
+
+                ewh.WaitOne();
+
+                ((App)App.Current).snifferWorker.ReportProgress(0, currentPacket);
+
+            }
+
+
         }
 
         private static int packetIndex = 0;
 
-        private static void deivce_OnPacketArrival(object sender, CaptureEventArgs e)
+        private void device_OnPacketArrival(object sender, CaptureEventArgs e)
         {
             captureFileWriter.Write(e.Packet);
-            
-            if(e.Packet.LinkLayerType == PacketDotNet.LinkLayers.Ethernet)
-            {
-                var packet = PacketDotNet.Packet.ParsePacket(e.Packet.LinkLayerType, e.Packet.Data);
-                var ethernetPacket = (PacketDotNet.EthernetPacket)packet;
+            currentPacket = new DataPacket();
 
-                packetIndex++;
+            currentPacket.Data = e.Packet.Data;
+            currentPacket.Length = e.Packet.Data.Length;
+            currentPacket.Time = e.Packet.Timeval.Date;
+
+            var packet = PacketDotNet.Packet.ParsePacket(e.Packet.LinkLayerType, e.Packet.Data);
+            var tcpPacket = PacketDotNet.TcpPacket.GetEncapsulated(packet);
+            if (tcpPacket != null)
+            {
+                
+
+                IpPacket ipPacket = (IpPacket)tcpPacket.ParentPacket;
+
+
+                currentPacket.DestIP = ipPacket.DestinationAddress.ToString();
+                currentPacket.SourceIP = ipPacket.SourceAddress.ToString();
+
             }
+
+
+
+
+            ewh.Set();
         }
     }
 

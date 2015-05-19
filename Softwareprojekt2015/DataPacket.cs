@@ -30,5 +30,7 @@ namespace Softwareprojekt2015
 
         public DateTime Time { get; set; }
 
+        public int Length { get; set; }
+
     }
 }

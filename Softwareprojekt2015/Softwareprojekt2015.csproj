@@ -100,6 +100,7 @@
       <DependentUpon>IPLookupLINQ.dbml</DependentUpon>
     </Compile>
     <Compile Include="LanguageFile.cs" />
+    <Compile Include="PacketSniffer.cs" />
     <Compile Include="ViewModel\GUIViewModel.cs" />
     <Page Include="GUI\Buttons.xaml">
       <Generator>MSBuild:Compile</Generator>

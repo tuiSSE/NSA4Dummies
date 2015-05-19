@@ -21,6 +21,8 @@ namespace Softwareprojekt2015
 
         public BackgroundWorker snifferWorker;
 
+        private PacketSniffer sniffer;
+
 		public static LanguageFile.Language CurrentLanguage
 		{
 			get;
@@ -30,10 +32,12 @@ namespace Softwareprojekt2015
 		public App()
 		{
 
+            sniffer = new PacketSniffer();
+
             snifferWorker = new BackgroundWorker();
             snifferWorker.WorkerReportsProgress = true;
             snifferWorker.WorkerSupportsCancellation = true;
-            snifferWorker.DoWork += new DoWorkEventHandler();  // Add the sniffers run methode here !!! (endless loop reacting on incoming pakets)
+            snifferWorker.DoWork += new DoWorkEventHandler(sniffer.RunPacketSniffer);
             snifferWorker.ProgressChanged += new ProgressChangedEventHandler(((MainWindow)this.MainWindow).Update);
 
 
