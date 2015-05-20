@@ -22,8 +22,83 @@ namespace Softwareprojekt2015
         public ObservableCollection<string> ViewTypes { get; set; }
         public Dictionary<string, De.TorstenMandelkow.MetroChart.ResourceDictionaryCollection> Palettes { get; set; }
 
+
         /*
-         *  Language
+         *  Chart-Data dictionaries
+         * */
+        private Dictionary<string, UInt64> FileTypes = new Dictionary<string, UInt64>();
+        private Dictionary<string, UInt64> Domains = new Dictionary<string, UInt64>();
+        private UInt64[] Encryption = new UInt64[2];
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="fileType"></param>
+        public void addFileType(string fileType)
+        {
+
+            fileType = fileType.ToUpper();
+            
+            // Isert data to directionary
+            if (FileTypes.ContainsKey(fileType))
+            {
+                FileTypes[fileType] += 1;
+            }
+            else
+            {
+                FileTypes.Add(fileType, 1);
+            }
+
+            // Update chart
+            Filetypes.Add(new TestClass() { Category = fileType, Number = FileTypes[fileType] });
+        }
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="domain"></param>
+        public void addDomain(string domain)
+        {
+
+            domain = domain.ToLower();
+
+            // Isert data to directionary
+            if (Domains.ContainsKey(domain))
+            {
+                Domains[domain] += 1;
+            }
+            else
+            {
+                Domains.Add(domain, 1);
+            }
+
+            // Update chart
+            TopWebsites.Add(new TestClass() { Category = domain, Number = Domains[domain] });
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="domain"></param>
+        public void addPackage(bool encrypted)
+        {
+            if (encrypted)
+            {
+                Encryption[0] += 1;
+            }
+            else
+            {
+                Encryption[1] += 1;
+            }
+
+            // Update chart
+            EncryptionStatus.Add(new TestClass() { Category = "Unencrypted", Number = Encryption[1] });
+        }
+
+
+        /*
+         *  Language dictionary
          * */
         public static Dictionary<string, string> T
         {
@@ -32,7 +107,8 @@ namespace Softwareprojekt2015
                 return App.translation;
             }
         }
-        
+ 
+       
         /*
          *  selected layout elements
          * */
@@ -97,7 +173,6 @@ namespace Softwareprojekt2015
         {
             get
             {
-                Console.WriteLine(SelectedFontSize.ToString() + "px");
                 return SelectedFontSize.ToString() + "px";
             }
         }
@@ -366,14 +441,16 @@ namespace Softwareprojekt2015
             EncryptionStatus = new ObservableCollection<TestClass>();
             Filetypes = new ObservableCollection<TestClass>();
 
+            /*
             TopWebsites.Add(new TestClass() { Category = "facebook.com", Number = 75 });
             TopWebsites.Add(new TestClass() { Category = "google.com", Number = 2 });
             TopWebsites.Add(new TestClass() { Category = "youtube.com", Number = 12 });
             TopWebsites.Add(new TestClass() { Category = "gmail.com", Number = 83 });
+            **/
 
-            EncryptionStatus.Add(new TestClass() { Category = "Unencrypted", Number = 83 });
+            // EncryptionStatus.Add(new TestClass() { Category = "Unencrypted", Number = 83 });
 
-
+            /*
             Filetypes.Add(new TestClass() { Category = "JPEG", Number = 83 });
             Filetypes.Add(new TestClass() { Category = "Mp3", Number = 15 });
             Filetypes.Add(new TestClass() { Category = "Gif", Number = 60 });
@@ -384,6 +461,7 @@ namespace Softwareprojekt2015
             Filetypes.Add(new TestClass() { Category = "JS", Number = 90 });
             Filetypes.Add(new TestClass() { Category = "JS", Number = 91 });
             Filetypes.Add(new TestClass() { Category = "JS", Number = 20 });
+             * */
 
         }
 

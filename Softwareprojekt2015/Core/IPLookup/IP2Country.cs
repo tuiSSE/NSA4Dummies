@@ -8,9 +8,14 @@ namespace Softwareprojekt2015{
 
     public static class IP2Country
     {
-        static IPLookupLINQDataContext db = new IPLookupLINQDataContext();
-        static IDictionary<uint, string> cacheDict = new Dictionary<uint, string>();
+        private static IPLookupLINQDataContext db = new IPLookupLINQDataContext();
+        private static IDictionary<uint, string> cacheDict = new Dictionary<uint, string>();
 
+        /// <summary>
+        /// This function converts a IPv4 address string (e.g. "173.194.113.23") to it's numerical representation
+        /// </summary>
+        /// <param name="address">The IP address as a string; format: "xxx.xxx.xxx.xxx"</param>
+        /// <returns>The numerical representation of the IP as a uint</returns>
         public static uint address2Number(string address)
         {
             char[] splitchar = { '.' };
@@ -34,6 +39,15 @@ namespace Softwareprojekt2015{
             return number;
         }
 
+        
+        /// <summary>
+        /// This function returns the corresponding two-letter country code to a given IP number.
+        /// To get the country code the function looks up the IP address number in the database 'IPLookupLINQ'.
+        /// Initially this can take some time!
+        /// The function implements a cache, so future request will be much faster.
+        /// </summary>
+        /// <param name="number"></param>
+        /// <returns>The two letter country code (in uppercase)</returns>
         public static string number2Country(uint number)
         {
             string country = "";
@@ -48,15 +62,15 @@ namespace Softwareprojekt2015{
                             && c.endAddress >= number
                         select c;
 
+            // Default value for string is NULL, so we will test, if a result exists
             if (query.Count() >= 1)
             {
-                // Default value for striing is NULL, so we will test, if a result exists
                 country = query.FirstOrDefault().countryShort;
             }
 
             cacheDict[number] = country;
 
-            return country;
+            return country.ToUpper();
         }
 
     }

@@ -45,13 +45,13 @@ namespace Softwareprojekt2015
         }
 
 
-        ///
         /// <summary>
         /// This function collects references to all Paths which resemble a country on the worldmap (Name has prefix 'Map')
         /// This function is called as soon as the map gets loaded.
         /// This happens every time the map gets visual.
+        /// This function also performs updateCountries() if there were any packages before Map_OnLoaded
         /// </summary>
-        /// <param name="sender">sender of the vent</param>
+        /// <param name="sender">sender of the event</param>
         /// <param name="e">arguments for the event</param>
         private void Map_OnLoaded(object sender, EventArgs e)
         {
@@ -62,14 +62,15 @@ namespace Softwareprojekt2015
                     _pathDictionary[cleanCountryCode(p.Name).ToUpper()] = p;
                 }
             }
+
+            updateCountries();
         }
 
 
-        ///
         /// <summary>
         /// This functions fills (shades) the country on which the mouse is over with the current 'mouseOverShading'
         /// </summary>
-        /// <param name="sender">sender of the vent</param>
+        /// <param name="sender">sender of the event</param>
         /// <param name="e">arguments for the event</param>
         private void Map_Country_MouseEnter(object sender, System.Windows.Input.MouseEventArgs e)
         {
@@ -80,9 +81,12 @@ namespace Softwareprojekt2015
         }
 
 
-        /*
-         * 
-         * */
+        /// <summary>
+        /// This function is called whenever the mouse leaves a country on the map.
+        /// This function will fill (shade) the country back to it's former color.
+        /// </summary>
+        /// <param name="sender">sender of the event</param>
+        /// <param name="e">arguments for the event</param>
         private void Map_Country_MouseLeave(object sender, System.Windows.Input.MouseEventArgs e)
         {
             var country = sender as Path;
@@ -92,23 +96,54 @@ namespace Softwareprojekt2015
         }
 
 
-        /*
-         * 
-         * */
-        public void addPackageToCountry(string IPAddress)
+        /// <summary>
+        /// This function increments the package-counter for a specific country.
+        /// This function does NOT update the country or the map filling!
+        /// </summary>
+        /// <param name="IPAddress">The IP address string of the country</param>
+        public static void addPackageToCountry(string IPAddress)
         {
             uint number = IP2Country.address2Number(IPAddress);
-            string country = IP2Country.number2Country(number);
+            string country = IP2Country.number2Country(number).ToUpper();
             if (_mapDictionary.ContainsKey(country))
             {
                 _mapDictionary[country] = _mapDictionary[country] + 1;
             }
+            else
+            {
+                _mapDictionary[country] = 1;
+            }
         }
 
 
-        /*
-         * 
-         * */
+        /// <summary>
+        /// This function increments the package-counter for a specific country.
+        /// This function DOES update the country filling!
+        /// </summary>
+        /// <param name="IPAddress">The IP address string of the country</param>
+        public static void addPackageToCountryUpdate(string IPAddress)
+        {
+            uint number = IP2Country.address2Number(IPAddress);
+            string country = IP2Country.number2Country(number).ToUpper();
+            if (_mapDictionary.ContainsKey(country))
+            {
+                _mapDictionary[country] = _mapDictionary[country] + 1;
+            }
+            else
+            {
+                _mapDictionary[country] = 1;
+            }
+
+            updateCountry(country);
+        }
+
+
+        /// <summary>
+        /// This function sets the package counter of a specific country to a chosen value.
+        /// This function does NOT update the country or the map filling!
+        /// </summary>
+        /// <param name="countryCode">The two-letter country code</param>
+        /// <param name="value"></param>
         public void setData(string countryCode, UInt64 value)
         {
             countryCode = cleanCountryCode(countryCode).ToUpper();
@@ -116,9 +151,12 @@ namespace Softwareprojekt2015
         }
 
 
-        /*
-         * 
-         * */
+        /// <summary>
+        /// This function returns the package count for a specific country
+        /// By default 0 is returned.
+        /// </summary>
+        /// <param name="countryCode">The two-letter country code</param>
+        /// <returns>The package count</returns>
         public UInt64 getData(string countryCode)
         {
             countryCode = cleanCountryCode(countryCode).ToUpper();
@@ -131,10 +169,12 @@ namespace Softwareprojekt2015
         }
 
 
-        /*
-         * 
-         * */
-        public void updateCountry(string countryCode)
+        /// <summary>
+        /// This function updates the filling of a specific country using the _shadingDictionary
+        /// If the country does not exist in the _shadingDictionary the current default shading is used.
+        /// </summary>
+        /// <param name="countryCode">The two-letter country code</param>
+        public static void updateCountry(string countryCode)
         {
             countryCode = cleanCountryCode(countryCode).ToUpper();
 
@@ -155,10 +195,10 @@ namespace Softwareprojekt2015
         }
 
 
-        /*
-         * 
-         * */
-        public void updateCountries()
+        /// <summary>
+        /// This function updates the fillings of all countries.
+        /// </summary>
+        public static void updateCountries()
         {
             double minVal = 0.0;
             double maxVal = 0.0;
@@ -199,7 +239,7 @@ namespace Softwareprojekt2015
                 string name = cleanCountryCode(p.Name).ToUpper();
 
                 if (_shadingDictionary.ContainsKey(name))
-                {
+                {          
                     SolidColorBrush packageShading = new SolidColorBrush(Colors.Blue);
 
                     packageShading.Opacity = _shadingDictionary[name];
@@ -209,10 +249,13 @@ namespace Softwareprojekt2015
         }
 
 
-        /*
-         * 
-         * */
-        public string cleanCountryCode(string code)
+        /// <summary>
+        /// This function returns a clean two-letter country code (without the 'Map' prefix)
+        /// If the passed string has no 'Map' prefix (case insensitive), the first two letters are returned (in uppercase).
+        /// </summary>
+        /// <param name="code"></param>
+        /// <returns>Two letter country code, or first to letters if no 'Map' prefix</returns>
+        public static string cleanCountryCode(string code)
         {
             if (code.ToUpper().StartsWith("MAP"))
             {
@@ -223,9 +266,12 @@ namespace Softwareprojekt2015
         }
 
 
-        /*
-         * 
-         * */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="parent"></param>
+        /// <returns></returns>
         private static IEnumerable<T> FindVisualChildren<T>(DependencyObject parent) where T : DependencyObject
         {
             List<T> foundChilds = new List<T>();
