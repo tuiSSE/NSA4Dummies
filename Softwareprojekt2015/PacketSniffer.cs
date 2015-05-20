@@ -19,7 +19,7 @@ namespace Softwareprojekt2015
         // Retrieves the list of network devices.
         private LibPcapLiveDeviceList deviceList;
 
-        // EventWaitHandle to let thread react on event
+        // EventWaitHandle to let thread react on event.
         private EventWaitHandle ewh;
 
         // Create the FileWriterDevice to write to a pcap file.
@@ -34,9 +34,8 @@ namespace Softwareprojekt2015
             deviceList = LibPcapLiveDeviceList.Instance;
 
             
-
             
-
+            // Capture data on every available adapter in the network.
             foreach (var adapter in deviceList)
             {
 
@@ -45,12 +44,12 @@ namespace Softwareprojekt2015
 
                 //captureFileWriter = new CaptureFileWriterDevice(device, "test.pcpap");
 
-                // Open the device for capturing
+                // Open the device for capturing.
                 int readTimeoutMilliseconds = 1000;
 
                 
 
-
+                // Distinction between AirPcap, WinPcap und LibPcap devices.
                 if (adapter is AirPcapDevice)
                 {
                     var airPcap = adapter as AirPcapDevice;
@@ -66,15 +65,17 @@ namespace Softwareprojekt2015
                     var livePcapDevice = adapter as LibPcapLiveDevice;
                     livePcapDevice.Open(DeviceMode.Promiscuous, readTimeoutMilliseconds);
                 }
+                // If the type of device is unknown, throw a new exception.
                 else
                 {
                     throw new System.InvalidOperationException("unknown device type of " + adapter.GetType().ToString());
                 }
 
+                // Limit the capturing process to IP and TCP packets.
                 string filter = "ip and tcp";
                 adapter.Filter = filter;
 
-                // Start the capturing process
+                // Start the capturing process.
                 adapter.StartCapture();
             }
 
@@ -82,6 +83,7 @@ namespace Softwareprojekt2015
 
         }
 
+        // This method stops the capturing process and closes the pcap device.
         public void KillSniffer()
         {
             foreach (var device in deviceList)
@@ -91,10 +93,9 @@ namespace Softwareprojekt2015
             }
         }
 
-
         public void RunPacketSniffer(object sender, DoWorkEventArgs e)
         {
-
+            // As long as the sniffer doesn't receive a cancel event, it reports the current progress.
             while (!e.Cancel)
             {
 
@@ -115,6 +116,9 @@ namespace Softwareprojekt2015
 
         private static int packetIndex = 0;
 
+        // This is the event that is triggered, when a packet arrives.
+        // It creates a new DataPacket and assigns data, length and arrival time of the packet to the variable DataPacket.
+        // Currently not working are the assignments of destination and source IP address.
         private void device_OnPacketArrival(object sender, CaptureEventArgs e)
         {
             //captureFileWriter.Write(e.Packet);
@@ -144,6 +148,8 @@ namespace Softwareprojekt2015
             ewh.Set();
         }
 
+
+        // This method cancels the capturing process and closes the pcap device by calling the KillSniffer() method.
         public void Cancel()
         {
             
