@@ -10,6 +10,7 @@ using SharpPcap.WinPcap;
 using PacketDotNet;
 using System.ComponentModel;
 using System.Threading;
+using System.Windows;
 
 namespace Softwareprojekt2015
 {
@@ -95,6 +96,7 @@ namespace Softwareprojekt2015
 
         public void RunPacketSniffer(object sender, DoWorkEventArgs e)
         {
+
             // As long as the sniffer doesn't receive a cancel event, it reports the current progress.
             while (!e.Cancel)
             {
@@ -109,6 +111,8 @@ namespace Softwareprojekt2015
 
                 ((App)App.Current).snifferWorker.ReportProgress(0, currentPacket);
 
+                
+
             }
 
 
@@ -121,6 +125,7 @@ namespace Softwareprojekt2015
         // Currently not working are the assignments of destination and source IP address.
         private void device_OnPacketArrival(object sender, CaptureEventArgs e)
         {
+
             //captureFileWriter.Write(e.Packet);
             currentPacket = new DataPacket();
 

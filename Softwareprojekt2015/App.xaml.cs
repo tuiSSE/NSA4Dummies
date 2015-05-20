@@ -47,7 +47,7 @@ namespace Softwareprojekt2015
 
             translation = LanguageFile.GetTranslation(lan);
 
-
+            snifferWorker.RunWorkerAsync();
 
 		}
 

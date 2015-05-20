@@ -55,11 +55,13 @@
     <Reference Include="De.TorstenMandelkow.MetroChart">
       <HintPath>.\De.TorstenMandelkow.MetroChart.dll</HintPath>
     </Reference>
-    <Reference Include="PacketDotNet">
-      <HintPath>..\SharpPcap-4.2.0.bin\SharpPcap-4.2.0\Debug\PacketDotNet.dll</HintPath>
+    <Reference Include="PacketDotNet, Version=0.13.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SharpPcap-4.2.0.bin\SharpPcap-4.2.0\Release\PacketDotNet.dll</HintPath>
     </Reference>
-    <Reference Include="SharpPcap">
-      <HintPath>..\SharpPcap-4.2.0.bin\SharpPcap-4.2.0\Debug\SharpPcap.dll</HintPath>
+    <Reference Include="SharpPcap, Version=4.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SharpPcap-4.2.0.bin\SharpPcap-4.2.0\Release\SharpPcap.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
