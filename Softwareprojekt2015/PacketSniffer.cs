@@ -122,8 +122,8 @@ namespace Softwareprojekt2015
         private static int packetIndex = 0;
 
         // This is the event that is triggered, when a packet arrives.
-        // It creates a new DataPacket and assigns data, length and arrival time of the packet to the variable DataPacket.
-        // Currently not working are the assignments of destination and source IP address.
+        // It creates a new DataPacket and assigns data, length, arrival time,
+        // destination & source IP address of the packet to the variable currentPacket. 
         private void device_OnPacketArrival(object sender, CaptureEventArgs e)
         {
 
