@@ -9,7 +9,7 @@ namespace Softwareprojekt2015
 {
     class DataPacket
     {
-
+        // Enum to determine the data transfer protocol
         public enum DataTransferProtocol
         {
             DTP_TCP,
@@ -19,18 +19,19 @@ namespace Softwareprojekt2015
 
         public DataTransferProtocol Protocol { get; set; }
 
+        // destination IP of the packet
         public IPAddress DestIP { get; set; }
 
+        // source IP of the packet
         public IPAddress SourceIP { get; set; }
 
-        public string DestMAC { get; set; }
-
-        public string SourceMAC { get; set; }
-
+        // payload data of the packet
         public Byte[] Data { get; set; }
 
+        // timestamp of when the packet arrived
         public DateTime Time { get; set; }
 
+        // payload length in bytes
         public int Length { get; set; }
 
     }

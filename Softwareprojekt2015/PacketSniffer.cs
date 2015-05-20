@@ -24,14 +24,15 @@ namespace Softwareprojekt2015
         private EventWaitHandle ewh;
 
         // Create the FileWriterDevice to write to a pcap file.
-        private CaptureFileWriterDevice captureFileWriter;
+        //private CaptureFileWriterDevice captureFileWriter;
 
+        // the DataPacket which is currently processed
         DataPacket currentPacket;
 
 
         public PacketSniffer()
         {
-
+            // get list of all devices
             deviceList = LibPcapLiveDeviceList.Instance;
 
             
