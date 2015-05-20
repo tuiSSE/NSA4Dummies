@@ -45,7 +45,7 @@ namespace Softwareprojekt2015
         /// <param name="e"></param>
         public void Update(object sender, ProgressChangedEventArgs e)
         {
-            App.Current.Dispatcher.Invoke(new Action(() => updateGUI(e)));
+            App.Current.Dispatcher.Invoke(DispatcherPriority.Background, new Action(() => updateGUI(e)));
         }
 
 
