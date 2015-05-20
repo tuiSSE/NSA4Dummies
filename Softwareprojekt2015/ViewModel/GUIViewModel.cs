@@ -83,6 +83,7 @@ namespace Softwareprojekt2015
         /// <param name="domain"></param>
         public void addPackage(bool encrypted)
         {
+            
             if (encrypted)
             {
                 Encryption[0] += 1;

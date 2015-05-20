@@ -13,7 +13,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using System.Net;
+using System.Windows.Threading;
+
 
 namespace Softwareprojekt2015
 {
@@ -28,7 +29,7 @@ namespace Softwareprojekt2015
         /// 
         /// </summary>
         public MainWindow()
-        {
+        {            
             InitializeComponent();
 
 			//binding the Apps dictonary as datacontext
@@ -44,24 +45,26 @@ namespace Softwareprojekt2015
         /// <param name="e"></param>
         public void Update(object sender, ProgressChangedEventArgs e)
         {
+            App.Current.Dispatcher.Invoke(new Action(() => updateGUI(e)));
+        }
+
+
+        public void updateGUI(ProgressChangedEventArgs e)
+        {
             var packet = e.UserState as DataPacket;
 
             // Add a packet to the country that is associated with the IP address
             WorldMap.addPackageToCountryUpdate(packet.DestIP.ToString());
-   
-            /*
-             *  TODO:
-             *      - encryption state
-             * */
-            string[] fileTypes = {"mp3", "jpeg", "html", "js", "css", "gif", "png", "flv"};
+
+            string[] fileTypes = { "mp3", "jpeg", "html", "js", "css", "gif", "png", "flv" };
             int choice = rnd.Next(0, fileTypes.Length);
             ((GUIViewModel)this.DataContext).addFileType(fileTypes[choice]);
 
-            string[] domains = { "google.com", "facebook.com", "web.de", "gmail.com", "youtube.com", "tu-ilmenau.de"};
+            string[] domains = { "google.com", "facebook.com", "web.de", "gmail.com", "youtube.com", "tu-ilmenau.de" };
             choice = rnd.Next(0, domains.Length);
             ((GUIViewModel)this.DataContext).addDomain(domains[choice]);
 
-            bool[] encrypted = { true, false};
+            bool[] encrypted = { true, false };
             choice = rnd.Next(0, encrypted.Length);
             ((GUIViewModel)this.DataContext).addPackage(encrypted[choice]);
         }
