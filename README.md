@@ -24,7 +24,7 @@ To run double click icon.
 The application is exclusively to be used in your own home network. Please inform your network advisor if you use this Software!
 
 Encrypted data aren't supposed to be logged and intruding secured networks isn't able with this application.
-Using the software does not violate §202a, §202b, §202c StgB.
+Using the software does not violate §202a, §202b, §202c StGB.
 
 ## Minimum requirements:
 
