@@ -76,8 +76,8 @@ namespace Softwareprojekt2015
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void Window_Loaded(object sender, RoutedEventArgs e)
-        {            
-            ((App)App.Current).snifferWorker.ProgressChanged += new ProgressChangedEventHandler(Update);
+        {
+			((App)App.Current).Sniffer.AddPacketHandler(new ProgressChangedEventHandler(Update));
             
         }
     }

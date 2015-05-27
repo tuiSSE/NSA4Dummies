@@ -19,9 +19,7 @@ namespace Softwareprojekt2015
 
 		public static Dictionary<string,string> translation;
 
-        public BackgroundWorker snifferWorker;
-
-        private PacketSniffer sniffer;
+		public PacketSniffer Sniffer { get; set; }
 
 		public static LanguageFile.Language CurrentLanguage
 		{
@@ -31,13 +29,7 @@ namespace Softwareprojekt2015
 
 		public App()
 		{
-
-            sniffer = new PacketSniffer();
-
-            snifferWorker = new BackgroundWorker();
-            snifferWorker.WorkerReportsProgress = true;
-            snifferWorker.WorkerSupportsCancellation = true;
-            snifferWorker.DoWork += new DoWorkEventHandler(sniffer.RunPacketSniffer);
+			Sniffer = new PacketSniffer();
 
 			// Load settings...
 
@@ -47,13 +39,13 @@ namespace Softwareprojekt2015
 
             translation = LanguageFile.GetTranslation(lan);
 
-            snifferWorker.RunWorkerAsync();
+			Sniffer.StartSniffer();
 
 		}
 
         private void Application_Exit(object sender, ExitEventArgs e)
         {
-            sniffer.Cancel();
+            Sniffer.StopSniffer();
 
         }
 

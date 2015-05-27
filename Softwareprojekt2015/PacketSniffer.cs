@@ -14,7 +14,7 @@ using System.Windows;
 
 namespace Softwareprojekt2015
 {
-    class PacketSniffer
+    public class PacketSniffer
     {
 
         // Retrieves the list of network devices.
@@ -27,7 +27,11 @@ namespace Softwareprojekt2015
         //private CaptureFileWriterDevice captureFileWriter;
 
         // the DataPacket which is currently processed
-        DataPacket currentPacket;
+        private DataPacket currentPacket;
+
+
+		// The BackgroundWorker proessing packets on arrival
+		private BackgroundWorker snifferWorker;
 
 
         public PacketSniffer()
@@ -35,67 +39,80 @@ namespace Softwareprojekt2015
             // get list of all devices
             deviceList = LibPcapLiveDeviceList.Instance;
 
-            
+			snifferWorker = new BackgroundWorker();
+
+			snifferWorker = new BackgroundWorker();
+			snifferWorker.WorkerReportsProgress = true;
+			snifferWorker.WorkerSupportsCancellation = true;
+			snifferWorker.DoWork += new DoWorkEventHandler(RunPacketSniffer);
+			snifferWorker.RunWorkerCompleted += new RunWorkerCompletedEventHandler(WorkerCompleted);
             
             // Capture data on every available adapter in the network.
-            foreach (var adapter in deviceList)
-            {
-
-                // Register the handler function to the packet arrival event.
-                adapter.OnPacketArrival += new PacketArrivalEventHandler(device_OnPacketArrival);
-
-                //captureFileWriter = new CaptureFileWriterDevice(device, "test.pcpap");
-
-                // Open the device for capturing.
-                int readTimeoutMilliseconds = 1000;
-
-                
-
-                // Distinction between AirPcap, WinPcap und LibPcap devices.
-                if (adapter is AirPcapDevice)
-                {
-                    var airPcap = adapter as AirPcapDevice;
-                    airPcap.Open(SharpPcap.WinPcap.OpenFlags.DataTransferUdp, readTimeoutMilliseconds);
-                }
-                else if (adapter is WinPcapDevice)
-                {
-                    var winPcap = adapter as WinPcapDevice;
-                    winPcap.Open(SharpPcap.WinPcap.OpenFlags.DataTransferUdp | SharpPcap.WinPcap.OpenFlags.NoCaptureLocal, readTimeoutMilliseconds);
-                }
-                else if (adapter is LibPcapLiveDevice)
-                {
-                    var livePcapDevice = adapter as LibPcapLiveDevice;
-                    livePcapDevice.Open(DeviceMode.Promiscuous, readTimeoutMilliseconds);
-                }
-                // If the type of device is unknown, throw a new exception.
-                else
-                {
-                    throw new System.InvalidOperationException("unknown device type of " + adapter.GetType().ToString());
-                }
-
-                // Limit the capturing process to IP and TCP packets.
-                string filter = "ip and tcp";
-                adapter.Filter = filter;
-
-                // Start the capturing process.
-                adapter.StartCapture();
-            }
+            
 
             ewh = new EventWaitHandle(false, EventResetMode.AutoReset);
 
         }
 
-        // This method stops the capturing process and closes the pcap device.
-        public void KillSniffer()
-        {
-            foreach (var device in deviceList)
-            {
-                device.StopCapture();
-                device.Close();
-            }
-        }
+		private void WorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+		{
+			foreach (var device in deviceList)
+			{
+				device.StopCapture();
+				device.Close();
+			}
+		}
 
-        public void RunPacketSniffer(object sender, DoWorkEventArgs e)
+		public void StartSniffer()
+		{
+			snifferWorker.RunWorkerAsync();
+
+			foreach (var adapter in deviceList)
+			{
+
+				// Register the handler function to the packet arrival event.
+				adapter.OnPacketArrival += new PacketArrivalEventHandler(device_OnPacketArrival);
+
+				//captureFileWriter = new CaptureFileWriterDevice(device, "test.pcpap");
+
+				// Open the device for capturing.
+				int readTimeoutMilliseconds = 1000;
+
+
+
+				// Distinction between AirPcap, WinPcap und LibPcap devices.
+				if (adapter is AirPcapDevice)
+				{
+					var airPcap = adapter as AirPcapDevice;
+					airPcap.Open(SharpPcap.WinPcap.OpenFlags.DataTransferUdp, readTimeoutMilliseconds);
+				}
+				else if (adapter is WinPcapDevice)
+				{
+					var winPcap = adapter as WinPcapDevice;
+					winPcap.Open(SharpPcap.WinPcap.OpenFlags.DataTransferUdp | SharpPcap.WinPcap.OpenFlags.NoCaptureLocal, readTimeoutMilliseconds);
+				}
+				else if (adapter is LibPcapLiveDevice)
+				{
+					var livePcapDevice = adapter as LibPcapLiveDevice;
+					livePcapDevice.Open(DeviceMode.Promiscuous, readTimeoutMilliseconds);
+				}
+				// If the type of device is unknown, throw a new exception.
+				else
+				{
+					throw new System.InvalidOperationException("unknown device type of " + adapter.GetType().ToString());
+				}
+
+				// Limit the capturing process to IP and TCP packets.
+				string filter = "ip and tcp";
+				adapter.Filter = filter;
+
+				// Start the capturing process.
+				adapter.StartCapture();
+
+			}
+		}
+
+        private void RunPacketSniffer(object sender, DoWorkEventArgs e)
         {
 
             // As long as the sniffer doesn't receive a cancel event, it reports the current progress.
@@ -104,13 +121,13 @@ namespace Softwareprojekt2015
 
                 ewh.WaitOne();
 
-                if (((App)App.Current).snifferWorker.CancellationPending)
+                if (snifferWorker.CancellationPending)
                 {
                     e.Cancel = true;
                     return;
                 }
 
-                ((App)App.Current).snifferWorker.ReportProgress(0, currentPacket);
+                snifferWorker.ReportProgress(0, currentPacket);
 
                 
 
@@ -156,15 +173,18 @@ namespace Softwareprojekt2015
 
 
         // This method cancels the capturing process and closes the pcap device by calling the KillSniffer() method.
-        public void Cancel()
+        public void StopSniffer()
         {
             
-            ((App)App.Current).snifferWorker.CancelAsync();
+            snifferWorker.CancelAsync();
             ewh.Set();
-
-            KillSniffer();
             
         }
+
+		public void AddPacketHandler(ProgressChangedEventHandler handler)
+		{
+			snifferWorker.ProgressChanged += handler;
+		}
     }
 
 }
