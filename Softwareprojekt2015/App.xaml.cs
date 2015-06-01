@@ -8,6 +8,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Xml;
+using Hardcodet.Wpf.TaskbarNotification;
 
 namespace Softwareprojekt2015
 {
@@ -16,6 +17,7 @@ namespace Softwareprojekt2015
 	/// </summary>
 	public partial class App : Application
 	{
+        private TaskbarIcon tb;
 
 		public static Dictionary<string,string> translation;
 
@@ -29,6 +31,8 @@ namespace Softwareprojekt2015
 
 		public App()
 		{
+            tb = (TaskbarIcon) FindResource("NotifyIcon");
+
 			Sniffer = new PacketSniffer();
 
 			// Load settings...
