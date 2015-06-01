@@ -65,6 +65,11 @@ namespace Softwareprojekt2015
 
         }
 
+        /// <summary>
+        /// Gets called when the thread finishes it work or gets cancled and stops capturing of packets
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
 		private void WorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
 		{
 			foreach (var device in deviceList)
@@ -121,7 +126,7 @@ namespace Softwareprojekt2015
                     }
 
                     // Limit the capturing process to IP and TCP packets.
-                    string filter = "ip and tcp";
+                    string filter = "ip and tcp and udp";
                     device.Filter = filter;
 
                     // Start the capturing process.
@@ -142,6 +147,7 @@ namespace Softwareprojekt2015
 
                 ewh.WaitOne();
 
+                // Check if there is a cancellation request pending
                 if (snifferWorker.CancellationPending)
                 {
                     e.Cancel = true;
@@ -165,26 +171,35 @@ namespace Softwareprojekt2015
         /// <param name="e">Containes all information attached to the incoming packet</param>
         private void device_OnPacketArrival(object sender, CaptureEventArgs e)
         {
-
             //captureFileWriter.Write(e.Packet);
             currentPacket = new DataPacket();
 
-            currentPacket.Data = e.Packet.Data;
             currentPacket.Length = e.Packet.Data.Length;
             currentPacket.Time = e.Packet.Timeval.Date;
 
+
+            // TODO:  Needs some cleanup, there might be a better way to do this.
             var packet = PacketDotNet.Packet.ParsePacket(e.Packet.LinkLayerType, e.Packet.Data);
-            var tcpPacket = PacketDotNet.TcpPacket.GetEncapsulated(packet);
-            if (tcpPacket != null)
+            var tcpPacket = packet.Extract(typeof(TcpPacket));
+            var udpPacket = packet.Extract(typeof(UdpPacket));
+            if (null != tcpPacket)
             {
-                
-
                 IpPacket ipPacket = (IpPacket)tcpPacket.ParentPacket;
-
 
                 currentPacket.DestIP = ipPacket.DestinationAddress;
                 currentPacket.SourceIP = ipPacket.SourceAddress;
+                currentPacket.Data = tcpPacket.PayloadData;
+                currentPacket.Protocol = DataPacket.DataTransferProtocol.DTP_TCP;
 
+            }
+            else if (null != udpPacket)
+            {
+                IpPacket ipPacket = (IpPacket)tcpPacket.ParentPacket;
+
+                currentPacket.DestIP = ipPacket.DestinationAddress;
+                currentPacket.SourceIP = ipPacket.SourceAddress;
+                currentPacket.Data = tcpPacket.PayloadData;
+                currentPacket.Protocol = DataPacket.DataTransferProtocol.DTP_UDP;
             }
 
 

@@ -7,31 +7,49 @@ using System.Net;
 
 namespace Softwareprojekt2015
 {
-    class DataPacket
+    [Serializable] class DataPacket
     {
-        // Enum to determine the data transfer protocol
+
+        /// <summary>
+        /// Enum to determine the protocol independently from what the snifferlibrary has
+        /// </summary>
         public enum DataTransferProtocol
         {
             DTP_TCP,
             DTP_UDP,
+            DTP_ICMP,
             DTP_OTHER
         }
 
+        /// <summary>
+        /// The protocol used to send the packet
+        /// </summary>
         public DataTransferProtocol Protocol { get; set; }
 
-        // destination IP of the packet
+
+        /// <summary>
+        /// Destination IP-Adress of the packet
+        /// </summary>
         public IPAddress DestIP { get; set; }
 
-        // source IP of the packet
+        /// <summary>
+        /// Source IP-Adress of the packet
+        /// </summary>
         public IPAddress SourceIP { get; set; }
 
-        // payload data of the packet
+        /// <summary>
+        /// The payload of the packet
+        /// </summary>
         public Byte[] Data { get; set; }
 
-        // timestamp of when the packet arrived
+        /// <summary>
+        /// Timestamp of when the packet arrived
+        /// </summary>
         public DateTime Time { get; set; }
 
-        // payload length in bytes
+        /// <summary>
+        /// payload length in bytes
+        /// </summary>
         public int Length { get; set; }
 
     }
