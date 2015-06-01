@@ -17,23 +17,34 @@ namespace Softwareprojekt2015
     public class PacketSniffer
     {
 
-        // Retrieves the list of network devices.
+        /// <summary>
+        /// A list of all registered devices
+        /// </summary>
         private LibPcapLiveDeviceList deviceList;
 
-        // EventWaitHandle to let thread react on event.
+        /// <summary>
+        /// Event handle to signal the processing thread when a packet arrives.
+        /// </summary>
         private EventWaitHandle ewh;
-
+         
+        // TODO: Write on disk !!!
         // Create the FileWriterDevice to write to a pcap file.
         //private CaptureFileWriterDevice captureFileWriter;
 
-        // the DataPacket which is currently processed
+        /// <summary>
+        /// The most recently arrived packet
+        /// </summary>
         private DataPacket currentPacket;
 
 
-		// The BackgroundWorker proessing packets on arrival
+		/// <summary>
+		/// The BackgroundWorker running the sniffer and reporting the packet to every registered handler 
+		/// </summary>
 		private BackgroundWorker snifferWorker;
 
-
+        /// <summary>
+        /// Constructor.
+        /// </summary>
         public PacketSniffer()
         {
             // get list of all devices
@@ -47,7 +58,7 @@ namespace Softwareprojekt2015
 			snifferWorker.DoWork += new DoWorkEventHandler(RunPacketSniffer);
 			snifferWorker.RunWorkerCompleted += new RunWorkerCompletedEventHandler(WorkerCompleted);
             
-            // Capture data on every available adapter in the network.
+            
             
 
             ewh = new EventWaitHandle(false, EventResetMode.AutoReset);
@@ -62,54 +73,64 @@ namespace Softwareprojekt2015
 				device.Close();
 			}
 		}
-
+        /// <summary>
+        /// Starts the packet sniffer in a new thread.
+        /// </summary>
 		public void StartSniffer()
 		{
-			snifferWorker.RunWorkerAsync();
-
-			foreach (var adapter in deviceList)
-			{
-
-				// Register the handler function to the packet arrival event.
-				adapter.OnPacketArrival += new PacketArrivalEventHandler(device_OnPacketArrival);
-
-				//captureFileWriter = new CaptureFileWriterDevice(device, "test.pcpap");
-
-				// Open the device for capturing.
-				int readTimeoutMilliseconds = 1000;
+            // Sniffer already running?
+            if (!snifferWorker.IsBusy)
+            {
+                snifferWorker.RunWorkerAsync();
 
 
+                // Capture data on every available adapter in the network.
+                foreach (var device in deviceList)
+                {
 
-				// Distinction between AirPcap, WinPcap und LibPcap devices.
-				if (adapter is AirPcapDevice)
-				{
-					var airPcap = adapter as AirPcapDevice;
-					airPcap.Open(SharpPcap.WinPcap.OpenFlags.DataTransferUdp, readTimeoutMilliseconds);
-				}
-				else if (adapter is WinPcapDevice)
-				{
-					var winPcap = adapter as WinPcapDevice;
-					winPcap.Open(SharpPcap.WinPcap.OpenFlags.DataTransferUdp | SharpPcap.WinPcap.OpenFlags.NoCaptureLocal, readTimeoutMilliseconds);
-				}
-				else if (adapter is LibPcapLiveDevice)
-				{
-					var livePcapDevice = adapter as LibPcapLiveDevice;
-					livePcapDevice.Open(DeviceMode.Promiscuous, readTimeoutMilliseconds);
-				}
-				// If the type of device is unknown, throw a new exception.
-				else
-				{
-					throw new System.InvalidOperationException("unknown device type of " + adapter.GetType().ToString());
-				}
+                    // Register the handler function to the packet arrival event.
+                    device.OnPacketArrival += new PacketArrivalEventHandler(device_OnPacketArrival);
 
-				// Limit the capturing process to IP and TCP packets.
-				string filter = "ip and tcp";
-				adapter.Filter = filter;
+                    //captureFileWriter = new CaptureFileWriterDevice(device, "test.pcpap");
 
-				// Start the capturing process.
-				adapter.StartCapture();
+                    // Open the device for capturing.
+                    int readTimeoutMilliseconds = 1000;
 
-			}
+
+
+                    // Distinction between AirPcap, WinPcap und LibPcap devices.
+                    if (device is AirPcapDevice)
+                    {
+                        var airPcap = device as AirPcapDevice;
+                        airPcap.Open(SharpPcap.WinPcap.OpenFlags.DataTransferUdp, readTimeoutMilliseconds);
+                    }
+                    else if (device is WinPcapDevice)
+                    {
+                        var winPcap = device as WinPcapDevice;
+                        winPcap.Open(SharpPcap.WinPcap.OpenFlags.DataTransferUdp | SharpPcap.WinPcap.OpenFlags.NoCaptureLocal, readTimeoutMilliseconds);
+                    }
+                    else if (device is LibPcapLiveDevice)
+                    {
+                        var livePcapDevice = device as LibPcapLiveDevice;
+                        livePcapDevice.Open(DeviceMode.Promiscuous, readTimeoutMilliseconds);
+                    }
+                    // If the type of device is unknown, throw a new exception.
+                    else
+                    {
+                        throw new System.InvalidOperationException("unknown device type of " + device.GetType().ToString());
+                    }
+
+                    // Limit the capturing process to IP and TCP packets.
+                    string filter = "ip and tcp";
+                    device.Filter = filter;
+
+                    // Start the capturing process.
+                    device.StartCapture();
+
+                }
+            }
+
+			
 		}
 
         private void RunPacketSniffer(object sender, DoWorkEventArgs e)
@@ -128,7 +149,6 @@ namespace Softwareprojekt2015
                 }
 
                 snifferWorker.ReportProgress(0, currentPacket);
-
                 
 
             }
@@ -138,9 +158,11 @@ namespace Softwareprojekt2015
 
         private static int packetIndex = 0;
 
-        // This is the event that is triggered, when a packet arrives.
-        // It creates a new DataPacket and assigns data, length, arrival time,
-        // destination & source IP address of the packet to the variable currentPacket. 
+        /// <summary>
+        /// Handles incoming packets and creates a DataPacket object and stores it in currentPacket.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e">Containes all information attached to the incoming packet</param>
         private void device_OnPacketArrival(object sender, CaptureEventArgs e)
         {
 
@@ -172,15 +194,25 @@ namespace Softwareprojekt2015
         }
 
 
-        // This method cancels the capturing process and closes the pcap device by calling the KillSniffer() method.
+        /// <summary>
+        /// Stops the sniffer and the associated thread as well as the capturing process on all devices.
+        /// </summary>
         public void StopSniffer()
         {
+            if (snifferWorker.IsBusy)
+            {
+                snifferWorker.CancelAsync();
+                ewh.Set();
+            }
             
-            snifferWorker.CancelAsync();
-            ewh.Set();
             
         }
 
+        /// <summary>
+        /// Registers a method handling incoming packets, methods registered before will not be overridden.
+        /// When defining the handling method be aware that the progress will always be zero (0).
+        /// </summary>
+        /// <param name="handler">A ProgressChangedEventHandler reciving a packet on arrivel.</param>
 		public void AddPacketHandler(ProgressChangedEventHandler handler)
 		{
 			snifferWorker.ProgressChanged += handler;
