@@ -88,7 +88,6 @@ namespace Softwareprojekt2015
             {
                 snifferWorker.RunWorkerAsync();
 
-
                 // Capture data on every available adapter in the network.
                 foreach (var device in deviceList)
                 {
@@ -126,7 +125,7 @@ namespace Softwareprojekt2015
                     }
 
                     // Limit the capturing process to IP and TCP packets.
-                    string filter = "ip and tcp and udp";
+                    string filter = "tcp or udp";
                     device.Filter = filter;
 
                     // Start the capturing process.
@@ -194,11 +193,11 @@ namespace Softwareprojekt2015
             }
             else if (null != udpPacket)
             {
-                IpPacket ipPacket = (IpPacket)tcpPacket.ParentPacket;
+                IpPacket ipPacket = (IpPacket)udpPacket.ParentPacket;
 
                 currentPacket.DestIP = ipPacket.DestinationAddress;
                 currentPacket.SourceIP = ipPacket.SourceAddress;
-                currentPacket.Data = tcpPacket.PayloadData;
+                currentPacket.Data = udpPacket.PayloadData;
                 currentPacket.Protocol = DataPacket.DataTransferProtocol.DTP_UDP;
             }
 
