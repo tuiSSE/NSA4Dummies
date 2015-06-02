@@ -56,19 +56,20 @@
       <HintPath>.\De.TorstenMandelkow.MetroChart.dll</HintPath>
     </Reference>
     <Reference Include="Hardcodet.Wpf.TaskbarNotification">
-      <HintPath>NotifyIcon\Hardcodet.Wpf.TaskbarNotification.dll</HintPath>
+      <HintPath>.\Hardcodet.Wpf.TaskbarNotification.dll</HintPath>
     </Reference>
     <Reference Include="PacketDotNet, Version=0.13.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\SharpPcap-4.2.0.bin\SharpPcap-4.2.0\Release\PacketDotNet.dll</HintPath>
+      <HintPath>.\PacketDotNet.dll</HintPath>
     </Reference>
     <Reference Include="SharpPcap, Version=4.2.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\SharpPcap-4.2.0.bin\SharpPcap-4.2.0\Release\SharpPcap.dll</HintPath>
+      <HintPath>.\SharpPcap.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -210,6 +211,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>IPLookup.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\NotifyIcon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

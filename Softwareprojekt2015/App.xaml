@@ -6,8 +6,8 @@
     <Application.Resources>
         <ResourceDictionary xmlns:tb="http://www.hardcodet.net/taskbar" >
             <tb:TaskbarIcon x:Key="NotifyIcon"
-                            IconSource="/NotifyIcon/Red.ico"
-                            ToolTipText="Softwareprojekt"
+                            IconSource="/Resources/NotifyIcon.ico"
+                            ToolTipText="No Such Application"
                             Visibility="Visible">
                 <tb:TaskbarIcon.ContextMenu>
                     <ContextMenu
