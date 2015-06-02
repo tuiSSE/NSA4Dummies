@@ -4,7 +4,22 @@
              StartupUri="MainWindow.xaml"
              Exit="Application_Exit">
     <Application.Resources>
-        <ResourceDictionary>
+        <ResourceDictionary xmlns:tb="http://www.hardcodet.net/taskbar" >
+            <tb:TaskbarIcon x:Key="NotifyIcon"
+                            IconSource="/NotifyIcon/Red.ico"
+                            ToolTipText="Softwareprojekt"
+                            Visibility="Visible">
+                <tb:TaskbarIcon.ContextMenu>
+                    <ContextMenu
+                        Background="LightCoral">
+                        <MenuItem Header="Show main window" />
+                        <MenuItem Header="Settings..." />
+                        <MenuItem Header="Start sniffer" />
+                        <MenuItem Header="Stop sniffer" />
+                        <MenuItem Header="Exit application" />
+                    </ContextMenu>
+                </tb:TaskbarIcon.ContextMenu>                    
+            </tb:TaskbarIcon>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="GUI/TextStyles.xaml" />
                 <ResourceDictionary Source="GUI/Buttons.xaml" />
