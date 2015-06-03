@@ -103,15 +103,21 @@ namespace NSA4Dummies
         /// <param name="IPAddress">The IP address string of the country</param>
         public static void addPackageToCountry(string IPAddress)
         {
-            uint number = IP2Country.address2Number(IPAddress);
-            string country = IP2Country.number2Country(number).ToUpper();
-            if (_mapDictionary.ContainsKey(country))
+            if (IPAddress != null)
             {
-                _mapDictionary[country] = _mapDictionary[country] + 1;
-            }
-            else
-            {
-                _mapDictionary[country] = 1;
+                uint number = IP2Country.address2Number(IPAddress);
+                string country = IP2Country.number2Country(number).ToUpper();
+                if (country != null)
+                {
+                    if (_mapDictionary.ContainsKey(country))
+                    {
+                        _mapDictionary[country] = _mapDictionary[country] + 1;
+                    }
+                    else
+                    {
+                        _mapDictionary[country] = 1;
+                    }
+                }
             }
         }
 
@@ -123,18 +129,24 @@ namespace NSA4Dummies
         /// <param name="IPAddress">The IP address string of the country</param>
         public static void addPackageToCountryUpdate(string IPAddress)
         {
-            uint number = IP2Country.address2Number(IPAddress);
-            string country = IP2Country.number2Country(number).ToUpper();
-            if (_mapDictionary.ContainsKey(country))
+            if (IPAddress != null)
             {
-                _mapDictionary[country] = _mapDictionary[country] + 1;
-            }
-            else
-            {
-                _mapDictionary[country] = 1;
-            }
+                uint number = IP2Country.address2Number(IPAddress);
+                string country = IP2Country.number2Country(number).ToUpper();
+                if (country != null)
+                {
+                    if (_mapDictionary.ContainsKey(country))
+                    {
+                        _mapDictionary[country] = _mapDictionary[country] + 1;
+                    }
+                    else
+                    {
+                        _mapDictionary[country] = 1;
+                    }
 
-            updateCountry(country);
+                    updateCountry(country);
+                }
+            }
         }
 
 
@@ -146,8 +158,11 @@ namespace NSA4Dummies
         /// <param name="value"></param>
         public void setData(string countryCode, UInt64 value)
         {
-            countryCode = cleanCountryCode(countryCode).ToUpper();
-            _mapDictionary[countryCode] = value;
+            if (countryCode != null)
+            {
+                countryCode = cleanCountryCode(countryCode).ToUpper();
+                _mapDictionary[countryCode] = value;
+            }
         }
 
 
@@ -159,11 +174,20 @@ namespace NSA4Dummies
         /// <returns>The package count</returns>
         public UInt64 getData(string countryCode)
         {
-            countryCode = cleanCountryCode(countryCode).ToUpper();
-            if (_mapDictionary.ContainsKey(countryCode))
+            if (countryCode != null)
             {
-                return _mapDictionary[countryCode];
-            }else{
+                countryCode = cleanCountryCode(countryCode).ToUpper();
+                if (_mapDictionary.ContainsKey(countryCode))
+                {
+                    return _mapDictionary[countryCode];
+                }
+                else
+                {
+                    return 0;
+                }
+            }
+            else
+            {
                 return 0;
             }
         }
@@ -176,20 +200,23 @@ namespace NSA4Dummies
         /// <param name="countryCode">The two-letter country code</param>
         public static void updateCountry(string countryCode)
         {
-            countryCode = cleanCountryCode(countryCode).ToUpper();
-
-            if (_shadingDictionary.ContainsKey(countryCode) && _pathDictionary.ContainsKey(countryCode))
+            if (countryCode != null)
             {
-                SolidColorBrush packageShading = new SolidColorBrush(Colors.Blue);
+                countryCode = cleanCountryCode(countryCode).ToUpper();
 
-                packageShading.Opacity = _shadingDictionary[countryCode];
-                _pathDictionary[countryCode].Fill = packageShading;
-            }
-            else
-            {
-                if (_pathDictionary.ContainsKey(countryCode))
+                if (_shadingDictionary.ContainsKey(countryCode) && _pathDictionary.ContainsKey(countryCode))
                 {
-                    _pathDictionary[countryCode].Fill = defaultShading;
+                    SolidColorBrush packageShading = new SolidColorBrush(Colors.Blue);
+
+                    packageShading.Opacity = _shadingDictionary[countryCode];
+                    _pathDictionary[countryCode].Fill = packageShading;
+                }
+                else
+                {
+                    if (_pathDictionary.ContainsKey(countryCode))
+                    {
+                        _pathDictionary[countryCode].Fill = defaultShading;
+                    }
                 }
             }
         }
@@ -236,14 +263,17 @@ namespace NSA4Dummies
 
             foreach (var p in FindVisualChildren<Path>(((MainWindow)System.Windows.Application.Current.MainWindow).mainGrid))
             {
-                string name = cleanCountryCode(p.Name).ToUpper();
+                if (p.Name != null)
+                {
+                    string name = cleanCountryCode(p.Name).ToUpper();
 
-                if (_shadingDictionary.ContainsKey(name))
-                {          
-                    SolidColorBrush packageShading = new SolidColorBrush(Colors.Blue);
+                    if (_shadingDictionary.ContainsKey(name))
+                    {
+                        SolidColorBrush packageShading = new SolidColorBrush(Colors.Blue);
 
-                    packageShading.Opacity = _shadingDictionary[name];
-                    p.Fill = packageShading;
+                        packageShading.Opacity = _shadingDictionary[name];
+                        p.Fill = packageShading;
+                    }
                 }
             }
         }
@@ -257,12 +287,19 @@ namespace NSA4Dummies
         /// <returns>Two letter country code, or first to letters if no 'Map' prefix</returns>
         public static string cleanCountryCode(string code)
         {
-            if (code.ToUpper().StartsWith("MAP"))
+            if (code != null)
             {
-                // Remove 'Map' prefix
-                code = code.Substring(3);
+                if (code.ToUpper().StartsWith("MAP"))
+                {
+                    // Remove 'Map' prefix
+                    code = code.Substring(3);
+                }
+                return code.Substring(0, 2);
             }
-            return code.Substring(0, 2);
+            else
+            {
+                return "";
+            }
         }
 
 

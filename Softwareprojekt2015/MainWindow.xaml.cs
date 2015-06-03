@@ -60,8 +60,13 @@ namespace NSA4Dummies
         {
             var packet = e.UserState as DataPacket;
 
-            // Add a packet to the country that is associated with the IP address
-            WorldMap.addPackageToCountryUpdate(packet.DestIP.ToString());
+            System.Net.IPAddress ip = packet.DestIP;
+
+            if (ip != null)
+            {
+                // Add a packet to the country that is associated with the IP address
+                WorldMap.addPackageToCountryUpdate(ip.ToString());
+            }
 
             string[] fileTypes = { "mp3", "jpeg", "html", "js", "css", "gif", "png", "flv" };
             int choice = rnd.Next(0, fileTypes.Length);

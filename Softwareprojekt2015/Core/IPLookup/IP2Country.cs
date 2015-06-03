@@ -18,25 +18,32 @@ namespace NSA4Dummies{
         /// <returns>The numerical representation of the IP as a uint</returns>
         public static uint address2Number(string address)
         {
-            char[] splitchar = { '.' };
-            string[] subnets = address.Split(splitchar);
-            uint s1, s2, s3, s4;
-            uint number = 0;
-
-            if (subnets.Length == 4)
+            if (address != null)
             {
-                uint.TryParse(subnets[0], out s1);
-                uint.TryParse(subnets[1], out s2);
-                uint.TryParse(subnets[2], out s3);
-                uint.TryParse(subnets[3], out s4);
+                char[] splitchar = { '.' };
+                string[] subnets = address.Split(splitchar);
+                uint s1, s2, s3, s4;
+                uint number = 0;
 
-                if (s1 <= 255 && s2 <= 255 && s3 <= 255 && s4 <= 255)
+                if (subnets.Length == 4)
                 {
-                    number = s1 * 16777216 + s2 * 65536 + s3 * 256 + s4;
-                }
-            }
+                    uint.TryParse(subnets[0], out s1);
+                    uint.TryParse(subnets[1], out s2);
+                    uint.TryParse(subnets[2], out s3);
+                    uint.TryParse(subnets[3], out s4);
 
-            return number;
+                    if (s1 <= 255 && s2 <= 255 && s3 <= 255 && s4 <= 255)
+                    {
+                        number = s1 * 16777216 + s2 * 65536 + s3 * 256 + s4;
+                    }
+                }
+
+                return number;
+            }
+            else
+            {
+                return 0;
+            }
         }
 
         
