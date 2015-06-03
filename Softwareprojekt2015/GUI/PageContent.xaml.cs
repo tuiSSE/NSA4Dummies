@@ -60,5 +60,15 @@ namespace NSA4Dummies
             }
 
         }
+
+        private void btn_normal_Click(object sender, RoutedEventArgs e)
+        {
+
+            foreach (Window window in App.Current.Windows)
+            {
+                window.WindowState = WindowState.Normal;
+            }
+
+        }
     }
 }
