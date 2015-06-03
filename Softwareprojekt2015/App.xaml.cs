@@ -33,7 +33,7 @@ namespace NSA4Dummies
 
 		public App()
 		{
-            tb = (TaskbarIcon) FindResource("NotifyIcon");
+            tb = (TaskbarIcon) this.Resources["notifyIcon"];
 
 			Sniffer = new PacketSniffer();
 
