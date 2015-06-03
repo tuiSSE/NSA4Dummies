@@ -14,6 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Threading;
+using System.Timers;
 
 
 namespace NSA4Dummies
@@ -24,6 +25,7 @@ namespace NSA4Dummies
     public partial class MainWindow : Window
     {
         static Random rnd = new Random();
+        public Timer guiUpdateTimer = new Timer();
         
         /// <summary>
         /// 
@@ -35,6 +37,11 @@ namespace NSA4Dummies
 			//binding the Apps dictonary as datacontext
             // this.DataContext = App.translation;
             this.DataContext = new GUIViewModel();
+
+            // GUI update timer
+            guiUpdateTimer.Elapsed += new ElapsedEventHandler(updateGUI);
+            guiUpdateTimer.Interval = 1000; // 1000 ms is one second
+            guiUpdateTimer.Start();
         }
 
 
@@ -45,11 +52,11 @@ namespace NSA4Dummies
         /// <param name="e"></param>
         public void Update(object sender, ProgressChangedEventArgs e)
         {
-            App.Current.Dispatcher.Invoke(DispatcherPriority.Background, new Action(() => updateGUI(e)));
+            App.Current.Dispatcher.Invoke(DispatcherPriority.Background, new Action(() => updateGUIData(e)));
         }
 
 
-        public void updateGUI(ProgressChangedEventArgs e)
+        public void updateGUIData(ProgressChangedEventArgs e)
         {
             var packet = e.UserState as DataPacket;
 
@@ -67,6 +74,26 @@ namespace NSA4Dummies
             bool[] encrypted = { true, false };
             choice = rnd.Next(0, encrypted.Length);
             ((GUIViewModel)this.DataContext).addPackage(encrypted[choice]);
+        }
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="source"></param>
+        /// <param name="e"></param>
+        public void updateGUI(object source, ElapsedEventArgs e)
+        {
+            App.Current.Dispatcher.Invoke(DispatcherPriority.Background, new Action(() => updateGUI()));
+        }
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void updateGUI()
+        {
+            ((GUIViewModel)this.DataContext).updateDataGraphs();
         }
 
         

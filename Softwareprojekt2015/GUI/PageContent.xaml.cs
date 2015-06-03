@@ -49,6 +49,8 @@ namespace NSA4Dummies
 
         private void btn_close_Click(object sender, RoutedEventArgs e)
         {
+            // Stop GUI timer
+            ((MainWindow)System.Windows.Application.Current.MainWindow).guiUpdateTimer.Stop();
             App.Current.Shutdown();
         }
 
@@ -63,10 +65,17 @@ namespace NSA4Dummies
 
         private void btn_normal_Click(object sender, RoutedEventArgs e)
         {
-
             foreach (Window window in App.Current.Windows)
             {
-                window.WindowState = WindowState.Normal;
+                if (window.WindowState != WindowState.Normal)
+                {
+                    window.WindowState = WindowState.Normal;
+                }
+                else
+                {
+                    window.WindowState = WindowState.Maximized;
+                }
+                
             }
 
         }

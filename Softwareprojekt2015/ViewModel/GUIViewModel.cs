@@ -19,7 +19,7 @@ namespace NSA4Dummies
         public List<double> FontSizes { get; set; }
         public List<double> DoughnutInnerRadiusRatios { get; set; }
         public List<string> SelectionBrushes { get; set; }
-        public ObservableCollection<string> ViewTypes { get; set; }
+        public ObservableCollectionEx<string> ViewTypes { get; set; }
         public Dictionary<string, De.TorstenMandelkow.MetroChart.ResourceDictionaryCollection> Palettes { get; set; }
 
 
@@ -50,7 +50,7 @@ namespace NSA4Dummies
             }
 
             // Update chart
-            Filetypes.Add(new TestClass() { Category = fileType, Number = FileTypes[fileType] });
+            // Filetypes.Add(new TestClass() { Category = fileType, Number = FileTypes[fileType] });
         }
 
 
@@ -74,7 +74,7 @@ namespace NSA4Dummies
             }
 
             // Update chart
-            TopWebsites.Add(new TestClass() { Category = domain, Number = Domains[domain] });
+            //TopWebsites.Add(new TestClass() { Category = domain, Number = Domains[domain] });
         }
 
         /// <summary>
@@ -94,7 +94,37 @@ namespace NSA4Dummies
             }
 
             // Update chart
-            EncryptionStatus.Add(new TestClass() { Category = "Unencrypted", Number = Encryption[1] });
+            //EncryptionStatus.Add(new TestClass() { Category = "Unencrypted", Number = Encryption[1] });
+        }
+
+
+        /// <summary>
+        /// This function is called whenever the graphs shall be updated
+        /// </summary>
+        public void updateDataGraphs()
+        {
+            Filetypes.Clear();
+            TopWebsites.Clear();
+            EncryptionStatus.Clear();
+
+            foreach (var d in Domains)
+            {
+                TopWebsites.Add(new TestClass() { Category = d.Key, Number = d.Value });
+            }
+
+            foreach (var f in FileTypes)
+            {
+                Filetypes.Add(new TestClass() { Category = f.Key, Number = f.Value });
+            }
+
+            int enc = 0;
+
+            if (Encryption[1] + Encryption[0] != 0)
+            {
+                enc = (int)(((float)Encryption[1] / ((float)Encryption[1] + (float)Encryption[0])) * 100);
+            }
+            
+            EncryptionStatus.Add(new TestClass() { Category = "Unencrypted", Number = enc });
         }
 
 
@@ -385,7 +415,7 @@ namespace NSA4Dummies
         int newSeriesCounter = 1;
         private void AddSeries()
         {
-            ObservableCollection<TestClass> data = new ObservableCollection<TestClass>();
+            ObservableCollectionEx<TestClass> data = new ObservableCollectionEx<TestClass>();
 
             data.Add(new TestClass() { Category = "Globalization", Number = 5 });
             data.Add(new TestClass() { Category = "Features", Number = 10 });
@@ -406,7 +436,7 @@ namespace NSA4Dummies
 
             //AddSeriesCommand = new DelegateCommand(x => AddSeries());
 
-            ViewTypes = new ObservableCollection<string>();
+            ViewTypes = new ObservableCollectionEx<string>();
             ViewTypes.Add("Map");
             ViewTypes.Add("Statistics");
             // ViewTypes.Add("Passwords");
@@ -441,6 +471,11 @@ namespace NSA4Dummies
             TopWebsites = new ObservableCollectionEx<TestClass>();
             EncryptionStatus = new ObservableCollectionEx<TestClass>();
             Filetypes = new ObservableCollectionEx<TestClass>();
+
+            // Disable Notifications of ObservableCollections
+            TopWebsites = TopWebsites.DisableNotifications();
+            EncryptionStatus = EncryptionStatus.DisableNotifications();
+            Filetypes = Filetypes.DisableNotifications();
 
             /*
             TopWebsites.Add(new TestClass() { Category = "facebook.com", Number = 75 });
