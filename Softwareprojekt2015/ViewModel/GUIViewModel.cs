@@ -439,7 +439,8 @@ namespace NSA4Dummies
             ViewTypes = new ObservableCollectionEx<string>();
             ViewTypes.Add("Map");
             ViewTypes.Add("Statistics");
-            // ViewTypes.Add("Passwords");
+            ViewTypes.Add("Settings");
+            ViewTypes.Add("Credits");
             SelectedChartType = ViewTypes.FirstOrDefault();
 
             FontSizes = new List<double>();
