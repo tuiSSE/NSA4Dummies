@@ -18,7 +18,7 @@ using System.Windows.Controls;
 
 #endif
 
-namespace Softwareprojekt2015
+namespace NSA4Dummies
 {
     public class StringToDataTemplateConverter : IValueConverter
     {

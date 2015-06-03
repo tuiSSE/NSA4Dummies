@@ -4,6 +4,8 @@
     <string id="ok">OK</string>
     <string id="cancel">Cancel</string>
     <string id="save">Save</string>
+    <string id="version">v0.1</string>
+    <string id="appName">NSA 4 Dummies</string>
   </category>
   <category name="settings">
     <string id="title">Settings</string>
@@ -36,9 +38,14 @@
   </category>
   <category name="mainWindow">
     <string id="windowTitle">No Such Application</string>
-    <string id="programName">NSA For Dummies</string>
-    <string id="programVersion">v0.0.0.1</string>
     <string id="buttonAbout">About</string>
     <string id="buttonOptions">Options</string>
+  </category>
+  <category name="taskIcon">
+    <string id="toolTip">No such Application</string>
+    <string id="startSniffer">Start network sniffing</string>
+    <string id="stopSniffer">Stop network sniffing</string>
+    <string id="settings">Settings</string>
+    <string id="exit">Exit application</string>
   </category>
 </root> 

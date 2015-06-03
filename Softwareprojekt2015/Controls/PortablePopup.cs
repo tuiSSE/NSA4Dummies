@@ -31,7 +31,7 @@ using System.Windows.Controls.Primitives;
 
 #endif
 
-namespace Softwareprojekt2015
+namespace NSA4Dummies
 {
     /// <summary>
     /// Layout aware page which can be used in SL, WinRT and WPF

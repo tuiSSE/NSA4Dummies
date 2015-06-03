@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 
-namespace Softwareprojekt2015
+namespace NSA4Dummies
 {
     public partial class PageContent
     {

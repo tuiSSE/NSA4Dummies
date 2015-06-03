@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Softwareprojekt2015{
+namespace NSA4Dummies{
 
     public static class IP2Country
     {

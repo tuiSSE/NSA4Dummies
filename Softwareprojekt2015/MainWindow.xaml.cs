@@ -16,7 +16,7 @@ using System.Windows.Shapes;
 using System.Windows.Threading;
 
 
-namespace Softwareprojekt2015
+namespace NSA4Dummies
 {
     /// <summary>
     /// Interaktionslogik für MainWindow.xaml

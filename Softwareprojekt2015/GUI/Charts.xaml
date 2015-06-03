@@ -1,7 +1,7 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:chart="clr-namespace:De.TorstenMandelkow.MetroChart;assembly=De.TorstenMandelkow.MetroChart"
-                    xmlns:local="clr-namespace:Softwareprojekt2015">
+                    xmlns:local="clr-namespace:NSA4Dummies">
 
     <local:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
     <local:StringToBrushConverter x:Key="StringToBrushConverter" />

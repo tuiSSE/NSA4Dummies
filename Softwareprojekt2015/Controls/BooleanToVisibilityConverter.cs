@@ -19,7 +19,7 @@ using System.Windows.Controls;
 
 #endif
 
-namespace Softwareprojekt2015
+namespace NSA4Dummies
 {
     public sealed class BooleanToVisibilityConverter : IValueConverter
     {

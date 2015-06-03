@@ -8,7 +8,7 @@ using System.ComponentModel;
 using System.Collections.ObjectModel;
 using System.Windows.Input;
 
-namespace Softwareprojekt2015
+namespace NSA4Dummies
 {
     public class GUIViewModel : INotifyPropertyChanged
     {

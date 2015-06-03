@@ -21,7 +21,7 @@ using System.Windows.Media;
 
 #endif
 
-namespace Softwareprojekt2015
+namespace NSA4Dummies
 {
     public class StringToBrushConverter : IValueConverter
     {

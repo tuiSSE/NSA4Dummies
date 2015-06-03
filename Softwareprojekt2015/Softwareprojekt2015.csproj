@@ -7,8 +7,8 @@
     <ProjectGuid>{D1708DE0-864C-4DD6-BD8B-EBC522B41BE7}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Softwareprojekt2015</RootNamespace>
-    <AssemblyName>Softwareprojekt2015</AssemblyName>
+    <RootNamespace>NSA4Dummies</RootNamespace>
+    <AssemblyName>NSA4Dummies</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>

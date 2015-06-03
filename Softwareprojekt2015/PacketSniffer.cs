@@ -12,7 +12,7 @@ using System.ComponentModel;
 using System.Threading;
 using System.Windows;
 
-namespace Softwareprojekt2015
+namespace NSA4Dummies
 {
     public class PacketSniffer
     {
@@ -57,13 +57,19 @@ namespace Softwareprojekt2015
 			snifferWorker.WorkerSupportsCancellation = true;
 			snifferWorker.DoWork += new DoWorkEventHandler(RunPacketSniffer);
 			snifferWorker.RunWorkerCompleted += new RunWorkerCompletedEventHandler(WorkerCompleted);
-            
-            
-            
 
             ewh = new EventWaitHandle(false, EventResetMode.AutoReset);
 
         }
+
+		/// <summary>
+		/// Returns wether or not the sniffer is currently running.
+		/// </summary>
+		/// <returns>true if sniffer is running or false otherwise</returns>
+		public bool SnifferRunning()
+		{
+			return snifferWorker.IsBusy;
+		}
 
         /// <summary>
         /// Gets called when the thread finishes it work or gets cancled and stops capturing of packets

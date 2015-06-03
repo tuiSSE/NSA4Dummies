@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="IPLookup" Class="IPLookupLINQDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\IPLookup.mdf;Integrated Security=True;Connect Timeout=30" SettingsObjectName="Softwareprojekt2015.Properties.Settings" SettingsPropertyName="IPLookupConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\IPLookup.mdf;Integrated Security=True;Connect Timeout=30" SettingsObjectName="NSA4Dummies.Properties.Settings" SettingsPropertyName="IPLookupConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.IPLookupTable" Member="IPLookupTable">
     <Type Name="IPLookupTable">
       <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />

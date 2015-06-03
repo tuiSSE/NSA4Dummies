@@ -8,7 +8,7 @@ using System.Windows.Media;
 using System.Windows;
 using System.ComponentModel;
 
-namespace Softwareprojekt2015
+namespace NSA4Dummies
 {
     public partial class WorldMap : INotifyPropertyChanged
     {

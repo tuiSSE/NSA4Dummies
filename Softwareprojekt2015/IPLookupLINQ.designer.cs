@@ -9,7 +9,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Softwareprojekt2015
+namespace NSA4Dummies
 {
 	using System.Data.Linq;
 	using System.Data.Linq.Mapping;
@@ -36,7 +36,7 @@ namespace Softwareprojekt2015
     #endregion
 		
 		public IPLookupLINQDataContext() : 
-				base(global::Softwareprojekt2015.Properties.Settings.Default.IPLookupConnectionString, mappingSource)
+				base(global::NSA4Dummies.Properties.Settings.Default.IPLookupConnectionString, mappingSource)
 		{
 			OnCreated();
 		}

@@ -1,4 +1,4 @@
-﻿<Window x:Class="Softwareprojekt2015.MainWindow"
+﻿<Window x:Class="NSA4Dummies.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="{Binding T[mainWindow.windowTitle]}"

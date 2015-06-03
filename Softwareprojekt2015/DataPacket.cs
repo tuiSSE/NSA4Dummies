@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Net;
 
-namespace Softwareprojekt2015
+namespace NSA4Dummies
 {
     [Serializable] class DataPacket
     {

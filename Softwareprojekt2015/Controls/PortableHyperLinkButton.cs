@@ -36,7 +36,7 @@ using System.Xml;
 #if SILVERLIGHT
 using System.Windows.Browser;
 #endif
-namespace Softwareprojekt2015
+namespace NSA4Dummies
 {
     public class PortableHyperLinkButton : Button
     {

@@ -1,7 +1,7 @@
-﻿<ResourceDictionary x:Class="Softwareprojekt2015.PageContent"
+﻿<ResourceDictionary x:Class="NSA4Dummies.PageContent"
                     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:local="clr-namespace:Softwareprojekt2015">
+                    xmlns:local="clr-namespace:NSA4Dummies">
     
     <!--
         \brief  This ResourceDictionary contains the main layout of the program window
@@ -112,8 +112,8 @@
                         Padding = "20 0 0 0"
                         HorizontalAlignment="Left">
                     <StackPanel Orientation="Horizontal">
-                        <TextBlock Foreground="{Binding Path=MainForeground}" VerticalAlignment="Bottom" x:Name="pageTitle" Text="{Binding T[mainWindow.programName]}" Style="{StaticResource PageHeaderTextStyle}" />
-                        <TextBlock Foreground="{Binding Path=MainForeground}" VerticalAlignment="Bottom" Margin="0 0 0 3" Opacity="0.75" Text="{Binding T[mainWindow.programVersion]}" Style="{StaticResource SectionHeaderSmallTextStyle}" />
+                        <TextBlock Foreground="{Binding Path=MainForeground}" VerticalAlignment="Bottom" x:Name="pageTitle" Text="{Binding T[general.appName]}" Style="{StaticResource PageHeaderTextStyle}" />
+                        <TextBlock Foreground="{Binding Path=MainForeground}" VerticalAlignment="Bottom" Margin="0 0 0 3" Opacity="0.75" Text="{Binding T[general.version]}" Style="{StaticResource SectionHeaderSmallTextStyle}" />
                     </StackPanel>
                 </Border>
 

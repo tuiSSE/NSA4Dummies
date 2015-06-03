@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Softwareprojekt2015.Properties {
+namespace NSA4Dummies.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]

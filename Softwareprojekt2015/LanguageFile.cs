@@ -8,7 +8,7 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Xml;
 
-namespace Softwareprojekt2015
+namespace NSA4Dummies
 {
 	public static class LanguageFile
 	{

@@ -10,8 +10,9 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Xml;
 using Hardcodet.Wpf.TaskbarNotification;
+using System.Windows.Controls;
 
-namespace Softwareprojekt2015
+namespace NSA4Dummies
 {
 	/// <summary>
 	/// Interaktionslogik für "App.xaml"
@@ -38,14 +39,13 @@ namespace Softwareprojekt2015
 
 			// Load settings...
 
-			string lan = Softwareprojekt2015.Properties.Settings.Default.lan;
+			string lan = NSA4Dummies.Properties.Settings.Default.lan;
 
 			// Load language file...
 
             translation = LanguageFile.GetTranslation(lan);
 
 			Sniffer.StartSniffer();
-
 		}
 
         private void Application_Exit(object sender, ExitEventArgs e)
@@ -53,6 +53,32 @@ namespace Softwareprojekt2015
             Sniffer.StopSniffer();
 
         }
+
+		private void ti_start_Click(object sender, RoutedEventArgs e)
+		{
+			if (!Sniffer.SnifferRunning())
+			{
+				Sniffer.StartSniffer();
+			}
+		}
+
+		private void ti_stop_Click(object sender, RoutedEventArgs e)
+		{
+			if (Sniffer.SnifferRunning())
+			{
+				Sniffer.StopSniffer();
+			}
+		}
+
+		private void ti_settings_Click(object sender, RoutedEventArgs e)
+		{
+
+		}
+
+		private void ti_exit_Click(object sender, RoutedEventArgs e)
+		{
+			this.Shutdown();
+		}
 
 	}
 }
