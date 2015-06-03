@@ -438,9 +438,9 @@ namespace NSA4Dummies
             SelectionBrushes.Add("[NoColor]");
             SelectedBrush = SelectionBrushes.FirstOrDefault();
 
-            TopWebsites = new ObservableCollection<TestClass>();
-            EncryptionStatus = new ObservableCollection<TestClass>();
-            Filetypes = new ObservableCollection<TestClass>();
+            TopWebsites = new ObservableCollectionEx<TestClass>();
+            EncryptionStatus = new ObservableCollectionEx<TestClass>();
+            Filetypes = new ObservableCollectionEx<TestClass>();
 
             /*
             TopWebsites.Add(new TestClass() { Category = "facebook.com", Number = 75 });
@@ -466,19 +466,19 @@ namespace NSA4Dummies
 
         }
 
-        public ObservableCollection<TestClass> TopWebsites
+        public ObservableCollectionEx<TestClass> TopWebsites
         {
             get;
             set;
         }
 
-        public ObservableCollection<TestClass> EncryptionStatus
+        public ObservableCollectionEx<TestClass> EncryptionStatus
         {
             get;
             set;
         }
 
-        public ObservableCollection<TestClass> Filetypes
+        public ObservableCollectionEx<TestClass> Filetypes
         {
             get;
             set;
