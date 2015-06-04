@@ -32,9 +32,9 @@ namespace NSA4Dummies
         //private CaptureFileWriterDevice captureFileWriter;
 
         /// <summary>
-        /// The most recently arrived packet
+        /// Queue of recent packets
         /// </summary>
-        private DataPacket currentPacket;
+        private Queue<DataPacket> packetQueue;
 
 
 		/// <summary>
@@ -59,6 +59,8 @@ namespace NSA4Dummies
 			snifferWorker.RunWorkerCompleted += new RunWorkerCompletedEventHandler(WorkerCompleted);
 
             ewh = new EventWaitHandle(false, EventResetMode.AutoReset);
+
+			packetQueue = new Queue<DataPacket>();
 
         }
 
@@ -152,15 +154,17 @@ namespace NSA4Dummies
 
                 ewh.WaitOne();
 
-                // Check if there is a cancellation request pending
-                if (snifferWorker.CancellationPending)
-                {
-                    e.Cancel = true;
-                    return;
-                }
+				while (0 != packetQueue.Count)
+				{
+					snifferWorker.ReportProgress(0, packetQueue.Dequeue());
+				}
 
-                snifferWorker.ReportProgress(0, currentPacket);
-                
+				// Check if there is a cancellation request pending
+				if (snifferWorker.CancellationPending)
+				{
+					e.Cancel = true;
+					return;
+				}
 
             }
 
@@ -177,7 +181,7 @@ namespace NSA4Dummies
         private void device_OnPacketArrival(object sender, CaptureEventArgs e)
         {
             //captureFileWriter.Write(e.Packet);
-            currentPacket = new DataPacket();
+            DataPacket currentPacket = new DataPacket();
 
             currentPacket.Length = e.Packet.Data.Length;
             currentPacket.Time = e.Packet.Timeval.Date;
@@ -207,8 +211,7 @@ namespace NSA4Dummies
                 currentPacket.Protocol = DataPacket.DataTransferProtocol.DTP_UDP;
             }
 
-
-
+			packetQueue.Enqueue(currentPacket);
 
             ewh.Set();
         }
