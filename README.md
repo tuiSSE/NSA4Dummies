@@ -10,6 +10,7 @@ This software is a sleek, intuitive application that shows unencrypted network t
 - [General](#general) 
 - [Minimum requirements](#minimum-requirements) 
 - [Copyright](#copyright)
+- [Limitation of liability](#limitation-of-liability)
 
 ## Quick start:
 
@@ -35,3 +36,11 @@ Windows 7
 - [World map](http://creativecommons.org/licenses/by-nc/4.0) converted from SVG to XAML
 - [IP2Location](http://lite.ip2location.com/database-ip-country#ipv4) converted from CSV to SQL
 - [Charts](https://modernuicharts.codeplex.com/license)
+
+
+##Limitation of liability
+
+No Software is without error. For that reason we don´t assume any liability for mistakes.
+University carry out research work with circumspection taking well-known status from science and technology as a basis. 
+Liability for defects will not taken. Especially liability for consequential damages (lost profits, property damage, etc.) is hereby excluded. 
+Otherwise liability is restricted on to deliberate and grossly negligent attempted damage.
