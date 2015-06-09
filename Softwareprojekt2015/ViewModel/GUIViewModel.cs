@@ -309,7 +309,7 @@ namespace NSA4Dummies
                 {
                     return "#FF00ff24";
                 }
-                return "#FF006666";
+                return "#FFFA611F";
             }
         }
         public string Background
@@ -320,7 +320,7 @@ namespace NSA4Dummies
                 {
                     return "#FF333333";
                 }
-                return "#FF6699CC";
+                return "#FF9AC9F8";
             }
         }
         public string MainBackground
@@ -331,7 +331,7 @@ namespace NSA4Dummies
                 {
                     return "#FF000000";
                 }
-                return "#FF003359";
+                return "#FF1E1E1E";
             }
         }
         public string MapDefaultColor
