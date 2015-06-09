@@ -592,6 +592,15 @@
             </propertyInstances>
           </stereotypeInstance>
         </appliedStereotypesInternal>
+        <suppliersInternal>
+          <interfaceRealization
+            Id="c6c98939-58a1-45f4-995f-f392f27ed903">
+            <interfaceMoniker
+              Id="a5f880cf-50cb-4642-9134-88d5c5cfef27"
+              LastKnownName="IDictionary&lt;String‎, UInt64‎&gt;"
+              LastKnownLocation="Package4_1748.uml" />
+          </interfaceRealization>
+        </suppliersInternal>
         <signatures>
           <templateBinding
             Id="f04b559e-5679-4820-8114-55e0b14f9e2c">

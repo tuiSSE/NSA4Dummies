@@ -5368,72 +5368,6 @@
             </relationshipOwnedElementsInternal>
           </association>
           <association
-            Id="ebe53401-d0e5-458a-8b82-035f97fc7efc"
-            isDerived="false"
-            sourceEndRoleName="GUIViewModel"
-            targetEndRoleName="ViewTypes"
-            isLeaf="false"
-            isAbstract="false">
-            <classMoniker
-              Id="aed5cfcb-727d-4212-be35-d0a71c7fe52f"
-              LastKnownName="ObservableCollectionEx&lt;String‎&gt;"
-              LastKnownLocation="Package10_1748.uml" />
-            <description>Property ViewTypes references type ObservableCollectionEx&lt;String‎&gt;.</description>
-            <relationshipOwnedElementsInternal>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="a1e8595f-3dea-4d97-a90f-7fb1f1a7a263"
-                  name="GUIViewModel"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="None"
-                  isComposite="false"
-                  isNavigableOwned="false">
-                  <lowerValueInternal>
-                    <literalString
-                      Id="1de65d4a-c310-4682-bf9f-cc34fbdb0a09"
-                      name="Lower"
-                      value="*" />
-                  </lowerValueInternal>
-                  <upperValueInternal>
-                    <literalString
-                      Id="f2fb7632-62f8-4daa-9dd6-022abe7c26d8"
-                      name="Upper"
-                      value="*" />
-                  </upperValueInternal>
-                </memberEnd>
-              </associationHasOwnedEnds>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="7f0fc4f3-8a02-43a6-8008-2d0c4288c662"
-                  name="ViewTypes"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="None"
-                  isComposite="false">
-                  <lowerValueInternal>
-                    <literalString
-                      Id="9f0973a5-e342-456b-a44d-5a76cef21c90"
-                      name="Lower"
-                      value="1" />
-                  </lowerValueInternal>
-                  <upperValueInternal>
-                    <literalString
-                      Id="d71d493d-bf4c-4161-83b1-5ba702964e65"
-                      name="Upper"
-                      value="1" />
-                  </upperValueInternal>
-                </memberEnd>
-              </associationHasOwnedEnds>
-            </relationshipOwnedElementsInternal>
-          </association>
-          <association
             Id="eea76f39-9774-4176-8fc2-946d1e0f2621"
             isDerived="false"
             sourceEndRoleName="GUIViewModel"
@@ -6028,7 +5962,139 @@
             </relationshipOwnedElementsInternal>
           </association>
           <association
-            Id="e0f70cf5-7621-4990-b8e7-e7d66ee2292f"
+            Id="83ac7caa-4d0d-4919-8d06-0e3b4c734084"
+            isDerived="false"
+            sourceEndRoleName="GUIViewModel"
+            targetEndRoleName="SelectedChartType"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="9931589b-4697-48aa-bf7f-9fae732182ec"
+              LastKnownName="ChartType"
+              LastKnownLocation="Package_1748.uml" />
+            <description>Property SelectedChartType references type ChartType.</description>
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="faf58872-6a11-401d-80f2-3810809f3cc7"
+                  name="GUIViewModel"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="b537923b-bb01-4f67-bb31-9efd770786a6"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="98d993a2-f427-40ce-9225-fa980581ab35"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="f8fe4e79-ae4c-43b3-9b8a-94cf110c40a4"
+                  name="SelectedChartType"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="4e6aa2e9-c70d-4512-809e-e26bb1aedecf"
+                      name="Lower"
+                      value="1" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="8022142d-818a-41a2-97d5-2bf8b19eb3bb"
+                      name="Upper"
+                      value="1" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="1a33f2eb-0cbc-437d-b6d2-4f32f7c75ce1"
+            isDerived="false"
+            sourceEndRoleName="GUIViewModel"
+            targetEndRoleName="ViewTypes"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="8fcaca4c-bf37-4b97-956a-f91b15a506f5"
+              LastKnownName="ObservableCollectionEx&lt;GUIViewModel‎‎.ChartType‎&gt;"
+              LastKnownLocation="Package10_1748.uml" />
+            <description>Property ViewTypes references type ObservableCollectionEx&lt;GUIViewModel‎‎.ChartType‎&gt;.</description>
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="e2198e6e-017b-4437-b18f-c87a9db413ff"
+                  name="GUIViewModel"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="b6a6e7b1-5eea-4f3d-aa04-040a90b21476"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="cfa4404d-f559-4bf8-b2d1-e383965930a7"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="f86a563a-0a8f-428b-8b10-9a3a8126b90f"
+                  name="ViewTypes"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="d91926b7-0014-450c-86ec-4f3d5ebaf18c"
+                      name="Lower"
+                      value="1" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="7ebf2f5b-5028-4928-aeab-d77ae04cfe85"
+                      name="Upper"
+                      value="1" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="a3173b1e-8ac8-4810-99ba-bdad7c87e08b"
             isDerived="false"
             sourceEndRoleName="GUIViewModel"
             targetEndRoleName="MainWindow"
@@ -6041,7 +6107,7 @@
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
                 <memberEnd
-                  Id="aa83649a-e076-4391-a050-cb1ae9657000"
+                  Id="d3267f68-e801-49e1-bf39-bfcd0119c660"
                   name="GUIViewModel"
                   isLeaf="false"
                   isStatic="false"
@@ -6054,7 +6120,7 @@
               </associationHasOwnedEnds>
               <associationHasOwnedEnds>
                 <memberEnd
-                  Id="69ef37d0-39e6-42b0-bfac-3c7f94b105aa"
+                  Id="f92f6e05-0ca4-465d-bb89-e3069f2347f6"
                   name="MainWindow"
                   isLeaf="false"
                   isStatic="false"
@@ -6383,8 +6449,8 @@
             </appliedStereotypesInternal>
             <type_NamedElement>
               <classMoniker
-                Id="aed5cfcb-727d-4212-be35-d0a71c7fe52f"
-                LastKnownName="ObservableCollectionEx&lt;String‎&gt;"
+                Id="8fcaca4c-bf37-4b97-956a-f91b15a506f5"
+                LastKnownName="ObservableCollectionEx&lt;GUIViewModel‎‎.ChartType‎&gt;"
                 LastKnownLocation="Package10_1748.uml" />
             </type_NamedElement>
           </property>
@@ -6622,10 +6688,10 @@
               </stereotypeInstance>
             </appliedStereotypesInternal>
             <type_NamedElement>
-              <primitiveTypeMoniker
-                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
-                LastKnownName="String"
-                LastKnownLocation="Feinentwurf.uml" />
+              <classMoniker
+                Id="9931589b-4697-48aa-bf7f-9fae732182ec"
+                LastKnownName="ChartType"
+                LastKnownLocation="Package_1748.uml" />
             </type_NamedElement>
           </property>
           <property
@@ -8503,10 +8569,10 @@
               </stereotypeInstance>
             </appliedStereotypesInternal>
             <type_NamedElement>
-              <primitiveTypeMoniker
-                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
-                LastKnownName="String"
-                LastKnownLocation="Feinentwurf.uml" />
+              <classMoniker
+                Id="9931589b-4697-48aa-bf7f-9fae732182ec"
+                LastKnownName="ChartType"
+                LastKnownLocation="Package_1748.uml" />
             </type_NamedElement>
           </property>
           <property
@@ -9790,7 +9856,7 @@
             </appliedStereotypesInternal>
           </operation>
           <operation
-            Id="f65035b6-1270-4f2f-bb8d-caf4391ce4e0"
+            Id="11861a8e-0b2e-4d46-9756-45eb3f85d023"
             name="GUIViewModel"
             isLeaf="false"
             isStatic="false"
@@ -9799,54 +9865,54 @@
             isQuery="false">
             <referencesInternal>
               <reference
-                Id="e534609b-8b52-43b2-96ee-8c3df2e38e8e"
+                Id="c1242133-8610-47a6-b817-3f710f3c6f24"
                 handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FD:%2FGitHub%2FSoftwareprojekt2015%2FSoftwareprojekt2015%2Fbin%2FDebug%2FNSA4Dummies.exe Namespace%3DNSA4Dummies Type%3DGUIViewModel Member%3D.ctor"
                 tag="ViewCode" />
             </referencesInternal>
             <appliedStereotypesInternal>
               <stereotypeInstance
-                Id="780eb354-0844-4f06-8b6f-fee659d9d0f2"
+                Id="eb4429ef-2077-42af-8d85-be496fb161a2"
                 name="method"
                 profile="CSharpProfile">
                 <propertyInstances>
                   <stereotypeInstanceHasPropertyInstances
-                    Id="4450b084-041e-4c45-a812-bf5d0bb86bfe">
+                    Id="2c08cebb-1215-4c1a-9e9a-a9011fbb65ee">
                     <propertyInstance
-                      Id="270f63cb-c21f-4726-9ceb-356b7889ea13"
+                      Id="05a47044-7b30-457c-b7f3-cc733cc36b9d"
                       name="ClrAttributes" />
                   </stereotypeInstanceHasPropertyInstances>
                   <stereotypeInstanceHasPropertyInstances
-                    Id="429d683a-5c29-4240-af2c-32d9fd97e1a9">
+                    Id="5004c890-3041-417c-a090-631f4140a97e">
                     <propertyInstance
-                      Id="b5099dc8-6487-4d30-96c7-b98dbce60e93"
+                      Id="94e4720c-ac05-448a-b38d-894b6af5f8fc"
                       name="IsPartial"
                       value="false" />
                   </stereotypeInstanceHasPropertyInstances>
                   <stereotypeInstanceHasPropertyInstances
-                    Id="e38fb7e9-0240-49fb-8dcc-cd0fd5040fac">
+                    Id="1b55f6e1-33db-4a1e-86fb-2aad6f5530a5">
                     <propertyInstance
-                      Id="b20e2e07-1c2b-47e9-96c1-794c212cfc9a"
+                      Id="69d96ecd-6e5a-4a25-b3d6-b4cbda3a0a30"
                       name="IsUnsafe"
                       value="false" />
                   </stereotypeInstanceHasPropertyInstances>
                   <stereotypeInstanceHasPropertyInstances
-                    Id="c0c7fefa-7f54-4c38-a0bd-126e72ea6aa2">
+                    Id="0f98158f-5c25-4969-8cc1-6e4ea721417c">
                     <propertyInstance
-                      Id="f336d44c-91fc-43a2-a1f9-31442261a196"
+                      Id="570ab1da-6e46-4634-ae1e-66f4cce52086"
                       name="Inheritance"
                       value="none" />
                   </stereotypeInstanceHasPropertyInstances>
                   <stereotypeInstanceHasPropertyInstances
-                    Id="99305f36-db8b-4ae1-a750-8dabc912864f">
+                    Id="df159777-b827-4a53-9d84-e56bcb8a9917">
                     <propertyInstance
-                      Id="c585506f-6e7f-4f13-b55a-18749b876de9"
+                      Id="4b39d9e7-f11d-4b80-a08a-486ea92f50a9"
                       name="PackageVisibility"
                       value="internal" />
                   </stereotypeInstanceHasPropertyInstances>
                   <stereotypeInstanceHasPropertyInstances
-                    Id="b95f7f62-4f15-429d-83a2-89dda979152e">
+                    Id="6c1daf1a-733a-4c18-b1fa-3ed37e52b39f">
                     <propertyInstance
-                      Id="a4d8296d-1fab-495c-b940-d682dc6f8014"
+                      Id="6e5f8eaa-ac55-49b4-8553-8f979a7d680c"
                       name="params"
                       value="false" />
                   </stereotypeInstanceHasPropertyInstances>
@@ -18544,6 +18610,57 @@
             </appliedStereotypesInternal>
           </operation>
         </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="9931589b-4697-48aa-bf7f-9fae732182ec"
+        name="ChartType"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="ac5b2795-7ba3-4a7e-b91f-b5065643d10f"
+            handle="viewcode://./CodeSchema_Struct?Assembly%3Dfile:%2F%2F%2FD:%2FGitHub%2FSoftwareprojekt2015%2FSoftwareprojekt2015%2Fbin%2FDebug%2FNSA4Dummies.exe Namespace%3DNSA4Dummies Type%3D(Name%3DChartType ParentType%3DGUIViewModel)"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="f8e4bf44-d043-4085-8fba-fe5e3767c3c5"
+            name="struct"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="f676bc91-ce41-4d4c-9fd4-2093396952c7">
+                <propertyInstance
+                  Id="020ea025-3d30-427a-bf27-c7c516d58cc0"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="d070bfc1-e452-4b43-a1eb-f21b131e8f41">
+                <propertyInstance
+                  Id="f1710847-afdc-471c-8c5f-36bb35f42b68"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="43dbf1b9-cb31-4070-bbdc-07573aad3488">
+                <propertyInstance
+                  Id="980716bf-6d7a-482a-9d3c-5469ec39af47"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="73b6d984-726c-4faf-864a-d0f959a4ae76">
+                <propertyInstance
+                  Id="95768369-e763-4a34-bc4d-6e285e009338"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
       </class>
     </packageHasNamedElement>
   </packagedElements>
