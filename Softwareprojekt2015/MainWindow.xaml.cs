@@ -114,7 +114,7 @@ namespace NSA4Dummies
         }
 
         /// <summary>
-        /// Let's the user move the window when not maximized
+        /// Lets the user move the window when not maximized
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
