@@ -112,5 +112,15 @@ namespace NSA4Dummies
 			((App)App.Current).Sniffer.AddPacketHandler(new ProgressChangedEventHandler(Update));
             
         }
+
+        /// <summary>
+        /// Let's the user move the window when not maximized
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Window_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            this.DragMove();
+        }
     }
 }
