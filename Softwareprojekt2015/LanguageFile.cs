@@ -10,12 +10,23 @@ using System.Xml;
 
 namespace NSA4Dummies
 {
+    /// <summary>
+    /// Class for handling language files
+    /// </summary>
 	public static class LanguageFile
 	{
-
+        /// <summary>
+        /// Substruct to keep track of languages
+        /// </summary>
 		public struct Language
 		{
+            /// <summary>
+            /// Full name of the language e.g. English
+            /// </summary>
 			public string name;
+            /// <summary>
+            /// Language abbreviation e.g. en
+            /// </summary>
 			public string sName;
 
 			public override string ToString()
@@ -25,6 +36,10 @@ namespace NSA4Dummies
 			}
 		}
 
+        /// <summary>
+        /// Gets all languages found in language folder of the application
+        /// </summary>
+        /// <returns>Returns an array of type LanguageFile.Language containing all found languages</returns>
 		public static Language[] GetLanguages()
 		{
 			string[] files = Directory.GetFiles(@"language\");
@@ -41,6 +56,11 @@ namespace NSA4Dummies
 
 		}
 
+        /// <summary>
+        /// Parses a languagefile and returns it as a Dictonary<string,string>
+        /// </summary>
+        /// <param name="language">The abbrevation of the language. This must match the language-files name e.g. for a file called en.lan use en</param>
+        /// <returns>Returns a Dictonary<string,string> containing all defined keys and the corresponding strings</returns>
 		public static Dictionary<string, string> GetTranslation(string language)
 		{
 			XmlDocument doc = new XmlDocument();
@@ -83,6 +103,12 @@ namespace NSA4Dummies
 			return translation;
 		}
 
+        /// <summary>
+        /// Constructs a LanguageFile.Language object from a given file and path
+        /// </summary>
+        /// <param name="doc">The xml document containing the language</param>
+        /// <param name="path">The name of the language file</param>
+        /// <returns></returns>
 		private static Language DetermineLanguage(XmlDocument doc, string path){
 
 			Language lan;

@@ -18,15 +18,11 @@ namespace NSA4Dummies
         {
             var comboBox = sender as ComboBox;
 
-            string value = comboBox.SelectedItem as string;
+            LanguageFile.Language value = (LanguageFile.Language)comboBox.SelectedItem;
 
-            if(value == "Deutsch"){
-                App.translation = LanguageFile.GetTranslation("de");
-            }
-            else if (value == "English")
-            {
-                App.translation = LanguageFile.GetTranslation("en");
-            }
+            
+            App.translation = LanguageFile.GetTranslation(value.sName);
+            
 
             foreach (Window w in App.Current.Windows)
             {
@@ -38,13 +34,12 @@ namespace NSA4Dummies
         {
             var comboBox = sender as ComboBox;
 
-            List<string> data = new List<string>();
-            data.Add("Deutsch");
-            data.Add("English");
+            LanguageFile.Language[] data = LanguageFile.GetLanguages();
 
             comboBox.ItemsSource = data;
 
-            // comboBox.SelectedIndex = 0;
+            comboBox.SelectedItem = App.CurrentLanguage;
+
         }
 
         private void btn_close_Click(object sender, RoutedEventArgs e)

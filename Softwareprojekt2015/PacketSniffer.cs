@@ -145,6 +145,11 @@ namespace NSA4Dummies
 			
 		}
 
+        /// <summary>
+        /// Contains the main loop of the sniffing thread and reports packets to all registert handlers
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void RunPacketSniffer(object sender, DoWorkEventArgs e)
         {
 
@@ -170,8 +175,6 @@ namespace NSA4Dummies
 
 
         }
-
-        private static int packetIndex = 0;
 
         /// <summary>
         /// Handles incoming packets and creates a DataPacket object and stores it in currentPacket.
@@ -235,7 +238,7 @@ namespace NSA4Dummies
         /// Registers a method handling incoming packets, methods registered before will not be overridden.
         /// When defining the handling method be aware that the progress will always be zero (0).
         /// </summary>
-        /// <param name="handler">A ProgressChangedEventHandler reciving a packet on arrivel.</param>
+        /// <param name="handler">A ProgressChangedEventHandler reciving a packet on arrival.</param>
 		public void AddPacketHandler(ProgressChangedEventHandler handler)
 		{
 			snifferWorker.ProgressChanged += handler;

@@ -15,22 +15,36 @@ using System.Windows.Controls;
 namespace NSA4Dummies
 {
 	/// <summary>
-	/// Interaktionslogik für "App.xaml"
+	/// Logic for "App.xaml"
 	/// </summary>
 	public partial class App : Application
 	{
-        private TaskbarIcon tb;
+        //private TaskbarIcon tb;
 
+        /// <summary>
+        /// Contains all strings in the currently chosen language
+        /// </summary>
 		public static Dictionary<string,string> translation;
 
+        /// <summary>
+        /// The actual sniffer
+        /// </summary>
 		public PacketSniffer Sniffer { get; set; }
 
+
+        /// <summary>
+        /// The currently selected language
+        /// </summary>
 		public static LanguageFile.Language CurrentLanguage
 		{
 			get;
 			set;
 		}
 
+
+        /// <summary>
+        /// Consturctor
+        /// </summary>
 		public App()
 		{
             
@@ -45,15 +59,30 @@ namespace NSA4Dummies
 
             translation = LanguageFile.GetTranslation(lan);
 
+            // Start network sniffing
 			Sniffer.StartSniffer();
 		}
 
+        /// <summary>
+        /// Gets called on application shutdown and stops the sniffer.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Application_Exit(object sender, ExitEventArgs e)
         {
-            Sniffer.StopSniffer();
+            if (Sniffer.SnifferRunning())
+            {
+                Sniffer.StopSniffer();
+            }
+            
 
         }
 
+        /// <summary>
+        /// Not used yet.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
 		private void ti_start_Click(object sender, RoutedEventArgs e)
 		{
 			if (!Sniffer.SnifferRunning())
@@ -62,6 +91,11 @@ namespace NSA4Dummies
 			}
 		}
 
+        /// <summary>
+        /// Not used yet.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
 		private void ti_stop_Click(object sender, RoutedEventArgs e)
 		{
 			if (Sniffer.SnifferRunning())
@@ -70,11 +104,21 @@ namespace NSA4Dummies
 			}
 		}
 
+        /// <summary>
+        /// Not used yet.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
 		private void ti_settings_Click(object sender, RoutedEventArgs e)
 		{
 
 		}
 
+        /// <summary>
+        /// Not used yet.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
 		private void ti_exit_Click(object sender, RoutedEventArgs e)
 		{
 			this.Shutdown();
