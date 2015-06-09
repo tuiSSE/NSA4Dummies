@@ -11,6 +11,7 @@ using System.Windows;
 using System.Xml;
 using Hardcodet.Wpf.TaskbarNotification;
 using System.Windows.Controls;
+using System.Threading;
 
 namespace NSA4Dummies
 {
@@ -41,6 +42,8 @@ namespace NSA4Dummies
 			set;
 		}
 
+        private bool languageFileMissing = false;
+
 
         /// <summary>
         /// Consturctor
@@ -55,12 +58,26 @@ namespace NSA4Dummies
 
 			string lan = NSA4Dummies.Properties.Settings.Default.lan;
 
-			// Load language file...
+            // Check if there is at least one language file existing
 
-            translation = LanguageFile.GetTranslation(lan);
+            if (null == LanguageFile.GetLanguages())
+            {
+                
+                languageFileMissing = true;
+                MessageBox.Show("There was no language file found! Please add one manually or reinstall the software.", "ERROR! No language file found", MessageBoxButton.OK, MessageBoxImage.Error);
 
-            // Start network sniffing
-			Sniffer.StartSniffer();
+            }
+            else
+            {
+                // Load language file...
+
+                translation = LanguageFile.GetTranslation(lan);
+
+                // Start network sniffing
+                Sniffer.StartSniffer();
+            }
+
+			
 		}
 
         /// <summary>
@@ -123,6 +140,18 @@ namespace NSA4Dummies
 		{
 			this.Shutdown();
 		}
+
+        private void Application_Startup(object sender, StartupEventArgs e)
+        {
+            //base.OnStartup(e);
+            if (languageFileMissing)
+            {
+                
+
+                this.Shutdown();
+            }
+        
+        }
 
 	}
 }
