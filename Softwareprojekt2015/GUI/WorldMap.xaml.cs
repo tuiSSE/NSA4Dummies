@@ -206,6 +206,7 @@ namespace NSA4Dummies
 
                 if (_shadingDictionary.ContainsKey(countryCode) && _pathDictionary.ContainsKey(countryCode))
                 {
+                    // Sets color for countries on worldmap
                     SolidColorBrush packageShading = new SolidColorBrush(Colors.Blue);
 
                     packageShading.Opacity = _shadingDictionary[countryCode];
@@ -246,7 +247,7 @@ namespace NSA4Dummies
 
             _shadingDictionary.Clear();
 
-            // Shade countires
+            // Shade countries
             foreach (var e in _mapDictionary)
             {
                 double opacity = (e.Value - minVal) / (maxVal - minVal);
