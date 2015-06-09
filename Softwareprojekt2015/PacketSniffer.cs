@@ -42,6 +42,8 @@ namespace NSA4Dummies
 		/// </summary>
 		private BackgroundWorker snifferWorker;
 
+        private static Mutex mut = new Mutex();
+
         /// <summary>
         /// Constructor.
         /// </summary>
@@ -133,7 +135,7 @@ namespace NSA4Dummies
                     }
 
                     // Limit the capturing process to IP and TCP packets.
-                    string filter = "tcp or udp";
+                    string filter = "ip and (tcp or udp)";
                     device.Filter = filter;
 
                     // Start the capturing process.
@@ -161,7 +163,9 @@ namespace NSA4Dummies
 
 				while (0 != packetQueue.Count)
 				{
+                    mut.WaitOne();
 					snifferWorker.ReportProgress(0, packetQueue.Dequeue());
+                    mut.ReleaseMutex();
 				}
 
 				// Check if there is a cancellation request pending
@@ -213,8 +217,9 @@ namespace NSA4Dummies
                 currentPacket.Data = udpPacket.PayloadData;
                 currentPacket.Protocol = DataPacket.DataTransferProtocol.DTP_UDP;
             }
-
+            mut.WaitOne();
 			packetQueue.Enqueue(currentPacket);
+            mut.ReleaseMutex();
 
             ewh.Set();
         }
