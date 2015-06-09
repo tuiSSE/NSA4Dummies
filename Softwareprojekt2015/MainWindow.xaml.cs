@@ -46,7 +46,7 @@ namespace NSA4Dummies
 
 
         /// <summary>
-        /// Handle all Window Update, required when a new packet arives here. Packet content can be accessed in e.UserState.
+        /// Handle all Window Update, required when a new packet arrives here. Packet content can be accessed in e.UserState.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>

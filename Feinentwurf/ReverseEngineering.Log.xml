@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="file:///C:/PROGRAM FILES (X86)/MICROSOFT VISUAL STUDIO 12.0/COMMON7/IDE/EXTENSIONS/MICROSOFT/ARCHITECTURE TOOLS/EXTENSIBILITY/Logging/ReverseEngineeringLog.xslt"?>
+<Log xmlns="http://schemas.microsoft.com/VisualStudio/2010/CodeGen.RE.Log" Label="Code Generation/Text Transformation Log">
+  <MessageClass Name="Message" Label="Message" Option="Show informational messages" />
+  <MessageClass Name="Warning" Label="Warning" Option="Show warnings" />
+  <MessageClass Name="Error" Label="Error" Option="Show errors" />
+  <MessageClass Name="Property" Label="Property" Option="Show metadata" />
+  <MessageClass Name="Diagnostic" Label="Message" Option="Show diagnostic messages" />
+  <Message Timestamp="2015-06-09T17:49:58" Importance="High" Text="Reverse Engineering Started." />
+  <Message Timestamp="2015-06-09T17:50:07" Importance="Diagnostic" Text="Element reverse engineered into the UML model: '55c19a4a-3c4b-4e9c-b5e3-5b7e602dc584' -  (ClassifierTemplateParameter)" />
+  <Message Timestamp="2015-06-09T17:50:07" Importance="Diagnostic" Text="Element reverse engineered into the UML model: '5b8968b3-2236-4bde-8085-7b3f7ce118e2' -  (ClassifierTemplateParameter)" />
+  <Message Timestamp="2015-06-09T17:50:07" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Boolean' -  (PrimitiveType)" />
+  <Message Timestamp="2015-06-09T17:50:07" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'cd02dd1e-ede8-4583-ab71-06bd73895439' -  (ClassifierTemplateParameter)" />
+  <Message Timestamp="2015-06-09T17:50:07" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Feinentwurf::NSA4Dummies' -  (Package)" />
+  <Message Timestamp="2015-06-09T17:50:07" Importance="Medium" Text="Element reverse engineered into the UML model: 'Feinentwurf::NSA4Dummies::WorldMap' -  (Class)" />
+  <Message Timestamp="2015-06-09T17:50:07" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Feinentwurf::NSA4Dummies::WorldMap::_contentLoaded' -  (Property)" />
+  <Message Timestamp="2015-06-09T17:50:07" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Feinentwurf::NSA4Dummies::WorldMap::_mapDictionary' -  (Property)" />
+  <Message Timestamp="2015-06-09T17:50:07" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Feinentwurf::NSA4Dummies::WorldMap::_pathDictionary' -  (Property)" />
+  <Message Timestamp="2015-06-09T17:50:07" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Feinentwurf::NSA4Dummies::WorldMap::_shadingDictionary' -  (Property)" />
+  <Message Timestamp="2015-06-09T17:50:07" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Feinentwurf::NSA4Dummies::WorldMap::addPackageToCountry' -  (Operation)" />
+  <Message Timestamp="2015-06-09T17:50:07" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Feinentwurf::NSA4Dummies::WorldMap::addPackageToCountry::IPAddress' -  (Parameter)" />
+  <Message Timestamp="2015-06-09T17:50:07" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Feinentwurf::NSA4Dummies::WorldMap::addPackageToCountryUpdate' -  (Operation)" />
+  <Message Timestamp="2015-06-09T17:50:07" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Feinentwurf::NSA4Dummies::WorldMap::addPackageToCountryUpdate::IPAddress' -  (Parameter)" />
+  <Message Timestamp="2015-06-09T17:50:07" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Feinentwurf::NSA4Dummies::WorldMap::cleanCountryCode' -  (Operation)" />
+  <Message Timestamp="2015-06-09T17:50:07" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Feinentwurf::NSA4Dummies::WorldMap::cleanCountryCode::code' -  (Parameter)" />
+  <Message Timestamp="2015-06-09T17:50:07" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Feinentwurf::NSA4Dummies::WorldMap::countryName' -  (Property)" />
+  <Message Timestamp="2015-06-09T17:50:07" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Feinentwurf::NSA4Dummies::WorldMap::CountryNameString' -  (Property)" />
+  <Message Timestamp="2015-06-09T17:50:07" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Feinentwurf::NSA4Dummies::WorldMap::defaultShading' -  (Property)" />
+  <Message Timestamp="2015-06-09T17:50:07" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Feinentwurf::NSA4Dummies::WorldMap::FindVisualChildren‎&lt;T‎&gt;' -  (Operation)" />
+  <Message Timestamp="2015-06-09T17:50:07" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Feinentwurf::NSA4Dummies::WorldMap::FindVisualChildren‎&lt;T‎&gt;::parent' -  (Parameter)" />
+  <Message Timestamp="2015-06-09T17:50:07" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Feinentwurf::NSA4Dummies::WorldMap::getData' -  (Operation)" />
+  <Message Timestamp="2015-06-09T17:50:07" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Feinentwurf::NSA4Dummies::WorldMap::getData::countryCode' -  (Parameter)" />
+  <Message Timestamp="2015-06-09T17:50:07" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Feinentwurf::NSA4Dummies::WorldMap::InitializeComponent' -  (Operation)" />
+  <Message Timestamp="2015-06-09T17:50:07" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Feinentwurf::NSA4Dummies::WorldMap::Map_Country_MouseEnter' -  (Operation)" />
+  <Message Timestamp="2015-06-09T17:50:07" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Feinentwurf::NSA4Dummies::WorldMap::Map_Country_MouseEnter::e' -  (Parameter)" />
+  <Message Timestamp="2015-06-09T17:50:07" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Feinentwurf::NSA4Dummies::WorldMap::Map_Country_MouseEnter::sender' -  (Parameter)" />
+  <Message Timestamp="2015-06-09T17:50:07" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Feinentwurf::NSA4Dummies::WorldMap::Map_Country_MouseLeave' -  (Operation)" />
+  <Message Timestamp="2015-06-09T17:50:07" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Feinentwurf::NSA4Dummies::WorldMap::Map_Country_MouseLeave::e' -  (Parameter)" />
+  <Message Timestamp="2015-06-09T17:50:07" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Feinentwurf::NSA4Dummies::WorldMap::Map_Country_MouseLeave::sender' -  (Parameter)" />
+  <Message Timestamp="2015-06-09T17:50:07" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Feinentwurf::NSA4Dummies::WorldMap::Map_OnLoaded' -  (Operation)" />
+  <Message Timestamp="2015-06-09T17:50:07" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Feinentwurf::NSA4Dummies::WorldMap::Map_OnLoaded::e' -  (Parameter)" />
+  <Message Timestamp="2015-06-09T17:50:07" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Feinentwurf::NSA4Dummies::WorldMap::Map_OnLoaded::sender' -  (Parameter)" />
+  <Message Timestamp="2015-06-09T17:50:07" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Feinentwurf::NSA4Dummies::WorldMap::mouseOverShading' -  (Property)" />
+  <Message Timestamp="2015-06-09T17:50:07" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Feinentwurf::NSA4Dummies::WorldMap::PropertyChanged' -  (Property)" />
+  <Message Timestamp="2015-06-09T17:50:07" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Feinentwurf::NSA4Dummies::WorldMap::setData' -  (Operation)" />
+  <Message Timestamp="2015-06-09T17:50:07" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Feinentwurf::NSA4Dummies::WorldMap::setData::countryCode' -  (Parameter)" />
+  <Message Timestamp="2015-06-09T17:50:07" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Feinentwurf::NSA4Dummies::WorldMap::setData::value' -  (Parameter)" />
+  <Message Timestamp="2015-06-09T17:50:07" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Feinentwurf::NSA4Dummies::WorldMap::System‎.Windows‎.Markup‎.IComponentConnector‎.Connect' -  (Operation)" />
+  <Message Timestamp="2015-06-09T17:50:07" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Feinentwurf::NSA4Dummies::WorldMap::System‎.Windows‎.Markup‎.IComponentConnector‎.Connect::connectionId' -  (Parameter)" />
+  <Message Timestamp="2015-06-09T17:50:07" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Feinentwurf::NSA4Dummies::WorldMap::System‎.Windows‎.Markup‎.IComponentConnector‎.Connect::target' -  (Parameter)" />
+  <Message Timestamp="2015-06-09T17:50:07" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Feinentwurf::NSA4Dummies::WorldMap::System‎.Windows‎.Markup‎.IStyleConnector‎.Connect' -  (Operation)" />
+  <Message Timestamp="2015-06-09T17:50:07" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Feinentwurf::NSA4Dummies::WorldMap::System‎.Windows‎.Markup‎.IStyleConnector‎.Connect::connectionId' -  (Parameter)" />
+  <Message Timestamp="2015-06-09T17:50:07" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Feinentwurf::NSA4Dummies::WorldMap::System‎.Windows‎.Markup‎.IStyleConnector‎.Connect::target' -  (Parameter)" />
+  <Message Timestamp="2015-06-09T17:50:07" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Feinentwurf::NSA4Dummies::WorldMap::updateCountries' -  (Operation)" />
+  <Message Timestamp="2015-06-09T17:50:07" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Feinentwurf::NSA4Dummies::WorldMap::updateCountry' -  (Operation)" />
+  <Message Timestamp="2015-06-09T17:50:07" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Feinentwurf::NSA4Dummies::WorldMap::updateCountry::countryCode' -  (Parameter)" />
+  <Message Timestamp="2015-06-09T17:50:07" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Feinentwurf::NSA4Dummies::WorldMap::WorldMap' -  (Operation)" />
+  <Message Timestamp="2015-06-09T17:50:07" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Feinentwurf::System' -  (Package)" />
+  <Message Timestamp="2015-06-09T17:50:07" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Feinentwurf::System::Collections' -  (Package)" />
+  <Message Timestamp="2015-06-09T17:50:07" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Feinentwurf::System::Collections::Generic' -  (Package)" />
+  <Message Timestamp="2015-06-09T17:50:07" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Feinentwurf::System::Collections::Generic::IDictionary' -  (Interface)   (partially reverse engineered - definition not updated) " />
+  <Message Timestamp="2015-06-09T17:50:07" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Feinentwurf::System::Collections::Generic::IDictionary&lt;String‎, Double‎&gt;' -  (Interface)   (partially reverse engineered - definition not updated) " />
+  <Message Timestamp="2015-06-09T17:50:07" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Feinentwurf::System::Collections::Generic::IDictionary&lt;String‎, Path‎&gt;' -  (Interface)   (partially reverse engineered - definition not updated) " />
+  <Message Timestamp="2015-06-09T17:50:07" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Feinentwurf::System::Collections::Generic::IDictionary&lt;String‎, UInt64‎&gt;' -  (Interface)   (partially reverse engineered - definition not updated) " />
+  <Message Timestamp="2015-06-09T17:50:07" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Feinentwurf::System::Collections::Generic::IEnumerable' -  (Interface)   (partially reverse engineered - definition not updated) " />
+  <Message Timestamp="2015-06-09T17:50:07" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Feinentwurf::System::Collections::Generic::IEnumerable&lt;T‎&gt;' -  (Interface)   (partially reverse engineered - definition not updated) " />
+  <Message Timestamp="2015-06-09T17:50:07" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Feinentwurf::System::ComponentModel' -  (Package)" />
+  <Message Timestamp="2015-06-09T17:50:07" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Feinentwurf::System::ComponentModel::INotifyPropertyChanged' -  (Interface)   (partially reverse engineered - definition not updated) " />
+  <Message Timestamp="2015-06-09T17:50:07" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Feinentwurf::System::ComponentModel::PropertyChangedEventHandler' -  (Class)   (partially reverse engineered - definition not updated) " />
+  <Message Timestamp="2015-06-09T17:50:07" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Feinentwurf::System::Double' -  (Class)   (partially reverse engineered - definition not updated) " />
+  <Message Timestamp="2015-06-09T17:50:07" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Feinentwurf::System::EventArgs' -  (Class)   (partially reverse engineered - definition not updated) " />
+  <Message Timestamp="2015-06-09T17:50:07" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Feinentwurf::System::Object' -  (Class)   (partially reverse engineered - definition not updated) " />
+  <Message Timestamp="2015-06-09T17:50:07" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Feinentwurf::System::UInt64' -  (Class)   (partially reverse engineered - definition not updated) " />
+  <Message Timestamp="2015-06-09T17:50:07" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Feinentwurf::System::Windows' -  (Package)" />
+  <Message Timestamp="2015-06-09T17:50:07" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Feinentwurf::System::Windows::DependencyObject' -  (Class)   (partially reverse engineered - definition not updated) " />
+  <Message Timestamp="2015-06-09T17:50:07" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Feinentwurf::System::Windows::Input' -  (Package)" />
+  <Message Timestamp="2015-06-09T17:50:07" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Feinentwurf::System::Windows::Input::MouseEventArgs' -  (Class)   (partially reverse engineered - definition not updated) " />
+  <Message Timestamp="2015-06-09T17:50:07" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Feinentwurf::System::Windows::Markup' -  (Package)" />
+  <Message Timestamp="2015-06-09T17:50:07" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Feinentwurf::System::Windows::Markup::IComponentConnector' -  (Interface)   (partially reverse engineered - definition not updated) " />
+  <Message Timestamp="2015-06-09T17:50:07" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Feinentwurf::System::Windows::Markup::IStyleConnector' -  (Interface)   (partially reverse engineered - definition not updated) " />
+  <Message Timestamp="2015-06-09T17:50:07" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Feinentwurf::System::Windows::Media' -  (Package)" />
+  <Message Timestamp="2015-06-09T17:50:07" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Feinentwurf::System::Windows::Media::SolidColorBrush' -  (Class)   (partially reverse engineered - definition not updated) " />
+  <Message Timestamp="2015-06-09T17:50:07" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Feinentwurf::System::Windows::ResourceDictionary' -  (Class)   (partially reverse engineered - definition not updated) " />
+  <Message Timestamp="2015-06-09T17:50:07" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Feinentwurf::System::Windows::Shapes' -  (Package)" />
+  <Message Timestamp="2015-06-09T17:50:07" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Feinentwurf::System::Windows::Shapes::Path' -  (Class)   (partially reverse engineered - definition not updated) " />
+  <Message Timestamp="2015-06-09T17:50:07" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Integer' -  (PrimitiveType)" />
+  <Message Timestamp="2015-06-09T17:50:07" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'String' -  (PrimitiveType)" />
+  <Message Timestamp="2015-06-09T17:50:07" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'T' -  (UndefinedType)" />
+  <Message Timestamp="2015-06-09T17:50:07" Importance="Diagnostic" Text="Relationship reverse engineered into the UML model: Feinentwurf::NSA4Dummies::WorldMap to Feinentwurf::System::Windows::Markup::IComponentConnector (InterfaceRealization)" />
+  <Message Timestamp="2015-06-09T17:50:07" Importance="Diagnostic" Text="Relationship reverse engineered into the UML model: Feinentwurf::NSA4Dummies::WorldMap to Feinentwurf::System::ComponentModel::INotifyPropertyChanged (InterfaceRealization)" />
+  <Message Timestamp="2015-06-09T17:50:07" Importance="Diagnostic" Text="Relationship reverse engineered into the UML model: Feinentwurf::NSA4Dummies::WorldMap to Feinentwurf::System::Windows::Markup::IStyleConnector (InterfaceRealization)" />
+  <Message Timestamp="2015-06-09T17:50:07" Importance="Diagnostic" Text="Relationship reverse engineered into the UML model: Feinentwurf::NSA4Dummies::WorldMap to Feinentwurf::System::Windows::ResourceDictionary (Generalization)" />
+  <Message Timestamp="2015-06-09T17:50:07" Importance="Diagnostic" Text="Relationship reverse engineered into the UML model: Feinentwurf::NSA4Dummies::PageContent to Feinentwurf::System::Windows::ResourceDictionary (Generalization)" />
+  <Message Timestamp="2015-06-09T17:50:07" Importance="High" Text="(1) type(s) fully reverse engineered." />
+  <Message Timestamp="2015-06-09T17:50:07" Importance="High" Text="(19) type(s) partially reverse engineered.  These types were not included in the original selection so their full definitions are not reverse engineered.  Instead, this shallow operation has simply ensured these types exist in the UML model because they are needed in order to fully describe other elements." />
+  <Message Timestamp="2015-06-09T17:50:07" Importance="High" Text="The reverse engineering operation completed with (0) error(s), and (0) warning(s)." />
+</Log>
