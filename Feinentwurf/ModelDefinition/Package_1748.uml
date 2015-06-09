@@ -14370,7 +14370,7 @@
         </generalsInternal>
         <targetEnds>
           <association
-            Id="2808cc52-3cc1-4fc5-b033-e190204d429f"
+            Id="dfb56c5b-6c06-4137-9c83-765a4291b885"
             isDerived="false"
             sourceEndRoleName="MainWindow"
             targetEndRoleName="App"
@@ -14383,7 +14383,7 @@
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
                 <memberEnd
-                  Id="a7493de7-c5ab-472f-bb49-b4e012299ff4"
+                  Id="2ec027f0-5c88-47e7-a5c7-a41c2a4d0ec5"
                   name="MainWindow"
                   isLeaf="false"
                   isStatic="false"
@@ -14396,7 +14396,7 @@
               </associationHasOwnedEnds>
               <associationHasOwnedEnds>
                 <memberEnd
-                  Id="dc309d36-0869-4572-aa7d-273f03270284"
+                  Id="c0cb9dba-83ff-437b-b244-47684673ad5f"
                   name="App"
                   isLeaf="false"
                   isStatic="false"
