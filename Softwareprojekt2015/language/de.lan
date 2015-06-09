@@ -41,6 +41,10 @@
     <string id="programName">NSA For Dummies</string>
     <string id="buttonAbout">Über</string>
     <string id="buttonOptions">Optionen</string>
+    <string id="map">Karte</string>
+    <string id="settings">Einstellungen</string>
+    <string id="stats">Statistik</string>
+    <string id="credits">Credits</string>
   </category>
   <category name="taskIcon">
     <string id="toolTip">No such Application</string>

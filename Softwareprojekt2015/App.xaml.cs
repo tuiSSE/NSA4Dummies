@@ -87,6 +87,7 @@ namespace NSA4Dummies
         /// <param name="e"></param>
         private void Application_Exit(object sender, ExitEventArgs e)
         {
+            
             if (Sniffer.SnifferRunning())
             {
                 Sniffer.StopSniffer();

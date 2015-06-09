@@ -20,6 +20,9 @@ namespace NSA4Dummies
 
             LanguageFile.Language value = (LanguageFile.Language)comboBox.SelectedItem;
 
+            Properties.Settings.Default.lan = value.sName;
+            Properties.Settings.Default.Save();
+
             
             App.translation = LanguageFile.GetTranslation(value.sName);
             

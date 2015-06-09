@@ -40,6 +40,10 @@
     <string id="windowTitle">No Such Application</string>
     <string id="buttonAbout">About</string>
     <string id="buttonOptions">Options</string>
+    <string id="map">Map</string>
+    <string id="settings">Settings</string>
+    <string id="stats">Statistic</string>
+    <string id="credits">Credits</string>
   </category>
   <category name="taskIcon">
     <string id="toolTip">No such Application</string>

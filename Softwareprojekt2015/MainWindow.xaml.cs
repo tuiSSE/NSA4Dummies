@@ -41,7 +41,7 @@ namespace NSA4Dummies
             // GUI update timer
             guiUpdateTimer.Elapsed += new ElapsedEventHandler(updateGUI);
             guiUpdateTimer.Interval = 1000; // 1000 ms is one second
-            guiUpdateTimer.Start();
+
         }
 
 
@@ -110,6 +110,7 @@ namespace NSA4Dummies
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
 			((App)App.Current).Sniffer.AddPacketHandler(new ProgressChangedEventHandler(Update));
+            guiUpdateTimer.Start();
             
         }
 

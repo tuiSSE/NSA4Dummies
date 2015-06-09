@@ -12,6 +12,47 @@ namespace NSA4Dummies
 {
     public class GUIViewModel : INotifyPropertyChanged
     {
+
+        public struct ChartType
+        {
+            public ChartType(string title, string key)
+            {
+                this.title = title;
+                this.key = key;
+            }
+
+            private string title;
+            private string key;
+
+            public string Title
+            {
+                get
+                {
+                    return title;
+                }
+                set
+                {
+                    title = value;
+                }
+            }
+            public string Key
+            {
+                get
+                {
+                    return key;
+                }
+                set
+                {
+                    key = value;
+                }
+            }
+
+            public override string ToString()
+            {
+                return Title;
+            }
+        }
+
         /*
          *  Public members
          * */
@@ -19,7 +60,7 @@ namespace NSA4Dummies
         public List<double> FontSizes { get; set; }
         public List<double> DoughnutInnerRadiusRatios { get; set; }
         public List<string> SelectionBrushes { get; set; }
-        public ObservableCollectionEx<string> ViewTypes { get; set; }
+        public ObservableCollectionEx<ChartType> ViewTypes { get; set; }
         public Dictionary<string, De.TorstenMandelkow.MetroChart.ResourceDictionaryCollection> Palettes { get; set; }
 
 
@@ -138,13 +179,12 @@ namespace NSA4Dummies
                 return App.translation;
             }
         }
- 
        
         /*
          *  selected layout elements
          * */
-        private string selectedChartType = null;
-        public string SelectedChartType
+        private ChartType selectedChartType;
+        public ChartType SelectedChartType
         {
             get
             {
@@ -436,11 +476,11 @@ namespace NSA4Dummies
 
             //AddSeriesCommand = new DelegateCommand(x => AddSeries());
 
-            ViewTypes = new ObservableCollectionEx<string>();
-            ViewTypes.Add("Map");
-            ViewTypes.Add("Statistics");
-            ViewTypes.Add("Settings");
-            ViewTypes.Add("Credits");
+            ViewTypes = new ObservableCollectionEx<ChartType>();
+            ViewTypes.Add(new ChartType(App.translation["mainWindow.map"], "Map"));
+            ViewTypes.Add(new ChartType(App.translation["mainWindow.stats"], "Statistics"));
+            ViewTypes.Add(new ChartType(App.translation["mainWindow.settings"], "Settings"));
+            ViewTypes.Add(new ChartType(App.translation["mainWindow.credits"], "Credits"));
             SelectedChartType = ViewTypes.FirstOrDefault();
 
             FontSizes = new List<double>();
@@ -472,6 +512,7 @@ namespace NSA4Dummies
             TopWebsites = new ObservableCollectionEx<TestClass>();
             EncryptionStatus = new ObservableCollectionEx<TestClass>();
             Filetypes = new ObservableCollectionEx<TestClass>();
+
 
             // Disable Notifications of ObservableCollections
             TopWebsites = TopWebsites.DisableNotifications();
