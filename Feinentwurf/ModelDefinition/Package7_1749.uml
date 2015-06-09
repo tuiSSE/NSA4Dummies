@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="8df63864-163e-4c45-9592-82aa482d8063"
+  name="LibPcap"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="45627244-d2f6-48ae-a28f-7b40e30c7863"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3DSharpPcap.LibPcap"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <class
+        Id="7419330f-d625-4cef-9804-73f0419f9aed"
+        name="LibPcapLiveDeviceList"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="a2054f1f-109e-47e3-b9ec-f24f7418de54"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FD:%2FGitHub%2FSoftwareprojekt2015%2FSoftwareprojekt2015%2FSharpPcap.dll Namespace%3DSharpPcap.LibPcap Type%3DLibPcapLiveDeviceList"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="91239dd3-6e00-4426-a8eb-70ce9dd4df62"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="179301e7-689a-4682-8b71-898e634aacc1">
+                <propertyInstance
+                  Id="6f0736dd-fca1-43f9-a732-2d737ee99e6c"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="9087386f-b77d-4176-bcb2-6e05864e2326">
+                <propertyInstance
+                  Id="4d490cf3-89ae-4442-8944-3794f70aad1e"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="11ef8c59-2198-4f4b-8d99-ba67e7d14ccd">
+                <propertyInstance
+                  Id="db228a5e-f176-46e2-947a-2d77a3a6e9d7"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="f6b65836-3059-47b3-a2f2-f11ee0753900">
+                <propertyInstance
+                  Id="107e0881-598f-4ca5-8456-2e64fc4bb470"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="8cda5a19-bd20-40e1-8ecf-ab4c40135db1">
+                <propertyInstance
+                  Id="846cd84b-74c1-4eb3-bf58-de4c669b0aff"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </class>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

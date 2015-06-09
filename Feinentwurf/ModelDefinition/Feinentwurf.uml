@@ -1,0 +1,2132 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="69fd64e8-c52a-42c2-9639-31ae636343fc"
+  name="Feinentwurf" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <profileInstances>
+    <packageHasProfileInstances
+      Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b">
+      <profileInstance
+        Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791"
+        name="StandardProfileL2" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances
+      Id="29349502-908c-4fda-9054-c48619c59ed0">
+      <profileInstance
+        Id="532ea607-fb19-44b8-8502-3351b05452be"
+        name="StandardProfileL3" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances
+      Id="f123311f-9420-475c-8a1f-f8c1dccd8b41">
+      <profileInstance
+        Id="a866007a-d7ae-44e8-a1f7-23de730d762c"
+        name="CSharpProfile" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="85c2a20b-bf69-42c3-bc3a-408b3eba6971"
+        LastKnownName="NSA4Dummies"
+        LastKnownLocation="Package_1748.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="d3a5397c-6312-4984-b039-75dc83a38424"
+        LastKnownName="System"
+        LastKnownLocation="Package1_1748.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="cd560756-f6cf-4286-bed1-eee15be3382e"
+        LastKnownName="De"
+        LastKnownLocation="Package11_1748.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="e7082bd3-37ea-402b-bbf8-1277fc8769a6"
+        LastKnownName="SharpPcap"
+        LastKnownLocation="Package6_1749.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="007f230e-8021-445b-9984-5520958db90d"
+        name="WorldMap1"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="f64fcfed-3054-4b2f-9395-5bbf8c3f5ffa"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FD:%2FGitHub%2FSoftwareprojekt2015%2FSoftwareprojekt2015%2Fbin%2FDebug%2FNSA4Dummies.exe Namespace%3DNSA4Dummies Type%3DWorldMap"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="bd14d9f0-d0ee-4f43-906b-09a7b7c26332"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="92040c6a-87e8-4791-b8c0-7848519aa64b">
+                <propertyInstance
+                  Id="e17945b9-e226-4de7-bf6d-edb315bb1ccf"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="c0b32559-1924-479f-af56-9c74c18b45a0">
+                <propertyInstance
+                  Id="6b133207-1293-486a-a4a0-c8195972b3dc"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="6ec676f5-86e2-4e13-bf3c-7e8060b64d21">
+                <propertyInstance
+                  Id="6840b694-42e4-4de3-86f4-0b1cd6e72668"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="bb9d9a28-9c8a-4619-9f03-31f3ea58740b">
+                <propertyInstance
+                  Id="1e0931eb-c4fa-4faa-a613-2a20e517d27a"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="15bce9d4-c1e6-4383-b78b-2d32938bc07b">
+                <propertyInstance
+                  Id="b866d538-d6ec-4f40-9e1a-7c55dbdd2a75"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <ownedAttributesInternal>
+          <property
+            Id="6524b21a-3407-4baa-b06e-89f4f2dbbb80"
+            name="CountryNameString"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="d3f79ff5-ef2d-4173-96ef-a9303b660530"
+                handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FD:%2FGitHub%2FSoftwareprojekt2015%2FSoftwareprojekt2015%2Fbin%2FDebug%2FNSA4Dummies.exe Namespace%3DNSA4Dummies Type%3DWorldMap Member%3DCountryNameString"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="5937ac73-8855-4319-9ce5-814cc075430a"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5fbda804-762b-4386-9a12-a60fa6ddf21e">
+                    <propertyInstance
+                      Id="92bf7e51-c875-4bad-b01d-7c1cf0ee8f90"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d634fe19-3b23-4214-8dc9-64b9239a8bf5">
+                    <propertyInstance
+                      Id="783873c6-21cf-429b-b9ff-23525073ae72"
+                      name="Get"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ac651856-1f50-4a66-9c18-bc8157c0be68">
+                    <propertyInstance
+                      Id="e75f4312-4b84-4299-b249-9d3120a16603"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="02b71dc5-f06b-49ef-bf17-11a0e8a221ca">
+                    <propertyInstance
+                      Id="3b7e951f-4272-4267-ad70-5847fa42175e"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1663f4c0-30f3-4396-b4fb-9a3b48f1c641">
+                    <propertyInstance
+                      Id="53c45a91-443d-4c7f-b689-483eff4563d0"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8150a463-ef6b-41ae-800c-11f2cb054494">
+                    <propertyInstance
+                      Id="d7d28535-1add-4a06-9582-fefbae8c1550"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="006f1a3c-13a1-433b-8c49-71342ae27066">
+                    <propertyInstance
+                      Id="cb03b93a-a306-4fe3-af46-2ee8d90afdd4"
+                      name="Set"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                LastKnownName="String"
+                LastKnownLocation="Feinentwurf.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="b4427139-f45e-4d0a-92c2-be37e2998961"
+            name="PropertyChanged"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="f1db03df-de31-401a-988f-ba673d7ccf5e"
+                handle="viewcode://./CodeSchema_Event?Assembly%3Dfile:%2F%2F%2FD:%2FGitHub%2FSoftwareprojekt2015%2FSoftwareprojekt2015%2Fbin%2FDebug%2FNSA4Dummies.exe Namespace%3DNSA4Dummies Type%3DWorldMap Member%3DPropertyChanged"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="050f8a3b-ed0e-400f-a238-f07a8860bc50"
+                name="event"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="56253649-8692-4b05-9a87-d1d82a57e9f0">
+                    <propertyInstance
+                      Id="14320daa-e832-4f51-8548-1e68572df60e"
+                      name="Add"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="3b32afbf-1011-4070-aac7-e6f3c33f662f">
+                    <propertyInstance
+                      Id="7c63c307-f92f-47f3-9463-c459e2f68408"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="cb565a4a-63c3-4efb-a8bd-ddc8e8aa8ea1">
+                    <propertyInstance
+                      Id="23e4aefa-090c-465f-828d-8c66870ac3f7"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5a4d0f37-743d-4a4e-9fb7-a6c3f601082f">
+                    <propertyInstance
+                      Id="7b2d8e73-de54-408c-8de4-ba0612921ff7"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="194152bf-acee-425f-8efe-86037fb5c404">
+                    <propertyInstance
+                      Id="5df16851-854a-4c1a-a22e-c762bec7c7f9"
+                      name="Remove"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="c8b1487a-cc2b-4ffb-93f1-54de159cbf95"
+                LastKnownName="PropertyChangedEventHandler"
+                LastKnownLocation="Package14_1748.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="125872c2-a43e-4b59-afc4-0d2b13ec2a80"
+            name="_contentLoaded"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="e53681be-949d-46b0-a839-85a6f0ee5bdc"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FD:%2FGitHub%2FSoftwareprojekt2015%2FSoftwareprojekt2015%2Fbin%2FDebug%2FNSA4Dummies.exe Namespace%3DNSA4Dummies Type%3DWorldMap Member%3D_contentLoaded"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="06c08d23-3d3c-4465-b621-3d5eb08388eb"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2bd72922-86fd-4ffc-b25d-7a21ee5b7b3f">
+                    <propertyInstance
+                      Id="8f669b13-5d9f-4895-9339-f7a71ec319c4"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b776361e-a86b-4e96-ad66-957fea58ca2c">
+                    <propertyInstance
+                      Id="3443404b-9121-4203-b74e-dbacf495be21"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="16145c84-7244-4e25-b384-6ff5dc17e1de">
+                    <propertyInstance
+                      Id="bd9616af-6f9e-468c-abef-fef4ff001776"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="644f35b9-6f28-48b3-b6ac-7bc2666e4e0c">
+                    <propertyInstance
+                      Id="eab461ae-6df2-4443-8ee2-62e2d63077bf"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="3527a777-f359-4432-a4cf-9cc7dabb2d6e">
+                    <propertyInstance
+                      Id="d49698a1-e410-4a3e-8966-6a30ef055fd5"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+                LastKnownName="Boolean"
+                LastKnownLocation="Feinentwurf.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="ab2ad08c-564c-44a8-955c-1d44007d3e6b"
+            name="_mapDictionary"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="true"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="566a543c-9475-46dc-a096-b67626b620bf"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FD:%2FGitHub%2FSoftwareprojekt2015%2FSoftwareprojekt2015%2Fbin%2FDebug%2FNSA4Dummies.exe Namespace%3DNSA4Dummies Type%3DWorldMap Member%3D_mapDictionary"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="58113c49-7cb9-4465-92da-3dbdf2f09597"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d579c21d-eb10-4a17-ad94-20d782318bea">
+                    <propertyInstance
+                      Id="4c457b59-a6e7-4edd-b4ae-228133128156"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="80fae534-1c49-4e89-8922-ae627e377b12">
+                    <propertyInstance
+                      Id="b8c16f88-5a0d-41c9-a492-402d546c4ff6"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b15b8a16-faa2-4484-94a5-b8fe507b3943">
+                    <propertyInstance
+                      Id="7e1d0c3f-074c-4fa2-bef9-38a63fa6c076"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="20884499-df17-4e2b-a34d-fc243d7a338b">
+                    <propertyInstance
+                      Id="78c4b4d0-17a9-4f7e-9779-025d3392efe8"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="aeabc087-8572-4dbf-ac99-b836c3cb8331">
+                    <propertyInstance
+                      Id="bb04de13-f508-4778-a122-84d1aa9f5ed8"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <interfaceMoniker
+                Id="a5f880cf-50cb-4642-9134-88d5c5cfef27"
+                LastKnownName="IDictionary&lt;String‎, UInt64‎&gt;"
+                LastKnownLocation="Package4_1748.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="2febd914-50e6-44da-8812-4972ff54e624"
+            name="_pathDictionary"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="true"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="eccf0f2a-f8fc-4ceb-850d-128370c73f0b"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FD:%2FGitHub%2FSoftwareprojekt2015%2FSoftwareprojekt2015%2Fbin%2FDebug%2FNSA4Dummies.exe Namespace%3DNSA4Dummies Type%3DWorldMap Member%3D_pathDictionary"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="35143574-6ec3-42d9-8b59-b6e46d139188"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="96c02f93-6fb2-47a5-b166-21fd45cdfcc7">
+                    <propertyInstance
+                      Id="71598652-89af-488c-a456-16129db0deba"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="96947aeb-8763-4675-9cc6-4b1cd9f013f3">
+                    <propertyInstance
+                      Id="105c2499-88e3-47dc-9405-debd2716e2fe"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="99883fa5-df6c-4746-a1b3-f19ec88e1fbe">
+                    <propertyInstance
+                      Id="5d7fcc3a-234b-4d9a-a6e1-51011e9743c8"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="bedc5473-dd66-4391-882a-998ebcb139d5">
+                    <propertyInstance
+                      Id="da1f3393-67fa-43ec-9af7-85ff32f9937c"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="211c58c5-8f26-442e-a349-9788271b8943">
+                    <propertyInstance
+                      Id="3ccfa071-331b-4769-97e6-11fa7b8542a8"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <interfaceMoniker
+                Id="4f666b1f-bfbd-4bbe-9572-28a2e2d26bdf"
+                LastKnownName="IDictionary&lt;String‎, Path‎&gt;"
+                LastKnownLocation="Package4_1748.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="3f430d3f-d52f-4a2a-943e-3b0ece72e3af"
+            name="_shadingDictionary"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="true"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="850351e1-4d22-4fa3-9514-f173226b9a8d"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FD:%2FGitHub%2FSoftwareprojekt2015%2FSoftwareprojekt2015%2Fbin%2FDebug%2FNSA4Dummies.exe Namespace%3DNSA4Dummies Type%3DWorldMap Member%3D_shadingDictionary"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="7cb89d36-ae63-4d28-b103-3166ace6247b"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f36f7992-7b1e-44fb-a2af-c9e2be542a0f">
+                    <propertyInstance
+                      Id="c9fae8e6-33f2-4139-a63d-70cd4e609e38"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f495966c-2d3e-4354-a27b-4f824ad8e489">
+                    <propertyInstance
+                      Id="a078d8a7-8d58-47f3-9d32-af4430682fba"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ce44b6ba-6fdd-4168-bd88-54e3b1c9dccf">
+                    <propertyInstance
+                      Id="ff681770-09fd-4367-a18e-d7e35b3bc989"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b59a50a3-a733-4997-bd8e-5b0e184929c6">
+                    <propertyInstance
+                      Id="2879d1ad-e3b3-421d-ae3d-530495010572"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a2632543-e8f6-4ea8-ba2b-70b1203bb7f4">
+                    <propertyInstance
+                      Id="8c94566e-c63e-4500-a032-8bb12dc91c41"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <interfaceMoniker
+                Id="5f2f189b-21f9-4681-b932-25cae9fc6dcf"
+                LastKnownName="IDictionary&lt;String‎, Double‎&gt;"
+                LastKnownLocation="Package4_1748.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="867703b5-d972-4691-a1bc-62bd429fa7cf"
+            name="countryName"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="1e8460a4-d855-45f9-b346-d04060327cc6"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FD:%2FGitHub%2FSoftwareprojekt2015%2FSoftwareprojekt2015%2Fbin%2FDebug%2FNSA4Dummies.exe Namespace%3DNSA4Dummies Type%3DWorldMap Member%3DcountryName"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="badc5510-4ea9-4f41-91b6-e8ff3ca23779"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="05ad645a-c591-475c-9d9d-02e9db8c5dab">
+                    <propertyInstance
+                      Id="ad63dd39-c1e5-44f7-9d51-85dea2e2a7bf"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="dffce2c3-7885-44ab-bdcd-c5a0612168a5">
+                    <propertyInstance
+                      Id="e0d5288d-ace8-4caf-8aad-e7de0b706615"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="45195a2c-15db-4f8a-ad53-b3376236cf82">
+                    <propertyInstance
+                      Id="6fb060da-af25-40d2-bd43-799bbc383026"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ee4491dc-8483-4149-a83a-ffd5b76ed424">
+                    <propertyInstance
+                      Id="3e4553b2-359a-41d7-a45f-e96c973ae291"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="523e1dea-14a3-4c79-9c43-aa3cdc4693bf">
+                    <propertyInstance
+                      Id="5d4c1b5d-05b7-4438-8c00-93380e6d1cda"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                LastKnownName="String"
+                LastKnownLocation="Feinentwurf.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="733c31f9-5cbf-4977-a4c2-e58375e6c089"
+            name="defaultShading"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="true"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="e311eb22-ca4c-408d-8fa1-1f0917bfe929"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FD:%2FGitHub%2FSoftwareprojekt2015%2FSoftwareprojekt2015%2Fbin%2FDebug%2FNSA4Dummies.exe Namespace%3DNSA4Dummies Type%3DWorldMap Member%3DdefaultShading"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="5e129411-c3f9-45a0-9349-ac9dc088eeda"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a9c1f872-e9c2-4e63-b26f-a8bad61d460d">
+                    <propertyInstance
+                      Id="13470c38-fabe-448d-8b05-a57d36822069"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f6e4272f-b190-49c7-accb-fe7fb3986182">
+                    <propertyInstance
+                      Id="c512ab7d-0dcb-48ba-be65-6cad612bde35"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="3ccb8439-71be-479e-850a-34345cac8463">
+                    <propertyInstance
+                      Id="c11fddb6-f96a-4149-a6f6-1870b29a2d34"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="3570138f-680b-476d-a862-8e66d53216e2">
+                    <propertyInstance
+                      Id="434319e2-38e9-44cd-a5c5-1e0e5dbde847"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0da03fe5-0dc3-4366-8754-c3238a13ea4a">
+                    <propertyInstance
+                      Id="830f6a64-c435-40a5-8eca-abaa9cdaf9d3"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="ffc005ee-12cd-4625-9e44-30a979f833ea"
+                LastKnownName="SolidColorBrush"
+                LastKnownLocation="Package1_1750.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="80afee12-2933-4bd3-bfbe-0381d9ea6d8a"
+            name="mouseOverShading"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="true"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="e5d86517-f559-4f14-938c-adb6edc622c1"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FD:%2FGitHub%2FSoftwareprojekt2015%2FSoftwareprojekt2015%2Fbin%2FDebug%2FNSA4Dummies.exe Namespace%3DNSA4Dummies Type%3DWorldMap Member%3DmouseOverShading"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="cf732c4e-defc-474e-bda4-1d8fe3340768"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e4179cf3-bde5-4888-bfce-4be9f3512253">
+                    <propertyInstance
+                      Id="1ef4c279-e73d-4060-9988-c0c7d7ba2877"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f1ed8014-39d6-47e4-ad43-f65a47fae952">
+                    <propertyInstance
+                      Id="2583cec0-2b77-4e9d-9408-a5ae8db6f758"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="eb274565-449c-40f2-8f33-d291aa813215">
+                    <propertyInstance
+                      Id="d33b92e6-5e6f-4877-ab9a-9e68b7752b3a"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="9de58d89-da52-44ac-9234-dc3cf73a089b">
+                    <propertyInstance
+                      Id="5e0c17de-83b1-4a29-9a7a-0c02ae577e0e"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="25b76d5f-3380-41f3-ae38-d8aa96017dd8">
+                    <propertyInstance
+                      Id="9f3d7ff1-44e8-4d30-8f4a-92f0bcbad382"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="ffc005ee-12cd-4625-9e44-30a979f833ea"
+                LastKnownName="SolidColorBrush"
+                LastKnownLocation="Package1_1750.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="6b2d50cb-2b08-48dc-8cf5-d0568ecb3f98"
+            name="FindVisualChildren‎&lt;T‎&gt;"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="true"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="6d0f2cca-cd14-4579-9fba-eb0f89c4cb09"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FD:%2FGitHub%2FSoftwareprojekt2015%2FSoftwareprojekt2015%2Fbin%2FDebug%2FNSA4Dummies.exe Namespace%3DNSA4Dummies Type%3DWorldMap Member%3D(Name%3DFindVisualChildren GenericParameterCount%3D1 OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2FWindowsBase.dll&quot; Namespace%3DSystem.Windows Type%3DDependencyObject)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="ab85916c-6d44-4a2a-a820-ad48f82a9c80"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2cc94518-2769-4ef4-8f1d-3db92662550c">
+                    <propertyInstance
+                      Id="1b2da709-db01-4f5d-a8d1-af2a96993871"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f45d6011-38bc-498b-8449-358d579b6118">
+                    <propertyInstance
+                      Id="60f86aaf-b99e-4476-a8b0-ecf46261b0c1"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="cab6d8c9-b766-45d7-947e-c0c7f6156469">
+                    <propertyInstance
+                      Id="50072728-06ab-452a-890e-b25f4c02d781"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="14fe7840-bce7-46e7-abdb-a0bf2ecd2968">
+                    <propertyInstance
+                      Id="4bc11b5b-5a00-4335-86aa-151903bbad4d"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="405d26ea-5c28-44f0-8507-cef58d0758aa">
+                    <propertyInstance
+                      Id="c330ec99-7dd0-47db-9da6-bb9bcd5e4ede"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f76e5107-3cac-4c5b-8ca9-fa52d634d3b6">
+                    <propertyInstance
+                      Id="c2e39c5c-cf2a-4d71-80d8-4e547b020207"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="2c39f85c-302a-4638-ac5d-becf22a61d24"
+                  direction="Return">
+                  <type_NamedElement>
+                    <interfaceMoniker
+                      Id="a4003f08-ddb7-4991-b99a-901cfa94f73d"
+                      LastKnownName="IEnumerable&lt;T‎&gt;"
+                      LastKnownLocation="Package4_1748.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="84971040-f377-484e-a191-b410cd9e4d9f"
+                  name="parent"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="00ce6c6d-e6d1-4ac9-bc5c-6f0b46c7001d"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FD:%2FGitHub%2FSoftwareprojekt2015%2FSoftwareprojekt2015%2Fbin%2FDebug%2FNSA4Dummies.exe Namespace%3DNSA4Dummies Type%3DWorldMap Member%3D(Name%3DFindVisualChildren GenericParameterCount%3D1 OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2FWindowsBase.dll&quot; Namespace%3DSystem.Windows Type%3DDependencyObject)]) ParameterIdentifier%3Dparent"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="6045336e-fdb3-4f4f-bf7c-8f76e8bbd9bd"
+                      LastKnownName="DependencyObject"
+                      LastKnownLocation="Package2_1748.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="7d66beee-bca1-4c08-b75e-bf43bac6171d"
+            name="Map_Country_MouseEnter"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="77cb4072-a916-4709-bcec-a25f24e1c568"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FD:%2FGitHub%2FSoftwareprojekt2015%2FSoftwareprojekt2015%2Fbin%2FDebug%2FNSA4Dummies.exe Namespace%3DNSA4Dummies Type%3DWorldMap Member%3D(Name%3DMap_Country_MouseEnter OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DObject)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2FPresentationCore.dll&quot; Namespace%3DSystem.Windows.Input Type%3DMouseEventArgs)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="0155974d-55f6-423b-8937-2100455f0a40"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="915d0bc2-2335-4f96-b77c-f27b4945a15d">
+                    <propertyInstance
+                      Id="c17a6d55-d3db-4385-afae-0b99b7a68c88"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="98bc9bd9-f5ef-4274-a5fc-3eb06f54ae75">
+                    <propertyInstance
+                      Id="9e56ff5f-bf68-4a52-a91d-dc7b80b6cf85"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1ab9f142-2569-4a89-b827-e007966e573f">
+                    <propertyInstance
+                      Id="46cd9648-b6ac-49f3-b252-f59ec997f2b6"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5b609044-d248-4242-8ab1-b487f33420d5">
+                    <propertyInstance
+                      Id="d2d53d53-6687-497d-9f33-3033c3e7f4ed"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ddc40e16-f2bb-45a4-ae63-2ba32f6ebbde">
+                    <propertyInstance
+                      Id="73bcbdba-af39-4b94-a97a-f0d71d0058d5"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="fd06c19d-f02e-4eaa-904f-2a48d0438910">
+                    <propertyInstance
+                      Id="f5155f93-5153-4498-8c1f-e6240371e762"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="b7b98d14-ea56-4e6d-a226-1e1e161f3dc3"
+                  name="sender"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="acaa6c41-829e-4b18-a3c0-f3d38a920a8e"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FD:%2FGitHub%2FSoftwareprojekt2015%2FSoftwareprojekt2015%2Fbin%2FDebug%2FNSA4Dummies.exe Namespace%3DNSA4Dummies Type%3DWorldMap Member%3D(Name%3DMap_Country_MouseEnter OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DObject)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2FPresentationCore.dll&quot; Namespace%3DSystem.Windows.Input Type%3DMouseEventArgs)]) ParameterIdentifier%3Dsender"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="4209ec89-d5ee-460b-9556-15de34a391fa"
+                      LastKnownName="Object"
+                      LastKnownLocation="Package1_1748.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="5d735f41-0548-4cc9-a96e-599d5ccdfb5f"
+                  name="e"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="e2eed496-b43a-45e7-9f49-246eddf2c810"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FD:%2FGitHub%2FSoftwareprojekt2015%2FSoftwareprojekt2015%2Fbin%2FDebug%2FNSA4Dummies.exe Namespace%3DNSA4Dummies Type%3DWorldMap Member%3D(Name%3DMap_Country_MouseEnter OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DObject)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2FPresentationCore.dll&quot; Namespace%3DSystem.Windows.Input Type%3DMouseEventArgs)]) ParameterIdentifier%3De"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="36b319a8-21c6-4b77-a332-a99129788e7d"
+                      LastKnownName="MouseEventArgs"
+                      LastKnownLocation="Package9_1748.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="be0fcb7f-43e7-414d-9766-a181a769a9a6"
+            name="Map_Country_MouseLeave"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="f7264fad-100a-45d6-b607-4c892465ad47"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FD:%2FGitHub%2FSoftwareprojekt2015%2FSoftwareprojekt2015%2Fbin%2FDebug%2FNSA4Dummies.exe Namespace%3DNSA4Dummies Type%3DWorldMap Member%3D(Name%3DMap_Country_MouseLeave OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DObject)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2FPresentationCore.dll&quot; Namespace%3DSystem.Windows.Input Type%3DMouseEventArgs)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="031f323d-bb6a-4a76-953e-12b31c04a7c4"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="dd71ef5c-5229-4510-a5d2-1f302baecc72">
+                    <propertyInstance
+                      Id="b61b8ccd-5f96-4deb-835c-5ea0af2226d2"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f9f8502a-4499-4665-a6e8-a1670d68f082">
+                    <propertyInstance
+                      Id="0f0eede1-9a34-4816-a539-8fb1e171dfe3"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c1426850-a431-49d9-93e5-373023f260c1">
+                    <propertyInstance
+                      Id="aebfe829-c62b-4f95-94c1-5165a6910dde"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="7465d2b9-b074-4ad3-93d5-8941a29b15c3">
+                    <propertyInstance
+                      Id="deb4cacd-2765-4517-a833-4a16ca7b315d"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="655fbcd8-2149-4c25-9094-1b2604de62a2">
+                    <propertyInstance
+                      Id="d8656398-59aa-474e-8c95-ce3459c1976e"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="02bfd42b-8294-43bc-b4b0-1eb92b764680">
+                    <propertyInstance
+                      Id="0c26f18f-91f5-4915-bd35-4448303bad8f"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="4aa4c8bd-7511-4fe1-89cc-a295eb5ac39a"
+                  name="sender"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="8f0db3d8-8838-423e-a661-51d31dbed92d"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FD:%2FGitHub%2FSoftwareprojekt2015%2FSoftwareprojekt2015%2Fbin%2FDebug%2FNSA4Dummies.exe Namespace%3DNSA4Dummies Type%3DWorldMap Member%3D(Name%3DMap_Country_MouseLeave OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DObject)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2FPresentationCore.dll&quot; Namespace%3DSystem.Windows.Input Type%3DMouseEventArgs)]) ParameterIdentifier%3Dsender"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="4209ec89-d5ee-460b-9556-15de34a391fa"
+                      LastKnownName="Object"
+                      LastKnownLocation="Package1_1748.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="4982f055-f331-4054-afb3-c63771fae541"
+                  name="e"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="4457022d-2ca9-4c72-b204-f19d312e61d6"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FD:%2FGitHub%2FSoftwareprojekt2015%2FSoftwareprojekt2015%2Fbin%2FDebug%2FNSA4Dummies.exe Namespace%3DNSA4Dummies Type%3DWorldMap Member%3D(Name%3DMap_Country_MouseLeave OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DObject)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2FPresentationCore.dll&quot; Namespace%3DSystem.Windows.Input Type%3DMouseEventArgs)]) ParameterIdentifier%3De"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="36b319a8-21c6-4b77-a332-a99129788e7d"
+                      LastKnownName="MouseEventArgs"
+                      LastKnownLocation="Package9_1748.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="7a14ba7d-a9fa-476e-a467-25d48983eb69"
+            name="Map_OnLoaded"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="77c9cc2f-c692-41f8-88bb-2f5a24962911"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FD:%2FGitHub%2FSoftwareprojekt2015%2FSoftwareprojekt2015%2Fbin%2FDebug%2FNSA4Dummies.exe Namespace%3DNSA4Dummies Type%3DWorldMap Member%3D(Name%3DMap_OnLoaded OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DObject)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DEventArgs)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="7def6a3e-f166-4aec-8bf3-0462f05f5f0c"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b1d24650-59f9-46ff-84fe-bdd6c63b3055">
+                    <propertyInstance
+                      Id="69de1b29-7d29-496a-8d44-b4c4318e715e"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="99aff692-5189-4bd9-8dcb-7d59063503fe">
+                    <propertyInstance
+                      Id="6cb36479-a91f-4d0d-8909-9dd3a62b1f48"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="637759b1-3750-4eff-938e-cfa91df4fce2">
+                    <propertyInstance
+                      Id="c6644747-4bce-4553-bb61-757b3c5d85ff"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="3cbaf9b5-b2bf-4bb9-9c45-63073d858f4e">
+                    <propertyInstance
+                      Id="78dd80d2-a521-41aa-b6e1-ce3d00245e66"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4752e71f-f270-46fe-932f-c3e5ec64c649">
+                    <propertyInstance
+                      Id="a6b49d9f-4eba-4d3b-9e77-54618e5113a7"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="3cfabd45-7225-49b5-b6cc-f20c941c9170">
+                    <propertyInstance
+                      Id="65b8465c-574a-4149-8276-898a30a3294a"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="c3d7ac5b-92de-410c-b4e4-e9bb96ee3366"
+                  name="sender"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="d26313ac-00de-442c-b491-bd713707241e"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FD:%2FGitHub%2FSoftwareprojekt2015%2FSoftwareprojekt2015%2Fbin%2FDebug%2FNSA4Dummies.exe Namespace%3DNSA4Dummies Type%3DWorldMap Member%3D(Name%3DMap_OnLoaded OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DObject)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DEventArgs)]) ParameterIdentifier%3Dsender"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="4209ec89-d5ee-460b-9556-15de34a391fa"
+                      LastKnownName="Object"
+                      LastKnownLocation="Package1_1748.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="a38d75a2-c4a2-42ac-b284-8a78fabe2d19"
+                  name="e"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="3e9713ca-1ad2-41ec-8734-6b9d7b675466"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FD:%2FGitHub%2FSoftwareprojekt2015%2FSoftwareprojekt2015%2Fbin%2FDebug%2FNSA4Dummies.exe Namespace%3DNSA4Dummies Type%3DWorldMap Member%3D(Name%3DMap_OnLoaded OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DObject)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DEventArgs)]) ParameterIdentifier%3De"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="2b0cb375-5f31-4ba2-9c25-272450a1aa06"
+                      LastKnownName="EventArgs"
+                      LastKnownLocation="Package1_1748.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="c3124a93-4ae2-4e6e-9e99-c10930f26d06"
+            name="System‎.Windows‎.Markup‎.IComponentConnector‎.Connect"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="3692f3e4-84b9-469f-af35-db543da19ab8"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FD:%2FGitHub%2FSoftwareprojekt2015%2FSoftwareprojekt2015%2Fbin%2FDebug%2FNSA4Dummies.exe Namespace%3DNSA4Dummies Type%3DWorldMap Member%3D(Name%3DSystem.Windows.Markup.IComponentConnector.Connect OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DObject)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="d1db3bda-fdd0-4bbe-9ed5-097067791759"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="46e43781-3995-4b0a-837c-58d9cd2818b4">
+                    <propertyInstance
+                      Id="7c0bde2a-d8ab-4c29-9729-237494e9e982"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="647eaef2-c90e-4257-ba70-d6ab833f877c">
+                    <propertyInstance
+                      Id="ba817dae-c748-45fd-8a92-49840bf2d3cd"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="37ef0c9c-25f8-4863-b6cb-491689a1b772">
+                    <propertyInstance
+                      Id="1cc8b4be-d744-4197-8563-b0616cee5795"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="23cc353d-ff92-492b-ae17-60291cac4974">
+                    <propertyInstance
+                      Id="64425639-e50d-4c23-968d-a34abd2ff7bc"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="62c0e21f-ee56-493c-9f72-f1d8bade5f05">
+                    <propertyInstance
+                      Id="11e59fec-74e4-4bcb-a5dc-6c0da2600d0b"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="07342371-f06a-479c-bd9e-175d1f80ea1d">
+                    <propertyInstance
+                      Id="10b694f7-7e0b-4cfc-855f-1c5e121231db"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="acd2a2e3-905b-400b-8165-3ee6b8472c20"
+                  name="connectionId"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="61674aec-bb7b-44a9-8390-489856a990a2"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FD:%2FGitHub%2FSoftwareprojekt2015%2FSoftwareprojekt2015%2Fbin%2FDebug%2FNSA4Dummies.exe Namespace%3DNSA4Dummies Type%3DWorldMap Member%3D(Name%3DSystem.Windows.Markup.IComponentConnector.Connect OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DObject)]) ParameterIdentifier%3DconnectionId"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="220a3521-e091-4221-bae9-3ef9018e845c"
+                      LastKnownName="Integer"
+                      LastKnownLocation="Feinentwurf.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="55790fc8-7a0a-4616-8c86-34e1aa39644d"
+                  name="target"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="844f48fc-dcfe-452d-985e-5fe6538d294d"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FD:%2FGitHub%2FSoftwareprojekt2015%2FSoftwareprojekt2015%2Fbin%2FDebug%2FNSA4Dummies.exe Namespace%3DNSA4Dummies Type%3DWorldMap Member%3D(Name%3DSystem.Windows.Markup.IComponentConnector.Connect OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DObject)]) ParameterIdentifier%3Dtarget"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="4209ec89-d5ee-460b-9556-15de34a391fa"
+                      LastKnownName="Object"
+                      LastKnownLocation="Package1_1748.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="db94e240-3a19-409b-8865-46a5aa638f99"
+            name="System‎.Windows‎.Markup‎.IStyleConnector‎.Connect"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="d042e86d-a3f7-4142-887b-e613bddd52f9"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FD:%2FGitHub%2FSoftwareprojekt2015%2FSoftwareprojekt2015%2Fbin%2FDebug%2FNSA4Dummies.exe Namespace%3DNSA4Dummies Type%3DWorldMap Member%3D(Name%3DSystem.Windows.Markup.IStyleConnector.Connect OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DObject)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="b628fc47-4d05-4c9c-89f0-1a6f579b0b60"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="dca91bbe-ffcd-4650-83e9-312abb1174ec">
+                    <propertyInstance
+                      Id="c90716ce-9564-45d7-80d7-332c7e1862c1"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="db79f2c1-1167-4ea7-9771-d19ac29c6005">
+                    <propertyInstance
+                      Id="08d0dd91-7661-4494-a3cd-5b45f4d254c9"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a479552e-6281-4a64-8be6-680c232c4d6c">
+                    <propertyInstance
+                      Id="1f7cf2be-30e9-4ca7-bde7-285ebd441ff7"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a6798153-72be-4a78-9161-675e219bb89b">
+                    <propertyInstance
+                      Id="ca013c71-6103-49f0-aa4c-24fbabbba02d"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e10359db-98cc-4829-991c-9ee53dbc9739">
+                    <propertyInstance
+                      Id="bd309d9a-161e-4052-a3f3-4e2e8326f13e"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a2c14773-58ff-4c4b-af40-ff42c37f93c8">
+                    <propertyInstance
+                      Id="27a4fd6b-d2c5-4786-800e-d00d5262b3e2"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="20e81dc7-0810-43cb-b473-7f46cb4c0b50"
+                  name="connectionId"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="28d0eedb-95c0-47d1-add7-f667efa950d7"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FD:%2FGitHub%2FSoftwareprojekt2015%2FSoftwareprojekt2015%2Fbin%2FDebug%2FNSA4Dummies.exe Namespace%3DNSA4Dummies Type%3DWorldMap Member%3D(Name%3DSystem.Windows.Markup.IStyleConnector.Connect OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DObject)]) ParameterIdentifier%3DconnectionId"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="220a3521-e091-4221-bae9-3ef9018e845c"
+                      LastKnownName="Integer"
+                      LastKnownLocation="Feinentwurf.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="7a424bd3-f3c2-409e-aa1c-9ebb4880c31e"
+                  name="target"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="4ea8e3b8-d71f-4277-a113-89c1151420e9"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FD:%2FGitHub%2FSoftwareprojekt2015%2FSoftwareprojekt2015%2Fbin%2FDebug%2FNSA4Dummies.exe Namespace%3DNSA4Dummies Type%3DWorldMap Member%3D(Name%3DSystem.Windows.Markup.IStyleConnector.Connect OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DObject)]) ParameterIdentifier%3Dtarget"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="4209ec89-d5ee-460b-9556-15de34a391fa"
+                      LastKnownName="Object"
+                      LastKnownLocation="Package1_1748.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="f401803c-3667-4272-9e05-09aa58e2a3f0"
+            name="addPackageToCountry"
+            isLeaf="false"
+            isStatic="true"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="b6e18461-c7c8-4916-838a-c66e8e07aa5c"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FD:%2FGitHub%2FSoftwareprojekt2015%2FSoftwareprojekt2015%2Fbin%2FDebug%2FNSA4Dummies.exe Namespace%3DNSA4Dummies Type%3DWorldMap Member%3D(Name%3DaddPackageToCountry OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="640519ae-b53e-4ed3-a1bc-d50f5612becf"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="6cfc4eb6-52e2-493e-bc50-6a6d747800b5">
+                    <propertyInstance
+                      Id="b296bc40-f061-4618-a417-03e319a2ed98"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5422d6a7-dca2-4c3e-a318-f8f8ea9cee9c">
+                    <propertyInstance
+                      Id="3b6a24a5-d557-409d-ba84-65b616d9c9f1"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="46503cd7-36db-48d9-b875-fba15926170e">
+                    <propertyInstance
+                      Id="4b12869c-ac27-41fb-aeba-c681db7ab272"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c1a920ca-f36d-4fb5-9a29-eb60c5be0eac">
+                    <propertyInstance
+                      Id="a5beae36-6b31-4520-8d71-94cf9ec67021"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d5e2e9d4-1e8a-48c9-ad36-c9e1b6ca1002">
+                    <propertyInstance
+                      Id="79fb770f-f0fe-4643-9852-ffc2e0510665"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="7fd811c3-5a5d-49af-ab09-f24fde31ffb3">
+                    <propertyInstance
+                      Id="81c54d8e-7c50-45ba-9707-f24e32dc5aae"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="baa3d3ac-0181-4114-9230-363844d50eae"
+                  name="IPAddress"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="2d3935c7-aeba-406a-8db6-39cd247f619e"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FD:%2FGitHub%2FSoftwareprojekt2015%2FSoftwareprojekt2015%2Fbin%2FDebug%2FNSA4Dummies.exe Namespace%3DNSA4Dummies Type%3DWorldMap Member%3D(Name%3DaddPackageToCountry OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)]) ParameterIdentifier%3DIPAddress"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="Feinentwurf.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="565eee9a-f228-404f-bb0a-db8c844e6198"
+            name="addPackageToCountryUpdate"
+            isLeaf="false"
+            isStatic="true"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="5d3ddf18-7b3e-4c83-b3c9-6f53fc2e7cb6"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FD:%2FGitHub%2FSoftwareprojekt2015%2FSoftwareprojekt2015%2Fbin%2FDebug%2FNSA4Dummies.exe Namespace%3DNSA4Dummies Type%3DWorldMap Member%3D(Name%3DaddPackageToCountryUpdate OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="7c31017a-641f-401a-bcee-b9e01ec7701a"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="26a24e91-8a14-46d1-ae11-45b54ef5a3cd">
+                    <propertyInstance
+                      Id="484004e2-c678-40e6-b9b7-3087c848b896"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="632bb626-ec5a-4052-9e1f-b2d97723e40c">
+                    <propertyInstance
+                      Id="f4d36323-789e-4fa7-bd90-513d0f789c43"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b16281d1-2e84-4378-b0c4-b626ba6014f5">
+                    <propertyInstance
+                      Id="084050d6-1376-4a5e-a012-b4b4b5dbfc26"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5f6d61ba-f05b-43f6-ac96-93415671b2e7">
+                    <propertyInstance
+                      Id="e5467c49-3b47-4a6d-be22-457768d12b1b"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d5c6ed00-7309-4a3e-a50e-162278d26363">
+                    <propertyInstance
+                      Id="0187a5a6-cf59-4a03-bf7b-e329e37d9817"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ef898e48-0f00-4f1e-a395-5017ff54756b">
+                    <propertyInstance
+                      Id="27aca02e-7476-4c37-9aa3-2f85afe33305"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="da0d972f-8dfd-4125-a607-0a6ec013ac9b"
+                  name="IPAddress"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="4f1766df-7082-4188-b22c-8688bea80160"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FD:%2FGitHub%2FSoftwareprojekt2015%2FSoftwareprojekt2015%2Fbin%2FDebug%2FNSA4Dummies.exe Namespace%3DNSA4Dummies Type%3DWorldMap Member%3D(Name%3DaddPackageToCountryUpdate OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)]) ParameterIdentifier%3DIPAddress"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="Feinentwurf.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="6d40c269-2056-4900-82aa-4806661574dc"
+            name="cleanCountryCode"
+            isLeaf="false"
+            isStatic="true"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="bcd2351e-7f75-4841-b6f4-78f0a1ba6ec0"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FD:%2FGitHub%2FSoftwareprojekt2015%2FSoftwareprojekt2015%2Fbin%2FDebug%2FNSA4Dummies.exe Namespace%3DNSA4Dummies Type%3DWorldMap Member%3D(Name%3DcleanCountryCode OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="0c647fc7-7d89-48e7-9bcd-3d7b4e302471"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="6dcbce6d-4bcb-4fa3-b9d1-c545aa38b927">
+                    <propertyInstance
+                      Id="e432a289-297d-49cc-b098-92bee24e807d"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="6aad1b22-8ae0-49fd-be9f-2d777632ad37">
+                    <propertyInstance
+                      Id="839f93af-7747-4791-a4b4-10d09b8913d6"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="50d467c1-d1f6-45f1-af52-f3564f069d85">
+                    <propertyInstance
+                      Id="3d6b8231-c9f1-4d44-a8d8-96a9825d23a2"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="6bddbde8-fd12-4ea6-b8d5-c9414459b5ac">
+                    <propertyInstance
+                      Id="cdbccd6d-f300-4419-85ea-cebd8e192649"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="43e06aa0-ffc8-4cc2-8417-fb2a58e49818">
+                    <propertyInstance
+                      Id="ebfa289d-4148-4507-8639-334cc70825ec"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="7a02c043-b829-48c2-a77f-5c15b1baec8f">
+                    <propertyInstance
+                      Id="2312c467-a8ef-4de4-9129-d0c375ef1e99"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="14185221-e2c9-4012-bc1a-32c36d6855f6"
+                  direction="Return">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="Feinentwurf.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="b62c23a8-f7af-404c-9a53-592e8109b5ba"
+                  name="code"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="482c26fa-bcb2-4c3f-9749-ce4f781b7b6b"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FD:%2FGitHub%2FSoftwareprojekt2015%2FSoftwareprojekt2015%2Fbin%2FDebug%2FNSA4Dummies.exe Namespace%3DNSA4Dummies Type%3DWorldMap Member%3D(Name%3DcleanCountryCode OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)]) ParameterIdentifier%3Dcode"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="Feinentwurf.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="e71602e6-532c-44db-bed2-c731c077c17c"
+            name="getData"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="a289657e-35eb-4e2d-a875-b9de74a808c4"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FD:%2FGitHub%2FSoftwareprojekt2015%2FSoftwareprojekt2015%2Fbin%2FDebug%2FNSA4Dummies.exe Namespace%3DNSA4Dummies Type%3DWorldMap Member%3D(Name%3DgetData OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="2891bdb4-c846-49b1-8214-dcb9a5e0731a"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5e2cd44a-56f1-4c86-bfa6-f0fccab34cde">
+                    <propertyInstance
+                      Id="a6dda033-e3b8-4667-9108-4e517a332cbc"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="6d5de117-6df7-402c-9b4a-2dc662326341">
+                    <propertyInstance
+                      Id="bd28c6a9-9857-4533-b384-c0618b7d26ba"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="21da2a76-61c0-4801-846a-de25678c6375">
+                    <propertyInstance
+                      Id="8d00f945-851d-44be-bbc3-3066cef45624"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="3cf46a05-98ba-4116-ac91-0d562b59c0cc">
+                    <propertyInstance
+                      Id="8a87f87a-863b-41da-9433-dd355fe711a5"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c8d8eb2a-96ca-40a9-9e26-192b41e5a17d">
+                    <propertyInstance
+                      Id="2c50af0a-fa72-4e1c-872f-cb78b64c33c6"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1e1622de-61d3-4aca-b523-a043804c3a11">
+                    <propertyInstance
+                      Id="4a88f7ae-eed8-4c90-93ec-1e5cfceb95f9"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="36be81ab-df62-4111-931c-cfeb64cdee60"
+                  direction="Return">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="1d997135-e106-4f1d-8e7c-61674376d500"
+                      LastKnownName="UInt64"
+                      LastKnownLocation="Package1_1748.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="a2c3dbe1-2eb8-41f4-9b26-b3b5f3f2d02b"
+                  name="countryCode"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="928e397b-2db2-43ec-bb0b-625a63099389"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FD:%2FGitHub%2FSoftwareprojekt2015%2FSoftwareprojekt2015%2Fbin%2FDebug%2FNSA4Dummies.exe Namespace%3DNSA4Dummies Type%3DWorldMap Member%3D(Name%3DgetData OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)]) ParameterIdentifier%3DcountryCode"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="Feinentwurf.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="5f87d611-dd5d-42d0-856e-c83db174fb25"
+            name="setData"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="4c9b11be-0f09-4a1c-b5f2-74f195be544f"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FD:%2FGitHub%2FSoftwareprojekt2015%2FSoftwareprojekt2015%2Fbin%2FDebug%2FNSA4Dummies.exe Namespace%3DNSA4Dummies Type%3DWorldMap Member%3D(Name%3DsetData OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DUInt64)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="c1ddbca9-d552-4e02-9e80-8d7a3d23e191"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="bf122729-a426-441a-90fa-e76924c42640">
+                    <propertyInstance
+                      Id="bb95a4e3-3f2a-4679-a486-82c32744dc73"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a0d4d746-095f-43d7-a0b4-0e4e3098b3d5">
+                    <propertyInstance
+                      Id="8150b62c-d996-4282-9ba7-051a457da238"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ca996dcd-1009-417b-b894-34c67789013a">
+                    <propertyInstance
+                      Id="859992f5-7665-4d01-bc51-1f6565bdb04d"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="54b7b00e-cb09-47b6-a019-73e46a97eb02">
+                    <propertyInstance
+                      Id="27407bd8-75fd-4521-98b0-faba432375d5"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a3a1bb37-f76e-4e66-8cfa-dd669fd96cd1">
+                    <propertyInstance
+                      Id="4e5dbbd9-fb52-4c8f-86e1-b99bbf1a8496"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="09638fe8-4b74-4eb7-8e73-2496d6cd8873">
+                    <propertyInstance
+                      Id="76ba3db2-e2db-47ad-ba5e-bee98bb5ab60"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="118c3add-e873-459e-a490-66c384b11fb9"
+                  name="countryCode"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="b30dd439-413e-4c69-bfa3-c34425c0d73a"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FD:%2FGitHub%2FSoftwareprojekt2015%2FSoftwareprojekt2015%2Fbin%2FDebug%2FNSA4Dummies.exe Namespace%3DNSA4Dummies Type%3DWorldMap Member%3D(Name%3DsetData OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DUInt64)]) ParameterIdentifier%3DcountryCode"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="Feinentwurf.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="e29b356e-6fb9-4d3a-8228-539eaae0d38d"
+                  name="value"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="c591ec56-5b30-4611-9636-c5443ffa3d58"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FD:%2FGitHub%2FSoftwareprojekt2015%2FSoftwareprojekt2015%2Fbin%2FDebug%2FNSA4Dummies.exe Namespace%3DNSA4Dummies Type%3DWorldMap Member%3D(Name%3DsetData OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DUInt64)]) ParameterIdentifier%3Dvalue"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="1d997135-e106-4f1d-8e7c-61674376d500"
+                      LastKnownName="UInt64"
+                      LastKnownLocation="Package1_1748.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="3c77bf56-31d6-46f5-b7d8-bc7b8b3e0cc9"
+            name="updateCountry"
+            isLeaf="false"
+            isStatic="true"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="22e969cc-3ff5-43b3-8aab-6f664360479e"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FD:%2FGitHub%2FSoftwareprojekt2015%2FSoftwareprojekt2015%2Fbin%2FDebug%2FNSA4Dummies.exe Namespace%3DNSA4Dummies Type%3DWorldMap Member%3D(Name%3DupdateCountry OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="3662aa2c-bdfb-4d75-8675-8091f9b7a235"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="3a44b7c7-f812-4bb2-931c-b177d6bdcfcd">
+                    <propertyInstance
+                      Id="3a274bb5-3b59-43c2-8748-6f5a7807418d"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0e93a566-60f2-4294-aef9-baa9dd8bdff6">
+                    <propertyInstance
+                      Id="c4fc44de-8a3c-4fca-ba5f-ba8f916606a3"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ae583ae8-440a-4722-b40a-8e2943b18a95">
+                    <propertyInstance
+                      Id="bbee7ab9-b448-4aa1-bf7f-38ec699d4420"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d130dcfc-435f-4a3c-ba24-e5202d14f661">
+                    <propertyInstance
+                      Id="cb533e24-a98e-4ef5-a982-2bd8c2ac806e"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="406fc921-1abb-4561-ad43-30af6837a1f7">
+                    <propertyInstance
+                      Id="c8ea6782-4187-48ff-a892-162ffb85d01b"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8f384138-a1a4-4dc1-8f39-48f01fd43e49">
+                    <propertyInstance
+                      Id="d15d9dff-4c82-45d8-bef6-59fa12f5786b"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="70e66985-835c-4e69-adb3-492be62bdc01"
+                  name="countryCode"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="04b00f1a-3ab1-4de6-8b34-3f9ab8a0e49d"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FD:%2FGitHub%2FSoftwareprojekt2015%2FSoftwareprojekt2015%2Fbin%2FDebug%2FNSA4Dummies.exe Namespace%3DNSA4Dummies Type%3DWorldMap Member%3D(Name%3DupdateCountry OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)]) ParameterIdentifier%3DcountryCode"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="Feinentwurf.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="596ef3da-d2d0-4cd8-a702-eaff076fd5e4"
+            name="WorldMap"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="e62eb162-bd16-4f54-99d8-8594d82b300d"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FD:%2FGitHub%2FSoftwareprojekt2015%2FSoftwareprojekt2015%2Fbin%2FDebug%2FNSA4Dummies.exe Namespace%3DNSA4Dummies Type%3DWorldMap Member%3D.ctor"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="a06b6ea5-8d84-4b2c-9e52-2e4bf7e8ada8"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="80ece4b4-6418-4d50-bde1-aa89fa278b36">
+                    <propertyInstance
+                      Id="4eebc0c4-59b8-467b-a186-f1495be459b6"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a8ed6598-30ad-4a1c-8b79-74218c00bd5f">
+                    <propertyInstance
+                      Id="e2eee176-ec09-4bcc-b5ff-7174f38f0b0d"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5b716aa0-238f-430d-84ac-1b8a0ae93de2">
+                    <propertyInstance
+                      Id="f10bce05-697f-4c9f-881f-1fe4bf9f957a"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="cdb085e3-cd40-463b-8fa7-02fb6138ad38">
+                    <propertyInstance
+                      Id="37f4e722-9bef-4563-8004-727e28cb7e14"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="cd07d413-89fa-4c6c-9a07-6cdfcce92bd1">
+                    <propertyInstance
+                      Id="76adfa07-0968-4e8f-96d9-48ebf2c52839"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2beb3060-dfc2-492d-a2a6-45cdf38afdec">
+                    <propertyInstance
+                      Id="99780f2a-f54b-4d25-86a0-424c011234dd"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+          <operation
+            Id="60ed4ab6-e8e8-4f9a-bdaf-ea8960fdcc34"
+            name="InitializeComponent"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="78cf372f-c984-4414-b477-4595efd6dcdd"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FD:%2FGitHub%2FSoftwareprojekt2015%2FSoftwareprojekt2015%2Fbin%2FDebug%2FNSA4Dummies.exe Namespace%3DNSA4Dummies Type%3DWorldMap Member%3DInitializeComponent"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="d7aea4d8-18b7-43aa-8c12-74d44f769f9c"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="09e90779-fe86-42cf-b092-624b17c68841">
+                    <propertyInstance
+                      Id="eb59c8e3-2215-4b2f-9746-dd3ff6cc7129"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d8244e8e-e71f-4f03-a8bb-b9f2e0c550d9">
+                    <propertyInstance
+                      Id="4eb1c755-a419-4e02-9f0a-1de9e20e4265"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4fa49090-8753-4b48-a932-af5b35dbaebc">
+                    <propertyInstance
+                      Id="17ebf5bf-1aad-4460-90f4-ce3b4f68a0e3"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f7c09007-73e5-4a58-85ed-73fb4911a952">
+                    <propertyInstance
+                      Id="a50f338f-db25-4fc1-acee-5e3afd727a30"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b2b34707-0e21-4138-bc36-9528f4cf43ca">
+                    <propertyInstance
+                      Id="f3adb5ed-8430-4606-9db7-4d6078b51659"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="6a2a3c52-00a9-4934-8b5b-f61113c3b2ef">
+                    <propertyInstance
+                      Id="03f1df3f-8732-4da0-8bda-2f1dbd918335"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+          <operation
+            Id="bf3cdc02-dd9b-4335-bcdd-dd6aa3aa8c14"
+            name="updateCountries"
+            isLeaf="false"
+            isStatic="true"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="78f60505-731f-42a3-83ba-5d35d538eafb"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FD:%2FGitHub%2FSoftwareprojekt2015%2FSoftwareprojekt2015%2Fbin%2FDebug%2FNSA4Dummies.exe Namespace%3DNSA4Dummies Type%3DWorldMap Member%3DupdateCountries"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="dd04403f-a9b6-4c58-bd82-5f86d2c5f9f5"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="29d09cd8-4dfb-4ba4-979f-e38665306200">
+                    <propertyInstance
+                      Id="e3d17ce0-329c-450e-aa19-b5badbf2eb25"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="014aa493-dda6-41e7-ab4d-a7cd71a78866">
+                    <propertyInstance
+                      Id="9d9dc469-4023-4607-98f3-525bbc3a916e"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="76f1ea40-4e40-437b-84c2-df91e1d81a0e">
+                    <propertyInstance
+                      Id="1d0eb833-98d4-4757-bfeb-9d785eb0a0ed"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d6876406-db95-43e7-83a7-5f891a3b393e">
+                    <propertyInstance
+                      Id="15c27163-c168-4efc-a399-bd2daff3062d"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b588c864-309a-44f6-9275-fa530feb3f19">
+                    <propertyInstance
+                      Id="796247bc-a505-480f-87c4-4ede0dc08250"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e76e01e2-7607-4596-9551-ae90a60fb89a">
+                    <propertyInstance
+                      Id="fd4bf925-21a1-4b8f-8ba5-99a967800b81"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+  </packagedElements>
+  <primitiveType
+    Id="220a3521-e091-4221-bae9-3ef9018e845c"
+    name="Integer"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+    name="Boolean"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+    name="String"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="3ab42e7d-4969-445a-b209-471f5cb8209c"
+    name="UnlimitedNatural"
+    isAbstract="false"
+    isLeaf="false" />
+</modelStoreModel>

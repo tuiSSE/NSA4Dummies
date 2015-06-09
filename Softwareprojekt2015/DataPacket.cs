@@ -48,7 +48,7 @@ namespace NSA4Dummies
         public DateTime Time { get; set; }
 
         /// <summary>
-        /// payload length in bytes
+        /// Payload length in bytes
         /// </summary>
         public int Length { get; set; }
 
