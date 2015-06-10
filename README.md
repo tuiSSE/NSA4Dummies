@@ -1,6 +1,6 @@
 # Softwareprojekt2015
 "NSA für Dummies"
-Version 1.0
+Version 0.1
 
 This software is a sleek, intuitive application that shows unencrypted network traffic.
 
