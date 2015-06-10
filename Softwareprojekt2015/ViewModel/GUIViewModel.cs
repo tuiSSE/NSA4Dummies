@@ -336,67 +336,6 @@ namespace NSA4Dummies
          *  Layout
          * 
          * --------*/
-        
-        
-        /*
-         *  Get/Set of layout elements
-         * */
-        public string Foreground
-        {
-            get
-            {
-                if (hackerLayout)
-                {
-                    return "#FF00ff24";
-                }
-                //default
-                return "#FFffffff";
-            }
-        }
-        public string MainForeground
-        {
-            get
-            {
-                if (hackerLayout)
-                {
-                    return "#FF00ff24";
-                }
-                return "#FFFA611F";
-            }
-        }
-        public string Background
-        {
-            get
-            {
-                if (hackerLayout)
-                {
-                    return "#FF333333";
-                }
-                return "#FF9AC9F8";
-            }
-        }
-        public string MainBackground
-        {
-            get
-            {
-                if (hackerLayout)
-                {
-                    return "#FF000000";
-                }
-                return "#FF1E1E1E";
-            }
-        }
-        public string MapDefaultColor
-        {
-            get
-            {
-                if (hackerLayout)
-                {
-                    return "#FF38FF62";
-                }
-                return "#FFFFAF66";
-            }
-        }
 
         /*
          *  Layouts
@@ -417,6 +356,76 @@ namespace NSA4Dummies
                 NotifyPropertyChanged("MainBackground");
                 NotifyPropertyChanged("MainForeground");
                 NotifyPropertyChanged("MapDefaultColor");
+            }
+        }
+
+
+        /*
+         *  Get/Set of layout elements
+         * */
+        // Color of Charts-Text
+        public string Foreground
+        {
+            get
+            {
+                if (hackerLayout)
+                {
+                    return "#FF00ff24";
+                }
+                //default
+                return "#FF000000";
+            }
+        }
+        // Color of Header texts
+        public string MainForeground
+        {
+            get
+            {
+                if (hackerLayout)
+                {
+                    return "#FF00ff24";
+                }
+                //default
+                return "#FFFA611F";
+            }
+        }
+        //
+        public string Background
+        {
+            get
+            {
+                if (hackerLayout)
+                {
+                    return "#FF333333";
+                }
+                // default
+                return "#FF9AC9F8";
+            }
+        }
+        //
+        public string MainBackground
+        {
+            get
+            {
+                if (hackerLayout)
+                {
+                    return "#FF000000";
+                }
+                // default
+                return "#FF1E1E1E";
+            }
+        }
+        // Default color of the countries
+        public string MapDefaultColor
+        {
+            get
+            {
+                if (hackerLayout)
+                {
+                    return "#FF38FF62";
+                }
+                // default
+                return "#FFFFAF66";
             }
         }
 
