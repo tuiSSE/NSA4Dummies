@@ -28,7 +28,7 @@ namespace NSA4Dummies
         public Timer guiUpdateTimer = new Timer();
         
         /// <summary>
-        /// 
+        /// The constructor of the main window
         /// </summary>
         public MainWindow()
         {            
@@ -46,7 +46,7 @@ namespace NSA4Dummies
 
 
         /// <summary>
-        /// Handle all Window Update, required when a new packet arrives here. Packet content can be accessed in e.UserState.
+        /// Since the package sniffer runs in another thread we need a function that invokes the 'updateGUIData' function.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -56,6 +56,10 @@ namespace NSA4Dummies
         }
 
 
+        /// <summary>
+        /// This function updates the data of the GUI (not the GUI itself), required when a new packet arrives here. Packet content can be accessed in e.UserState.
+        /// </summary>
+        /// <param name="e"></param>
         public void updateGUIData(ProgressChangedEventArgs e)
         {
             var packet = e.UserState as DataPacket;
@@ -83,7 +87,7 @@ namespace NSA4Dummies
 
 
         /// <summary>
-        /// 
+        /// Since the GUI update timer runs in another thread we need to invoke 'updateGUI' with this function
         /// </summary>
         /// <param name="source"></param>
         /// <param name="e"></param>
@@ -94,7 +98,7 @@ namespace NSA4Dummies
 
 
         /// <summary>
-        /// 
+        /// This function updates the GUI every guiUpdateTimer.Interval milliseconds
         /// </summary>
         public void updateGUI()
         {
@@ -103,7 +107,7 @@ namespace NSA4Dummies
 
         
         /// <summary>
-        /// 
+        /// This function is called as soon as the Window is loaded since some objects are only available if they are visible
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>

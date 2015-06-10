@@ -12,37 +12,17 @@ namespace NSA4Dummies
 {
     public partial class WorldMap : INotifyPropertyChanged
     {
-
         private static IDictionary<string, uint> _mapDictionary = new Dictionary<string, uint>();
         private static IDictionary<string, double> _shadingDictionary = new Dictionary<string, double>();
         private static IDictionary<string, Path> _pathDictionary = new Dictionary<string, Path>();
-        static SolidColorBrush defaultShading = new SolidColorBrush(Color.FromArgb(255, 255, 175, 102));
-        static SolidColorBrush mouseOverShading = new SolidColorBrush(Color.FromArgb(255, 255, 121, 0));
+        private static SolidColorBrush defaultShading = new SolidColorBrush(Color.FromArgb(255, 255, 175, 102));
+        private static SolidColorBrush mouseOverShading = new SolidColorBrush(Color.FromArgb(255, 255, 121, 0));
 
 
         /*
          *  Events
          * */
         public event PropertyChangedEventHandler PropertyChanged;
-
-
-        private string countryName = "-Country_Name-";
-        public string CountryNameString
-        {
-            get
-            {
-                return countryName;
-            }
-            set
-            {
-                countryName = value;
-                if (PropertyChanged != null)
-                {
-                    PropertyChanged(App.Current.MainWindow.DataContext, new PropertyChangedEventArgs("CountryNameString"));
-                }
-            }
-
-        }
 
 
         /// <summary>
@@ -77,7 +57,6 @@ namespace NSA4Dummies
             var country = sender as Path;
 
             country.Fill = mouseOverShading;
-            CountryNameString = cleanCountryCode(country.Name);
         }
 
 
@@ -92,7 +71,6 @@ namespace NSA4Dummies
             var country = sender as Path;
 
             updateCountry(country.Name);
-            CountryNameString = "";
         }
 
 
@@ -305,7 +283,8 @@ namespace NSA4Dummies
 
 
         /// <summary>
-        /// 
+        /// This function searches for a visual children of a given type.
+        /// This function is used to find the map tiles to get a reference to them.
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="parent"></param>

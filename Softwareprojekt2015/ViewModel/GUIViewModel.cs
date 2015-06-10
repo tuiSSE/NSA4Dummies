@@ -72,9 +72,9 @@ namespace NSA4Dummies
 
         
         /// <summary>
-        /// 
+        /// This function adds a package to the filetype-chart with the specific filetype
         /// </summary>
-        /// <param name="fileType"></param>
+        /// <param name="fileType">The filetype string</param>
         public void addFileType(string fileType)
         {
 
@@ -96,9 +96,9 @@ namespace NSA4Dummies
 
 
         /// <summary>
-        /// 
+        /// This function adds a package to the domin-chart with the specific domain
         /// </summary>
-        /// <param name="domain"></param>
+        /// <param name="domain">The domain</param>
         public void addDomain(string domain)
         {
 
@@ -120,9 +120,9 @@ namespace NSA4Dummies
 
 
         /// <summary>
-        /// 
+        /// Adds a package to the charts
         /// </summary>
-        /// <param name="domain"></param>
+        /// <param name="encrypted">The encryption status of that package</param>
         public void addPackage(bool encrypted)
         {
             
@@ -151,12 +151,12 @@ namespace NSA4Dummies
 
             foreach (var d in Domains)
             {
-                TopWebsites.Add(new TestClass() { Category = d.Key, Number = d.Value });
+                TopWebsites.Add(new DataClass() { Category = d.Key, Number = d.Value });
             }
 
             foreach (var f in FileTypes)
             {
-                Filetypes.Add(new TestClass() { Category = f.Key, Number = f.Value });
+                Filetypes.Add(new DataClass() { Category = f.Key, Number = f.Value });
             }
 
             int enc = 0;
@@ -165,14 +165,14 @@ namespace NSA4Dummies
             {
                 enc = (int)(((float)Encryption[1] / ((float)Encryption[1] + (float)Encryption[0])) * 100);
             }
-            
-            EncryptionStatus.Add(new TestClass() { Category = "Unencrypted", Number = enc });
+
+            EncryptionStatus.Add(new DataClass() { Category = "Unencrypted", Number = enc });
         }
 
 
-        /*
-         *  Language dictionary
-         * */
+        /// <summary>
+        /// The dictionary that holds the translations for the whole program
+        /// </summary>
         public static Dictionary<string, string> T
         {
             get
@@ -363,7 +363,9 @@ namespace NSA4Dummies
         /*
          *  Get/Set of layout elements
          * */
-        // Color of Charts-Text
+        /// <summary>
+        /// Color of Charts-Text
+        /// </summary>
         public string Foreground
         {
             get
@@ -376,7 +378,9 @@ namespace NSA4Dummies
                 return "#FF000000";
             }
         }
-        // Color of Header texts
+        /// <summary>
+        /// Color of Header texts
+        /// </summary>
         public string MainForeground
         {
             get
@@ -389,7 +393,9 @@ namespace NSA4Dummies
                 return "#FFFA611F";
             }
         }
-        //
+        /// <summary>
+        /// The background color
+        /// </summary>
         public string Background
         {
             get
@@ -402,7 +408,9 @@ namespace NSA4Dummies
                 return "#FF9AC9F8";
             }
         }
-        //
+        /// <summary>
+        /// The main background color of the program
+        /// </summary>
         public string MainBackground
         {
             get
@@ -415,7 +423,9 @@ namespace NSA4Dummies
                 return "#FF1E1E1E";
             }
         }
-        // Default color of the countries
+        /// <summary>
+        /// Default color of the countries
+        /// </summary>
         public string MapDefaultColor
         {
             get
@@ -478,21 +488,21 @@ namespace NSA4Dummies
         int newSeriesCounter = 1;
         private void AddSeries()
         {
-            ObservableCollectionEx<TestClass> data = new ObservableCollectionEx<TestClass>();
+            ObservableCollectionEx<DataClass> data = new ObservableCollectionEx<DataClass>();
 
-            data.Add(new TestClass() { Category = "Globalization", Number = 5 });
-            data.Add(new TestClass() { Category = "Features", Number = 10 });
-            data.Add(new TestClass() { Category = "ContentTypes", Number = 15 });
-            data.Add(new TestClass() { Category = "Correctness", Number = 20 });
-            data.Add(new TestClass() { Category = "Naming", Number = 15 });
-            data.Add(new TestClass() { Category = "Best Practices", Number = 10 });
+            data.Add(new DataClass() { Category = "Globalization", Number = 5 });
+            data.Add(new DataClass() { Category = "Features", Number = 10 });
+            data.Add(new DataClass() { Category = "ContentTypes", Number = 15 });
+            data.Add(new DataClass() { Category = "Correctness", Number = 20 });
+            data.Add(new DataClass() { Category = "Naming", Number = 15 });
+            data.Add(new DataClass() { Category = "Best Practices", Number = 10 });
 
             newSeriesCounter++;
         }
 
-        /*
-         *  Constructor
-         * */
+        /// <summary>
+        /// The constructor of GUIViewModel
+        /// </summary>
         public GUIViewModel()
         {
             LoadPalettes();
@@ -532,9 +542,9 @@ namespace NSA4Dummies
             SelectionBrushes.Add("[NoColor]");
             SelectedBrush = SelectionBrushes.FirstOrDefault();
 
-            TopWebsites = new ObservableCollectionEx<TestClass>();
-            EncryptionStatus = new ObservableCollectionEx<TestClass>();
-            Filetypes = new ObservableCollectionEx<TestClass>();
+            TopWebsites = new ObservableCollectionEx<DataClass>();
+            EncryptionStatus = new ObservableCollectionEx<DataClass>();
+            Filetypes = new ObservableCollectionEx<DataClass>();
 
 
             // Disable Notifications of ObservableCollections
@@ -566,19 +576,28 @@ namespace NSA4Dummies
 
         }
 
-        public ObservableCollectionEx<TestClass> TopWebsites
+        /// <summary>
+        /// The collection that holds the top websites
+        /// </summary>
+        public ObservableCollectionEx<DataClass> TopWebsites
         {
             get;
             set;
         }
 
-        public ObservableCollectionEx<TestClass> EncryptionStatus
+        /// <summary>
+        /// The collection that holds the (un-)encrypted packages
+        /// </summary>
+        public ObservableCollectionEx<DataClass> EncryptionStatus
         {
             get;
             set;
         }
 
-        public ObservableCollectionEx<TestClass> Filetypes
+        /// <summary>
+        /// The collection that holds the filetypes of the packages
+        /// </summary>
+        public ObservableCollectionEx<DataClass> Filetypes
         {
             get;
             set;
@@ -643,7 +662,10 @@ namespace NSA4Dummies
      * */
 
 
-    public class TestClass : INotifyPropertyChanged
+    /// <summary>
+    /// The class that is used to store the data to the charts
+    /// </summary>
+    public class DataClass : INotifyPropertyChanged
     {
         public string Category { get; set; }
 
