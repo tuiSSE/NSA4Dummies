@@ -56,7 +56,6 @@ namespace NSA4Dummies
         /*
          *  Public members
          * */
-        //public DelegateCommand AddSeriesCommand { get; set; }
         public List<double> FontSizes { get; set; }
         public List<double> DoughnutInnerRadiusRatios { get; set; }
         public List<string> SelectionBrushes { get; set; }
@@ -67,10 +66,11 @@ namespace NSA4Dummies
         /*
          *  Chart-Data dictionaries
          * */
-        private Dictionary<string, UInt64> FileTypes = new Dictionary<string, UInt64>();
-        private Dictionary<string, UInt64> Domains = new Dictionary<string, UInt64>();
-        private UInt64[] Encryption = new UInt64[2];
+        private Dictionary<string, uint> FileTypes = new Dictionary<string, uint>();
+        private Dictionary<string, uint> Domains = new Dictionary<string, uint>();
+        private uint[] Encryption = new uint[2];
 
+        
         /// <summary>
         /// 
         /// </summary>
@@ -117,6 +117,7 @@ namespace NSA4Dummies
             // Update chart
             //TopWebsites.Add(new TestClass() { Category = domain, Number = Domains[domain] });
         }
+
 
         /// <summary>
         /// 
@@ -180,6 +181,7 @@ namespace NSA4Dummies
             }
         }
        
+
         /*
          *  selected layout elements
          * */
@@ -327,6 +329,15 @@ namespace NSA4Dummies
             }
         }
 
+
+        
+        /*----------
+         * 
+         *  Layout
+         * 
+         * --------*/
+        
+        
         /*
          *  Get/Set of layout elements
          * */
@@ -338,7 +349,8 @@ namespace NSA4Dummies
                 {
                     return "#FF00ff24";
                 }
-                return "#FF006666";
+                //default
+                return "#FFffffff";
             }
         }
         public string MainForeground
@@ -407,6 +419,8 @@ namespace NSA4Dummies
                 NotifyPropertyChanged("MapDefaultColor");
             }
         }
+
+
 
         /*
          *  Events

@@ -53,7 +53,7 @@ namespace NSA4Dummies{
         /// Initially this can take some time!
         /// The function implements a cache, so future request will be much faster.
         /// </summary>
-        /// <param name="number"></param>
+        /// <param name="number">The IP number for which the country code should be searched.</param>
         /// <returns>The two letter country code (in uppercase)</returns>
         public static string number2Country(uint number)
         {

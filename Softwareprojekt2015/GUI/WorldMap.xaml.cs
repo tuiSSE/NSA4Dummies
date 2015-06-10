@@ -13,7 +13,7 @@ namespace NSA4Dummies
     public partial class WorldMap : INotifyPropertyChanged
     {
 
-        private static IDictionary<string, UInt64> _mapDictionary = new Dictionary<string, UInt64>();
+        private static IDictionary<string, uint> _mapDictionary = new Dictionary<string, uint>();
         private static IDictionary<string, double> _shadingDictionary = new Dictionary<string, double>();
         private static IDictionary<string, Path> _pathDictionary = new Dictionary<string, Path>();
         static SolidColorBrush defaultShading = new SolidColorBrush(Color.FromArgb(255, 255, 175, 102));
@@ -156,7 +156,7 @@ namespace NSA4Dummies
         /// </summary>
         /// <param name="countryCode">The two-letter country code</param>
         /// <param name="value"></param>
-        public void setData(string countryCode, UInt64 value)
+        public void setData(string countryCode, uint value)
         {
             if (countryCode != null)
             {
@@ -172,7 +172,7 @@ namespace NSA4Dummies
         /// </summary>
         /// <param name="countryCode">The two-letter country code</param>
         /// <returns>The package count</returns>
-        public UInt64 getData(string countryCode)
+        public uint getData(string countryCode)
         {
             if (countryCode != null)
             {
