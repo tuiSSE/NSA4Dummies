@@ -10048,20 +10048,20 @@
         </appliedStereotypesInternal>
         <targetEnds>
           <association
-            Id="8dc1a4c2-a361-4f0d-a2a1-ae9487bf1598"
+            Id="71adaac1-d372-407d-a69c-77425bacb185"
             isDerived="false"
             sourceEndRoleName="IP2Country"
-            targetEndRoleName="DataPacket"
+            targetEndRoleName="WorldMap"
             isLeaf="false"
             isAbstract="false">
             <classMoniker
-              Id="d1e4e775-a230-4e3f-bbe0-1e3b7ae76bb4"
-              LastKnownName="DataPacket"
+              Id="057569a7-f6de-4430-a672-14981e505edf"
+              LastKnownName="WorldMap"
               LastKnownLocation="Package_1748.uml" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
                 <memberEnd
-                  Id="8b9ea69e-f3c0-4b1f-8ed5-c4c1dd6ff23a"
+                  Id="eed46b1d-cf77-4cd9-9f7e-e1b1253026bb"
                   name="IP2Country"
                   isLeaf="false"
                   isStatic="false"
@@ -10070,25 +10070,12 @@
                   isDerivedUnion="false"
                   aggregation="None"
                   isComposite="false"
-                  isNavigableOwned="false">
-                  <lowerValueInternal>
-                    <literalString
-                      Id="c35f96f3-b852-447e-8826-acba85dbe80d"
-                      name="Lower"
-                      value="*" />
-                  </lowerValueInternal>
-                  <upperValueInternal>
-                    <literalString
-                      Id="8ced2731-214e-4be3-82fa-dbf13fa88916"
-                      name="Upper"
-                      value="*" />
-                  </upperValueInternal>
-                </memberEnd>
+                  isNavigableOwned="false" />
               </associationHasOwnedEnds>
               <associationHasOwnedEnds>
                 <memberEnd
-                  Id="b3069c8e-7dde-49d1-a489-7323f723dfc8"
-                  name="DataPacket"
+                  Id="755be9a8-cb03-4d1d-be13-6414616757d3"
+                  name="WorldMap"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
