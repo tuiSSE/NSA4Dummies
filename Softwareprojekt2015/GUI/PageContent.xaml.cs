@@ -41,6 +41,7 @@ namespace NSA4Dummies
             {
                 w.DataContext = new GUIViewModel();;
             }
+			((App)App.Current).UpdateNotifyLanguage();
         }
 
         

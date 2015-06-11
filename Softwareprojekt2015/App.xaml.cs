@@ -122,6 +122,16 @@ namespace NSA4Dummies
 			
 		}
 
+		public void UpdateNotifyLanguage()
+		{
+			this.niStartSniffer.Text = App.translation["notifyIcon.niStartSniffer"];
+			this.niStopSniffer.Text = App.translation["notifyIcon.niStopSniffer"];
+			this.niSettings.Text = App.translation["notifyIcon.niSettings"];
+			this.niExit.Text = App.translation["notifyIcon.niExit"];
+			ntfyIcon.Text = App.translation["notifyIcon.niText"];
+			ntfyIcon.BalloonTipTitle = App.translation["notifyIcon.niBalloon"];
+		}
+
         /// <summary>
         /// Gets called on application shutdown and stops the sniffer.
         /// </summary>
@@ -200,7 +210,6 @@ namespace NSA4Dummies
             //base.OnStartup(e);
             if (languageFileMissing)
             {
-                
 
                 this.Shutdown();
             }
