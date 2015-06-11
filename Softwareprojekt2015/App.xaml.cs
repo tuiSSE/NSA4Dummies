@@ -195,6 +195,15 @@ namespace NSA4Dummies
 			this.Shutdown();
 		}
         
+        private void ntfyIcon_DoubleClick(object Sender, EventArgs e)
+        {
+            if (MainWindow.WindowState == FormWindowState.Minimized)
+                MainWindow.WindowState = FormWindowState.Normal;
+
+            MainWindow.Activate();
+        }
+
+
         private void Application_Startup(object Sender, StartupEventArgs e)
         {
             //base.OnStartup(e);
