@@ -117,7 +117,7 @@ namespace NSA4Dummies
             ntfyIcon.BalloonTipTitle = App.translation["notifyIcon.niBalloon"];
 
             // Event for DoubleClick on NotifyIcon.
-            // ntfyIcon.DoubleClick += new System.EventHandler(this.ntfyIcon_DoubleClick);
+            ntfyIcon.DoubleClick += new System.EventHandler(this.ntfyIcon_DoubleClick);
 
 			
 		}
@@ -207,8 +207,16 @@ namespace NSA4Dummies
         
         private void ntfyIcon_DoubleClick(object Sender, EventArgs e)
         {
-            if (MainWindow.WindowState == WindowState.Minimized)
-                MainWindow.WindowState = WindowState.Normal;
+			if (MainWindow.WindowState == WindowState.Minimized)
+			{
+				MainWindow.WindowState = WindowState.Normal;
+			}
+			else if (MainWindow.WindowState == WindowState.Normal)
+			{
+				MainWindow.WindowState = WindowState.Minimized;
+			}
+			
+
 
             MainWindow.Activate();
         }
