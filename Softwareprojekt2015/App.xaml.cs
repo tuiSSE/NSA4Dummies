@@ -145,6 +145,10 @@ namespace NSA4Dummies
                 Sniffer.StopSniffer();
             }
             
+            if (components != null)
+            {
+                components.Dispose();
+            }
 
         }
 
