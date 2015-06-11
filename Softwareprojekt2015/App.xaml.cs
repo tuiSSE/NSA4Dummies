@@ -207,8 +207,8 @@ namespace NSA4Dummies
         
         private void ntfyIcon_DoubleClick(object Sender, EventArgs e)
         {
-            if (MainWindow.WindowState == FormWindowState.Minimized)
-                MainWindow.WindowState = FormWindowState.Normal;
+            if (MainWindow.WindowState == WindowState.Minimized)
+                MainWindow.WindowState = WindowState.Normal;
 
             MainWindow.Activate();
         }
