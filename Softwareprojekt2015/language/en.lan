@@ -45,11 +45,12 @@
     <string id="stats">Statistic</string>
     <string id="credits">Credits</string>
   </category>
-  <category name="taskIcon">
-    <string id="toolTip">No such Application</string>
-    <string id="startSniffer">Start network sniffing</string>
-    <string id="stopSniffer">Stop network sniffing</string>
-    <string id="settings">Settings</string>
-    <string id="exit">Exit application</string>
+  <category name="notifyIcon">
+    <string id="niText">NSA 4 Dummies</string>
+    <string id="niBalloon">NSA 4 Dummies</string>
+    <string id="niStartSniffer">Start network sniffing</string>
+    <string id="niStopSniffer">Stop network sniffing</string>
+    <string id="niSettings">Settings</string>
+    <string id="niExit">Exit application</string>
   </category>
 </root> 

@@ -88,22 +88,22 @@ namespace NSA4Dummies
 
             // Initialize niStartSniffer.
             this.niStartSniffer.Index = 0;
-            this.niStartSniffer.Text = "Start Sniffer";
+            this.niStartSniffer.Text = App.translation["notifyIcon.niStartSniffer"];
             this.niStartSniffer.Click += new System.EventHandler(this.niStart_Click);
 
             // Initialize niStopSniffer.
             this.niStopSniffer.Index = 1;
-            this.niStopSniffer.Text = "Stop Sniffer";
+            this.niStopSniffer.Text = App.translation["notifyIcon.niStopSniffer"];
             this.niStopSniffer.Click += new System.EventHandler(this.niStop_Click);
             
             // Initialize niSettings.
             this.niSettings.Index = 2;
-            this.niSettings.Text = "Settings";
+            this.niSettings.Text = App.translation["notifyIcon.niSettings"];
             this.niSettings.Click += new System.EventHandler(this.niSettings_Click);
 
             // Initialize niExit.
             this.niExit.Index = 3;
-            this.niExit.Text = "Exit Application";
+            this.niExit.Text = App.translation["notifyIcon.niExit"];
             this.niExit.Click += new System.EventHandler(this.niExit_Click);
 
             // Create the NotifyIcon.
@@ -112,10 +112,9 @@ namespace NSA4Dummies
             // Set the icon for the systray.
 			ntfyIcon.Icon = (Icon)NSA4Dummies.Properties.Resources.NotifyIconTest;
             ntfyIcon.ContextMenu = this.niContextMenu;
-            ntfyIcon.Text = "NSA 4 Dummies";
+            ntfyIcon.Text = App.translation["notifyIcon.niText"];
             ntfyIcon.Visible = true;
-            ntfyIcon.BalloonTipTitle = "NSA 4 Dummies";
-            ntfyIcon.BalloonTipText = "Testtext Testtext Testtext";
+            ntfyIcon.BalloonTipTitle = App.translation["notifyIcon.niBalloon"];
 
             // Event for DoubleClick on NotifyIcon.
             // ntfyIcon.DoubleClick += new System.EventHandler(this.ntfyIcon_DoubleClick);
