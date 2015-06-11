@@ -110,7 +110,7 @@ namespace NSA4Dummies
             this.ntfyIcon = new System.Windows.Forms.NotifyIcon(this.components);
 
             // Set the icon for the systray.
-            ntfyIcon.Icon = new Icon(".../Resources/NotifyIconTest.ico");
+			ntfyIcon.Icon = (Icon)NSA4Dummies.Properties.Resources.NotifyIconTest;
             ntfyIcon.ContextMenu = this.niContextMenu;
             ntfyIcon.Text = "NSA 4 Dummies";
             ntfyIcon.Visible = true;
