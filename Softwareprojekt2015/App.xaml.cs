@@ -9,7 +9,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Xml;
-using Hardcodet.Wpf.TaskbarNotification;
 using System.Windows.Controls;
 using System.Threading;
 
@@ -20,7 +19,6 @@ namespace NSA4Dummies
 	/// </summary>
 	public partial class App : Application
 	{
-        //private TaskbarIcon tb;
 
         /// <summary>
         /// Contains all strings in the currently chosen language

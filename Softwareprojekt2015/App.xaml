@@ -5,21 +5,7 @@
              Exit="Application_Exit"
              Startup="Application_Startup">
     <Application.Resources>
-        <ResourceDictionary xmlns:tb="http://www.hardcodet.net/taskbar" >
-            <tb:TaskbarIcon x:Key="NotifyIcon"
-                            IconSource="/Resources/NotifyIcon.ico"
-                            ToolTipText="{Binding T[taskIcon.toolTip]}"
-                            Visibility="Visible">
-                <tb:TaskbarIcon.ContextMenu>
-                    <ContextMenu
-                        Background="LightCoral">
-                        <MenuItem Name="ti_start" Header="{Binding T[taskIcon.startSniffer]}" Click="ti_start_Click"/>
-                        <MenuItem Name="ti_stop" Header="{Binding T[taskIcon.stopSniffer]}" Click="ti_stop_Click"/>
-                        <MenuItem Name="ti_settings" Header="{Binding T[taskIcon.settings]}" Click="ti_settings_Click"/>
-                        <MenuItem Name="ti_exit" Header="{Binding T[taskIcon.exit]}" Click="ti_exit_Click"/>
-                    </ContextMenu>
-                </tb:TaskbarIcon.ContextMenu>                    
-            </tb:TaskbarIcon>
+        <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="GUI/TextStyles.xaml" />
                 <ResourceDictionary Source="GUI/Buttons.xaml" />
