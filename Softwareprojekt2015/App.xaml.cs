@@ -145,7 +145,6 @@ namespace NSA4Dummies
 			this.niSettings.Text = App.translation["notifyIcon.niSettings"];
 			this.niExit.Text = App.translation["notifyIcon.niExit"];
 			ntfyIcon.Text = App.translation["notifyIcon.niText"];
-			ntfyIcon.BalloonTipTitle = App.translation["notifyIcon.niBalloon"];
 		}
 
         /// <summary>
