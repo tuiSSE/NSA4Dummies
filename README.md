@@ -11,6 +11,7 @@ This software is a sleek, intuitive application that shows unencrypted network t
 - [Minimum requirements](#minimum-requirements) 
 - [Copyright](#copyright)
 - [Limitation of liability](#limitation-of-liability)
+- [License](#license)
 
 ## Quick start:
 
@@ -44,3 +45,9 @@ No Software is without error. For that reason we don´t assume any liability for
 University carry out research work with circumspection taking well-known status from science and technology as a basis. 
 Liability for defects will not taken. Especially liability for consequential damages (lost profits, property damage, etc.) is hereby excluded. 
 Otherwise liability is restricted on to deliberate and grossly negligent attempted damage.
+
+
+##License
+
+This program is free software, you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation.
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY, without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
