@@ -72,53 +72,55 @@ namespace NSA4Dummies
 
                 translation = LanguageFile.GetTranslation(lan);
 
+				this.niContextMenu = new System.Windows.Forms.ContextMenu();
+				this.niStartSniffer = new System.Windows.Forms.MenuItem();
+				this.niStopSniffer = new System.Windows.Forms.MenuItem();
+				this.niSettings = new System.Windows.Forms.MenuItem();
+				this.niExit = new System.Windows.Forms.MenuItem();
+				this.components = new System.ComponentModel.Container();
+
+				// Initialize niContextMenu.
+				this.niContextMenu.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] { this.niStartSniffer, this.niStopSniffer, this.niSettings, this.niExit });
+
+				// Initialize niStartSniffer.
+				this.niStartSniffer.Index = 0;
+				this.niStartSniffer.Text = App.translation["notifyIcon.niStartSniffer"];
+				this.niStartSniffer.Click += new System.EventHandler(this.niStart_Click);
+
+				// Initialize niStopSniffer.
+				this.niStopSniffer.Index = 1;
+				this.niStopSniffer.Text = App.translation["notifyIcon.niStopSniffer"];
+				this.niStopSniffer.Click += new System.EventHandler(this.niStop_Click);
+
+				// Initialize niSettings.
+				this.niSettings.Index = 2;
+				this.niSettings.Text = App.translation["notifyIcon.niSettings"];
+				this.niSettings.Click += new System.EventHandler(this.niSettings_Click);
+
+				// Initialize niExit.
+				this.niExit.Index = 3;
+				this.niExit.Text = App.translation["notifyIcon.niExit"];
+				this.niExit.Click += new System.EventHandler(this.niExit_Click);
+
+				// Create the NotifyIcon.
+				this.ntfyIcon = new System.Windows.Forms.NotifyIcon(this.components);
+
+				// Set the icon for the systray.
+				ntfyIcon.Icon = (Icon)NSA4Dummies.Properties.Resources.NotifyIconTest;
+				ntfyIcon.ContextMenu = this.niContextMenu;
+				ntfyIcon.Text = App.translation["notifyIcon.niText"];
+				ntfyIcon.Visible = true;
+				ntfyIcon.BalloonTipTitle = App.translation["notifyIcon.niBalloon"];
+
+				// Click events for NotifyIcon.
+				ntfyIcon.Click += new System.EventHandler(this.ntfyIcon_Click);
+				ntfyIcon.DoubleClick += new System.EventHandler(this.ntfyIcon_DoubleClick);
+
                 // Start network sniffing
                 Sniffer.StartSniffer();
             }
 
-            this.niContextMenu = new System.Windows.Forms.ContextMenu();
-            this.niStartSniffer = new System.Windows.Forms.MenuItem();
-            this.niStopSniffer = new System.Windows.Forms.MenuItem();
-            this.niSettings = new System.Windows.Forms.MenuItem();
-            this.niExit = new System.Windows.Forms.MenuItem();
-            this.components = new System.ComponentModel.Container();
-
-            // Initialize niContextMenu.
-            this.niContextMenu.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] { this.niStartSniffer, this.niStopSniffer, this.niSettings, this.niExit });
-
-            // Initialize niStartSniffer.
-            this.niStartSniffer.Index = 0;
-            this.niStartSniffer.Text = App.translation["notifyIcon.niStartSniffer"];
-            this.niStartSniffer.Click += new System.EventHandler(this.niStart_Click);
-
-            // Initialize niStopSniffer.
-            this.niStopSniffer.Index = 1;
-            this.niStopSniffer.Text = App.translation["notifyIcon.niStopSniffer"];
-            this.niStopSniffer.Click += new System.EventHandler(this.niStop_Click);
             
-            // Initialize niSettings.
-            this.niSettings.Index = 2;
-            this.niSettings.Text = App.translation["notifyIcon.niSettings"];
-            this.niSettings.Click += new System.EventHandler(this.niSettings_Click);
-
-            // Initialize niExit.
-            this.niExit.Index = 3;
-            this.niExit.Text = App.translation["notifyIcon.niExit"];
-            this.niExit.Click += new System.EventHandler(this.niExit_Click);
-
-            // Create the NotifyIcon.
-            this.ntfyIcon = new System.Windows.Forms.NotifyIcon(this.components);
-
-            // Set the icon for the systray.
-			ntfyIcon.Icon = (Icon)NSA4Dummies.Properties.Resources.NotifyIconTest;
-            ntfyIcon.ContextMenu = this.niContextMenu;
-            ntfyIcon.Text = App.translation["notifyIcon.niText"];
-            ntfyIcon.Visible = true;
-            ntfyIcon.BalloonTipTitle = App.translation["notifyIcon.niBalloon"];
-
-            // Click events for NotifyIcon.
-            ntfyIcon.Click += new System.EventHandler(this.ntfyIcon_Click);
-            ntfyIcon.DoubleClick += new System.EventHandler(this.ntfyIcon_DoubleClick);
 
 			
 		}
