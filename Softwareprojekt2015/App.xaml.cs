@@ -116,7 +116,7 @@ namespace NSA4Dummies
             ntfyIcon.Visible = true;
             ntfyIcon.BalloonTipTitle = App.translation["notifyIcon.niBalloon"];
 
-            // Events for Clicking/Doubleclicking on NotifyIcon.
+            // Click events for NotifyIcon.
             ntfyIcon.Click += new System.EventHandler(this.ntfyIcon_Click);
             ntfyIcon.DoubleClick += new System.EventHandler(this.ntfyIcon_DoubleClick);
 
@@ -215,14 +215,9 @@ namespace NSA4Dummies
 			this.Shutdown();
 		}
 
-        string testtitle = "NSA 4 Dummies";
-        string testtext = "Dies ist ein Testext";
-        int testtimeout = 50000;
-        ToolTipIcon testicon = ToolTipIcon.Info;
         private void ntfyIcon_Click(object sender, EventArgs e)
         {
             ntfyIcon.Visible = true;
-            ShowTaskIconNotification(testtitle, testtext, testtimeout, testicon);
         }
 
         private void ntfyIcon_DoubleClick(object Sender, EventArgs e)
