@@ -116,11 +116,17 @@ namespace NSA4Dummies
             ntfyIcon.Visible = true;
             ntfyIcon.BalloonTipTitle = App.translation["notifyIcon.niBalloon"];
 
-            // Event for DoubleClick on NotifyIcon.
+            // Events for Clicking/Doubleclicking on NotifyIcon.
+            ntfyIcon.Click += new System.EventHandler(this.ntfyIcon_Click);
             ntfyIcon.DoubleClick += new System.EventHandler(this.ntfyIcon_DoubleClick);
 
 			
 		}
+
+        public void ShowTaskIconNotification(string balloonTitle, string balloonText, int balloonTimeout = 3000, ToolTipIcon balloonIcon = ToolTipIcon.None)
+        {
+            ntfyIcon.ShowBalloonTip(balloonTimeout, balloonTitle, balloonText, balloonIcon);
+        }
 
 		public void UpdateNotifyLanguage()
 		{
@@ -208,7 +214,17 @@ namespace NSA4Dummies
 		{
 			this.Shutdown();
 		}
-        
+
+        string testtitle = "NSA 4 Dummies";
+        string testtext = "Dies ist ein Testext";
+        int testtimeout = 50000;
+        ToolTipIcon testicon = ToolTipIcon.Info;
+        private void ntfyIcon_Click(object sender, EventArgs e)
+        {
+            ntfyIcon.Visible = true;
+            ShowTaskIconNotification(testtitle, testtext, testtimeout, testicon);
+        }
+
         private void ntfyIcon_DoubleClick(object Sender, EventArgs e)
         {
 			if (MainWindow.WindowState == WindowState.Minimized)
