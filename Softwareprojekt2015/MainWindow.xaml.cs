@@ -20,7 +20,7 @@ using System.Timers;
 namespace NSA4Dummies
 {
     /// <summary>
-    /// Interaktionslogik für MainWindow.xaml
+    /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
     {
@@ -76,7 +76,7 @@ namespace NSA4Dummies
             int choice = rnd.Next(0, fileTypes.Length);
             ((GUIViewModel)this.DataContext).addFileType(fileTypes[choice]);
 
-            string[] domains = { "google.com", "facebook.com", "web.de", "gmail.com", "youtube.com", "tu-ilmenau.de" };
+            string[] domains = { "google.com", "facebook.com", "google.de", "gmail.com", "youtube.com", "tu-ilmenau.de" };
             choice = rnd.Next(0, domains.Length);
             ((GUIViewModel)this.DataContext).addDomain(domains[choice]);
 

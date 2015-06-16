@@ -49,7 +49,7 @@ namespace NSA4Dummies
         /// </summary>
         public PacketSniffer()
         {
-            // get list of all devices
+            // Get list of all connected devices
             deviceList = LibPcapLiveDeviceList.Instance;
 
 			snifferWorker = new BackgroundWorker();
@@ -76,7 +76,7 @@ namespace NSA4Dummies
 		}
 
         /// <summary>
-        /// Gets called when the thread finishes it work or gets cancled and stops capturing of packets
+        /// Gets called when the thread finishes its work or gets canceled and stops capturing packets
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -149,7 +149,7 @@ namespace NSA4Dummies
 		}
 
         /// <summary>
-        /// Contains the main loop of the sniffing thread and reports packets to all registert handlers
+        /// Contains the main loop of the sniffing thread and reports packets to all registered handlers
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
