@@ -143,6 +143,7 @@ namespace NSA4Dummies
 
                 }
             }
+            // Shows a balloon tip informing the user, that the sniffer was started. 
             ((App)App.Current).ShowTaskIconNotification(App.translation["balloonTip.btStartSnifferTitle"], App.translation["balloonTip.btStartSnifferText"], 5000, System.Windows.Forms.ToolTipIcon.Info);
 			
 		}
@@ -235,7 +236,7 @@ namespace NSA4Dummies
                 snifferWorker.CancelAsync();
                 ewh.Set();
             }
-
+            // Shows a balloon tip informing the user, that the sniffer was stopped.
             ((App)App.Current).ShowTaskIconNotification(App.translation["balloonTip.btStopSnifferTitle"], App.translation["balloonTip.btStopSnifferText"], 5000, System.Windows.Forms.ToolTipIcon.Info);
 
         }
