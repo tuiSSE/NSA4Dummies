@@ -54,4 +54,10 @@
     <string id="niSettings">Einstellungen</string>
     <string id="niExit">Anwendung beenden</string>
   </category>
+  <category name="balloonTip">
+    <string id="btStartSnifferTitle">NSA 4 Dummies</string>
+    <string id="btStartSnifferText">Die Netzwerküberwachung wurde gestartet.</string>
+    <string id="btStopSnifferTitle">NSA 4 Dummies</string>
+    <string id="btStopSnifferText">Die Netzwerküberwachung wurde gestoppt.</string>
+  </category>
 </root>

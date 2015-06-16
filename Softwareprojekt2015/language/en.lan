@@ -53,4 +53,10 @@
     <string id="niSettings">Settings</string>
     <string id="niExit">Exit application</string>
   </category>
+  <category name="balloonTip">
+    <string id="btStartSnifferTitle">NSA 4 Dummies</string>
+    <string id="btStartSnifferText">The network sniffing was started.</string>
+    <string id="btStopSnifferTitle">NSA 4 Dummies</string>
+    <string id="btStopSnifferText">The network sniffing was stopped.</string>
+  </category>
 </root> 

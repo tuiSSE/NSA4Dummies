@@ -143,7 +143,7 @@ namespace NSA4Dummies
 
                 }
             }
-
+            ((App)App.Current).ShowTaskIconNotification(App.translation["balloonTip.btStartSnifferTitle"], App.translation["balloonTip.btStartSnifferText"], 5000, System.Windows.Forms.ToolTipIcon.Info);
 			
 		}
 
@@ -235,8 +235,9 @@ namespace NSA4Dummies
                 snifferWorker.CancelAsync();
                 ewh.Set();
             }
-            
-            
+
+            ((App)App.Current).ShowTaskIconNotification(App.translation["balloonTip.btStopSnifferTitle"], App.translation["balloonTip.btStopSnifferText"], 5000, System.Windows.Forms.ToolTipIcon.Info);
+
         }
 
         /// <summary>
