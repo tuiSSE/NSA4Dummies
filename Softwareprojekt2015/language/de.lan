@@ -48,7 +48,6 @@
   </category>
   <category name="notifyIcon">
     <string id="niText">NSA 4 Dummies</string>
-    <string id="niBalloon">NSA 4 Dummies</string>
     <string id="niStartSniffer">Netzüberwachung starten</string>
     <string id="niStopSniffer">Netzüberwachung stoppen</string>
     <string id="niSettings">Einstellungen</string>

@@ -110,7 +110,6 @@ namespace NSA4Dummies
 				ntfyIcon.ContextMenu = this.niContextMenu;
 				ntfyIcon.Text = App.translation["notifyIcon.niText"];
 				ntfyIcon.Visible = true;
-				ntfyIcon.BalloonTipTitle = App.translation["notifyIcon.niBalloon"];
 
 				// Click events for NotifyIcon.
 				ntfyIcon.Click += new System.EventHandler(this.ntfyIcon_Click);
@@ -124,12 +123,21 @@ namespace NSA4Dummies
 
 			
 		}
-
+        /// <summary>
+        /// This method is called to show the balloon tip.
+        /// </summary>
+        /// <param name="balloonTitle">Sets the title of the balloon tip.</param>
+        /// <param name="balloonText">Sets the text of the balloon tip.</param>
+        /// <param name="balloonTimeout">Sets the display time of the balloon tip. The default value is 3 seconds.</param>
+        /// <param name="balloonIcon">Sets the icon which is shown in the balloon tip. The default icon is set to none.</param>
         public void ShowTaskIconNotification(string balloonTitle, string balloonText, int balloonTimeout = 3000, ToolTipIcon balloonIcon = ToolTipIcon.None)
         {
             ntfyIcon.ShowBalloonTip(balloonTimeout, balloonTitle, balloonText, balloonIcon);
         }
 
+        /// <summary>
+        /// Updates the context menu entries of the notify icon when a different language is selected.
+        /// </summary>
 		public void UpdateNotifyLanguage()
 		{
 			this.niStartSniffer.Text = App.translation["notifyIcon.niStartSniffer"];
@@ -216,12 +224,24 @@ namespace NSA4Dummies
 		{
 			this.Shutdown();
 		}
-
+        /// <summary>
+        /// Event for clicking the notify icon.
+        /// If you click on the icon once, the balloon tip will show up with information
+        /// about the current status of the application.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ntfyIcon_Click(object sender, EventArgs e)
         {
             ntfyIcon.Visible = true;
         }
-
+        /// <summary>
+        /// Event for doubleclicking the notify icon.
+        /// If the main window is minized, the window will be restored with a double click.
+        /// If the main window is visible, it will be minimzed on double click.
+        /// </summary>
+        /// <param name="Sender"></param>
+        /// <param name="e"></param>
         private void ntfyIcon_DoubleClick(object Sender, EventArgs e)
         {
 			if (MainWindow.WindowState == WindowState.Minimized)
