@@ -40,7 +40,7 @@ namespace NSA4Dummies
 
             // GUI update timer
             guiUpdateTimer.Elapsed += new ElapsedEventHandler(updateGUI);
-            guiUpdateTimer.Interval = 1000; // 1000 ms is one second
+            guiUpdateTimer.Interval = 3000; // 1000 ms is one second
 
         }
 
@@ -102,7 +102,11 @@ namespace NSA4Dummies
         /// </summary>
         public void updateGUI()
         {
+            // Update graphs
             ((GUIViewModel)this.DataContext).updateDataGraphs();
+
+            // Update map
+            WorldMap.updateCountries();
         }
 
         
