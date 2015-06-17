@@ -3,7 +3,9 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
     <DataTemplate x:Key="Map">
-        <Viewbox>
+        <Viewbox 
+            Margin="5,5,5,5"
+            Stretch="Uniform">
             <Grid Loaded="Map_OnLoaded">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"/>

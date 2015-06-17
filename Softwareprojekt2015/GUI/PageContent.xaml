@@ -363,9 +363,13 @@
                 </ListBox>
             </Border>
 
+            <ContentControl Grid.Row="2" Content="{Binding}" Margin="0 0 0 10" ContentTemplate="{Binding Path=SelectedChartType.Key, Converter={StaticResource StringToDataTemplateConverter}}" HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch" VerticalAlignment="Stretch" VerticalContentAlignment="Stretch" />
+            
+            <!--
             <ScrollViewer Grid.Row="2" VerticalScrollBarVisibility="Disabled" HorizontalScrollBarVisibility="Auto" BorderThickness="0" >
                 <ContentControl Content="{Binding}" Margin="0 0 0 10" ContentTemplate="{Binding Path=SelectedChartType.Key, Converter={StaticResource StringToDataTemplateConverter}}" HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch" VerticalAlignment="Stretch" VerticalContentAlignment="Stretch" />
             </ScrollViewer>
+            -->
         </Grid>
     </DataTemplate>
 
