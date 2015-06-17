@@ -1,5 +1,3 @@
-Hier steht mal die Lizenz!
-
 Welcome to the NSA4Dummies Setup Wizard
 This wizard will guide you through the installation of NSA4Dummies.
 The Setup Wizard will install NSA4Dummies on your computer. Click Next to continue or Cancel to exit the Setup Wizard.
