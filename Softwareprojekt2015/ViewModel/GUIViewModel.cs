@@ -80,7 +80,7 @@ namespace NSA4Dummies
 
             fileType = fileType.ToUpper();
             
-            // Isert data to directionary
+            // Insert data to directionary
             if (FileTypes.ContainsKey(fileType))
             {
                 FileTypes[fileType] += 1;
@@ -96,7 +96,7 @@ namespace NSA4Dummies
 
 
         /// <summary>
-        /// This function adds a package to the domin-chart with the specific domain
+        /// This function adds a package to the domain-chart with the specific domain
         /// </summary>
         /// <param name="domain">The domain</param>
         public void addDomain(string domain)
@@ -104,7 +104,7 @@ namespace NSA4Dummies
 
             domain = domain.ToLower();
 
-            // Isert data to directionary
+            // Insert data to directionary
             if (Domains.ContainsKey(domain))
             {
                 Domains[domain] += 1;
@@ -141,7 +141,7 @@ namespace NSA4Dummies
 
 
         /// <summary>
-        /// This function is called whenever the graphs shall be updated
+        /// This function is called whenever graphs shall be updated
         /// </summary>
         public void updateDataGraphs()
         {
@@ -663,7 +663,7 @@ namespace NSA4Dummies
 
 
     /// <summary>
-    /// The class that is used to store the data to the charts
+    /// The class that is used to store data to the charts
     /// </summary>
     public class DataClass : INotifyPropertyChanged
     {
