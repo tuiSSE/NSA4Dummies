@@ -7,7 +7,8 @@
         WindowStyle = "None"
         WindowState = "Maximized"
         Loaded="Window_Loaded"
-        MouseLeftButtonDown="Window_MouseLeftButtonDown">
+        MouseLeftButtonDown="Window_MouseLeftButtonDown"
+        MouseLeftButtonUp="Window_MouseLeftButtonUp">
     <Grid x:Name="mainGrid">
         <ContentControl Content="{Binding}" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" ContentTemplate="{StaticResource PageContent}" />
     </Grid>

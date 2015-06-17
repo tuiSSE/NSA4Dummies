@@ -129,7 +129,22 @@ namespace NSA4Dummies
         /// <param name="e"></param>
         private void Window_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            this.DragMove();
+			if (WindowState.Normal == this.WindowState)
+			{
+				this.Cursor = Cursors.SizeAll;
+				this.DragMove();
+				
+			}
+            
         }
+
+		private void Window_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+		{
+			if (WindowState.Normal == this.WindowState)
+			{
+				this.Cursor = Cursors.Arrow;
+
+			}
+		}
     }
 }
