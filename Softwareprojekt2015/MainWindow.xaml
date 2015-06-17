@@ -8,7 +8,9 @@
         WindowState = "Maximized"
         Loaded="Window_Loaded"
         MouseLeftButtonDown="Window_MouseLeftButtonDown"
-        MouseLeftButtonUp="Window_MouseLeftButtonUp">
+        MouseLeftButtonUp="Window_MouseLeftButtonUp"
+        ResizeMode="CanResizeWithGrip"
+        AllowsTransparency="True">
     <Grid x:Name="mainGrid">
         <ContentControl Content="{Binding}" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" ContentTemplate="{StaticResource PageContent}" />
     </Grid>
