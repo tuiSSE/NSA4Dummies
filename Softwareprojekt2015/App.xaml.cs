@@ -178,6 +178,12 @@ namespace NSA4Dummies
         private System.ComponentModel.IContainer components;
 
 
+        //public static MessageBoxResult Show(string messageBoxText, string caption)
+        //{
+        //    messageBoxText = App.translation["messageBox.noDeviceText"];
+        //    caption = App.translation["messageBox.noDeviceCaption"];
+        //}
+
         /// <summary>
         /// Not used yet.
         /// </summary>
@@ -257,6 +263,13 @@ namespace NSA4Dummies
             MainWindow.Activate();
         }
 
+        //void showMessageBoxButton_Click(object Sender, RoutedEventArgs e)
+        //{
+        //    string message = App.translation["messageBox.noDeviceText"];
+        //    string caption = App.translation["messageBox.noDeviceCaption"];
+
+        //    MessageBoxResult result = System.Windows.MessageBox.Show(message, caption);
+        //}
 
         private void Application_Startup(object Sender, StartupEventArgs e)
         {

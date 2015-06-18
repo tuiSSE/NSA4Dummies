@@ -59,4 +59,8 @@
     <string id="btStopSnifferTitle">NSA 4 Dummies</string>
     <string id="btStopSnifferText">Die Netzwerküberwachung wurde gestoppt.</string>
   </category>
+  <category name="messageBox">
+    <string id="noDeviceCaption">Kein Netzweradapter gefunden!</string>
+    <string id="noDeviceText">Es konnte kein Netzwerkadapter gefunden werden. Bitte stellen Sie sicher, dass ein Netzwerkadapter angeschlossen ist und starten Sie das Programm erneut.</string>
+  </category>
 </root>

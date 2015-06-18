@@ -138,8 +138,17 @@ namespace NSA4Dummies
                     string filter = "ip and (tcp or udp)";
                     device.Filter = filter;
 
-                    // Start the capturing process.
-                    device.StartCapture();
+                    if(deviceList == null)
+                    {
+                        // Show MessageBox
+                        // MessageBox.Show(messageBoxText, caption);
+                    }
+                    else
+                    {
+                        // Start the capturing process.
+                        device.StartCapture();
+                    }
+                    
 
                 }
             }
