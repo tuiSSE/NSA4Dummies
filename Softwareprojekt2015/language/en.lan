@@ -4,7 +4,7 @@
     <string id="ok">OK</string>
     <string id="cancel">Cancel</string>
     <string id="save">Save</string>
-    <string id="version">v0.2.1</string>
+    <string id="version">v0.2.2</string>
     <string id="appName">NSA 4 Dummies</string>
   </category>
   <category name="settings">
