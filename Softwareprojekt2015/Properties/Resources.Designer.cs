@@ -63,9 +63,9 @@ namespace NSA4Dummies.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
-        internal static System.Drawing.Icon NotifyIconTest {
+        internal static System.Drawing.Icon NotifyIcon {
             get {
-                object obj = ResourceManager.GetObject("NotifyIconTest", resourceCulture);
+                object obj = ResourceManager.GetObject("NotifyIcon", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
             }
         }

@@ -44,6 +44,8 @@ namespace NSA4Dummies
 
         private static Mutex mut = new Mutex();
 
+        private bool noNetworkDevice = false;
+
         /// <summary>
         /// Constructor.
         /// </summary>
@@ -51,6 +53,12 @@ namespace NSA4Dummies
         {
             // Get list of all connected devices
             deviceList = LibPcapLiveDeviceList.Instance;
+
+            if(deviceList == null)
+            {
+                noNetworkDevice = true;
+                System.Windows.MessageBox.Show(App.translation["messageBox.noDeviceText"], App.translation["messageBox.noDeviceCaption"], MessageBoxButton.OK, MessageBoxImage.Error);
+            }
 
 			snifferWorker = new BackgroundWorker();
 
@@ -138,16 +146,8 @@ namespace NSA4Dummies
                     string filter = "ip and (tcp or udp)";
                     device.Filter = filter;
 
-                    if(deviceList == null)
-                    {
-                        // Show MessageBox
-                        // MessageBox.Show(messageBoxText, caption);
-                    }
-                    else
-                    {
-                        // Start the capturing process.
-                        device.StartCapture();
-                    }
+                    // Start the capturing process.
+                    device.StartCapture();
                     
 
                 }
