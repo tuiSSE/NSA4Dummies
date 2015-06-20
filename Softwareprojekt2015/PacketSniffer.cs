@@ -112,7 +112,7 @@ namespace NSA4Dummies
 		public void StartSniffer()
 		{
             // Sniffer already running?
-            if (!snifferWorker.IsBusy)
+            if (!snifferWorker.IsBusy && !noNetworkDevice)
             {
                 snifferWorker.RunWorkerAsync();
 
