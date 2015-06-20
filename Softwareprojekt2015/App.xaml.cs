@@ -106,7 +106,7 @@ namespace NSA4Dummies
 				this.ntfyIcon = new System.Windows.Forms.NotifyIcon(this.components);
 
 				// Set the icon for the systray.
-				ntfyIcon.Icon = (Icon)NSA4Dummies.Properties.Resources.NotifyIconTest;
+				ntfyIcon.Icon = (Icon)NSA4Dummies.Properties.Resources.NotifyIcon;
 				ntfyIcon.ContextMenu = this.niContextMenu;
 				ntfyIcon.Text = App.translation["notifyIcon.niText"];
 				ntfyIcon.Visible = true;
@@ -177,12 +177,6 @@ namespace NSA4Dummies
         private System.Windows.Forms.MenuItem niExit;
         private System.ComponentModel.IContainer components;
 
-
-        //public static MessageBoxResult Show(string messageBoxText, string caption)
-        //{
-        //    messageBoxText = App.translation["messageBox.noDeviceText"];
-        //    caption = App.translation["messageBox.noDeviceCaption"];
-        //}
 
         /// <summary>
         /// Not used yet.
@@ -262,14 +256,6 @@ namespace NSA4Dummies
 
             MainWindow.Activate();
         }
-
-        //void showMessageBoxButton_Click(object Sender, RoutedEventArgs e)
-        //{
-        //    string message = App.translation["messageBox.noDeviceText"];
-        //    string caption = App.translation["messageBox.noDeviceCaption"];
-
-        //    MessageBoxResult result = System.Windows.MessageBox.Show(message, caption);
-        //}
 
         private void Application_Startup(object Sender, StartupEventArgs e)
         {

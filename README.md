@@ -18,7 +18,10 @@ This software is a sleek, intuitive application that shows unencrypted network t
 [Download the latest release](https://github.com/Softwareprojekt2015/Softwareprojekt2015/releases)
 
 Getting started:
-To run double click icon.
+To run double click installer.
+
+It's necessery to install the windows packet capture library.
+[Download WinPcap from http://www.winpcap.org/](http://www.winpcap.org/)
 
 ## General:
 

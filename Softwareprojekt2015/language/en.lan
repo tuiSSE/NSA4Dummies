@@ -59,6 +59,6 @@
   </category>
   <category name="messageBox">
     <string id="noDeviceCaption">No network device found!</string>
-    <string id="noDeviceText">No network device to be found. Please make sure that a network device is connected and restart the program.</string>
+    <string id="noDeviceText">No network device was found. Please make sure that a network device is connected and restart the program.</string>
   </category>
 </root> 
