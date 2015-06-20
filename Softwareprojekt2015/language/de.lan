@@ -54,9 +54,9 @@
   </category>
   <category name="sniffer">
     <string id="dllMissingText">Scheinbar fehlt eine DLL. Haben Sie WinPcap installiert? Falls es dennoch nicht funktioniert können Sie eine Neuinstallation der Anwendung versuchen.</string>
-    <string id="dllMissingCaption">DLL missing!</string>
-    <string id="start">Network sniffing started.</string>
-    <string id="stop">Network sniffing stopped.</string>
+    <string id="dllMissingCaption">DLL fehlt!</string>
+    <string id="start">Netzwerküberwachung gestartet.</string>
+    <string id="stop">Netzwerküberwachung gestoppt.</string>
   </category>
   <category name="messageBox">
     <string id="noDeviceCaption">Kein Netzweradapter gefunden!</string>
