@@ -260,7 +260,7 @@ namespace NSA4Dummies
         private void Application_Startup(object Sender, StartupEventArgs e)
         {
             
-            if (languageFileMissing)
+            if (languageFileMissing || Sniffer.NoNetworkDevice)
             {
 
                 this.Shutdown();
