@@ -37,6 +37,7 @@
   </category>
   <category name="mainWindow">
     <string id="windowTitle">NSA 4 Dummies</string>
+    <string id="programName">NSA 4 Dummies</string>
     <string id="buttonAbout">About</string>
     <string id="buttonOptions">Options</string>
     <string id="map">Map</string>
