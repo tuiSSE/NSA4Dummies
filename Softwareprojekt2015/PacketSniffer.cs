@@ -45,7 +45,13 @@ namespace NSA4Dummies
         private static Mutex mut = new Mutex();
 
         private bool noNetworkDevice = false;
-        public bool NoNetworkDevice { get; }
+        public bool NoNetworkDevice
+        {
+            get
+            {
+                return noNetworkDevice;
+            }
+        }
 
         /// <summary>
         /// Constructor.
