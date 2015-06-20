@@ -273,7 +273,7 @@ namespace NSA4Dummies
 
         private void Application_Startup(object Sender, StartupEventArgs e)
         {
-            //base.OnStartup(e);
+            
             if (languageFileMissing)
             {
 

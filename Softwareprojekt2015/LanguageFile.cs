@@ -36,28 +36,34 @@ namespace NSA4Dummies
 			}
 		}
 
+		private static Language[] languages = null;
+
         /// <summary>
         /// Gets all languages found in language folder of the application
         /// </summary>
         /// <returns>Returns an array of type LanguageFile.Language containing all found languages or null if no language could be found</returns>
 		public static Language[] GetLanguages()
 		{
-			string[] files = Directory.GetFiles(@"language\");
-            Language[] lans = null;
-            if (!(0 == files.Length))
-            {
-                lans = new Language[files.Length];
-                XmlDocument doc = new XmlDocument();
-                for (int i = 0; i < files.Length; i++)
-                {
-                    doc.Load(@files[i]);
+			if (null == languages)
+			{
+				string[] files = Directory.GetFiles(@"language\");
+				
+				if (!(0 == files.Length))
+				{
+					languages = new Language[files.Length];
+					XmlDocument doc = new XmlDocument();
+					for (int i = 0; i < files.Length; i++)
+					{
+						doc.Load(@files[i]);
 
-                    lans[i] = DetermineLanguage(doc, files[i]);
-                }
-            }
+						languages[i] = DetermineLanguage(doc, files[i]);
+					}
+				}
+			}
+			
 			
 
-			return lans;
+			return languages;
 
 		}
 

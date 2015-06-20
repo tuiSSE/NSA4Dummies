@@ -12,6 +12,7 @@
                 <ResourceDictionary Source="GUI/Charts.xaml" />
                 <ResourceDictionary Source="GUI/WorldMap.xaml" />
                 <ResourceDictionary Source="GUI/PageContent.xaml" />
+                <ResourceDictionary Source="GUI/Settings.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

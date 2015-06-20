@@ -11,8 +11,7 @@
     <string id="title">Einstellungen</string>
     <string id="language">Sprache wählen</string>
     <string id="advanced">Erweiterte Einstellungen</string>
-    <string id="buttonClose">Schließen</string>
-    
+    <string id="buttonClose">Schließen</string>  
     <string id="headerAbout">Über</string>
     <string id="aboutHeadline1">Überschrift 1</string>
     <string id="aboutParagraph1">Abschnitt 1</string>
@@ -28,7 +27,7 @@
     <string id="aboutHyperlinkURL3">http://youtube.com</string>
 
     <string id="headerOptions">Optionen und Einstellungen</string>
-    <string id="optionsHeadline1">Anzeigeoptionen</string>
+    <string id="displayHeadline">Anzeigeoptionen</string>
     <string id="optionsTitleVisible">Überschrift anzeigen</string>
     <string id="optionsLegendVisible">Legende Anzeigen</string>
     <string id="optionsHackerMode">Hacker Modus</string>
@@ -53,11 +52,11 @@
     <string id="niSettings">Einstellungen</string>
     <string id="niExit">Anwendung beenden</string>
   </category>
-  <category name="balloonTip">
-    <string id="btStartSnifferTitle">NSA 4 Dummies</string>
-    <string id="btStartSnifferText">Die Netzwerküberwachung wurde gestartet.</string>
-    <string id="btStopSnifferTitle">NSA 4 Dummies</string>
-    <string id="btStopSnifferText">Die Netzwerküberwachung wurde gestoppt.</string>
+  <category name="sniffer">
+    <string id="dllMissingText">Scheinbar fehlt eine DLL. Haben Sie WinPcap installiert? Falls es dennoch nicht funktioniert können Sie eine Neuinstallation der Anwendung versuchen.</string>
+    <string id="dllMissingCaption">DLL missing!</string>
+    <string id="start">Network sniffing started.</string>
+    <string id="stop">Network sniffing stopped.</string>
   </category>
   <category name="messageBox">
     <string id="noDeviceCaption">Kein Netzweradapter gefunden!</string>

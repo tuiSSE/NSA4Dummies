@@ -16,51 +16,6 @@ namespace NSA4Dummies
         public PageContent(){
             
         }
-        
-        
-        /// <summary>
-        /// This function is called when the user selects a language from the ComboBox
-        /// This function then updates the DataContext of the program.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void LangComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            var comboBox = sender as ComboBox;
-
-            LanguageFile.Language value = (LanguageFile.Language)comboBox.SelectedItem;
-
-            Properties.Settings.Default.lan = value.sName;
-            Properties.Settings.Default.Save();
-
-            
-            App.translation = LanguageFile.GetTranslation(value.sName);
-            
-
-            foreach (Window w in App.Current.Windows)
-            {
-                w.DataContext = new GUIViewModel();;
-            }
-			((App)App.Current).UpdateNotifyLanguage();
-        }
-
-        
-        /// <summary>
-        /// This function is called when the ComboBox is loaded and sets up the options depending on the available languages
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void LangComboBox_Loaded(object sender, RoutedEventArgs e)
-        {
-            var comboBox = sender as ComboBox;
-
-            LanguageFile.Language[] data = LanguageFile.GetLanguages();
-
-            comboBox.ItemsSource = data;
-
-            comboBox.SelectedItem = App.CurrentLanguage;
-
-        }
 
         
 

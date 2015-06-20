@@ -49,8 +49,18 @@ namespace NSA4Dummies
         /// </summary>
         public PacketSniffer()
         {
-            // Get list of all connected devices
-            deviceList = LibPcapLiveDeviceList.Instance;
+			try
+			{
+				// Get list of all connected devices
+				deviceList = LibPcapLiveDeviceList.Instance;
+			}
+			catch(DllNotFoundException ex)
+			{
+				MessageBox.Show(App.translation["sniffer.dllMissingText"], App.translation["sniffer.dllMissingCaption"], MessageBoxButton.OK, MessageBoxImage.Error);
+				
+			}
+            
+            
 
 			snifferWorker = new BackgroundWorker();
 
@@ -153,7 +163,7 @@ namespace NSA4Dummies
                 }
             }
             // Shows a balloon tip informing the user, that the sniffer was started. 
-            ((App)App.Current).ShowTaskIconNotification(App.translation["balloonTip.btStartSnifferTitle"], App.translation["balloonTip.btStartSnifferText"], 5000, System.Windows.Forms.ToolTipIcon.Info);
+            ((App)App.Current).ShowTaskIconNotification(App.translation["general.appName"], App.translation["sniffer.start"], 5000, System.Windows.Forms.ToolTipIcon.Info);
 			
 		}
 
@@ -246,7 +256,7 @@ namespace NSA4Dummies
                 ewh.Set();
             }
             // Shows a balloon tip informing the user, that the sniffer was stopped.
-            ((App)App.Current).ShowTaskIconNotification(App.translation["balloonTip.btStopSnifferTitle"], App.translation["balloonTip.btStopSnifferText"], 5000, System.Windows.Forms.ToolTipIcon.Info);
+            ((App)App.Current).ShowTaskIconNotification(App.translation["general.appName"], App.translation["sniffer.stop"], 5000, System.Windows.Forms.ToolTipIcon.Info);
 
         }
 

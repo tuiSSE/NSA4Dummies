@@ -97,6 +97,9 @@
     <Compile Include="GUI\PageContent.xaml.cs">
       <DependentUpon>PageContent.xaml</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Settings.xaml.cs">
+      <DependentUpon>Settings.xaml</DependentUpon>
+    </Compile>
     <Compile Include="GUI\WorldMap.xaml.cs">
       <DependentUpon>WorldMap.xaml</DependentUpon>
     </Compile>

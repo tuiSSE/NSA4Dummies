@@ -515,6 +515,7 @@ namespace NSA4Dummies
             ViewTypes.Add(new ChartType(App.translation["mainWindow.settings"], "Settings"));
             ViewTypes.Add(new ChartType(App.translation["mainWindow.credits"], "Credits"));
             SelectedChartType = ViewTypes.FirstOrDefault();
+			
 
             FontSizes = new List<double>();
             FontSizes.Add(8.0);

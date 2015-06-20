@@ -12,7 +12,6 @@
     <string id="language">Choose Language</string>
     <string id="advanced">Advanced Settings</string>
     <string id="buttonClose">Close</string>
-    
     <string id="headerAbout">About</string>
     <string id="aboutHeadline1">Headline 1</string>
     <string id="aboutParagraph1">Paragraph 1</string>
@@ -28,7 +27,7 @@
     <string id="aboutHyperlinkURL3">http://youtube.com</string>
 
     <string id="headerOptions">Options and Settings</string>
-    <string id="optionsHeadline1">Display Options</string>
+    <string id="displayHeadline">Display Options</string>
     <string id="optionsTitleVisible">Title Visible</string>
     <string id="optionsLegendVisible">Legend Visible</string>
     <string id="optionsHackerMode">Hacker Mode</string>
@@ -52,11 +51,11 @@
     <string id="niSettings">Settings</string>
     <string id="niExit">Exit application</string>
   </category>
-  <category name="balloonTip">
-    <string id="btStartSnifferTitle">NSA 4 Dummies</string>
-    <string id="btStartSnifferText">The network sniffing was started.</string>
-    <string id="btStopSnifferTitle">NSA 4 Dummies</string>
-    <string id="btStopSnifferText">The network sniffing was stopped.</string>
+  <category name="sniffer">
+    <string id="dllMissingText">Looks like a dll is missing. Have you installed WinPcap? You may try to reinstall the application if it's still not working.</string>
+    <string id="dllMissingCaption">DLL missing!</string>
+    <string id="start">Network sniffing started.</string>
+    <string id="stop">Network sniffing stopped.</string>
   </category>
   <category name="messageBox">
     <string id="noDeviceCaption">No network device found!</string>
