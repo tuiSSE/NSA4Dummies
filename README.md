@@ -1,8 +1,8 @@
 # Softwareprojekt2015
 "NSA für Dummies"
-Version 0.1
+Version 0.3
 
-This software is a sleek, intuitive application that shows unencrypted network traffic.
+This software is a sleek, intuitive application that shows unencrypted network traffic and IP-Routing in your own home network.
 
 ## Table of contents
 
