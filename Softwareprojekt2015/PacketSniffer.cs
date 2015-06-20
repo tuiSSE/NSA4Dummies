@@ -45,7 +45,7 @@ namespace NSA4Dummies
         private static Mutex mut = new Mutex();
 
         private bool noNetworkDevice = false;
-        public bool NoNetworkDevice { get; set; }
+        public bool NoNetworkDevice { get; }
 
         /// <summary>
         /// Constructor.
@@ -67,7 +67,7 @@ namespace NSA4Dummies
 
             if(deviceList == null)
             {
-                NoNetworkDevice = true;
+                noNetworkDevice = true;
                 System.Windows.MessageBox.Show(App.translation["messageBox.noDeviceText"], App.translation["messageBox.noDeviceCaption"], MessageBoxButton.OK, MessageBoxImage.Error);
             }
 
