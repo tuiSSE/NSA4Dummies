@@ -420,7 +420,7 @@ namespace NSA4Dummies
                     return "#FF000000";
                 }
                 // default
-                return "#FF1E1E1E";
+                return "#FF1e1e1e";
             }
         }
         /// <summary>

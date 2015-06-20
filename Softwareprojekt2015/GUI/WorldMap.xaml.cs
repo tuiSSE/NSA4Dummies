@@ -184,8 +184,8 @@ namespace NSA4Dummies
 
                 if (_shadingDictionary.ContainsKey(countryCode) && _pathDictionary.ContainsKey(countryCode))
                 {
-                    // Sets color for countries on worldmap
-                    SolidColorBrush packageShading = new SolidColorBrush(Colors.Aquamarine);
+                    // Sets shading color for countries on worldmap when receiving/sending packages from/to country
+                    SolidColorBrush packageShading = new SolidColorBrush(Colors.SkyBlue);
 
                     packageShading.Opacity = _shadingDictionary[countryCode];
                     _pathDictionary[countryCode].Fill = packageShading;
@@ -230,10 +230,10 @@ namespace NSA4Dummies
             {
                 double opacity = (e.Value - minVal) / (maxVal - minVal);
 
-                // Minimum is 3%
-                if (opacity < 0.03)
+                // Minimum opacity is 33% for better visibility
+                if (opacity < 0.33  )
                 {
-                    opacity = 0.03;
+                    opacity = 0.33;
                 }
 
                 _shadingDictionary[e.Key] = opacity;
@@ -248,7 +248,7 @@ namespace NSA4Dummies
 
                     if (_shadingDictionary.ContainsKey(name))
                     {
-                        SolidColorBrush packageShading = new SolidColorBrush(Colors.Aquamarine);
+                        SolidColorBrush packageShading = new SolidColorBrush(Colors.SkyBlue);
 
                         packageShading.Opacity = _shadingDictionary[name];
                         p.Fill = packageShading;
