@@ -42,7 +42,7 @@
     <string id="buttonOptions">Options</string>
     <string id="map">Map</string>
     <string id="settings">Settings</string>
-    <string id="stats">Statistic</string>
+    <string id="stats">Statistics</string>
     <string id="credits">Credits</string>
   </category>
   <category name="notifyIcon">
