@@ -13,6 +13,8 @@
                 <ResourceDictionary Source="GUI/WorldMap.xaml" />
                 <ResourceDictionary Source="GUI/PageContent.xaml" />
                 <ResourceDictionary Source="GUI/Settings.xaml" />
+                <ResourceDictionary Source="GUI/Credits.xaml" />
+
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

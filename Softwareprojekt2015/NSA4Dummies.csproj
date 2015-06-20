@@ -121,6 +121,10 @@
     <Compile Include="Core\IPLookup\IP2Country.cs" />
     <Compile Include="Core\ObservableCollectionEx.cs" />
     <Compile Include="DataPacket.cs" />
+    <Compile Include="GUI\Credits.xaml.cs">
+      <DependentUpon>Credits.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="GUI\PageContent.xaml.cs">
       <DependentUpon>PageContent.xaml</DependentUpon>
     </Compile>
@@ -151,8 +155,8 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="GUI\PageContent.xaml">
-      <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="GUI\Settings.xaml">
       <SubType>Designer</SubType>
@@ -207,6 +211,7 @@
     </None>
     <None Include="language\de.lan">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </None>
     <None Include="language\en.lan">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

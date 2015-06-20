@@ -1,10 +1,37 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    x:Class="NSA4Dummies.Credits">
+  <DataTemplate x:Key="Credits">
+    <Viewbox>
+      <Grid x:Name="maingrid" Background="{Binding Path=MainBackground}">
+        
 
-    <DataTemplate x:Key="Credits">
-        <Viewbox>
+        
+          <!-- 
+                    \brief  There are two columns in the first row.
+                            Column 0: Program title and version
+                            Column 1: 'About' and 'Config' button
+                -->
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="*"/>
+          </Grid.ColumnDefinitions>
 
-        </Viewbox>
-    </DataTemplate>
+          <!-- 
+                    \brief  Column 0: Program title and version
+                -->
+          <Border Grid.Column="0"
+                  Padding = "20 0 0 0"
+                  HorizontalAlignment="Left">
+            <StackPanel Orientation="Horizontal">
+              <TextBlock Foreground="{Binding Path=MainForeground}" VerticalAlignment="Bottom" x:Name="pageTitle" Text="{Binding T[general.appName]}" Style="{StaticResource PageHeaderTextStyle}" />
+              <TextBlock Foreground="{Binding Path=MainForeground}" VerticalAlignment="Bottom" Margin="0 0 0 3" Opacity="0.75" Text="{Binding T[general.version]}" Style="{StaticResource SectionHeaderSmallTextStyle}" />
+            </StackPanel>
 
+          </Border>
+        </Grid>
+    </Viewbox>
+  </DataTemplate>
 </ResourceDictionary>
+                 
+   
