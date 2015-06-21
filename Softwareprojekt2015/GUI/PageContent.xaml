@@ -116,75 +116,14 @@
                         <TextBlock Foreground="{Binding Path=MainForeground}" VerticalAlignment="Bottom" Margin="0 0 0 3" Opacity="0.75" Text="{Binding T[general.version]}" Style="{StaticResource SectionHeaderSmallTextStyle}" />
                     </StackPanel>
                 </Border>
-
-                <!-- 
-                    \brief  Column 1: 'About' and 'Config' button
-                -->
                 <Border Grid.Column="1">
                     <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Right">
-                        <StackPanel>
-                            <!-- -->
-                            <ToggleButton x:Name="aboutButton" Style="{StaticResource ToggleButtonWithText}">
-                                <TextBlock Text="{Binding T[mainWindow.buttonAbout]}" Foreground="{Binding Path=MainForeground}" />
-                            </ToggleButton>
-
-                            <local:PortablePopup Foreground="Black" IsOpen="{Binding Path=IsChecked, ElementName=aboutButton, Mode=TwoWay}">
-                                <Grid>
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition Height="auto" />
-                                        <RowDefinition Height="*" />
-                                    </Grid.RowDefinitions>
-                                    <Border Grid.Row="0" Background="#FFEFEFEF">
-                                        <TextBlock Margin="15" Text="{Binding T[settings.headerAbout]}" Style="{StaticResource SectionHeaderSmallTextStyle}" />
-                                    </Border>
-                                    <ScrollViewer Grid.Row="1" BorderThickness="0">
-                                        <StackPanel Margin="15">
-                                            <TextBlock Text="{Binding T[settings.aboutHeadline1]}" Style="{StaticResource SectionHeaderSmallTextStyle}" />
-                                            <TextBlock Style="{StaticResource ContentTextStyle}" Text="{Binding T[settings.aboutParagraph1]}" />
-
-                                            <TextBlock Text="{Binding T[settings.aboutHeadline2]}" Style="{StaticResource SectionHeaderSmallTextStyle}" />
-                                            <Grid>
-                                                <Grid.ColumnDefinitions>
-                                                    <ColumnDefinition Width="*" />
-                                                    <ColumnDefinition Width="auto" />
-                                                </Grid.ColumnDefinitions>
-                                                <Image Margin="10 0 0 10" VerticalAlignment="Top" Grid.Column="1" Width="75" Height="75" Source="/Shared/Images/torsten.png" />
-                                                <TextBlock Grid.Column="0" Style="{StaticResource ContentTextStyle}" Text="{Binding T[settings.aboutParagraph2]}" />
-                                            </Grid>
-                                            <local:PortableHyperLinkButton Url="{Binding T[settings.aboutHyperlinkURL1]}">
-                                                <TextBlock Margin="0 0 0 3" Style="{StaticResource ContentTextStyle}">
-                                                    <Underline>
-                                                        <Run Text="{Binding T[settings.aboutHyperlinkText1]}"/>
-                                                    </Underline>
-                                                </TextBlock>
-                                            </local:PortableHyperLinkButton>
-                                            <local:PortableHyperLinkButton Url="{Binding T[settings.aboutHyperlinkURL2]}">
-                                                <TextBlock Margin="0 0 0 3" Style="{StaticResource ContentTextStyle}">
-                                                    <Underline>
-                                                        <Run Text="{Binding T[settings.aboutHyperlinkText2]}"/>
-                                                    </Underline>
-                                                </TextBlock>
-                                            </local:PortableHyperLinkButton>
-
-                                            <TextBlock Text="{Binding T[settings.aboutHeadline3]}" Style="{StaticResource SectionHeaderSmallTextStyle}" />
-                                            <TextBlock Style="{StaticResource ContentTextStyle}" Text="{Binding T[settings.aboutParagraph3]}" />
-                                            <local:PortableHyperLinkButton Url="{Binding T[settings.aboutHyperlinkURL3]}">
-                                                <TextBlock Margin="0 0 0 3" Style="{StaticResource ContentTextStyle}">
-                                                    <Underline>
-                                                        <Run Text="{Binding T[settings.aboutHyperlinkText3]}"/>
-                                                    </Underline>
-                                                </TextBlock>
-                                            </local:PortableHyperLinkButton>
-                                        </StackPanel>
-                                    </ScrollViewer>
-                                </Grid>
-                            </local:PortablePopup>
-                        </StackPanel>
+                    
 
                         
                         <!-- Close, Normal and Minimize Button -->
                         <StackPanel Orientation="Horizontal"
-                                    Margin="0,0,10,0">
+                                    Margin="0,0,15,0">
                             <Button Content="_" Style="{StaticResource WindowControllButton}" Name="btn_minimize" Click="btn_minimize_Click" />
                             <Button Content="□" Style="{StaticResource WindowControllButton}" Name="btn_normal" Click="btn_normal_Click" />
                             <Button Content="X" Style="{StaticResource WindowControllButton}" Name="btn_close" Click="btn_close_Click" />
