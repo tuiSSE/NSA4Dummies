@@ -35,8 +35,8 @@
     <string id="optionsLanguage">Sprache</string>
     <string id="optionsFontSize">Schriftgröße</string>
     <string id="optionsDoughnutInnerRadiusRatio">Donutchart Radius</string>
-    <string id="optionsSelection Support">Auswahlhilfe</string>
-    <string id="ColorInfo">Users can select the chart elements (like the bar or column). Change the color for the selected element. The selected object can be used to display additional data.</string>
+    <string id="optionsSelectionSupport">Auswahlhilfe</string>
+    <string id="optionsColorInfo">Nutzer können die Diagramm Elemente auswählen. Durch das ändern der Farbe eines ausgewählten Elementes können weitere Daten angezeigt werden</string>
   </category>
   <category name="mainWindow">
     <string id="windowTitle">NSA 4 Dummies</string>

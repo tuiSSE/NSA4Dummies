@@ -36,7 +36,7 @@
     <string id="optionsFontSize">Font Size</string>
     <string id="optionsDoughnutInnerRadiusRatio">Doughnut Inner Radius</string>
     <string id="optionsSelectionSupport">Selection Support</string>
-    <string id="ColorInfo">Users can select the chart elements (like the bar or column). Change the color for the selected element. The selected object can be used to display additional data.</string>
+    <string id="optionsColorInfo">Users can select the chart elements (like the bar or column). Change the color for the selected element. The selected object can be used to display additional data.</string>
   </category>
   <category name="mainWindow">
     <string id="windowTitle">NSA 4 Dummies</string>
