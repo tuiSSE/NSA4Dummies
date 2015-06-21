@@ -10,42 +10,42 @@
                     <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Right">
                         <StackPanel>
                             <Border Grid.Row="0" Background="#FFEFEFEF">
-                                <TextBlock Margin="15" Text="{Binding T[settings.headerAbout]}" Style="{StaticResource SectionHeaderSmallTextStyle}" />
+                                <TextBlock Margin="15" Text="{Binding T[credits.headerAbout]}" Style="{StaticResource SectionHeaderSmallTextStyle}" />
                             </Border>
                             <ScrollViewer Grid.Row="1" BorderThickness="0">
                                 <StackPanel Margin="15">
-                                    <TextBlock Text="{Binding T[settings.aboutHeadline1]}" Style="{StaticResource SectionHeaderSmallTextStyle}" />
-                                    <TextBlock Style="{StaticResource ContentTextStyle}" Text="{Binding T[settings.aboutParagraph1]}" />
+                                    <TextBlock Text="{Binding T[credits.aboutHeadline1]}" Style="{StaticResource SectionHeaderSmallTextStyle}" />
+                                    <TextBlock Style="{StaticResource ContentTextStyle}" Text="{Binding T[credits.aboutParagraph1]}" />
 
-                                    <TextBlock Text="{Binding T[settings.aboutHeadline2]}" Style="{StaticResource SectionHeaderSmallTextStyle}" />
+                                    <TextBlock Text="{Binding T[credits.aboutHeadline2]}" Style="{StaticResource SectionHeaderSmallTextStyle}" />
                                     <Grid>
                                         <Grid.ColumnDefinitions>
                                             <ColumnDefinition Width="*" />
                                             <ColumnDefinition Width="auto" />
                                         </Grid.ColumnDefinitions>
-                                        <TextBlock Grid.Column="0" Style="{StaticResource ContentTextStyle}" Text="{Binding T[settings.aboutParagraph2]}" />
+                                        <TextBlock Grid.Column="0" Style="{StaticResource ContentTextStyle}" Text="{Binding T[credits.aboutParagraph2]}" />
                                     </Grid>    
-                                    <local:PortableHyperLinkButton Url="{Binding T[settings.aboutHyperlinkURL1]}">
+                                    <local:PortableHyperLinkButton Url="{Binding T[credits.aboutHyperlinkURL1]}">
                                         <TextBlock Margin="0 0 0 3" Style="{StaticResource ContentTextStyle}">
                                                     <Underline>
-                                                        <Run Text="{Binding T[settings.aboutHyperlinkText1]}"/>
+                                                        <Run Text="{Binding T[credits.aboutHyperlinkText1]}"/>
                                                     </Underline>
                                         </TextBlock>
                                     </local:PortableHyperLinkButton>
-                                    <local:PortableHyperLinkButton Url="{Binding T[settings.aboutHyperlinkURL2]}">
+                                    <local:PortableHyperLinkButton Url="{Binding T[credits.aboutHyperlinkURL2]}">
                                         <TextBlock Margin="0 0 0 3" Style="{StaticResource ContentTextStyle}">
                                                     <Underline>
-                                                        <Run Text="{Binding T[settings.aboutHyperlinkText2]}"/>
+                                                        <Run Text="{Binding T[credits.aboutHyperlinkText2]}"/>
                                                     </Underline>
                                         </TextBlock>
                                     </local:PortableHyperLinkButton>
 
-                                    <TextBlock Text="{Binding T[settings.aboutHeadline3]}" Style="{StaticResource SectionHeaderSmallTextStyle}" />
-                                    <TextBlock Style="{StaticResource ContentTextStyle}" Text="{Binding T[settings.aboutParagraph3]}" />
-                                    <local:PortableHyperLinkButton Url="{Binding T[settings.aboutHyperlinkURL3]}">
+                                    <TextBlock Text="{Binding T[credits.aboutHeadline3]}" Style="{StaticResource SectionHeaderSmallTextStyle}" />
+                                    <TextBlock Style="{StaticResource ContentTextStyle}" Text="{Binding T[credits.aboutParagraph3]}" />
+                                    <local:PortableHyperLinkButton Url="{Binding T[credits.aboutHyperlinkURL3]}">
                                         <TextBlock Margin="0 0 0 3" Style="{StaticResource ContentTextStyle}">
                                                     <Underline>
-                                                        <Run Text="{Binding T[settings.aboutHyperlinkText3]}"/>
+                                                        <Run Text="{Binding T[credits.aboutHyperlinkText3]}"/>
                                                     </Underline>
                                         </TextBlock>
                                     </local:PortableHyperLinkButton>

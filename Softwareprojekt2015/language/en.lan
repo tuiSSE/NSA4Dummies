@@ -7,11 +7,7 @@
     <string id="version">v0.3</string>
     <string id="appName">NSA 4 Dummies</string>
   </category>
-  <category name="settings">
-    <string id="title">Settings</string>
-    <string id="language">Choose Language</string>
-    <string id="advanced">Advanced Settings</string>
-    <string id="buttonClose">Close</string>
+  <category name="credits">
     <string id="headerAbout">About</string>
     <string id="aboutHeadline1">Headline 1</string>
     <string id="aboutParagraph1">Paragraph 1</string>
@@ -25,7 +21,12 @@
     <string id="aboutHyperlinkURL2">http://tu-ilmenau.de</string>
     <string id="aboutHyperlinkText3">Youtube</string>
     <string id="aboutHyperlinkURL3">http://youtube.com</string>
-
+  </category>
+  <category name="settings">
+    <string id="title">Settings</string>
+    <string id="language">Choose Language</string>
+    <string id="advanced">Advanced Settings</string>
+    <string id="buttonClose">Close</string>
     <string id="headerOptions">Options and Settings</string>
     <string id="displayHeadline">Display Options</string>
     <string id="optionsTitleVisible">Title Visible</string>
