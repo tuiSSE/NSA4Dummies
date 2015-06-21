@@ -2,17 +2,17 @@
 #Config
 #
 #The Name of the program + install Name
-Name "No Such Application"
+Name "NSA 4 Dummies"
 #The file that shall be created
-OutFile "nsa_installer.exe"
+OutFile "nsa_v0.3_installer.exe"
 #The installation path
-InstallDir $PROGRAMFILES\NoSuchApplication
+InstallDir $PROGRAMFILES\NSA4Dummies
 #The file that contains the license info
 LicenseData "license.txt"
 #File icon
 Icon "img/icon.ico"
 #The Text that is shown on the bottom
-BrandingText "Softwareprojekt 2015"
+BrandingText "NSA4Dummies"
 
 #
 #Installer-Pages
