@@ -23,7 +23,6 @@
                                             <ColumnDefinition Width="*" />
                                             <ColumnDefinition Width="auto" />
                                         </Grid.ColumnDefinitions>
-                                        <Image Margin="10 0 0 10" VerticalAlignment="Top" Grid.Column="1" Width="75" Height="75" Source="/Shared/Images/torsten.png" />
                                         <TextBlock Grid.Column="0" Style="{StaticResource ContentTextStyle}" Text="{Binding T[settings.aboutParagraph2]}" />
                                     </Grid>    
                                     <local:PortableHyperLinkButton Url="{Binding T[settings.aboutHyperlinkURL1]}">

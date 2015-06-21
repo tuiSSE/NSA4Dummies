@@ -4,7 +4,7 @@
 #The Name of the program + install Name
 Name "NSA 4 Dummies"
 #The file that shall be created
-OutFile "nsa_v0.3_installer.exe"
+OutFile "nsa_v0.3.1_installer.exe"
 #The installation path
 InstallDir $PROGRAMFILES\NSA4Dummies
 #The file that contains the license info
