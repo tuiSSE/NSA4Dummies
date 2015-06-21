@@ -4,7 +4,7 @@
     <string id="ok">OK</string>
     <string id="cancel">Abbruch</string>
     <string id="save">Speichern</string>
-    <string id="version">v0.3</string>
+    <string id="version">v0.3.1</string>
     <string id="appName">NSA 4 Dummies</string>
   </category>
   <category name="credits">
@@ -57,7 +57,7 @@
     <string id="niExit">Anwendung beenden</string>
   </category>
   <category name="sniffer">
-    <string id="dllMissingText">Scheinbar fehlt eine DLL. Haben Sie WinPcap installiert? Falls es dennoch nicht funktioniert können Sie eine Neuinstallation der Anwendung versuchen.</string>
+    <string id="dllMissingText">Scheinbar fehlt eine DLL. Haben Sie WinPcap installiert? Falls es dennoch nicht funktioniert, können Sie eine Neuinstallation der Anwendung versuchen.</string>
     <string id="dllMissingCaption">DLL fehlt!</string>
     <string id="start">Netzwerküberwachung gestartet.</string>
     <string id="stop">Netzwerküberwachung gestoppt.</string>
