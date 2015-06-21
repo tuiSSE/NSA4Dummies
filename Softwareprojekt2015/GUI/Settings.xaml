@@ -65,8 +65,7 @@
                                                 </ComboBox.ItemTemplate>
                                             </ComboBox>
                                             -->
-
-                        <TextBlock Text="Doughnut Inner Radius" Style="{StaticResource SectionHeaderSmallTextStyle}" />
+                        <TextBlock Text="{Binding T[settings.optionsDoughnutInnerRadiusRatio]}" Style="{StaticResource SectionHeaderSmallTextStyle}" />                       
                         <ComboBox Tag="{Binding Path=SelectedDoughnutInnerRadiusRatioString}" ItemsSource="{Binding Path=DoughnutInnerRadiusRatios}" SelectedItem="{Binding Path=SelectedDoughnutInnerRadiusRatio, Mode=TwoWay}" >
                             <ComboBox.ItemTemplate>
                                 <DataTemplate>
@@ -75,8 +74,9 @@
                             </ComboBox.ItemTemplate>
                         </ComboBox>
 
-                        <TextBlock Text="Selection Support" Style="{StaticResource SectionHeaderSmallTextStyle}" />
-                        <TextBlock Style="{StaticResource ContentTextStyle}" Text="Users can select the chart elements (like the bar or column). Change the color for the selected element. The selected object can be used to display additional data." />
+                        
+                        <TextBlock Text="{Binding T[settings.optionsSelectionSupport]}" Style="{StaticResource SectionHeaderSmallTextStyle}" />
+                        <TextBlock Text="{Binding T[settings.optionsColorInfo]}" Style="{StaticResource ContentTextStyle}"  />
 
                         <ComboBox Foreground="Black" Tag="{Binding Path=SelectedBrush}" ItemsSource="{Binding Path=SelectionBrushes}" SelectedItem="{Binding Path=SelectedBrush, Mode=TwoWay}" />
 

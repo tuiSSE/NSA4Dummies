@@ -4,7 +4,7 @@
     <string id="ok">OK</string>
     <string id="cancel">Abbruch</string>
     <string id="save">Speichern</string>
-    <string id="version">v0.2.2</string>
+    <string id="version">v0.3</string>
     <string id="appName">NSA 4 Dummies</string>
   </category>
   <category name="settings">
@@ -34,6 +34,9 @@
     <string id="optionsExpertMode">Experten Modus</string>
     <string id="optionsLanguage">Sprache</string>
     <string id="optionsFontSize">Schriftgröße</string>
+    <string id="optionsDoughnutInnerRadiusRatio">Donutchart Radius</string>
+    <string id="optionsSelection Support">Auswahlhilfe</string>
+    <string id="ColorInfo">Users can select the chart elements (like the bar or column). Change the color for the selected element. The selected object can be used to display additional data.</string>
   </category>
   <category name="mainWindow">
     <string id="windowTitle">NSA 4 Dummies</string>
