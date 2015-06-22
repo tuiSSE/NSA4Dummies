@@ -6,7 +6,7 @@ NOTE: This program will only work if you have WinPcap installed!
 
 Click 'I Agree' to continue or 'Cancel' to exit the Setup Wizard.
 
-____
+___________________________________________________________
 
 GNU GENERAL PUBLIC LICENSE
 
