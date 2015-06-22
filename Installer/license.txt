@@ -6,6 +6,8 @@ NOTE: This program will only work if you have WinPcap installed!
 
 Click 'I Agree' to continue or 'Cancel' to exit the Setup Wizard.
 
+____
+
 GNU GENERAL PUBLIC LICENSE
 
 Version 3, 29 June 2007
