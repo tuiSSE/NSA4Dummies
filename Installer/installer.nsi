@@ -44,8 +44,8 @@ Section "WinPcap" SEC01
 	endWinPcap:	
 
 SectionEnd	
-#Section - "NSA4Dummies
-Section "NSA4Dummies" SEC02
+#Section - "NSA 4 Dummies"
+Section "NSA 4 Dummies" SEC02
 		
 		SetOutPath $INSTDIR
 		  File /r "..\Softwareprojekt2015\bin\Release\*"
