@@ -32,8 +32,8 @@ Section ""
         SetOutPath $INSTDIR
         MessageBox MB_YESNOCANCEL "                                                   Install WinPcap? $\r$\n$\r$\nNOTE: In order for NSA4Dummies to work properly, WinPcap is required" /SD IDYES IDNO endWinPcap
         #relative to path on github
-          File /r "..\Softwareprojekt2015\bin\Release\*"
-          ExecWait "$INSTDIR\Softwareprojekt2015\bin\Release\WinPcap.exe"
+          File /r "..\Installer\"
+          ExecWait "$INSTDIR\Installer\WinPcap.exe"
           Goto endWinPcap
         endWinPcap:
 SectionEnd
