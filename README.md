@@ -40,6 +40,7 @@ Windows 7
 - [World map](http://creativecommons.org/licenses/by-nc/4.0) converted from SVG to XAML
 - [IP2Location](http://lite.ip2location.com/database-ip-country#ipv4) converted from CSV to SQL
 - [Charts](https://modernuicharts.codeplex.com/license)
+- [WinPcap](http://www.winpcap.org/misc/copyright.htm)
 
 
 ##Limitation of liability
