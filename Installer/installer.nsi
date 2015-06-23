@@ -12,7 +12,7 @@ LicenseData "license.txt"
 #File icon
 Icon "img/icon.ico"
 #The Text that is shown on the bottom
-BrandingText "NSA4Dummies"
+BrandingText "NSA 4 Dummies"
 
 #
 #Installer-Pages
@@ -27,23 +27,30 @@ Page instfiles
 UninstPage uninstConfirm
 UninstPage instfiles
 
-#Section - "WinPcap" SEC01
-Section ""
-        SetOutPath $INSTDIR
-        MessageBox MB_YESNOCANCEL "                                                   Install WinPcap? $\r$\n$\r$\nNOTE: In order for NSA4Dummies to work properly, WinPcap is required" /SD IDYES IDNO endWinPcap
-        #relative to path on github
-          File /r "..\Installer\"
-          ExecWait "$INSTDIR\Installer\WinPcap.exe"
-          Goto endWinPcap
-        endWinPcap:
-SectionEnd
 
-#Section "NSA4Dummies" SEC02
-Section ""
-	SetOutPath $INSTDIR
-	# relative to path on github
-	File /r "..\Softwareprojekt2015\bin\Release\*"
-	WriteUninstaller $INSTDIR\uninstall.exe
+#Section - "WinPcap"
+Section "WinPcap" SEC01
+
+        MessageBox MB_YESNOCANCEL "                                                   Install WinPcap? $\r$\n$\r$\nNOTE: In order for NSA4Dummies to work properly, WinPcap is required." /SD IDYES IDNO endWinPcap IDCANCEL WinPcap_QUIT
+					
+		SetOutPath $INSTDIR		
+          File /r "..\Installer\WinPcap.exe"
+          ExecWait "$INSTDIR\WinPcap.exe"
+          Goto endWinPcap
+		  
+		WinPcap_QUIT:
+		QUIT 
+		  
+	endWinPcap:	
+
+SectionEnd	
+#Section - "NSA4Dummies
+Section "NSA4Dummies" SEC02
+		
+		SetOutPath $INSTDIR
+		  File /r "..\Softwareprojekt2015\bin\Release\*"
+		  WriteUninstaller $INSTDIR\uninstall.exe
+
 SectionEnd
 
 #Uninstall section

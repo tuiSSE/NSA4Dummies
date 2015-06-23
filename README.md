@@ -1,6 +1,6 @@
 # Softwareprojekt2015
 "NSA für Dummies"
-Version 0.3
+Version 0.3.2
 
 This software is a sleek, intuitive application that shows unencrypted network traffic and IP-Routing in your own home network.
 
@@ -32,8 +32,8 @@ Encrypted data aren't supposed to be logged and intruding secured networks isn't
 Using the software does not violate §202a, §202b, §202c StGB.
 
 ## Minimum requirements:
-
-Windows 7
+- **Windows 7** or higher
+- WinPcap
 
 ##Copyright
 
