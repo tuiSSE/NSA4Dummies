@@ -20,8 +20,9 @@ This software is a sleek, intuitive application that shows unencrypted network t
 Getting started:
 To run double click installer.
 
-It's necessery to install the windows packet capture library.
-[Download WinPcap from http://www.winpcap.org/](http://www.winpcap.org/)
+It's necessery to install the windows packet capture library:
+
+[Download WinPcap](http://www.winpcap.org/)
 
 ## General:
 
