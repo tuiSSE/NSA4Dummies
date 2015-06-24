@@ -8,13 +8,14 @@
     <string id="appName">NSA 4 Dummies</string>
   </category>
   <category name="credits">
-    <string id="headerAbout">Über</string>
-    <string id="aboutHeadline1">Überschrift 1</string>
-    <string id="aboutParagraph1">Abschnitt 1</string>
-    <string id="aboutHeadline2">Überschrift 2</string>
-    <string id="aboutParagraph2">Abschnitt 2</string>
-    <string id="aboutHeadline3">Überschrift 3</string>
-    <string id="aboutParagraph3">Abschnitt 3</string>
+    <string id="headerAbout">NSA 4 Dummies</string>
+    <string id="aboutHeadline1">Über das Programm</string>
+    <string id="aboutParagraph1">NSA 4 Dummies ist eine übersichtliche und intuitiv zu bedienende Applikation, die dem Nutzer einen Überblick über seinen Netzwerkverkehr und die Geolokation seine Anfragen vermittelt.   
+    Sie wurde von einem Team aus Studenten der TU Ilmenau im Rahmen des obligatorischen Softwareprojektes im 4. Fachsemester entwickelt. </string>
+    <string id="aboutHeadline2">Haftungsbeschränkung</string>
+    <string id="aboutParagraph2">Keine Software ist fehlerfrei. Aus diesem Grund übernehmen wir keine Haftung für eventuelle Fehler. Die Applikation wurde nach besten Wissen und Gewissen entwickelt.</string>
+    <string id="aboutHeadline3">GNU-Lizenz für freie Dokumentation </string>
+    <string id="aboutParagraph3">Platzhalter</string>
     <string id="aboutHyperlinkText1">Google</string>
     <string id="aboutHyperlinkURL1">http://google.de</string>
     <string id="aboutHyperlinkText2">TU Ilmenau</string>
