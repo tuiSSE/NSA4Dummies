@@ -34,22 +34,6 @@
                                                     </Underline>
                                         </TextBlock>
                                     </local:PortableHyperLinkButton>
-                                    <local:PortableHyperLinkButton Url="{Binding T[credits.aboutHyperlinkURL1]}">
-                                        <TextBlock Margin="0 0 0 3" Style="{StaticResource ContentTextStyle}">
-                                                    <Underline>
-                                                        <Run Text="{Binding T[credits.aboutHyperlinkText1]}"/>
-                                                    </Underline>
-                                        </TextBlock>
-                                    </local:PortableHyperLinkButton>
-                                    <local:PortableHyperLinkButton Url="{Binding T[credits.aboutHyperlinkURL2]}">
-                                        <TextBlock Margin="0 0 0 3" Style="{StaticResource ContentTextStyle}">
-                                                    <Underline>
-                                                        <Run Text="{Binding T[credits.aboutHyperlinkText2]}"/>
-                                                    </Underline>
-                                        </TextBlock>
-                                    </local:PortableHyperLinkButton>
-
-                                   
                                 </StackPanel>
                             </ScrollViewer>
                         </StackPanel>
