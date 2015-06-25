@@ -20,8 +20,8 @@
     <string id="aboutHyperlinkURL1">http://google.de</string>
     <string id="aboutHyperlinkText2">TU Ilmenau</string>
     <string id="aboutHyperlinkURL2">http://tu-ilmenau.de</string>
-    <string id="aboutHyperlinkText3">Youtube</string>
-    <string id="aboutHyperlinkURL3">http://youtube.com</string>
+    <string id="aboutHyperlinkText3">GNU-Lizenz</string>
+    <string id="aboutHyperlinkURL3">http://www.gnu.org/licenses/agpl-3.0</string>
   </category>
   <category name="settings">
     <string id="title">Einstellungen</string>

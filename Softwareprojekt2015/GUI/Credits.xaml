@@ -24,7 +24,16 @@
                                             <ColumnDefinition Width="auto" />
                                         </Grid.ColumnDefinitions>
                                         <TextBlock Grid.Column="0" Style="{StaticResource ContentTextStyle}" Text="{Binding T[credits.aboutParagraph2]}" />
-                                    </Grid>    
+                                    </Grid>
+                                    <TextBlock Text="{Binding T[credits.aboutHeadline3]}" Style="{StaticResource SectionHeaderSmallTextStyle}" />
+
+                                    <local:PortableHyperLinkButton Url="{Binding T[credits.aboutHyperlinkURL3]}">
+                                        <TextBlock Margin="0 0 0 3" Style="{StaticResource ContentTextStyle}">
+                                                    <Underline>
+                                                        <Run Text="{Binding T[credits.aboutHyperlinkText3]}"/>
+                                                    </Underline>
+                                        </TextBlock>
+                                    </local:PortableHyperLinkButton>
                                     <local:PortableHyperLinkButton Url="{Binding T[credits.aboutHyperlinkURL1]}">
                                         <TextBlock Margin="0 0 0 3" Style="{StaticResource ContentTextStyle}">
                                                     <Underline>
@@ -40,15 +49,7 @@
                                         </TextBlock>
                                     </local:PortableHyperLinkButton>
 
-                                    <TextBlock Text="{Binding T[credits.aboutHeadline3]}" Style="{StaticResource SectionHeaderSmallTextStyle}" />
-                                    <TextBlock Style="{StaticResource ContentTextStyle}" Text="{Binding T[credits.aboutParagraph3]}" />
-                                    <local:PortableHyperLinkButton Url="{Binding T[credits.aboutHyperlinkURL3]}">
-                                        <TextBlock Margin="0 0 0 3" Style="{StaticResource ContentTextStyle}">
-                                                    <Underline>
-                                                        <Run Text="{Binding T[credits.aboutHyperlinkText3]}"/>
-                                                    </Underline>
-                                        </TextBlock>
-                                    </local:PortableHyperLinkButton>
+                                   
                                 </StackPanel>
                             </ScrollViewer>
                         </StackPanel>
