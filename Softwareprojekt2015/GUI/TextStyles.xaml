@@ -33,20 +33,23 @@
         <Setter Property="Margin" Value="0,5,10,0"/>
         <Setter Property="FontSize" Value="40" />
         <Setter Property="LineHeight" Value="40" />
+        <Setter Property="Foreground" Value="White" />
     </Style>
     <Style x:Key="SectionHeaderTextStyle" TargetType="TextBlock" BasedOn="{StaticResource HeaderTextStyle}">
         <Setter Property="Margin" Value="0,0,15,0"/>
         <Setter Property="FontSize" Value="22" />
+        <Setter Property="Foreground" Value="White" />
     </Style>
     <Style x:Key="SectionHeaderSmallTextStyle" TargetType="TextBlock" BasedOn="{StaticResource HeaderTextStyle}">
         <Setter Property="Margin" Value="0,10,5,5"/>
         <Setter Property="FontSize" Value="18" />
+        <Setter Property="Foreground" Value="White" />
     </Style>
     <Style x:Key="ContentTextStyle" TargetType="TextBlock" BasedOn="{StaticResource HeaderTextStyle}">
         <Setter Property="Margin" Value="0,0,5,5"/>
         <Setter Property="FontSize" Value="14" />
         <Setter Property="TextWrapping" Value="Wrap" />
-        <Setter Property="Foreground" Value="Black" />
+        <Setter Property="Foreground" Value="White" />
     </Style>
 
     <Style x:Key="SeriesHeader" TargetType="TextBlock" BasedOn="{StaticResource HeaderTextStyle}">
