@@ -68,7 +68,8 @@ namespace NSA4Dummies
          * */
         private Dictionary<string, uint> FileTypes = new Dictionary<string, uint>();
         private Dictionary<string, uint> Domains = new Dictionary<string, uint>();
-        private uint[] Encryption = new uint[2];
+        private Dictionary<string, uint> Countries = new Dictionary<string, uint>();
+        private Dictionary<string, int> Size = new Dictionary<string, int>();
 
         
         /// <summary>
@@ -123,20 +124,67 @@ namespace NSA4Dummies
         /// Adds a package to the charts
         /// </summary>
         /// <param name="encrypted">The encryption status of that package</param>
-        public void addPackage(bool encrypted)
+        public void addPackage(int packageSize)
         {
+            string sizeNormalized;
             
-            if (encrypted)
+            if (packageSize < 50)
             {
-                Encryption[0] += 1;
+                sizeNormalized = "50kb";
+            }
+            else if(packageSize < 100)
+            {
+                sizeNormalized = "100kb";
+            }
+            else if(packageSize < 250)
+            {
+                sizeNormalized = "250kb";
+            }
+            else if(packageSize < 500)
+            {
+                sizeNormalized = "500kb";
+            }
+            else if(packageSize < 1000)
+            {
+                sizeNormalized = "1000kb";
+            }
+            else if(packageSize < 5000)
+            {
+                sizeNormalized = "5000kb";
+            }
+            else if (packageSize < 10000)
+            {
+                sizeNormalized = "10000kb";
             }
             else
             {
-                Encryption[1] += 1;
+                sizeNormalized = "> 10000kb";
             }
 
-            // Update chart
-            //EncryptionStatus.Add(new TestClass() { Category = "Unencrypted", Number = Encryption[1] });
+            if (Size.ContainsKey(sizeNormalized))
+            {
+                Size[sizeNormalized] += 1;
+            }
+            else
+            {
+                Size.Add(sizeNormalized, 1);
+            }
+        }
+
+
+        public void addCountryPackage(string countryShort)
+        {
+            countryShort = countryShort.ToUpper();
+
+            // Insert data to directionary
+            if (Countries.ContainsKey(countryShort))
+            {
+                Countries[countryShort] += 1;
+            }
+            else
+            {
+                Countries.Add(countryShort, 1);
+            }
         }
 
 
@@ -147,8 +195,12 @@ namespace NSA4Dummies
         {
             Filetypes.Clear();
             TopWebsites.Clear();
-            EncryptionStatus.Clear();
+            PackageSize.Clear();
 
+            foreach(var c in Countries){
+                PackagesPerCountry.Add(new DataClass() { Category = c.Key, Number = c.Value });
+            }
+            
             foreach (var d in Domains)
             {
                 TopWebsites.Add(new DataClass() { Category = d.Key, Number = d.Value });
@@ -159,14 +211,10 @@ namespace NSA4Dummies
                 Filetypes.Add(new DataClass() { Category = f.Key, Number = f.Value });
             }
 
-            int enc = 0;
-
-            if (Encryption[1] + Encryption[0] != 0)
+            foreach (var s in Size)
             {
-                enc = (int)(((float)Encryption[1] / ((float)Encryption[1] + (float)Encryption[0])) * 100);
+                PackageSize.Add(new DataClass() { Category = s.Key, Number = s.Value });
             }
-
-            EncryptionStatus.Add(new DataClass() { Category = "Unencrypted", Number = enc });
         }
 
 
@@ -496,37 +544,16 @@ namespace NSA4Dummies
             SelectedBrush = SelectionBrushes.FirstOrDefault();
 
             TopWebsites = new ObservableCollectionEx<DataClass>();
-            EncryptionStatus = new ObservableCollectionEx<DataClass>();
+            PackageSize = new ObservableCollectionEx<DataClass>();
             Filetypes = new ObservableCollectionEx<DataClass>();
+            PackagesPerCountry = new ObservableCollectionEx<DataClass>();
 
 
             // Disable Notifications of ObservableCollections
             TopWebsites = TopWebsites.DisableNotifications();
-            EncryptionStatus = EncryptionStatus.DisableNotifications();
+            PackageSize = PackageSize.DisableNotifications();
             Filetypes = Filetypes.DisableNotifications();
-
-            /*
-            TopWebsites.Add(new TestClass() { Category = "facebook.com", Number = 75 });
-            TopWebsites.Add(new TestClass() { Category = "google.com", Number = 2 });
-            TopWebsites.Add(new TestClass() { Category = "youtube.com", Number = 12 });
-            TopWebsites.Add(new TestClass() { Category = "gmail.com", Number = 83 });
-            **/
-
-            // EncryptionStatus.Add(new TestClass() { Category = "Unencrypted", Number = 83 });
-
-            /*
-            Filetypes.Add(new TestClass() { Category = "JPEG", Number = 83 });
-            Filetypes.Add(new TestClass() { Category = "Mp3", Number = 15 });
-            Filetypes.Add(new TestClass() { Category = "Gif", Number = 60 });
-            Filetypes.Add(new TestClass() { Category = "PNG", Number = 47 });
-            Filetypes.Add(new TestClass() { Category = "HTML", Number = 120 });
-            Filetypes.Add(new TestClass() { Category = "CSS", Number = 122 });
-            Filetypes.Add(new TestClass() { Category = "JS", Number = 89 });
-            Filetypes.Add(new TestClass() { Category = "JS", Number = 90 });
-            Filetypes.Add(new TestClass() { Category = "JS", Number = 91 });
-            Filetypes.Add(new TestClass() { Category = "JS", Number = 20 });
-             * */
-
+            PackagesPerCountry = PackagesPerCountry.DisableNotifications();
         }
 
         /// <summary>
@@ -541,7 +568,7 @@ namespace NSA4Dummies
         /// <summary>
         /// The collection that holds the (un-)encrypted packages
         /// </summary>
-        public ObservableCollectionEx<DataClass> EncryptionStatus
+        public ObservableCollectionEx<DataClass> PackageSize
         {
             get;
             set;
@@ -551,6 +578,15 @@ namespace NSA4Dummies
         /// The collection that holds the filetypes of the packages
         /// </summary>
         public ObservableCollectionEx<DataClass> Filetypes
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
+        /// The collection that holds number of packages sent to a country
+        /// </summary>
+        public ObservableCollectionEx<DataClass> PackagesPerCountry
         {
             get;
             set;

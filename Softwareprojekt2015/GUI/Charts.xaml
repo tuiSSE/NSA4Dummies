@@ -80,7 +80,7 @@
                     SelectedBrush="{Binding Path=SelectedBrush, Converter={StaticResource StringToBrushConverter}}" >
                     <chart:ClusteredBarChart.Series>
                         <chart:ChartSeries
-                            SeriesTitle="Errors"
+                            SeriesTitle=" "
                             DisplayMember="Category"
                             ValueMember="Number"
                             ItemsSource="{Binding Path=TopWebsites}" />
@@ -109,7 +109,7 @@
                     SelectedBrush="{Binding Path=SelectedBrush, Converter={StaticResource StringToBrushConverter}}"  >
                     <chart:PieChart.Series>
                         <chart:ChartSeries
-                                SeriesTitle="Warnings"
+                                SeriesTitle=" "
                                 DisplayMember="Category"
                                 ValueMember="Number"
                                 ItemsSource="{Binding Path=Filetypes}">
@@ -117,14 +117,13 @@
                     </chart:PieChart.Series>
                 </chart:DoughnutChart>
 
-
-                <chart:RadialGaugeChart  
+                <chart:DoughnutChart  
                     Grid.Column="1"
                     Grid.Row="0"
                     HorizontalAlignment="Center"
                     VerticalAlignment="Stretch"
                     Style="{StaticResource ChartStyleVariableSize}"
-                    ChartTitle="Un-Encrypted Packages"
+                    ChartTitle="Packages per size"                                
                     ChartSubTitle=""
                     Palette="{Binding Path=SelectedPalette.Value}"
                     FontSize="{Binding Path=SelectedFontSize}"
@@ -132,20 +131,22 @@
                     ChartTitleVisibility="{Binding Path=IsTitleVisible, Converter={StaticResource BooleanToVisibilityConverter}}"
                     ChartLegendVisibility="{Binding Path=IsLegendVisible, Converter={StaticResource BooleanToVisibilityConverter}}"
                     ToolTipFormat="{Binding Path=ToolTipFormat}"
+                    PieMinimalSize="500.0"
                     Foreground="{Binding Path=Foreground}" 
-                    Background="{Binding Path=Background}"                 
+                    Background="{Binding Path=Background}" 
+                    InnerRadiusRatio="{Binding Path=SelectedDoughnutInnerRadiusRatio}"
                     SelectedItem="{Binding Path=SelectedItem, Mode=TwoWay}"
-                    SelectedBrush="{Binding Path=SelectedBrush, Converter={StaticResource StringToBrushConverter}}" >
-                        <chart:RadialGaugeChart.Series>
-                            <chart:ChartSeries
-                            SeriesTitle="Errors"
-                            DisplayMember="Category"
-                            ValueMember="Number"
-                            ItemsSource="{Binding Path=EncryptionStatus}">
-                            </chart:ChartSeries>
-                        </chart:RadialGaugeChart.Series>
-                </chart:RadialGaugeChart>
-
+                    SelectedBrush="{Binding Path=SelectedBrush, Converter={StaticResource StringToBrushConverter}}"  >
+                    <chart:PieChart.Series>
+                        <chart:ChartSeries
+                                SeriesTitle=" "
+                                DisplayMember="Category"
+                                ValueMember="Number"
+                                ItemsSource="{Binding Path=PackageSize}">
+                        </chart:ChartSeries>
+                    </chart:PieChart.Series>
+                </chart:DoughnutChart>
+                
                 <chart:ClusteredColumnChart  
                     Grid.Column="1"
                     Grid.Row="1"
@@ -166,10 +167,10 @@
                     SelectedBrush="{Binding Path=SelectedBrush, Converter={StaticResource StringToBrushConverter}}" >
                     <chart:ClusteredColumnChart.Series>
                         <chart:ChartSeries
-                            SeriesTitle="Errors"
+                            SeriesTitle=" "
                             DisplayMember="Category"
                             ValueMember="Number"
-                            ItemsSource="{Binding Path=TopWebsites}" />
+                            ItemsSource="{Binding Path=PackagesPerCountry}" />
                     </chart:ClusteredColumnChart.Series>
                 </chart:ClusteredColumnChart>
             
