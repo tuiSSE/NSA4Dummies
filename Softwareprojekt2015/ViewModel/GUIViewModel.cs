@@ -338,29 +338,6 @@ namespace NSA4Dummies
          * --------*/
 
         /*
-         *  Layouts
-         * */
-        private bool hackerLayout = false;
-        public bool HackerLayout
-        {
-            get
-            {
-                return hackerLayout;
-            }
-            set
-            {
-                hackerLayout = value;
-                NotifyPropertyChanged("DarkLayout");
-                NotifyPropertyChanged("Foreground");
-                NotifyPropertyChanged("Background");
-                NotifyPropertyChanged("MainBackground");
-                NotifyPropertyChanged("MainForeground");
-                NotifyPropertyChanged("MapDefaultColor");
-            }
-        }
-
-
-        /*
          *  Get/Set of layout elements
          * */
         /// <summary>
@@ -370,12 +347,7 @@ namespace NSA4Dummies
         {
             get
             {
-                if (hackerLayout)
-                {
-                    return "#FF00ff24";
-                }
-                //default
-                return "#FF000000";
+                return (string)Application.Current.FindResource("chartsLabelColor");
             }
         }
         /// <summary>
@@ -385,12 +357,7 @@ namespace NSA4Dummies
         {
             get
             {
-                if (hackerLayout)
-                {
-                    return "#FF00ff24";
-                }
-                //default
-                return "#FFFA611F";
+                return (string)Application.Current.FindResource("chartsLabelColor");
             }
         }
         /// <summary>
@@ -400,12 +367,7 @@ namespace NSA4Dummies
         {
             get
             {
-                if (hackerLayout)
-                {
-                    return "#FF333333";
-                }
-                // default
-                return "#FF9AC9F8";
+                return (string)Application.Current.FindResource("chartsBackgroundColor");
             }
         }
         /// <summary>
@@ -415,12 +377,7 @@ namespace NSA4Dummies
         {
             get
             {
-                if (hackerLayout)
-                {
-                    return "#FF000000";
-                }
-                // default
-                return "#FF1e1e1e";
+                return (string)Application.Current.FindResource("programMainBackgroundColor");
             }
         }
         /// <summary>
@@ -430,12 +387,7 @@ namespace NSA4Dummies
         {
             get
             {
-                if (hackerLayout)
-                {
-                    return "#FF38FF62";
-                }
-                // default
-                return "#FFFFAF66";
+                return (string)Application.Current.FindResource("mapDefaultShadingColor");
             }
         }
 

@@ -179,7 +179,7 @@
         <Setter Property="IsTabStop" Value="False" />
         <Setter Property="HorizontalContentAlignment" Value="Stretch" />
         <Setter Property="VerticalContentAlignment" Value="Stretch" />
-        <Setter Property="Background" Value="#FFFFFFFF" />
+        <Setter Property="Background" Value="#FF000000" />
         <Setter Property="BorderBrush" Value="Black" />
         <Setter Property="BorderThickness" Value="2" />
         <Setter Property="FontSize" Value="16" />

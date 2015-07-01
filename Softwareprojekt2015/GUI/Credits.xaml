@@ -9,7 +9,7 @@
                 <Border Grid.Column="1">
                     <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Right">
                         <StackPanel>
-                            <Border Grid.Row="0" Background="#FFEFEFEF">
+                            <Border Grid.Row="0" Background="{StaticResource creditsBackgroundColor}">
                                 <TextBlock Margin="15" Text="{Binding T[credits.headerAbout]}" Style="{StaticResource SectionHeaderSmallTextStyle}" />
                             </Border>
                             <ScrollViewer Grid.Row="1" BorderThickness="0">

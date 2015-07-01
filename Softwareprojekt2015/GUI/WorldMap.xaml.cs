@@ -15,8 +15,8 @@ namespace NSA4Dummies
         private static IDictionary<string, uint> _mapDictionary = new Dictionary<string, uint>();
         private static IDictionary<string, double> _shadingDictionary = new Dictionary<string, double>();
         private static IDictionary<string, Path> _pathDictionary = new Dictionary<string, Path>();
-        private static SolidColorBrush defaultShading = new SolidColorBrush(Color.FromArgb(255, 255, 175, 102));
-        private static SolidColorBrush mouseOverShading = new SolidColorBrush(Color.FromArgb(255, 255, 121, 0));
+        private static SolidColorBrush defaultShading = new BrushConverter().ConvertFromString((string)Application.Current.FindResource("mapDefaultShadingColor")) as SolidColorBrush;
+        private static SolidColorBrush mouseOverShading = new BrushConverter().ConvertFromString((string)Application.Current.FindResource("mapMouseOverShading")) as SolidColorBrush;
 
 
         /*
@@ -185,7 +185,7 @@ namespace NSA4Dummies
                 if (_shadingDictionary.ContainsKey(countryCode) && _pathDictionary.ContainsKey(countryCode))
                 {
                     // Sets shading color for countries on worldmap when receiving/sending packages from/to country
-                    SolidColorBrush packageShading = new SolidColorBrush(Colors.SkyBlue);
+                    SolidColorBrush packageShading = new BrushConverter().ConvertFromString((string)Application.Current.FindResource("mapPackageShading")) as SolidColorBrush;
 
                     packageShading.Opacity = _shadingDictionary[countryCode];
                     _pathDictionary[countryCode].Fill = packageShading;
@@ -248,7 +248,7 @@ namespace NSA4Dummies
 
                     if (_shadingDictionary.ContainsKey(name))
                     {
-                        SolidColorBrush packageShading = new SolidColorBrush(Colors.SkyBlue);
+                        SolidColorBrush packageShading = new BrushConverter().ConvertFromString((string)Application.Current.FindResource("mapPackageShading")) as SolidColorBrush;
 
                         packageShading.Opacity = _shadingDictionary[name];
                         p.Fill = packageShading;

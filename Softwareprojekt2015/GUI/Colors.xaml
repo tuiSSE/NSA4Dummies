@@ -1,0 +1,21 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:system="clr-namespace:System;assembly=mscorlib">
+
+    <!-- General -->
+    <system:String x:Key="programMainBackgroundColor">#FFFFFFFF</system:String>
+    <system:String x:Key="programTitleColor">#FF000000</system:String>
+    <system:String x:Key="tabItemColor">Black</system:String>
+    
+    <!-- Charts -->
+    <system:String x:Key="chartsLabelColor">#FF000000</system:String>
+    <system:String x:Key="chartsBackgroundColor">#FF9AC9F8</system:String>
+    
+    <!-- Map -->
+    <system:String x:Key="mapDefaultShadingColor">#FFFFAF66</system:String>
+    <system:String x:Key="mapMouseOverShading">#FFFFFF79</system:String>
+    <system:String x:Key="mapPackageShading">#FF0000FF</system:String>
+    
+    <!-- Credits -->
+    <Brush x:Key="creditsBackgroundColor">#FFFF0000</Brush>
+</ResourceDictionary>
