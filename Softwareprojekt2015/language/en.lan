@@ -4,7 +4,7 @@
     <string id="ok">OK</string>
     <string id="cancel">Cancel</string>
     <string id="save">Save</string>
-    <string id="version">v0.3.2</string>
+    <string id="version">v0.4</string>
     <string id="appName">NSA 4 Dummies</string>
   </category>
   <category name="credits">
@@ -23,7 +23,7 @@
     <string id="aboutHyperlinkURL1">http://google.de</string>
     <string id="aboutHyperlinkText2">TU Ilmenau</string>
     <string id="aboutHyperlinkURL2">http://tu-ilmenau.de</string>
-    <string id="aboutHyperlinkText3">GNU-License</string>
+    <string id="aboutHyperlinkText3">http://www.gnu.org/licenses/agpl-3.0</string>
     <string id="aboutHyperlinkURL3">http://www.gnu.org/licenses/agpl-3.0</string>
   </category>
   <category name="settings">

@@ -34,9 +34,7 @@
                             <TextBlock Text="{Binding T[settings.optionsLegendVisible]}" Style="{StaticResource ContentTextStyle}" />
                         </CheckBox>
 
-                        <CheckBox IsChecked="{Binding Path=HackerLayout, Mode=TwoWay}">
-                            <TextBlock Text="{Binding T[settings.optionsHackerMode]}" Style="{StaticResource ContentTextStyle}" />
-                        </CheckBox>
+                       
 
                         <!--
                                             <CheckBox IsChecked="{Binding Path=ExpertMode, Mode=TwoWay}">

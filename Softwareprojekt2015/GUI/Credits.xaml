@@ -12,7 +12,7 @@
                             <Border Grid.Row="0" Background="{StaticResource creditsBackgroundColor}">
                                 <TextBlock Margin="15" Text="{Binding T[credits.headerAbout]}" Style="{StaticResource SectionHeaderSmallTextStyle}" />
                             </Border>
-                            <ScrollViewer Grid.Row="1" BorderThickness="0">
+                            
                                 <StackPanel Margin="15">
                                     <TextBlock Text="{Binding T[credits.aboutHeadline1]}" Style="{StaticResource SectionHeaderSmallTextStyle}" />
                                     <TextBlock Style="{StaticResource ContentTextStyle}" Text="{Binding T[credits.aboutParagraph1]}" />
@@ -35,7 +35,7 @@
                                         </TextBlock>
                                     </local:PortableHyperLinkButton>
                                 </StackPanel>
-                            </ScrollViewer>
+                          
                         </StackPanel>
                     </StackPanel>
                 </Border>
