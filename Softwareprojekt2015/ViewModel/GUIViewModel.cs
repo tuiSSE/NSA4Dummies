@@ -550,10 +550,10 @@ namespace NSA4Dummies
 
 
             // Disable Notifications of ObservableCollections
-            TopWebsites = TopWebsites.DisableNotifications();
-            PackageSize = PackageSize.DisableNotifications();
-            Filetypes = Filetypes.DisableNotifications();
-            PackagesPerCountry = PackagesPerCountry.DisableNotifications();
+            // TopWebsites = TopWebsites.DisableNotifications();
+            // PackageSize = PackageSize.DisableNotifications();
+            // Filetypes = Filetypes.DisableNotifications();
+            // PackagesPerCountry = PackagesPerCountry.DisableNotifications();
         }
 
         /// <summary>
