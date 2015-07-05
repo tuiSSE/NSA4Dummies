@@ -110,6 +110,13 @@
       <SubType>Content</SubType>
       <DependentUpon>Klassendiagramm.classdiagram</DependentUpon>
     </Content>
+    <Content Include="Sequenzdiagramm.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Sequenzdiagramm.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Sequenzdiagramm.sequencediagram</DependentUpon>
+    </Content>
     <Folder Include="ModelDefinition\" />
     <Content Include="ModelDefinition\Feinentwurf.uml">
       <SubType>Content</SubType>
