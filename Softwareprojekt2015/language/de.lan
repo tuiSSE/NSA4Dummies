@@ -50,6 +50,10 @@
     <string id="stats">Statistik</string>
     <string id="credits">Credits</string>
   </category>
+  <category name="charts">
+    <string id="chartTitleUsedProtocols">Pakete pro Protokoll</string>
+    <string id="chartTitlePackageSize">Pakete pro Paketgröße</string>
+  </category>
   <category name="notifyIcon">
     <string id="niText">NSA 4 Dummies</string>
     <string id="niStartSniffer">Netzüberwachung starten</string>

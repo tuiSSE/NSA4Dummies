@@ -67,9 +67,9 @@ namespace NSA4Dummies
          *  Chart-Data dictionaries
          * */
         private Dictionary<string, uint> FileTypes = new Dictionary<string, uint>();
-        private Dictionary<string, uint> Domains = new Dictionary<string, uint>();
         private Dictionary<string, uint> Countries = new Dictionary<string, uint>();
         private Dictionary<string, int> Size = new Dictionary<string, int>();
+        private Dictionary<string, int> Protocols = new Dictionary<string, int>();
 
         
         /// <summary>
@@ -97,36 +97,13 @@ namespace NSA4Dummies
 
 
         /// <summary>
-        /// This function adds a package to the domain-chart with the specific domain
-        /// </summary>
-        /// <param name="domain">The domain</param>
-        public void addDomain(string domain)
-        {
-
-            domain = domain.ToLower();
-
-            // Insert data to directionary
-            if (Domains.ContainsKey(domain))
-            {
-                Domains[domain] += 1;
-            }
-            else
-            {
-                Domains.Add(domain, 1);
-            }
-
-            // Update chart
-            //TopWebsites.Add(new TestClass() { Category = domain, Number = Domains[domain] });
-        }
-
-
-        /// <summary>
         /// Adds a package to the charts
         /// </summary>
         /// <param name="encrypted">The encryption status of that package</param>
-        public void addPackage(int packageSize)
+        public void addPackage(int packageSize, DataPacket.DataTransferProtocol protocol)
         {
             string sizeNormalized;
+            string protocolString = "";
             
             if (packageSize < 50)
             {
@@ -169,6 +146,31 @@ namespace NSA4Dummies
             {
                 Size.Add(sizeNormalized, 1);
             }
+
+            switch (protocol)
+            {
+                case DataPacket.DataTransferProtocol.DTP_TCP:
+                    protocolString = "TCP";
+                    break;
+                case DataPacket.DataTransferProtocol.DTP_UDP:
+                    protocolString = "UDP";
+                    break;
+                case DataPacket.DataTransferProtocol.DTP_ICMP:
+                    protocolString = "ICMP";
+                    break;
+                default:
+                    protocolString = "OTHER";
+                    break;
+            }
+
+            if (Protocols.ContainsKey(protocolString))
+            {
+                Protocols[protocolString] += 1;
+            }
+            else
+            {
+                Protocols.Add(protocolString, 1);
+            }
         }
 
 
@@ -194,16 +196,16 @@ namespace NSA4Dummies
         public void updateDataGraphs()
         {
             Filetypes.Clear();
-            TopWebsites.Clear();
+            UsedProtocols.Clear();
             PackageSize.Clear();
 
             foreach(var c in Countries){
                 PackagesPerCountry.Add(new DataClass() { Category = c.Key, Number = c.Value });
             }
             
-            foreach (var d in Domains)
+            foreach (var p in Protocols)
             {
-                TopWebsites.Add(new DataClass() { Category = d.Key, Number = d.Value });
+                UsedProtocols.Add(new DataClass() { Category = p.Key, Number = p.Value });
             }
 
             foreach (var f in FileTypes)
@@ -543,7 +545,7 @@ namespace NSA4Dummies
             SelectionBrushes.Add("[NoColor]");
             SelectedBrush = SelectionBrushes.FirstOrDefault();
 
-            TopWebsites = new ObservableCollectionEx<DataClass>();
+            UsedProtocols = new ObservableCollectionEx<DataClass>();
             PackageSize = new ObservableCollectionEx<DataClass>();
             Filetypes = new ObservableCollectionEx<DataClass>();
             PackagesPerCountry = new ObservableCollectionEx<DataClass>();
@@ -559,7 +561,7 @@ namespace NSA4Dummies
         /// <summary>
         /// The collection that holds the top websites
         /// </summary>
-        public ObservableCollectionEx<DataClass> TopWebsites
+        public ObservableCollectionEx<DataClass> UsedProtocols
         {
             get;
             set;

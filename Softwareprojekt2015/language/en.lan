@@ -53,6 +53,10 @@
     <string id="stats">Statistics</string>
     <string id="credits">Credits</string>
   </category>
+  <category name="charts">
+    <string id="chartTitleUsedProtocols">Packages per protocol</string>
+    <string id="chartTitlePackageSize">Packages per Packagesize</string>
+  </category>
   <category name="notifyIcon">
     <string id="niText">NSA 4 Dummies</string>
     <string id="niStartSniffer">Start network sniffing</string>

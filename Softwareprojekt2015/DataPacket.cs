@@ -7,7 +7,7 @@ using System.Net;
 
 namespace NSA4Dummies
 {
-    [Serializable] class DataPacket
+    [Serializable] public class DataPacket
     {
 
         /// <summary>

@@ -77,11 +77,7 @@ namespace NSA4Dummies
             int choice = rnd.Next(0, fileTypes.Length);
             ((GUIViewModel)this.DataContext).addFileType(fileTypes[choice]);
 
-            string[] domains = { "google.com", "facebook.com", "google.de", "gmail.com", "youtube.com", "tu-ilmenau.de" };
-            choice = rnd.Next(0, domains.Length);
-            ((GUIViewModel)this.DataContext).addDomain(domains[choice]);
-
-            ((GUIViewModel)this.DataContext).addPackage(packet.Length);
+            ((GUIViewModel)this.DataContext).addPackage(packet.Length, packet.Protocol);
         }
 
 
