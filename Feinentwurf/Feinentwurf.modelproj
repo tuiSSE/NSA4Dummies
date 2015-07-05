@@ -91,6 +91,9 @@
     <Content Include="ModelDefinition\Package9_1748.uml">
       <SubType>Content</SubType>
     </Content>
+    <Content Include="ModelDefinition\Package_1141.uml">
+      <SubType>Content</SubType>
+    </Content>
     <Content Include="ModelDefinition\Package_1748.uml">
       <SubType>Content</SubType>
     </Content>
@@ -99,6 +102,13 @@
     </Content>
     <Content Include="ModelDefinition\Package_1750.uml">
       <SubType>Content</SubType>
+    </Content>
+    <Content Include="UMLClassDiagram1.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="UMLClassDiagram1.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>UMLClassDiagram1.classdiagram</DependentUpon>
     </Content>
     <Folder Include="ModelDefinition\" />
     <Content Include="Klassendiagramm.classdiagram">

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
   dslVersion="1.0.0.0"
   Id="68b119ba-ffee-4c41-a27f-452fdb98ebbe"
   name="Windows"
@@ -67,6 +67,16 @@
             </propertyInstances>
           </stereotypeInstance>
         </appliedStereotypesInternal>
+        <generalsInternal>
+          <generalization
+            Id="b1a9a636-9a8b-4b0f-8dbd-6b0f0185c92c"
+            isSubstitutable="false">
+            <classMoniker
+              Id="2b0cb375-5f31-4ba2-9c25-272450a1aa06"
+              LastKnownName="EventArgs"
+              LastKnownLocation="Package1_1748.uml" />
+          </generalization>
+        </generalsInternal>
       </class>
     </packageHasNamedElement>
     <packageHasNamedElement>
@@ -125,6 +135,16 @@
             </propertyInstances>
           </stereotypeInstance>
         </appliedStereotypesInternal>
+        <generalsInternal>
+          <generalization
+            Id="2640ee15-d9a0-4b34-84b0-69c5909f1035"
+            isSubstitutable="false">
+            <classMoniker
+              Id="2b0cb375-5f31-4ba2-9c25-272450a1aa06"
+              LastKnownName="EventArgs"
+              LastKnownLocation="Package1_1748.uml" />
+          </generalization>
+        </generalsInternal>
       </class>
     </packageHasNamedElement>
     <packageHasNamedElement>
@@ -183,6 +203,16 @@
             </propertyInstances>
           </stereotypeInstance>
         </appliedStereotypesInternal>
+        <generalsInternal>
+          <generalization
+            Id="540f3d9d-09fa-40d2-bbc5-3ec716e330d2"
+            isSubstitutable="false">
+            <classMoniker
+              Id="2b0cb375-5f31-4ba2-9c25-272450a1aa06"
+              LastKnownName="EventArgs"
+              LastKnownLocation="Package1_1748.uml" />
+          </generalization>
+        </generalsInternal>
       </class>
     </packageHasNamedElement>
     <packageHasNamedElement>
@@ -452,6 +482,12 @@
         Id="2f104cd8-b775-407f-8100-9d9cd0fca838"
         LastKnownName="Media"
         LastKnownLocation="Package1_1750.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="e71ece21-f2a2-4e94-9af0-444a0dcfd14c"
+        LastKnownName="Forms"
+        LastKnownLocation="Package_1141.uml" />
     </packageHasNamedElement>
   </packagedElements>
 </package>

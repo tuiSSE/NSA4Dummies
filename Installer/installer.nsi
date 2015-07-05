@@ -12,7 +12,7 @@ LicenseData "license.txt"
 #File icon
 Icon "img/icon.ico"
 #The Text that is shown on the bottom
-BrandingText "NSA 4 Dummies"
+BrandingText "                            NSA 4 Dummies"
 
 #
 #Installer-Pages
