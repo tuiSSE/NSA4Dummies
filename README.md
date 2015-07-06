@@ -1,7 +1,7 @@
-# Softwareprojekt2015
+#Softwareprojekt2015
 
 
-## Table of contents
+##Table of contents
 
 - [General](#general)
 - [Quick start](#quick-start)
@@ -13,7 +13,7 @@
 - [Reporting Problems](#reporting-problems)
 
 
-## General
+##General
 
 Our software project titled "NSA 4 Dummies" is a small, lightweight application to show unencrpyted traffic and IP-Routing in your own home network. There's no need for further knowledge regarding network security, so this tool is for everyone who want's to get a fast and general overview of their data traffic.
 
@@ -23,7 +23,7 @@ Encrypted data isn't supposed to be logged and intruding secured networks isn't 
 Using the software does not violate §202a, §202b, §202c StGB.
 
 
-## Quick start:
+##Quick start:
 
 [Download the latest release](https://github.com/Softwareprojekt2015/Softwareprojekt2015/releases)
 
