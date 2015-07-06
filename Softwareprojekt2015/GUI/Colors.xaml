@@ -17,5 +17,5 @@
     <system:String x:Key="mapPackageShading">#FF0000FF</system:String>
     
     <!-- Credits -->
-    <Brush x:Key="creditsBackgroundColor">#FFFF0000</Brush>
+    <Brush x:Key="creditsBackgroundColor">#FFacacac</Brush>
 </ResourceDictionary>
