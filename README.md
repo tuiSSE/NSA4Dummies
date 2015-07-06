@@ -27,7 +27,7 @@ Using the software does not violate §202a, §202b, §202c StGB.
 
 [Download the latest release](https://github.com/Softwareprojekt2015/Softwareprojekt2015/releases)
 
-The installer file is named "nsa_version_installer.exe".
+The installer file is named "nsa_{VERSION}_installer.exe".
 
 After you downloaded the setup file, a simple doubleclick starts the installation process. In order to install this program, you have to agree to the licence. Then you are asked whether you want to install WinPcap.
 
@@ -65,6 +65,7 @@ This program is distributed in hope that it will be useful but without any guara
 ##Future Features
 
 aka "TODO List"
+
 ARP Spoofing
 
 - we would like to implement ARP-spoofing so the Data from every User in a switched Network can be captured
