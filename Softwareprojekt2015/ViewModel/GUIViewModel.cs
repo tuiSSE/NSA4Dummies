@@ -105,37 +105,25 @@ namespace NSA4Dummies
             string sizeNormalized;
             string protocolString = "";
             
-            if (packageSize < 50)
+            if (packageSize <= 1000)
             {
-                sizeNormalized = "50kb";
-            }
-            else if(packageSize < 100)
-            {
-                sizeNormalized = "100kb";
-            }
-            else if(packageSize < 250)
-            {
-                sizeNormalized = "250kb";
-            }
-            else if(packageSize < 500)
-            {
-                sizeNormalized = "500kb";
-            }
-            else if(packageSize < 1000)
-            {
-                sizeNormalized = "1000kb";
+                sizeNormalized = "< 1kb";
             }
             else if(packageSize < 5000)
             {
-                sizeNormalized = "5000kb";
+                sizeNormalized = "1 - 5kB";
             }
-            else if (packageSize < 10000)
+            else if(packageSize < 10000)
             {
-                sizeNormalized = "10000kb";
+                sizeNormalized = "5 - 10kB";
+            }
+            else if(packageSize < 64000)
+            {
+                sizeNormalized = "10kB - 64kB";
             }
             else
             {
-                sizeNormalized = "> 10000kb";
+                sizeNormalized = "> 64kB";
             }
 
             if (Size.ContainsKey(sizeNormalized))
@@ -195,6 +183,7 @@ namespace NSA4Dummies
         /// </summary>
         public void updateDataGraphs()
         {
+            PackagesPerCountry.Clear();
             Filetypes.Clear();
             UsedProtocols.Clear();
             PackageSize.Clear();
