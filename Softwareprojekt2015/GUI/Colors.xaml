@@ -12,8 +12,8 @@
     <system:String x:Key="chartsBackgroundColor">#FF9AC9F8</system:String>
     
     <!-- Map -->
-    <system:String x:Key="mapDefaultShadingColor">#FFFFAF66</system:String>
-    <system:String x:Key="mapMouseOverShading">#FFFFFF79</system:String>
+    <system:String x:Key="mapDefaultShadingColor">#FFacacac</system:String>
+    <system:String x:Key="mapMouseOverShading">#FF7382ac</system:String>
     <system:String x:Key="mapPackageShading">#FF0000FF</system:String>
     
     <!-- Credits -->
