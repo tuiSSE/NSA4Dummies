@@ -123,6 +123,7 @@ namespace NSA4Dummies
 
 			
 		}
+
         /// <summary>
         /// This method is called to show the balloon tip.
         /// </summary>
@@ -135,6 +136,7 @@ namespace NSA4Dummies
             ntfyIcon.ShowBalloonTip(balloonTimeout, balloonTitle, balloonText, balloonIcon);
         }
 
+
         /// <summary>
         /// Updates the context menu entries of the notify icon when a different language is selected.
         /// </summary>
@@ -146,6 +148,7 @@ namespace NSA4Dummies
 			this.niExit.Text = App.translation["notifyIcon.niExit"];
 			ntfyIcon.Text = App.translation["notifyIcon.niText"];
 		}
+
 
         /// <summary>
         /// Gets called on application shutdown and stops the sniffer.
@@ -191,6 +194,7 @@ namespace NSA4Dummies
 			}
 		}
 
+
         /// <summary>
         /// Not used yet.
         /// </summary>
@@ -204,6 +208,7 @@ namespace NSA4Dummies
 			}
 		}
 
+
         /// <summary>
         /// Not used yet.
         /// </summary>
@@ -214,6 +219,7 @@ namespace NSA4Dummies
 
 		}
 
+
         /// <summary>
         /// Not used yet.
         /// </summary>
@@ -223,6 +229,8 @@ namespace NSA4Dummies
 		{
 			this.Shutdown();
 		}
+
+
         /// <summary>
         /// Event for clicking the notify icon.
         /// If you click on the icon once, the balloon tip will show up with information
@@ -234,6 +242,8 @@ namespace NSA4Dummies
         {
             ntfyIcon.Visible = true;
         }
+
+
         /// <summary>
         /// Event for doubleclicking the notify icon.
         /// If the main window is minized, the window will be restored with a double click.

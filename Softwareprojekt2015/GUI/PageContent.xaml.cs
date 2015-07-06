@@ -8,17 +8,11 @@ using System.Windows.Controls;
 
 namespace NSA4Dummies
 {
+    /// <summary>
+    /// This code-behind class handles events triggered by the GUI-Buttons (close, minimize, normal)
+    /// </summary>
     public partial class PageContent
     {
-        /// <summary>
-        /// Constructor of PageContent
-        /// </summary>
-        public PageContent(){
-            
-        }
-
-        
-
         /// <summary>
         /// This function is called when the user clicks on the "X" (close) button
         /// The GUI Update timer will be stopped and the program is closed
@@ -41,7 +35,6 @@ namespace NSA4Dummies
         /// <param name="e"></param>
         private void btn_minimize_Click(object sender, RoutedEventArgs e)
         {
-
             foreach(Window window in App.Current.Windows) {
                 window.WindowState = WindowState.Minimized;
             }

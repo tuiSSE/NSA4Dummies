@@ -29,9 +29,12 @@ namespace NSA4Dummies
             /// </summary>
 			public string sName;
 
-			public override string ToString()
+			/// <summary>
+			/// Method which returns a string representation of the Language
+			/// </summary>
+			/// <returns></returns>
+            public override string ToString()
 			{
-
 				return this.name + " - " + this.sName;
 			}
 		}

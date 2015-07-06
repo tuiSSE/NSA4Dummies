@@ -10,6 +10,9 @@ using System.Windows.Input;
 
 namespace NSA4Dummies
 {
+    /// <summary>
+    /// This class handles the data of the charts
+    /// </summary>
     public class GUIViewModel : INotifyPropertyChanged
     {
 
@@ -53,10 +56,13 @@ namespace NSA4Dummies
             }
         }
 
-        /*
-         *  Public members
-         * */
+        /// <summary>
+        /// This member holds the font size of the charts
+        /// </summary>
         public List<double> FontSizes { get; set; }
+        /// <summary>
+        /// This member holds the inner radius of the doughnut chart
+        /// </summary>
         public List<double> DoughnutInnerRadiusRatios { get; set; }
         public List<string> SelectionBrushes { get; set; }
         public ObservableCollection<ChartType> ViewTypes { get; set; }
@@ -99,7 +105,8 @@ namespace NSA4Dummies
         /// <summary>
         /// Adds a package to the charts
         /// </summary>
-        /// <param name="encrypted">The encryption status of that package</param>
+        /// <param name="packageSize">The size (in bytes) of the package</param>
+        /// <param name="protocol">The used protocol of the package (see: DataPacket.DataTransferProtocol)</param>
         public void addPackage(int packageSize, DataPacket.DataTransferProtocol protocol)
         {
             string sizeNormalized;
@@ -166,6 +173,10 @@ namespace NSA4Dummies
         }
 
 
+        /// <summary>
+        /// Add a package to the "Packages per country" chart
+        /// </summary>
+        /// <param name="countryShort">The two-letter code of the country</param>
         public void addCountryPackage(string countryShort)
         {
             countryShort = countryShort.ToUpper();
@@ -225,10 +236,10 @@ namespace NSA4Dummies
         }
        
 
-        /*
-         *  selected layout elements
-         * */
         private ChartType selectedChartType;
+        /// <summary>
+        /// Returns the selected chrt type
+        /// </summary>
         public ChartType SelectedChartType
         {
             get
@@ -242,7 +253,11 @@ namespace NSA4Dummies
             }
         }
 
+
         private object selectedPalette = null;
+        /// <summary>
+        /// Returns the selected palette
+        /// </summary>
         public object SelectedPalette
         {
             get
@@ -256,7 +271,11 @@ namespace NSA4Dummies
             }
         }
 
+
         private string selectedBrush = null;
+        /// <summary>
+        /// Returns the selected brush
+        /// </summary>
         public string SelectedBrush
         {
             get
@@ -270,7 +289,11 @@ namespace NSA4Dummies
             }
         }
 
+
         private double selectedDoughnutInnerRadiusRatio = 0.75;
+        /// <summary>
+        /// Returns the selected inner radius of the doughnut chart
+        /// </summary>
         public double SelectedDoughnutInnerRadiusRatio
         {
             get
@@ -285,6 +308,10 @@ namespace NSA4Dummies
             }
         }
 
+        
+        /// <summary>
+        /// Returns the selected font size as string
+        /// </summary>
         public string SelectedFontSizeString
         {
             get
@@ -293,7 +320,11 @@ namespace NSA4Dummies
             }
         }
 
+
         private object selectedItem = null;
+        /// <summary>
+        /// Returns the selected item
+        /// </summary>
         public object SelectedItem
         {
             get
@@ -307,7 +338,11 @@ namespace NSA4Dummies
             }
         }
 
+
         private double fontSize = 11.0;
+        /// <summary>
+        /// Returns the selected font size
+        /// </summary>
         public double SelectedFontSize
         {
             get
@@ -322,7 +357,11 @@ namespace NSA4Dummies
             }
         }
 
+
         private bool isRowColumnSwitched = false;
+        /// <summary>
+        /// Returns whether the row column is switched or not
+        /// </summary>
         public bool IsRowColumnSwitched
         {
             get
@@ -336,7 +375,11 @@ namespace NSA4Dummies
             }
         }
 
+
         private bool isLegendVisible = true;
+        /// <summary>
+        /// Returns whether the legend is visible or not
+        /// </summary>
         public bool IsLegendVisible
         {
             get
@@ -350,7 +393,11 @@ namespace NSA4Dummies
             }
         }
 
+
         private bool isTitleVisible = true;
+        /// <summary>
+        /// Returns whether the title column is switched or not
+        /// </summary>
         public bool IsTitleVisible
         {
             get
@@ -364,6 +411,10 @@ namespace NSA4Dummies
             }
         }
 
+
+        /// <summary>
+        /// Returns the selected inner radius of the doughnut chart as string
+        /// </summary>
         public string SelectedDoughnutInnerRadiusRatioString
         {
             get
@@ -393,6 +444,8 @@ namespace NSA4Dummies
                 return (string)Application.Current.FindResource("chartsLabelColor");
             }
         }
+
+
         /// <summary>
         /// Color of Header texts
         /// </summary>
@@ -403,6 +456,8 @@ namespace NSA4Dummies
                 return (string)Application.Current.FindResource("chartsLabelColor");
             }
         }
+
+
         /// <summary>
         /// The background color
         /// </summary>
@@ -413,6 +468,8 @@ namespace NSA4Dummies
                 return (string)Application.Current.FindResource("chartsBackgroundColor");
             }
         }
+
+
         /// <summary>
         /// The main background color of the program
         /// </summary>
@@ -423,6 +480,8 @@ namespace NSA4Dummies
                 return (string)Application.Current.FindResource("programMainBackgroundColor");
             }
         }
+
+
         /// <summary>
         /// Default color of the countries
         /// </summary>
@@ -441,6 +500,9 @@ namespace NSA4Dummies
          * */
         public event PropertyChangedEventHandler PropertyChanged;
 
+        /// <summary>
+        /// Returns the tooltip string
+        /// </summary>
         public string ToolTipFormat
         {
             get
@@ -459,6 +521,7 @@ namespace NSA4Dummies
                 PropertyChanged.Invoke(this, new PropertyChangedEventArgs(property));
             }
         }
+
 
         private void LoadPalettes()
         {
@@ -480,6 +543,7 @@ namespace NSA4Dummies
             SelectedPalette = Palettes.FirstOrDefault();
         }
 
+
         int newSeriesCounter = 1;
         private void AddSeries()
         {
@@ -495,14 +559,13 @@ namespace NSA4Dummies
             newSeriesCounter++;
         }
 
+
         /// <summary>
         /// The constructor of GUIViewModel
         /// </summary>
         public GUIViewModel()
         {
             LoadPalettes();
-
-            //AddSeriesCommand = new DelegateCommand(x => AddSeries());
 
             ViewTypes = new ObservableCollection<ChartType>();
             ViewTypes.Add(new ChartType(App.translation["mainWindow.map"], "Map"));
@@ -544,6 +607,7 @@ namespace NSA4Dummies
             PackagesPerCountry = new ObservableCollection<DataClass>();
         }
 
+
         /// <summary>
         /// The collection that holds the top websites
         /// </summary>
@@ -552,6 +616,7 @@ namespace NSA4Dummies
             get;
             set;
         }
+
 
         /// <summary>
         /// The collection that holds the (un-)encrypted packages
@@ -562,6 +627,7 @@ namespace NSA4Dummies
             set;
         }
 
+
         /// <summary>
         /// The collection that holds the filetypes of the packages
         /// </summary>
@@ -571,6 +637,7 @@ namespace NSA4Dummies
             set;
         }
 
+
         /// <summary>
         /// The collection that holds number of packages sent to a country
         /// </summary>
@@ -579,7 +646,6 @@ namespace NSA4Dummies
             get;
             set;
         }
-
     }
 
 
@@ -627,26 +693,17 @@ namespace NSA4Dummies
     }
 
 
-    /*
-    public class SeriesData
-    {
-        public string SeriesDisplayName { get; set; }
-
-        public string SeriesDescription { get; set; }
-
-        public ObservableCollection<TestClass> Items { get; set; }
-    }
-     * */
-
-
     /// <summary>
     /// The class that is used to store data to the charts
     /// </summary>
-    public class DataClass : INotifyPropertyChanged
+    public class DataClass
     {
         public string Category { get; set; }
 
         private float _number = 0;
+        /// <summary>
+        /// The numerical value of a chart element
+        /// </summary>
         public float Number
         {
             get
@@ -656,14 +713,7 @@ namespace NSA4Dummies
             set
             {
                 _number = value;
-                if (PropertyChanged != null)
-                {
-                    this.PropertyChanged(this, new PropertyChangedEventArgs("Number"));
-                }
             }
-
         }
-
-        public event PropertyChangedEventHandler PropertyChanged;
     }
 }
