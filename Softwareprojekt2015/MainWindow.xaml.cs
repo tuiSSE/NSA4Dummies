@@ -40,7 +40,7 @@ namespace NSA4Dummies
 
             // GUI update timer
             guiUpdateTimer.Elapsed += new ElapsedEventHandler(updateGUI);
-            guiUpdateTimer.Interval = 3000; // 1000 ms is one second
+            guiUpdateTimer.Interval = 5000; // 1000 ms is one second
 
         }
 
