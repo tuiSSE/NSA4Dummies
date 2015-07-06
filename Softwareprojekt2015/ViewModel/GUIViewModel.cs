@@ -59,7 +59,7 @@ namespace NSA4Dummies
         public List<double> FontSizes { get; set; }
         public List<double> DoughnutInnerRadiusRatios { get; set; }
         public List<string> SelectionBrushes { get; set; }
-        public ObservableCollectionEx<ChartType> ViewTypes { get; set; }
+        public ObservableCollection<ChartType> ViewTypes { get; set; }
         public Dictionary<string, De.TorstenMandelkow.MetroChart.ResourceDictionaryCollection> Palettes { get; set; }
 
 
@@ -483,7 +483,7 @@ namespace NSA4Dummies
         int newSeriesCounter = 1;
         private void AddSeries()
         {
-            ObservableCollectionEx<DataClass> data = new ObservableCollectionEx<DataClass>();
+            ObservableCollection<DataClass> data = new ObservableCollection<DataClass>();
 
             data.Add(new DataClass() { Category = "Globalization", Number = 5 });
             data.Add(new DataClass() { Category = "Features", Number = 10 });
@@ -504,7 +504,7 @@ namespace NSA4Dummies
 
             //AddSeriesCommand = new DelegateCommand(x => AddSeries());
 
-            ViewTypes = new ObservableCollectionEx<ChartType>();
+            ViewTypes = new ObservableCollection<ChartType>();
             ViewTypes.Add(new ChartType(App.translation["mainWindow.map"], "Map"));
             ViewTypes.Add(new ChartType(App.translation["mainWindow.stats"], "Statistics"));
             ViewTypes.Add(new ChartType(App.translation["mainWindow.settings"], "Settings"));
@@ -538,23 +538,16 @@ namespace NSA4Dummies
             SelectionBrushes.Add("[NoColor]");
             SelectedBrush = SelectionBrushes.FirstOrDefault();
 
-            UsedProtocols = new ObservableCollectionEx<DataClass>();
-            PackageSize = new ObservableCollectionEx<DataClass>();
-            Filetypes = new ObservableCollectionEx<DataClass>();
-            PackagesPerCountry = new ObservableCollectionEx<DataClass>();
-
-
-            // Disable Notifications of ObservableCollections
-            // TopWebsites = TopWebsites.DisableNotifications();
-            // PackageSize = PackageSize.DisableNotifications();
-            // Filetypes = Filetypes.DisableNotifications();
-            // PackagesPerCountry = PackagesPerCountry.DisableNotifications();
+            UsedProtocols = new ObservableCollection<DataClass>();
+            PackageSize = new ObservableCollection<DataClass>();
+            Filetypes = new ObservableCollection<DataClass>();
+            PackagesPerCountry = new ObservableCollection<DataClass>();
         }
 
         /// <summary>
         /// The collection that holds the top websites
         /// </summary>
-        public ObservableCollectionEx<DataClass> UsedProtocols
+        public ObservableCollection<DataClass> UsedProtocols
         {
             get;
             set;
@@ -563,7 +556,7 @@ namespace NSA4Dummies
         /// <summary>
         /// The collection that holds the (un-)encrypted packages
         /// </summary>
-        public ObservableCollectionEx<DataClass> PackageSize
+        public ObservableCollection<DataClass> PackageSize
         {
             get;
             set;
@@ -572,7 +565,7 @@ namespace NSA4Dummies
         /// <summary>
         /// The collection that holds the filetypes of the packages
         /// </summary>
-        public ObservableCollectionEx<DataClass> Filetypes
+        public ObservableCollection<DataClass> Filetypes
         {
             get;
             set;
@@ -581,7 +574,7 @@ namespace NSA4Dummies
         /// <summary>
         /// The collection that holds number of packages sent to a country
         /// </summary>
-        public ObservableCollectionEx<DataClass> PackagesPerCountry
+        public ObservableCollection<DataClass> PackagesPerCountry
         {
             get;
             set;
