@@ -230,10 +230,10 @@ namespace NSA4Dummies
             {
                 double opacity = (e.Value - minVal) / (maxVal - minVal);
 
-                // Minimum opacity is 33% for better visibility
-                if (opacity < 0.33  )
+                // Minimum opacity is 10% for better visibility
+                if (opacity < 0.1  )
                 {
-                    opacity = 0.33;
+                    opacity = 0.1;
                 }
 
                 _shadingDictionary[e.Key] = opacity;

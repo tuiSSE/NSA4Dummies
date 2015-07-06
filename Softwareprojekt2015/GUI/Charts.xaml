@@ -153,7 +153,7 @@
                     HorizontalAlignment="Center"
                     VerticalAlignment="Stretch"
                     Style="{StaticResource ChartStyleVariableSize}"
-                    ChartTitle="Packages per country"
+                    ChartTitle="{Binding T[charts.chartTitlePackagesPerCountry]}"
                     ChartSubTitle="" 
                     Palette="{Binding Path=SelectedPalette.Value}"
                     FontSize="{Binding Path=SelectedFontSize}"

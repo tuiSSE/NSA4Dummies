@@ -53,14 +53,12 @@ namespace NSA4Dummies
 
 				GUIViewModel t = new GUIViewModel();
 
-				foreach (Window w in App.Current.Windows)
-				{
+                foreach (Window w in App.Current.Windows)
+                {
+                    w.DataContext = t;
+                }
 
-					w.DataContext = t;
-				}
-				((App)App.Current).UpdateNotifyLanguage();
-			
-			
+				((App)App.Current).UpdateNotifyLanguage();		
 		}
 
 		/// <summary>

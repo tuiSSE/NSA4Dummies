@@ -10,7 +10,7 @@
                         <RowDefinition Height="auto"/>
                     </Grid.RowDefinitions>
 
-                    <StackPanel Grid.Row="0" Margin="15" HorizontalAlignment="Left">
+                    <StackPanel Grid.Row="0" Margin="25 0 25 0" HorizontalAlignment="Left">
                         <TextBlock Text="{Binding T[settings.language]}" Style="{StaticResource SectionHeaderSmallTextStyle}" />
                         <ComboBox 
                             SelectionChanged="cb_language_SelectionChanged"
@@ -72,10 +72,10 @@
                             </ComboBox.ItemTemplate>
                         </ComboBox>
 
-                        
                         <TextBlock Text="{Binding T[settings.optionsSelectionSupport]}" Style="{StaticResource SectionHeaderSmallTextStyle}" />
                         <TextBlock Text="{Binding T[settings.optionsColorInfo]}" Style="{StaticResource ContentTextStyle}"  />
 
+                        
                         <ComboBox Foreground="Black" Tag="{Binding Path=SelectedBrush}" ItemsSource="{Binding Path=SelectionBrushes}" SelectedItem="{Binding Path=SelectedBrush, Mode=TwoWay}" />
 
                         

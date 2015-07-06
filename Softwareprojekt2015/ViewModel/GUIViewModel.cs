@@ -105,25 +105,29 @@ namespace NSA4Dummies
             string sizeNormalized;
             string protocolString = "";
             
-            if (packageSize <= 1000)
+            if (packageSize <= 100)
             {
-                sizeNormalized = "< 1kb";
+                sizeNormalized = "< 100B";
             }
-            else if(packageSize < 5000)
+            else if(packageSize < 500)
             {
-                sizeNormalized = "1 - 5kB";
+                sizeNormalized = "100B - 500B";
             }
-            else if(packageSize < 10000)
+            else if(packageSize < 1000)
             {
-                sizeNormalized = "5 - 10kB";
+                sizeNormalized = "500B - 1kB";
             }
-            else if(packageSize < 64000)
+            else if(packageSize < 1500)
             {
-                sizeNormalized = "10kB - 64kB";
+                sizeNormalized = "1kB - 1.5kB";
+            }
+            else if (packageSize < 2000)
+            {
+                sizeNormalized = "1.5kB - 2kB";
             }
             else
             {
-                sizeNormalized = "> 64kB";
+                sizeNormalized = "> 2kB";
             }
 
             if (Size.ContainsKey(sizeNormalized))
