@@ -194,7 +194,7 @@ namespace NSA4Dummies
 
             foreach (var s in SizePerCountry)
             {
-                FileSizePerCountry.Add(new DataClass() { Category = s.Key, Number = s.Value });
+                FileSizePerCountry.Add(new DataClass() { Category = s.Key, Number = (float)Math.Round(s.Value, 2) });
             }
 
             foreach (var s in Size)
