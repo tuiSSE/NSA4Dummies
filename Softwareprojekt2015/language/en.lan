@@ -16,13 +16,22 @@
     <string id="aboutHeadline3">GNU General Public License </string>
     <string id="aboutParagraph3">Placeholder</string>
     <string id="aboutHeadline4">Developer</string>
-    <string id="aboutParagraph4">Peter Brodkorb&#x0a;Clemens Fischer&#x0a;Dennis Pietsch&#x0a;Timo Sadzik&#x0a;Franziska Selle&#x0a;Matrin Wolf</string>
+    <string id="aboutParagraph4">Peter Brodkorb&#x0a;Clemens Fischer&#x0a;Dennis Pietsch&#x0a;Timo Sadzik&#x0a;Franziska Selle&#x0a;Martin Wolf</string>
     <string id="aboutHyperlinkText1">Google</string>
     <string id="aboutHyperlinkURL1">http://google.de</string>
     <string id="aboutHyperlinkText2">TU Ilmenau</string>
     <string id="aboutHyperlinkURL2">http://tu-ilmenau.de</string>
     <string id="aboutHyperlinkText3">http://www.gnu.org/licenses/agpl-3.0</string>
     <string id="aboutHyperlinkURL3">http://www.gnu.org/licenses/agpl-3.0</string>
+    <string id="aboutHeadline5">Other libraries/sources</string>
+    <string id="aboutHyperlinkText4">WinPcap</string>
+    <string id="aboutHyperlinkURL4">http://www.winpcap.org/misc/copyright.htm</string>
+    <string id="aboutHyperlinkText5">IP2Location</string>
+    <string id="aboutHyperlinkURL5">http://lite.ip2location.com/database-ip-country</string>
+    <string id="aboutHyperlinkText6">Modern UI Charts</string>
+    <string id="aboutHyperlinkURL6">https://modernuicharts.codeplex.com/license</string>
+    <string id="aboutHyperlinkText7">World Map</string>
+    <string id="aboutHyperlinkURL7">http://www.wpclipart.com/geography/Earth/world_map_grid.png.htmle</string>
   </category>
   <category name="settings">
     <string id="title">Settings</string>
