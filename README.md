@@ -45,6 +45,7 @@ You will need [Adobe Acrobat Reader](https://get.adobe.com/de/reader/) to access
 - [IP2Location](http://lite.ip2location.com/database-ip-country#ipv4) converted from CSV to SQL
 - [Charts](https://modernuicharts.codeplex.com/license)
 - [WinPcap](http://www.winpcap.org/misc/copyright.htm)
+- [SharpPcap](http://sourceforge.net/projects/sharppcap)
 
 
 ##Limitation of liability
