@@ -43,6 +43,14 @@ namespace NSA4Dummies
 
         private bool languageFileMissing = false;
 
+		// Declaration of NotifyIcon and its context menu.
+		private System.Windows.Forms.NotifyIcon ntfyIcon;
+		private System.Windows.Forms.ContextMenu niContextMenu;
+		private System.Windows.Forms.MenuItem niStartSniffer;
+		private System.Windows.Forms.MenuItem niStopSniffer;
+		private System.Windows.Forms.MenuItem niExit;
+		private System.ComponentModel.IContainer components;
+
 
         /// <summary>
         /// Consturctor
@@ -75,12 +83,11 @@ namespace NSA4Dummies
 				this.niContextMenu = new System.Windows.Forms.ContextMenu();
 				this.niStartSniffer = new System.Windows.Forms.MenuItem();
 				this.niStopSniffer = new System.Windows.Forms.MenuItem();
-				this.niSettings = new System.Windows.Forms.MenuItem();
 				this.niExit = new System.Windows.Forms.MenuItem();
 				this.components = new System.ComponentModel.Container();
 
 				// Initialize niContextMenu.
-				this.niContextMenu.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] { this.niStartSniffer, this.niStopSniffer, this.niSettings, this.niExit });
+				this.niContextMenu.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] { this.niStartSniffer, this.niStopSniffer, this.niExit });
 
 				// Initialize niStartSniffer.
 				this.niStartSniffer.Index = 0;
@@ -92,13 +99,9 @@ namespace NSA4Dummies
 				this.niStopSniffer.Text = App.translation["notifyIcon.niStopSniffer"];
 				this.niStopSniffer.Click += new System.EventHandler(this.niStop_Click);
 
-				// Initialize niSettings.
-				this.niSettings.Index = 2;
-				this.niSettings.Text = App.translation["notifyIcon.niSettings"];
-				this.niSettings.Click += new System.EventHandler(this.niSettings_Click);
 
 				// Initialize niExit.
-				this.niExit.Index = 3;
+				this.niExit.Index = 2;
 				this.niExit.Text = App.translation["notifyIcon.niExit"];
 				this.niExit.Click += new System.EventHandler(this.niExit_Click);
 
@@ -142,7 +145,6 @@ namespace NSA4Dummies
 		{
 			this.niStartSniffer.Text = App.translation["notifyIcon.niStartSniffer"];
 			this.niStopSniffer.Text = App.translation["notifyIcon.niStopSniffer"];
-			this.niSettings.Text = App.translation["notifyIcon.niSettings"];
 			this.niExit.Text = App.translation["notifyIcon.niExit"];
 			ntfyIcon.Text = App.translation["notifyIcon.niText"];
 		}
@@ -168,14 +170,7 @@ namespace NSA4Dummies
         }
 
 
-        // Declaration of NotifyIcon and its context menu.
-        private System.Windows.Forms.NotifyIcon ntfyIcon;
-        private System.Windows.Forms.ContextMenu niContextMenu;
-        private System.Windows.Forms.MenuItem niStartSniffer;
-        private System.Windows.Forms.MenuItem niStopSniffer;
-        private System.Windows.Forms.MenuItem niSettings;
-        private System.Windows.Forms.MenuItem niExit;
-        private System.ComponentModel.IContainer components;
+
 
 
         /// <summary>
@@ -204,15 +199,6 @@ namespace NSA4Dummies
 			}
 		}
 
-        /// <summary>
-        /// Not used yet.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-		private void niSettings_Click(object Sender, EventArgs e)
-		{
-
-		}
 
         /// <summary>
         /// Not used yet.
