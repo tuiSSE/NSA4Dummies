@@ -65,6 +65,13 @@
                                                     </Underline>
                                     </TextBlock>
                                 </local:PortableHyperLinkButton>
+                                <local:PortableHyperLinkButton Url="{Binding T[credits.aboutHyperlinkURL8]}">
+                                    <TextBlock Margin="0 0 0 3" Style="{StaticResource ContentTextStyle}">
+                                                    <Underline>
+                                                        <Run Text="{Binding T[credits.aboutHyperlinkText8]}"/>
+                                                    </Underline>
+                                    </TextBlock>
+                                </local:PortableHyperLinkButton>
                                 <TextBlock Text="{Binding T[credits.aboutHeadline4]}" Style="{StaticResource SectionHeaderSmallTextStyle}" TextBlock.FontWeight="Bold"/>
                                 <TextBlock Style="{StaticResource ContentTextStyle}" Text="{Binding T[credits.aboutParagraph4]}" />
                             </StackPanel>

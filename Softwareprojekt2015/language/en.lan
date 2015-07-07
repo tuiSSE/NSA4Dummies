@@ -31,7 +31,9 @@
     <string id="aboutHyperlinkText6">Modern UI Charts</string>
     <string id="aboutHyperlinkURL6">https://modernuicharts.codeplex.com/license</string>
     <string id="aboutHyperlinkText7">World Map</string>
-    <string id="aboutHyperlinkURL7">http://www.wpclipart.com/geography/Earth/world_map_grid.png.htmle</string>
+    <string id="aboutHyperlinkURL7">http://www.wpclipart.com/geography/Earth/world_map_grid.png.html</string>
+    <string id="aboutHyperlinkText8">SharpPcap</string>
+    <string id="aboutHyperlinkURL8">http://sourceforge.net/projects/sharppcap/</string>
   </category>
   <category name="settings">
     <string id="title">Settings</string>
