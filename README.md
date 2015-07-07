@@ -37,6 +37,7 @@ You will need [Adobe Acrobat Reader](https://get.adobe.com/de/reader/) to access
 ## Minimum requirements:
 - **Windows 7** or higher
 - WinPcap
+- .NET Framework 4.5 or higher
 
 ##Copyright
 
