@@ -1,4 +1,36 @@
-﻿using System;
+﻿// Doxygen mainpage
+/*! \mainpage NSA for Dummies
+ *
+ * \section intro_sec General
+ *
+ * Our software project titled "NSA 4 Dummies" is a small, lightweight application to show unencrpyted traffic and IP-Routing in your own home network. 
+ * There's no need for further knowledge regarding network security, so this tool is for everyone who want's to get a fast and general overview of their data traffic.
+ * "NSA 4 Dummies" was developed by a team of students from the "Technische Universität Ilmenau" during their mandatory 4th semester course called "Softwareprojekt".
+ * Encrypted data isn't supposed to be logged and intruding secured networks isn't able with this application. 
+ * Using the software does not violate §202a, §202b, §202c StGB.
+ * 
+ * For more details have a look at https://github.com/Softwareprojekt2015/NSA4Dummies
+ *
+ *
+ * \section credits Credits
+ * 
+ * \subsection third_party Third Party Libraries
+ * 
+ * WinPcap\n
+ * Modern UI Charts
+ * 
+ * \subsection developer Developer
+ * 
+ * Peter Brodkorb\n
+ * Clemens Fischer\n
+ * Dennis Pietsch\n
+ * Timo Sadzik\n
+ * Franziska Selle\n
+ * Martin Wolf
+ */
+
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
