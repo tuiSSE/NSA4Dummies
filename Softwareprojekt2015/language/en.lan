@@ -4,21 +4,19 @@
     <string id="ok">OK</string>
     <string id="cancel">Cancel</string>
     <string id="save">Save</string>
-    <string id="version">v0.4</string>
+    <string id="version">v1.0</string>
     <string id="appName">NSA 4 Dummies</string>
   </category>
   <category name="credits">
     <string id="headerAbout">NSA 4 Dummies</string>
     <string id="aboutHeadline1">About this Programm</string>
-    <string id="aboutParagraph1">NSA 4 Dummies is a sleek, intuitive application that shows unencrypted network traffic and IP-Routing in your own home network.  
-    It was develepoed by a Team of Students from the Technical University Ilmenau.</string>
+    <string id="aboutParagraph1">NSA 4 Dummies is a sleek, intuitive application that shows unencrypted network traffic and IP-Routing in your own home network.&#x0a;It was develepoed by a Team of Students from the Technical University Ilmenau.</string>
     <string id="aboutHeadline2">Limitation of liability</string>
-    <string id="aboutParagraph2">No Software is without error. For that reason we don´t assume any liability for mistakes.   
-    University carry out research work with circumspection taking well-known status from science and technology as a basis.  
-    Liability for defects will not be taken. Especially liability for consequential damages (lost profits, property damage, etc.) is hereby excluded.  
-    Otherwise liability is restricted on to deliberate and grossly negligent attempted damage.</string>
+    <string id="aboutParagraph2">No Software is without error. For that reason we don´t assume any liability for mistakes.&#x0a;University carry out research work with circumspection taking well-known status from science and technology as a basis.&#x0a;Liability for defects will not be taken. Especially liability for consequential damages (lost profits, property damage, etc.) is hereby excluded.&#x0a;Otherwise liability is restricted on to deliberate and grossly negligent attempted damage.</string>
     <string id="aboutHeadline3">GNU General Public License </string>
     <string id="aboutParagraph3">Placeholder</string>
+    <string id="aboutHeadline4">Developer</string>
+    <string id="aboutParagraph4">Peter Brodkorb&#x0a;Clemens Fischer&#x0a;Dennis Pietsch&#x0a;Timo Sadzik&#x0a;Franziska Selle&#x0a;Matrin Wolf</string>
     <string id="aboutHyperlinkText1">Google</string>
     <string id="aboutHyperlinkURL1">http://google.de</string>
     <string id="aboutHyperlinkText2">TU Ilmenau</string>
@@ -52,6 +50,12 @@
     <string id="settings">Settings</string>
     <string id="stats">Statistics</string>
     <string id="credits">Credits</string>
+  </category>
+  <category name="charts">
+    <string id="chartTitleUsedProtocols">Packages per protocol</string>
+    <string id="chartTitlePackageSize">Packages per Packagesize</string>
+    <string id="chartTitlePackagesPerCountry">Packages per Country</string>
+    <string id="chartTitleDataAmountPerCountry">Amount of data per country</string>
   </category>
   <category name="notifyIcon">
     <string id="niText">NSA 4 Dummies</string>

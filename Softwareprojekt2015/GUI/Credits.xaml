@@ -4,20 +4,20 @@
                     xmlns:local="clr-namespace:NSA4Dummies">
   
     <DataTemplate x:Key="Credits">
-    <Viewbox>
-            <Grid x:Name="maingrid" Background="{Binding Path=MainBackground}">
-                <Border Grid.Column="1">
-                    <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Right">
+        <Viewbox>
+            <Grid VerticalAlignment="Top">
+                <Border>
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="10">
                         <StackPanel>
                             <Border Grid.Row="0" Background="{StaticResource creditsBackgroundColor}">
-                                <TextBlock Margin="15" Text="{Binding T[credits.headerAbout]}" Style="{StaticResource SectionHeaderSmallTextStyle}" />
+                                <TextBlock Margin="10 5 5 5" Text="{Binding T[credits.headerAbout]}" Style="{StaticResource SectionHeaderSmallTextStyle}" />
                             </Border>
                             
-                                <StackPanel Margin="15">
-                                    <TextBlock Text="{Binding T[credits.aboutHeadline1]}" Style="{StaticResource SectionHeaderSmallTextStyle}" />
+                                <StackPanel Margin="10">
+                                    <TextBlock Text="{Binding T[credits.aboutHeadline1]}" Style="{StaticResource SectionHeaderSmallTextStyle}" TextBlock.FontWeight="Bold"/>
                                     <TextBlock Style="{StaticResource ContentTextStyle}" Text="{Binding T[credits.aboutParagraph1]}" />
 
-                                    <TextBlock Text="{Binding T[credits.aboutHeadline2]}" Style="{StaticResource SectionHeaderSmallTextStyle}" />
+                                    <TextBlock Text="{Binding T[credits.aboutHeadline2]}" Style="{StaticResource SectionHeaderSmallTextStyle}" TextBlock.FontWeight="Bold"/>
                                     <Grid>
                                         <Grid.ColumnDefinitions>
                                             <ColumnDefinition Width="*" />
@@ -34,7 +34,9 @@
                                                     </Underline>
                                         </TextBlock>
                                     </local:PortableHyperLinkButton>
-                                </StackPanel>
+                                <TextBlock Text="{Binding T[credits.aboutHeadline4]}" Style="{StaticResource SectionHeaderSmallTextStyle}" TextBlock.FontWeight="Bold"/>
+                                <TextBlock Style="{StaticResource ContentTextStyle}" Text="{Binding T[credits.aboutParagraph4]}" />
+                            </StackPanel>
                           
                         </StackPanel>
                     </StackPanel>

@@ -10,19 +10,16 @@ using System.ComponentModel;
 
 namespace NSA4Dummies
 {
-    public partial class WorldMap : INotifyPropertyChanged
+    /// <summary>
+    /// This code-behind class handles everything concerning the worldmap.
+    /// </summary>
+    public partial class WorldMap
     {
         private static IDictionary<string, uint> _mapDictionary = new Dictionary<string, uint>();
         private static IDictionary<string, double> _shadingDictionary = new Dictionary<string, double>();
         private static IDictionary<string, Path> _pathDictionary = new Dictionary<string, Path>();
         private static SolidColorBrush defaultShading = new BrushConverter().ConvertFromString((string)Application.Current.FindResource("mapDefaultShadingColor")) as SolidColorBrush;
         private static SolidColorBrush mouseOverShading = new BrushConverter().ConvertFromString((string)Application.Current.FindResource("mapMouseOverShading")) as SolidColorBrush;
-
-
-        /*
-         *  Events
-         * */
-        public event PropertyChangedEventHandler PropertyChanged;
 
 
         /// <summary>
@@ -230,10 +227,10 @@ namespace NSA4Dummies
             {
                 double opacity = (e.Value - minVal) / (maxVal - minVal);
 
-                // Minimum opacity is 33% for better visibility
-                if (opacity < 0.33  )
+                // Minimum opacity is 20% for better visibility
+                if (opacity < 0.2  )
                 {
-                    opacity = 0.33;
+                    opacity = 0.2;
                 }
 
                 _shadingDictionary[e.Key] = opacity;

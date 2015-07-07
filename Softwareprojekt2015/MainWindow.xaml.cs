@@ -1,4 +1,36 @@
-﻿using System;
+﻿// Doxygen mainpage
+/*! \mainpage NSA for Dummies
+ *
+ * \section intro_sec General
+ *
+ * Our software project titled "NSA 4 Dummies" is a small, lightweight application to show unencrpyted traffic and IP-Routing in your own home network. 
+ * There's no need for further knowledge regarding network security, so this tool is for everyone who want's to get a fast and general overview of their data traffic.
+ * "NSA 4 Dummies" was developed by a team of students from the "Technische Universität Ilmenau" during their mandatory 4th semester course called "Softwareprojekt".
+ * Encrypted data isn't supposed to be logged and intruding secured networks isn't able with this application. 
+ * Using the software does not violate §202a, §202b, §202c StGB.
+ * 
+ * For more details have a look at https://github.com/Softwareprojekt2015/NSA4Dummies
+ *
+ *
+ * \section credits Credits
+ * 
+ * \subsection third_party Third Party Libraries
+ * 
+ * WinPcap\n
+ * Modern UI Charts
+ * 
+ * \subsection developer Developer
+ * 
+ * Peter Brodkorb\n
+ * Clemens Fischer\n
+ * Dennis Pietsch\n
+ * Timo Sadzik\n
+ * Franziska Selle\n
+ * Martin Wolf
+ */
+
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -40,7 +72,7 @@ namespace NSA4Dummies
 
             // GUI update timer
             guiUpdateTimer.Elapsed += new ElapsedEventHandler(updateGUI);
-            guiUpdateTimer.Interval = 3000; // 1000 ms is one second
+            guiUpdateTimer.Interval = 5000; // 1000 ms is one second
 
         }
 
@@ -70,18 +102,8 @@ namespace NSA4Dummies
             {
                 // Add a packet to the country that is associated with the IP address
                 WorldMap.addPackageToCountryUpdate(ip.ToString());
-                ((GUIViewModel)this.DataContext).addCountryPackage(IP2Country.number2Country(IP2Country.address2Number(ip.ToString())));
-            }
-
-            string[] fileTypes = { "mp3", "jpeg", "html", "js", "css", "gif", "png", "flv" };
-            int choice = rnd.Next(0, fileTypes.Length);
-            ((GUIViewModel)this.DataContext).addFileType(fileTypes[choice]);
-
-            string[] domains = { "google.com", "facebook.com", "google.de", "gmail.com", "youtube.com", "tu-ilmenau.de" };
-            choice = rnd.Next(0, domains.Length);
-            ((GUIViewModel)this.DataContext).addDomain(domains[choice]);
-
-            ((GUIViewModel)this.DataContext).addPackage(packet.Length);
+                ((GUIViewModel)this.DataContext).addPackage(packet.Length, packet.Protocol, IP2Country.number2Country(IP2Country.address2Number(ip.ToString())));
+            }        
         }
 
 

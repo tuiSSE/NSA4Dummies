@@ -4,18 +4,19 @@
     <string id="ok">OK</string>
     <string id="cancel">Abbruch</string>
     <string id="save">Speichern</string>
-    <string id="version">v0.4</string>
+    <string id="version">v1.0</string>
     <string id="appName">NSA 4 Dummies</string>
   </category>
   <category name="credits">
     <string id="headerAbout">NSA 4 Dummies</string>
     <string id="aboutHeadline1">Über das Programm</string>
-    <string id="aboutParagraph1">NSA 4 Dummies ist eine übersichtliche und intuitiv zu bedienende Applikation, die dem Nutzer einen Überblick über seinen Netzwerkverkehr und die Geolokation seine Anfragen vermittelt.   
-    Sie wurde von einem Team aus Studenten der TU Ilmenau im Rahmen des obligatorischen Softwareprojektes im 4. Fachsemester entwickelt. </string>
+    <string id="aboutParagraph1">NSA 4 Dummies ist eine übersichtliche und intuitiv zu bedienende Applikation, die dem Nutzer einen Überblick über seinen Netzwerkverkehr und die Geolokation seiner Anfragen vermittelt.&#x0a;Sie wurde von einem Team aus Studenten der TU Ilmenau im Rahmen des obligatorischen Softwareprojektes im 4. Fachsemester entwickelt. </string>
     <string id="aboutHeadline2">Haftungsbeschränkung</string>
-    <string id="aboutParagraph2">Keine Software ist fehlerfrei. Aus diesem Grund übernehmen wir keine Haftung für eventuelle Fehler. Die Applikation wurde nach besten Wissen und Gewissen entwickelt.</string>
+    <string id="aboutParagraph2">Keine Software ist fehlerfrei. Aus diesem Grund übernehmen wir keine Haftung für eventuelle Fehler. Die Applikation wurde nach bestem Wissen und Gewissen entwickelt.</string>
     <string id="aboutHeadline3">GNU-Lizenz für freie Dokumentation </string>
     <string id="aboutParagraph3">Platzhalter</string>
+    <string id="aboutHeadline4">Entwickler</string>
+    <string id="aboutParagraph4">Peter Brodkorb&#x0a;Clemens Fischer&#x0a;Dennis Pietsch&#x0a;Timo Sadzik&#x0a;Franziska Selle&#x0a;Matrin Wolf</string>
     <string id="aboutHyperlinkText1">Google</string>
     <string id="aboutHyperlinkURL1">http://google.de</string>
     <string id="aboutHyperlinkText2">TU Ilmenau</string>
@@ -49,6 +50,12 @@
     <string id="settings">Einstellungen</string>
     <string id="stats">Statistik</string>
     <string id="credits">Credits</string>
+  </category>
+  <category name="charts">
+    <string id="chartTitleUsedProtocols">Pakete pro Protokoll</string>
+    <string id="chartTitlePackageSize">Pakete pro Paketgröße</string>
+    <string id="chartTitlePackagesPerCountry">Pakete pro Land</string>
+    <string id="chartTitleDataAmountPerCountry">Datenmenge pro Land</string> 
   </category>
   <category name="notifyIcon">
     <string id="niText">NSA 4 Dummies</string>

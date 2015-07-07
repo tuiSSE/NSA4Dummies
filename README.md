@@ -1,36 +1,38 @@
-# Softwareprojekt2015
-"NSA für Dummies"
-Version 0.3.2
+#Softwareprojekt2015
 
-This software is a sleek, intuitive application that shows unencrypted network traffic and IP-Routing in your own home network.
 
-## Table of contents
+##Table of contents
 
+- [General](#general)
 - [Quick start](#quick-start)
-- [General](#general) 
 - [Minimum requirements](#minimum-requirements) 
 - [Copyright](#copyright)
 - [Limitation of liability](#limitation-of-liability)
 - [License](#license)
+- [Future Features](#future-features)
+- [Reporting Problems](#reporting-problems)
 
-## Quick start:
 
-[Download the latest release](https://github.com/Softwareprojekt2015/Softwareprojekt2015/releases)
+##General
 
-Getting started:
-To run double click installer.
+Our software project titled "NSA 4 Dummies" is a small, lightweight application to show unencrpyted traffic and IP-Routing in your own home network. There's no need for further knowledge regarding network security, so this tool is for everyone who want's to get a fast and general overview of their data traffic.  
+"NSA 4 Dummies" was developed by a team of students from the "Technische Universität Ilmenau" during their mandatory 4th semester course called "Softwareprojekt".  
+Encrypted data isn't supposed to be logged and intruding secured networks isn't able with this application.
+Using the software does not violate §202a, §202b, §202c StGB.
 
-It's necessery to install the windows packet capture library:
 
+##Quick start:
+
+[Download the latest release](https://github.com/Softwareprojekt2015/Softwareprojekt2015/releases)  
+The installer file is named "nsa_{VERSION}_installer.exe".
+
+After you downloaded the setup file, a simple doubleclick starts the installation process. In order to install this program, you have to agree to the licence. Then you are asked whether you want to install WinPcap.  
+WinPcap is an essential component for NSA 4 Dummies. It is required for our program in order to function properly. This library installs automatically during the nsa4dummies - installer - process, otherwise klick the following link.  
 [Download WinPcap](http://www.winpcap.org/)
 
-## General:
+Please read the [manual](https://github.com/Softwareprojekt2015/NSA4Dummies/blob/master/Manual/NSA4Dummies_Handbuch.pdf) for further instructions.  
+You will need [Adobe Acrobat Reader](https://get.adobe.com/de/reader/) to access this document.
 
-"NSA für Dummies" is an application, which shows the user the local traffic of his network. 
-The application is exclusively to be used in your own home network. Please inform your network advisor if you use this Software!
-
-Encrypted data aren't supposed to be logged and intruding secured networks isn't able with this application.
-Using the software does not violate §202a, §202b, §202c StGB.
 
 ## Minimum requirements:
 - **Windows 7** or higher
@@ -48,11 +50,28 @@ Using the software does not violate §202a, §202b, §202c StGB.
 
 No Software is without error. For that reason we don´t assume any liability for mistakes.
 University carry out research work with circumspection taking well-known status from science and technology as a basis. 
-Liability for defects will not taken. Especially liability for consequential damages (lost profits, property damage, etc.) is hereby excluded. 
+Liability for defects will not be taken especially for consequential damages (lost profits, property damage, etc.) are  hereby excluded. 
 Otherwise liability is restricted on to deliberate and grossly negligent attempted damage.
 
 
 ##License
 
-This program is free software, you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation.
-This program is distributed in the hope that it will be useful, but without any guarantee, without even the implied guarantee of marketability or fitness for a particular purpose. See the GNU General Public License for more details.
+This program is free software, you can redistribute and / or modify it under the terms of the GNU General Public License as published by the Free Software Foundation.
+This program is distributed in hope that it will be useful but without any guarantee even the implied guarantee of marketability or fitness for a particular purpose. Please check the GNU General Public License for more details.
+
+
+##Future Features
+
+aka "TODO List"
+
+ARP Spoofing
+
+- we would like to implement ARP-spoofing so the Data from every User in a switched Network can be captured
+
+t.b.c
+
+
+##Reporting Problems
+
+If you run into a problem / bug please [report](https://github.com/Softwareprojekt2015/Softwareprojekt2015/issues) (create new issue) it and we try our best to fix it as soon as possible. 
+

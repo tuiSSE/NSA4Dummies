@@ -12,12 +12,6 @@ namespace NSA4Dummies
 	{
 		private bool onLoad = false;
 
-		public Settings()
-		{
-			
-		}
-
-
 		/// <summary>
 		/// This function is called when the user selects a language from the ComboBox
 		/// This function then updates the DataContext of the program.
@@ -44,24 +38,27 @@ namespace NSA4Dummies
 		}
 
 		
-
-
-		private void btn_save_Click(object sender, RoutedEventArgs e)
+		/// <summary>
+		/// This function is called when the user clicks on the save-button in the settings menu.
+        /// This function saves the settings in the Settings.Default Object.
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+        private void btn_save_Click(object sender, RoutedEventArgs e)
 		{
 			
 				Properties.Settings.Default.Save();
 
 				GUIViewModel t = new GUIViewModel();
 
-				foreach (Window w in App.Current.Windows)
-				{
+                foreach (Window w in App.Current.Windows)
+                {
+                    w.DataContext = t;
+                }
 
-					w.DataContext = t;
-				}
-				((App)App.Current).UpdateNotifyLanguage();
-			
-			
+				((App)App.Current).UpdateNotifyLanguage();		
 		}
+
 
 		/// <summary>
 		/// This function is called when the language combobox is loaded and sets up the options depending on the available languages
@@ -78,8 +75,5 @@ namespace NSA4Dummies
 
 			comboBox.SelectedItem = App.CurrentLanguage;
 		}
-
-
-
 	}
 }

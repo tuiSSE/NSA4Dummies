@@ -14,6 +14,9 @@ using System.Windows;
 
 namespace NSA4Dummies
 {
+    /// <summary>
+    /// The packet sniffer class which captures the data traffic of the user
+    /// </summary>
     public class PacketSniffer
     {
 

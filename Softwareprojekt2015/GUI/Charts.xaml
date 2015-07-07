@@ -66,7 +66,7 @@
                     HorizontalAlignment="Center"
                     VerticalAlignment="Stretch"
                     Style="{StaticResource ChartStyleVariableSize}"
-                    ChartTitle="Top 5 websites"
+                    ChartTitle="{Binding T[charts.chartTitleUsedProtocols]}"
                     ChartSubTitle=""     
                     Palette="{Binding Path=SelectedPalette.Value}"
                     FontSize="{Binding Path=SelectedFontSize}"
@@ -83,7 +83,7 @@
                             SeriesTitle=" "
                             DisplayMember="Category"
                             ValueMember="Number"
-                            ItemsSource="{Binding Path=TopWebsites}" />
+                            ItemsSource="{Binding Path=UsedProtocols}" />
                     </chart:ClusteredBarChart.Series>
                 </chart:ClusteredBarChart>
 
@@ -93,7 +93,7 @@
                     HorizontalAlignment="Center"
                     VerticalAlignment="Stretch"
                     Style="{StaticResource ChartStyleVariableSize}"
-                    ChartTitle="Filetypes"                                
+                    ChartTitle="{Binding T[charts.chartTitleDataAmountPerCountry]}"                                
                     ChartSubTitle=""
                     Palette="{Binding Path=SelectedPalette.Value}"
                     FontSize="{Binding Path=SelectedFontSize}"
@@ -112,7 +112,7 @@
                                 SeriesTitle=" "
                                 DisplayMember="Category"
                                 ValueMember="Number"
-                                ItemsSource="{Binding Path=Filetypes}">
+                                ItemsSource="{Binding Path=FileSizePerCountry}">
                         </chart:ChartSeries>
                     </chart:PieChart.Series>
                 </chart:DoughnutChart>
@@ -123,7 +123,7 @@
                     HorizontalAlignment="Center"
                     VerticalAlignment="Stretch"
                     Style="{StaticResource ChartStyleVariableSize}"
-                    ChartTitle="Packages per size"                                
+                    ChartTitle="{Binding T[charts.chartTitlePackageSize]}"                                
                     ChartSubTitle=""
                     Palette="{Binding Path=SelectedPalette.Value}"
                     FontSize="{Binding Path=SelectedFontSize}"
@@ -153,7 +153,7 @@
                     HorizontalAlignment="Center"
                     VerticalAlignment="Stretch"
                     Style="{StaticResource ChartStyleVariableSize}"
-                    ChartTitle="Packages per country"
+                    ChartTitle="{Binding T[charts.chartTitlePackagesPerCountry]}"
                     ChartSubTitle="" 
                     Palette="{Binding Path=SelectedPalette.Value}"
                     FontSize="{Binding Path=SelectedFontSize}"

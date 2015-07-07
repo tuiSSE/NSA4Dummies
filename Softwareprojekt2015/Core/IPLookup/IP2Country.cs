@@ -6,6 +6,11 @@ using System.Threading.Tasks;
 
 namespace NSA4Dummies{
 
+    /// <summary>
+    /// This static class is used to convert an IP-Address string to an IP-Address number
+    /// or an IP-Address number to a two-letter country code.
+    /// The database file "IPLookup.mdf" is used by this class
+    /// </summary>
     public static class IP2Country
     {
         private static IPLookupLINQDataContext db = new IPLookupLINQDataContext();

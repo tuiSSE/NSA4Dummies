@@ -10,9 +10,15 @@ using System.Windows.Input;
 
 namespace NSA4Dummies
 {
+    /// <summary>
+    /// This class handles the data of the charts
+    /// </summary>
     public class GUIViewModel : INotifyPropertyChanged
     {
 
+        /// <summary>
+        /// The chart type struct
+        /// </summary>
         public struct ChartType
         {
             public ChartType(string title, string key)
@@ -53,112 +59,64 @@ namespace NSA4Dummies
             }
         }
 
-        /*
-         *  Public members
-         * */
+        /// <summary>
+        /// This member holds the font size of the charts
+        /// </summary>
         public List<double> FontSizes { get; set; }
+        /// <summary>
+        /// This member holds the inner radius of the doughnut chart
+        /// </summary>
         public List<double> DoughnutInnerRadiusRatios { get; set; }
         public List<string> SelectionBrushes { get; set; }
-        public ObservableCollectionEx<ChartType> ViewTypes { get; set; }
+        public ObservableCollection<ChartType> ViewTypes { get; set; }
         public Dictionary<string, De.TorstenMandelkow.MetroChart.ResourceDictionaryCollection> Palettes { get; set; }
 
 
         /*
          *  Chart-Data dictionaries
          * */
-        private Dictionary<string, uint> FileTypes = new Dictionary<string, uint>();
-        private Dictionary<string, uint> Domains = new Dictionary<string, uint>();
+        private Dictionary<string, float> SizePerCountry = new Dictionary<string, float>();
         private Dictionary<string, uint> Countries = new Dictionary<string, uint>();
         private Dictionary<string, int> Size = new Dictionary<string, int>();
-
-        
-        /// <summary>
-        /// This function adds a package to the filetype-chart with the specific filetype
-        /// </summary>
-        /// <param name="fileType">The filetype string</param>
-        public void addFileType(string fileType)
-        {
-
-            fileType = fileType.ToUpper();
-            
-            // Insert data to directionary
-            if (FileTypes.ContainsKey(fileType))
-            {
-                FileTypes[fileType] += 1;
-            }
-            else
-            {
-                FileTypes.Add(fileType, 1);
-            }
-
-            // Update chart
-            // Filetypes.Add(new TestClass() { Category = fileType, Number = FileTypes[fileType] });
-        }
-
-
-        /// <summary>
-        /// This function adds a package to the domain-chart with the specific domain
-        /// </summary>
-        /// <param name="domain">The domain</param>
-        public void addDomain(string domain)
-        {
-
-            domain = domain.ToLower();
-
-            // Insert data to directionary
-            if (Domains.ContainsKey(domain))
-            {
-                Domains[domain] += 1;
-            }
-            else
-            {
-                Domains.Add(domain, 1);
-            }
-
-            // Update chart
-            //TopWebsites.Add(new TestClass() { Category = domain, Number = Domains[domain] });
-        }
+        private Dictionary<string, int> Protocols = new Dictionary<string, int>();
 
 
         /// <summary>
         /// Adds a package to the charts
         /// </summary>
-        /// <param name="encrypted">The encryption status of that package</param>
-        public void addPackage(int packageSize)
+        /// <param name="packageSize">The size (in bytes) of the package</param>
+        /// <param name="protocol">The used protocol of the package (see: DataPacket.DataTransferProtocol)</param>
+        /// <param name="countryShort">The two-letter code of the country</param>
+        public void addPackage(int packageSize, DataPacket.DataTransferProtocol protocol, string countryShort)
         {
+            countryShort = countryShort.ToUpper();
+
             string sizeNormalized;
+            string protocolString = "";
             
-            if (packageSize < 50)
+            if (packageSize <= 100)
             {
-                sizeNormalized = "50kb";
-            }
-            else if(packageSize < 100)
-            {
-                sizeNormalized = "100kb";
-            }
-            else if(packageSize < 250)
-            {
-                sizeNormalized = "250kb";
+                sizeNormalized = "< 100B";
             }
             else if(packageSize < 500)
             {
-                sizeNormalized = "500kb";
+                sizeNormalized = "100B - 500B";
             }
             else if(packageSize < 1000)
             {
-                sizeNormalized = "1000kb";
+                sizeNormalized = "500B - 1kB";
             }
-            else if(packageSize < 5000)
+            else if(packageSize < 1500)
             {
-                sizeNormalized = "5000kb";
+                sizeNormalized = "1kB - 1.5kB";
             }
-            else if (packageSize < 10000)
+            else if (packageSize < 2000)
             {
-                sizeNormalized = "10000kb";
+                sizeNormalized = "1.5kB - 2kB";
             }
             else
             {
-                sizeNormalized = "> 10000kb";
+                sizeNormalized = "> 2kB";
             }
 
             if (Size.ContainsKey(sizeNormalized))
@@ -169,14 +127,32 @@ namespace NSA4Dummies
             {
                 Size.Add(sizeNormalized, 1);
             }
-        }
 
+            switch (protocol)
+            {
+                case DataPacket.DataTransferProtocol.DTP_TCP:
+                    protocolString = "TCP";
+                    break;
+                case DataPacket.DataTransferProtocol.DTP_UDP:
+                    protocolString = "UDP";
+                    break;
+                case DataPacket.DataTransferProtocol.DTP_ICMP:
+                    protocolString = "ICMP";
+                    break;
+                default:
+                    protocolString = "OTHER";
+                    break;
+            }
 
-        public void addCountryPackage(string countryShort)
-        {
-            countryShort = countryShort.ToUpper();
+            if (Protocols.ContainsKey(protocolString))
+            {
+                Protocols[protocolString] += 1;
+            }
+            else
+            {
+                Protocols.Add(protocolString, 1);
+            }
 
-            // Insert data to directionary
             if (Countries.ContainsKey(countryShort))
             {
                 Countries[countryShort] += 1;
@@ -184,6 +160,15 @@ namespace NSA4Dummies
             else
             {
                 Countries.Add(countryShort, 1);
+            }
+
+            if (SizePerCountry.ContainsKey(countryShort))
+            {
+                SizePerCountry[countryShort] += (float)packageSize / (float)1000000.0;
+            }
+            else
+            {
+                SizePerCountry.Add(countryShort, (float)packageSize / (float)1000000.0);
             }
         }
 
@@ -193,22 +178,23 @@ namespace NSA4Dummies
         /// </summary>
         public void updateDataGraphs()
         {
-            Filetypes.Clear();
-            TopWebsites.Clear();
+            PackagesPerCountry.Clear();
+            FileSizePerCountry.Clear();
+            UsedProtocols.Clear();
             PackageSize.Clear();
 
             foreach(var c in Countries){
                 PackagesPerCountry.Add(new DataClass() { Category = c.Key, Number = c.Value });
             }
             
-            foreach (var d in Domains)
+            foreach (var p in Protocols)
             {
-                TopWebsites.Add(new DataClass() { Category = d.Key, Number = d.Value });
+                UsedProtocols.Add(new DataClass() { Category = p.Key, Number = p.Value });
             }
 
-            foreach (var f in FileTypes)
+            foreach (var s in SizePerCountry)
             {
-                Filetypes.Add(new DataClass() { Category = f.Key, Number = f.Value });
+                FileSizePerCountry.Add(new DataClass() { Category = s.Key, Number = (float)Math.Round(s.Value, 2) });
             }
 
             foreach (var s in Size)
@@ -230,10 +216,10 @@ namespace NSA4Dummies
         }
        
 
-        /*
-         *  selected layout elements
-         * */
         private ChartType selectedChartType;
+        /// <summary>
+        /// Returns the selected chrt type
+        /// </summary>
         public ChartType SelectedChartType
         {
             get
@@ -247,7 +233,11 @@ namespace NSA4Dummies
             }
         }
 
+
         private object selectedPalette = null;
+        /// <summary>
+        /// Returns the selected palette
+        /// </summary>
         public object SelectedPalette
         {
             get
@@ -261,7 +251,11 @@ namespace NSA4Dummies
             }
         }
 
+
         private string selectedBrush = null;
+        /// <summary>
+        /// Returns the selected brush
+        /// </summary>
         public string SelectedBrush
         {
             get
@@ -275,7 +269,11 @@ namespace NSA4Dummies
             }
         }
 
+
         private double selectedDoughnutInnerRadiusRatio = 0.75;
+        /// <summary>
+        /// Returns the selected inner radius of the doughnut chart
+        /// </summary>
         public double SelectedDoughnutInnerRadiusRatio
         {
             get
@@ -290,6 +288,10 @@ namespace NSA4Dummies
             }
         }
 
+        
+        /// <summary>
+        /// Returns the selected font size as string
+        /// </summary>
         public string SelectedFontSizeString
         {
             get
@@ -298,7 +300,11 @@ namespace NSA4Dummies
             }
         }
 
+
         private object selectedItem = null;
+        /// <summary>
+        /// Returns the selected item
+        /// </summary>
         public object SelectedItem
         {
             get
@@ -312,7 +318,11 @@ namespace NSA4Dummies
             }
         }
 
+
         private double fontSize = 11.0;
+        /// <summary>
+        /// Returns the selected font size
+        /// </summary>
         public double SelectedFontSize
         {
             get
@@ -327,7 +337,11 @@ namespace NSA4Dummies
             }
         }
 
+
         private bool isRowColumnSwitched = false;
+        /// <summary>
+        /// Returns whether the row column is switched or not
+        /// </summary>
         public bool IsRowColumnSwitched
         {
             get
@@ -341,7 +355,11 @@ namespace NSA4Dummies
             }
         }
 
+
         private bool isLegendVisible = true;
+        /// <summary>
+        /// Returns whether the legend is visible or not
+        /// </summary>
         public bool IsLegendVisible
         {
             get
@@ -355,7 +373,11 @@ namespace NSA4Dummies
             }
         }
 
+
         private bool isTitleVisible = true;
+        /// <summary>
+        /// Returns whether the title column is switched or not
+        /// </summary>
         public bool IsTitleVisible
         {
             get
@@ -369,6 +391,10 @@ namespace NSA4Dummies
             }
         }
 
+
+        /// <summary>
+        /// Returns the selected inner radius of the doughnut chart as string
+        /// </summary>
         public string SelectedDoughnutInnerRadiusRatioString
         {
             get
@@ -398,6 +424,8 @@ namespace NSA4Dummies
                 return (string)Application.Current.FindResource("chartsLabelColor");
             }
         }
+
+
         /// <summary>
         /// Color of Header texts
         /// </summary>
@@ -408,6 +436,8 @@ namespace NSA4Dummies
                 return (string)Application.Current.FindResource("chartsLabelColor");
             }
         }
+
+
         /// <summary>
         /// The background color
         /// </summary>
@@ -418,6 +448,8 @@ namespace NSA4Dummies
                 return (string)Application.Current.FindResource("chartsBackgroundColor");
             }
         }
+
+
         /// <summary>
         /// The main background color of the program
         /// </summary>
@@ -428,6 +460,8 @@ namespace NSA4Dummies
                 return (string)Application.Current.FindResource("programMainBackgroundColor");
             }
         }
+
+
         /// <summary>
         /// Default color of the countries
         /// </summary>
@@ -446,6 +480,9 @@ namespace NSA4Dummies
          * */
         public event PropertyChangedEventHandler PropertyChanged;
 
+        /// <summary>
+        /// Returns the tooltip string
+        /// </summary>
         public string ToolTipFormat
         {
             get
@@ -464,6 +501,7 @@ namespace NSA4Dummies
                 PropertyChanged.Invoke(this, new PropertyChangedEventArgs(property));
             }
         }
+
 
         private void LoadPalettes()
         {
@@ -485,10 +523,11 @@ namespace NSA4Dummies
             SelectedPalette = Palettes.FirstOrDefault();
         }
 
+
         int newSeriesCounter = 1;
         private void AddSeries()
         {
-            ObservableCollectionEx<DataClass> data = new ObservableCollectionEx<DataClass>();
+            ObservableCollection<DataClass> data = new ObservableCollection<DataClass>();
 
             data.Add(new DataClass() { Category = "Globalization", Number = 5 });
             data.Add(new DataClass() { Category = "Features", Number = 10 });
@@ -500,6 +539,7 @@ namespace NSA4Dummies
             newSeriesCounter++;
         }
 
+
         /// <summary>
         /// The constructor of GUIViewModel
         /// </summary>
@@ -507,9 +547,7 @@ namespace NSA4Dummies
         {
             LoadPalettes();
 
-            //AddSeriesCommand = new DelegateCommand(x => AddSeries());
-
-            ViewTypes = new ObservableCollectionEx<ChartType>();
+            ViewTypes = new ObservableCollection<ChartType>();
             ViewTypes.Add(new ChartType(App.translation["mainWindow.map"], "Map"));
             ViewTypes.Add(new ChartType(App.translation["mainWindow.stats"], "Statistics"));
             ViewTypes.Add(new ChartType(App.translation["mainWindow.settings"], "Settings"));
@@ -543,55 +581,51 @@ namespace NSA4Dummies
             SelectionBrushes.Add("[NoColor]");
             SelectedBrush = SelectionBrushes.FirstOrDefault();
 
-            TopWebsites = new ObservableCollectionEx<DataClass>();
-            PackageSize = new ObservableCollectionEx<DataClass>();
-            Filetypes = new ObservableCollectionEx<DataClass>();
-            PackagesPerCountry = new ObservableCollectionEx<DataClass>();
-
-
-            // Disable Notifications of ObservableCollections
-            // TopWebsites = TopWebsites.DisableNotifications();
-            // PackageSize = PackageSize.DisableNotifications();
-            // Filetypes = Filetypes.DisableNotifications();
-            // PackagesPerCountry = PackagesPerCountry.DisableNotifications();
+            UsedProtocols = new ObservableCollection<DataClass>();
+            PackageSize = new ObservableCollection<DataClass>();
+            FileSizePerCountry = new ObservableCollection<DataClass>();
+            PackagesPerCountry = new ObservableCollection<DataClass>();
         }
+
 
         /// <summary>
         /// The collection that holds the top websites
         /// </summary>
-        public ObservableCollectionEx<DataClass> TopWebsites
+        public ObservableCollection<DataClass> UsedProtocols
         {
             get;
             set;
         }
+
 
         /// <summary>
         /// The collection that holds the (un-)encrypted packages
         /// </summary>
-        public ObservableCollectionEx<DataClass> PackageSize
+        public ObservableCollection<DataClass> PackageSize
         {
             get;
             set;
         }
+
 
         /// <summary>
         /// The collection that holds the filetypes of the packages
         /// </summary>
-        public ObservableCollectionEx<DataClass> Filetypes
+        public ObservableCollection<DataClass> FileSizePerCountry
         {
             get;
             set;
         }
+
 
         /// <summary>
         /// The collection that holds number of packages sent to a country
         /// </summary>
-        public ObservableCollectionEx<DataClass> PackagesPerCountry
+        public ObservableCollection<DataClass> PackagesPerCountry
         {
             get;
             set;
         }
-
     }
 
 
@@ -639,26 +673,17 @@ namespace NSA4Dummies
     }
 
 
-    /*
-    public class SeriesData
-    {
-        public string SeriesDisplayName { get; set; }
-
-        public string SeriesDescription { get; set; }
-
-        public ObservableCollection<TestClass> Items { get; set; }
-    }
-     * */
-
-
     /// <summary>
     /// The class that is used to store data to the charts
     /// </summary>
-    public class DataClass : INotifyPropertyChanged
+    public class DataClass
     {
         public string Category { get; set; }
 
         private float _number = 0;
+        /// <summary>
+        /// The numerical value of a chart element
+        /// </summary>
         public float Number
         {
             get
@@ -668,14 +693,7 @@ namespace NSA4Dummies
             set
             {
                 _number = value;
-                if (PropertyChanged != null)
-                {
-                    this.PropertyChanged(this, new PropertyChangedEventArgs("Number"));
-                }
             }
-
         }
-
-        public event PropertyChangedEventHandler PropertyChanged;
     }
 }

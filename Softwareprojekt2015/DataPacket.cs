@@ -7,7 +7,10 @@ using System.Net;
 
 namespace NSA4Dummies
 {
-    [Serializable] class DataPacket
+    /// <summary>
+    /// This class represents a packet which was captured by the sniffer includings it's meta data
+    /// </summary>
+    [Serializable] public class DataPacket
     {
 
         /// <summary>
@@ -15,9 +18,21 @@ namespace NSA4Dummies
         /// </summary>
         public enum DataTransferProtocol
         {
+            /// <summary>
+            /// Transmission Control Protocol
+            /// </summary>
             DTP_TCP,
+            /// <summary>
+            /// User Datagram Protocol
+            /// </summary>
             DTP_UDP,
+            /// <summary>
+            /// Internet Control Message Protocol
+            /// </summary>
             DTP_ICMP,
+            /// <summary>
+            /// Coud not determine protocol type
+            /// </summary>
             DTP_OTHER
         }
 

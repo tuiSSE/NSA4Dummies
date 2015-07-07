@@ -38,6 +38,10 @@ using System.Windows.Browser;
 #endif
 namespace NSA4Dummies
 {
+    /// <summary>
+    /// Part of 'Modern UI Charts'
+    /// For more details look at https://modernuicharts.codeplex.com/
+    /// </summary>
     public class PortableHyperLinkButton : Button
     {
         public static readonly DependencyProperty TextProperty =
