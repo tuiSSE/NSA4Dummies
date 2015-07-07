@@ -21,6 +21,10 @@ using System.Windows.Controls;
 
 namespace NSA4Dummies
 {
+    /// <summary>
+    /// Part of 'Modern UI Charts'
+    /// For more details look at https://modernuicharts.codeplex.com/
+    /// </summary>
     public sealed class BooleanToVisibilityConverter : IValueConverter
     {
 

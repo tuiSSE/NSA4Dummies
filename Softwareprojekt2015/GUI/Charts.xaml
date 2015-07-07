@@ -93,7 +93,7 @@
                     HorizontalAlignment="Center"
                     VerticalAlignment="Stretch"
                     Style="{StaticResource ChartStyleVariableSize}"
-                    ChartTitle="Filetypes"                                
+                    ChartTitle="{Binding T[charts.chartTitleDataAmountPerCountry]}"                                
                     ChartSubTitle=""
                     Palette="{Binding Path=SelectedPalette.Value}"
                     FontSize="{Binding Path=SelectedFontSize}"
@@ -112,7 +112,7 @@
                                 SeriesTitle=" "
                                 DisplayMember="Category"
                                 ValueMember="Number"
-                                ItemsSource="{Binding Path=Filetypes}">
+                                ItemsSource="{Binding Path=FileSizePerCountry}">
                         </chart:ChartSeries>
                     </chart:PieChart.Series>
                 </chart:DoughnutChart>

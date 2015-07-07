@@ -34,7 +34,8 @@ using System.Windows.Controls.Primitives;
 namespace NSA4Dummies
 {
     /// <summary>
-    /// Layout aware page which can be used in SL, WinRT and WPF
+    /// Part of 'Modern UI Charts'
+    /// For more details look at https://modernuicharts.codeplex.com/
     /// </summary>
     public class PortablePopup : ContentControl
     {

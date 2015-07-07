@@ -55,6 +55,7 @@
     <string id="chartTitleUsedProtocols">Pakete pro Protokoll</string>
     <string id="chartTitlePackageSize">Pakete pro Paketgröße</string>
     <string id="chartTitlePackagesPerCountry">Pakete pro Land</string>
+    <string id="chartTitleDataAmountPerCountry">Datenmenge pro Land</string> 
   </category>
   <category name="notifyIcon">
     <string id="niText">NSA 4 Dummies</string>

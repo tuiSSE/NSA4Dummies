@@ -16,6 +16,9 @@ namespace NSA4Dummies
     public class GUIViewModel : INotifyPropertyChanged
     {
 
+        /// <summary>
+        /// The chart type struct
+        /// </summary>
         public struct ChartType
         {
             public ChartType(string title, string key)
@@ -72,34 +75,10 @@ namespace NSA4Dummies
         /*
          *  Chart-Data dictionaries
          * */
-        private Dictionary<string, uint> FileTypes = new Dictionary<string, uint>();
+        private Dictionary<string, float> SizePerCountry = new Dictionary<string, float>();
         private Dictionary<string, uint> Countries = new Dictionary<string, uint>();
         private Dictionary<string, int> Size = new Dictionary<string, int>();
         private Dictionary<string, int> Protocols = new Dictionary<string, int>();
-
-        
-        /// <summary>
-        /// This function adds a package to the filetype-chart with the specific filetype
-        /// </summary>
-        /// <param name="fileType">The filetype string</param>
-        public void addFileType(string fileType)
-        {
-
-            fileType = fileType.ToUpper();
-            
-            // Insert data to directionary
-            if (FileTypes.ContainsKey(fileType))
-            {
-                FileTypes[fileType] += 1;
-            }
-            else
-            {
-                FileTypes.Add(fileType, 1);
-            }
-
-            // Update chart
-            // Filetypes.Add(new TestClass() { Category = fileType, Number = FileTypes[fileType] });
-        }
 
 
         /// <summary>
@@ -107,8 +86,11 @@ namespace NSA4Dummies
         /// </summary>
         /// <param name="packageSize">The size (in bytes) of the package</param>
         /// <param name="protocol">The used protocol of the package (see: DataPacket.DataTransferProtocol)</param>
-        public void addPackage(int packageSize, DataPacket.DataTransferProtocol protocol)
+        /// <param name="countryShort">The two-letter code of the country</param>
+        public void addPackage(int packageSize, DataPacket.DataTransferProtocol protocol, string countryShort)
         {
+            countryShort = countryShort.ToUpper();
+
             string sizeNormalized;
             string protocolString = "";
             
@@ -170,18 +152,7 @@ namespace NSA4Dummies
             {
                 Protocols.Add(protocolString, 1);
             }
-        }
 
-
-        /// <summary>
-        /// Add a package to the "Packages per country" chart
-        /// </summary>
-        /// <param name="countryShort">The two-letter code of the country</param>
-        public void addCountryPackage(string countryShort)
-        {
-            countryShort = countryShort.ToUpper();
-
-            // Insert data to directionary
             if (Countries.ContainsKey(countryShort))
             {
                 Countries[countryShort] += 1;
@@ -189,6 +160,15 @@ namespace NSA4Dummies
             else
             {
                 Countries.Add(countryShort, 1);
+            }
+
+            if (SizePerCountry.ContainsKey(countryShort))
+            {
+                SizePerCountry[countryShort] += (float)packageSize / (float)1000000.0;
+            }
+            else
+            {
+                SizePerCountry.Add(countryShort, (float)packageSize / (float)1000000.0);
             }
         }
 
@@ -199,7 +179,7 @@ namespace NSA4Dummies
         public void updateDataGraphs()
         {
             PackagesPerCountry.Clear();
-            Filetypes.Clear();
+            FileSizePerCountry.Clear();
             UsedProtocols.Clear();
             PackageSize.Clear();
 
@@ -212,9 +192,9 @@ namespace NSA4Dummies
                 UsedProtocols.Add(new DataClass() { Category = p.Key, Number = p.Value });
             }
 
-            foreach (var f in FileTypes)
+            foreach (var s in SizePerCountry)
             {
-                Filetypes.Add(new DataClass() { Category = f.Key, Number = f.Value });
+                FileSizePerCountry.Add(new DataClass() { Category = s.Key, Number = s.Value });
             }
 
             foreach (var s in Size)
@@ -603,7 +583,7 @@ namespace NSA4Dummies
 
             UsedProtocols = new ObservableCollection<DataClass>();
             PackageSize = new ObservableCollection<DataClass>();
-            Filetypes = new ObservableCollection<DataClass>();
+            FileSizePerCountry = new ObservableCollection<DataClass>();
             PackagesPerCountry = new ObservableCollection<DataClass>();
         }
 
@@ -631,7 +611,7 @@ namespace NSA4Dummies
         /// <summary>
         /// The collection that holds the filetypes of the packages
         /// </summary>
-        public ObservableCollection<DataClass> Filetypes
+        public ObservableCollection<DataClass> FileSizePerCountry
         {
             get;
             set;

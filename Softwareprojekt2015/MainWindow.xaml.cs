@@ -70,14 +70,8 @@ namespace NSA4Dummies
             {
                 // Add a packet to the country that is associated with the IP address
                 WorldMap.addPackageToCountryUpdate(ip.ToString());
-                ((GUIViewModel)this.DataContext).addCountryPackage(IP2Country.number2Country(IP2Country.address2Number(ip.ToString())));
-            }
-
-            string[] fileTypes = { "mp3", "jpeg", "html", "js", "css", "gif", "png", "flv" };
-            int choice = rnd.Next(0, fileTypes.Length);
-            ((GUIViewModel)this.DataContext).addFileType(fileTypes[choice]);
-
-            ((GUIViewModel)this.DataContext).addPackage(packet.Length, packet.Protocol);
+                ((GUIViewModel)this.DataContext).addPackage(packet.Length, packet.Protocol, IP2Country.number2Country(IP2Country.address2Number(ip.ToString())));
+            }        
         }
 
 
